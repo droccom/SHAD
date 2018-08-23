@@ -47,6 +47,27 @@ matrix:
       env:
         - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
 
+branch:
+  except:
+    - gh-pages
+
+# Environment variables
+env:
+  global:
+    - GH_REPO_NAME: shad
+    - DOXYFILE: $TRAVIS_BUILD_DIR/Doxygen/Doxyfile
+    - GH_REPO_REF: github.com/droccom/shad.git
+
+# Install dependencies
+addons:
+  apt:
+    packages:
+      - doxygen
+      - doxygen-doc
+      - doxygen-latex
+      - doxygen-gui
+      - graphviz
+
 before_install:
   - eval "${MATRIX_EVAL}"
   - git clone --branch release-1.8.0 --depth 1 https://github.com/google/googletest.git
@@ -75,3 +96,9 @@ script:
   - cmake -DCMAKE_BUILD_TYPE=Release -DSHAD_RUNTIME_SYSTEM=TBB -DGTEST_ROOT=$HOME/gtest-root -DTBB_ROOT=$HOME/tbb-root -Dbenchmark_ROOT=$HOME/benchmark-root -Bbuild-release -H.
   - cmake --build build-release -- -j 2
   - cmake --build build-release --target test -- ARGS="--output-on-failure"
+
+# Generate and deploy documentation
+after_success:
+  - cd $TRAVIS_BUILD_DIR
+  - chmod +x makedoc.sh
+  - ./makedoc.sh
