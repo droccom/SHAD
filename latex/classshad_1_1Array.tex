@@ -1,0 +1,839 @@
+\hypertarget{classshad_1_1Array}{\section{shad\-:\-:Array$<$ T $>$ Class Template Reference}
+\label{classshad_1_1Array}\index{shad\-::\-Array$<$ T $>$@{shad\-::\-Array$<$ T $>$}}
+}
+
+
+The \hyperlink{classshad_1_1Array}{Array} data structure.  
+
+
+
+
+{\ttfamily \#include $<$shad/data\-\_\-structures/array.\-h$>$}
+
+
+
+Inheritance diagram for shad\-:\-:Array$<$ T $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classshad_1_1Array__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for shad\-:\-:Array$<$ T $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classshad_1_1Array__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{classshad_1_1Array_a69c0b0424c09d4779081e358548a3165}{Object\-I\-D} = typename \hyperlink{classshad_1_1AbstractDataStructure}{Abstract\-Data\-Structure}$<$ \hyperlink{classshad_1_1Array}{Array}$<$ T $>$$>$\-::\hyperlink{classshad_1_1Array_a69c0b0424c09d4779081e358548a3165}{Object\-I\-D}
+\item 
+using \hyperlink{classshad_1_1Array_a9d0f8fb34a90f8b9d232aa086ff75d2a}{Buffers\-Vector} = impl\-::\-Buffers\-Vector$<$ std\-::tuple$<$ size\-\_\-t, T $>$, \hyperlink{classshad_1_1Array}{Array}$<$ T $>$$>$
+\item 
+using \hyperlink{classshad_1_1Array_a5ff91c72815df47db60fc6ed44b01d46}{Shad\-Array\-Ptr} = typename \hyperlink{classshad_1_1AbstractDataStructure}{Abstract\-Data\-Structure}$<$ \hyperlink{classshad_1_1Array}{Array}$<$ T $>$$>$\-::\hyperlink{classshad_1_1AbstractDataStructure_a8bb29450966955c546d40421ce46316f}{Shared\-Ptr}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classshad_1_1Array_a69c0b0424c09d4779081e358548a3165}{Object\-I\-D} \hyperlink{classshad_1_1Array_a6340a0b0ce2b34964e580a86f0c9cbcd}{Get\-Global\-I\-D} () const 
+\begin{DoxyCompactList}\small\item\em Retrieve the Global Identifier. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classshad_1_1Array_ab6ebd2321e693fbcbf6ff6ec90a12f56}{Size} () const noexcept
+\begin{DoxyCompactList}\small\item\em Return the size of the \hyperlink{classshad_1_1Array}{shad\-::\-Array}. \end{DoxyCompactList}\item 
+void \hyperlink{classshad_1_1Array_ae90ba873251e3dd7afb36fc58a1aa648}{Insert\-At} (const size\-\_\-t pos, const T \&value)
+\begin{DoxyCompactList}\small\item\em Synchronous insert method. \end{DoxyCompactList}\item 
+void \hyperlink{classshad_1_1Array_a3f460d2e4d34fe22fa2ede421e668da0}{Insert\-At} (const size\-\_\-t pos, const T $\ast$values, const size\-\_\-t num\-Values)
+\begin{DoxyCompactList}\small\item\em Synchronous bulk insert method. \end{DoxyCompactList}\item 
+void \hyperlink{classshad_1_1Array_a0e145550478683482a1601031535c8cf}{Async\-Insert\-At} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, const size\-\_\-t pos, const T \&value)
+\begin{DoxyCompactList}\small\item\em Asynchronous Insert method. \end{DoxyCompactList}\item 
+void \hyperlink{classshad_1_1Array_af3e5d9c1664af29e635e1ed6c96eaf70}{Async\-Insert\-At} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, const size\-\_\-t pos, const T $\ast$values, const size\-\_\-t num\-Values)
+\begin{DoxyCompactList}\small\item\em Asynchronous bulk insert method. \end{DoxyCompactList}\item 
+void \hyperlink{classshad_1_1Array_ac684b1894e474db3e9fee060a1bd59bf}{Buffered\-Insert\-At} (const size\-\_\-t pos, const T \&value)
+\begin{DoxyCompactList}\small\item\em Buffered insert method. \end{DoxyCompactList}\item 
+void \hyperlink{classshad_1_1Array_a34c463d858d31e8090534405c7692580}{Buffered\-Async\-Insert\-At} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, const size\-\_\-t pos, const T \&value)
+\begin{DoxyCompactList}\small\item\em Asynchronous buffered insert method. \end{DoxyCompactList}\item 
+void \hyperlink{classshad_1_1Array_a80bdbc75aca1424f086305d9297dccec}{Wait\-For\-Buffered\-Insert} ()
+\begin{DoxyCompactList}\small\item\em Finalize method for buffered insertions. \end{DoxyCompactList}\item 
+T \hyperlink{classshad_1_1Array_a56085a958b519c523540a5e8babb8045}{At} (const size\-\_\-t pos)
+\begin{DoxyCompactList}\small\item\em Lookup Method. \end{DoxyCompactList}\item 
+void \hyperlink{classshad_1_1Array_a23fe4840cee746b5f54c118650139ed0}{Async\-At} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, const size\-\_\-t pos, T $\ast$result)
+\begin{DoxyCompactList}\small\item\em Asynchronous Lookup Method. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Apply\-Fun\-T , typename... Args$>$ }\\void \hyperlink{classshad_1_1Array_a044795e62744280d74a0fc8933dc5b6c}{Apply} (const size\-\_\-t pos, Apply\-Fun\-T \&\&function, Args \&...args)
+\begin{DoxyCompactList}\small\item\em Applies a user-\/defined function to an element. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Apply\-Fun\-T , typename... Args$>$ }\\void \hyperlink{classshad_1_1Array_a7761587f45d0059212091ba33366e4e6}{Async\-Apply} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, const size\-\_\-t pos, Apply\-Fun\-T \&\&function, Args \&...args)
+\begin{DoxyCompactList}\small\item\em Asynchronously applies a user-\/defined function to an element. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Apply\-Fun\-T , typename... Args$>$ }\\void \hyperlink{classshad_1_1Array_a5136714d22b0efef01f6711e2ad2a8fc}{For\-Each\-In\-Range} (const size\-\_\-t first, const size\-\_\-t last, Apply\-Fun\-T \&\&function, Args \&...args)
+\begin{DoxyCompactList}\small\item\em Applies a user-\/defined function to every element in the specified range. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Apply\-Fun\-T , typename... Args$>$ }\\void \hyperlink{classshad_1_1Array_a993d7eb96221277f74c6fb4c36f36f8e}{Async\-For\-Each\-In\-Range} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, const size\-\_\-t first, const size\-\_\-t last, Apply\-Fun\-T \&\&function, Args \&...args)
+\begin{DoxyCompactList}\small\item\em Asynchronously applies a user-\/defined function to every element in the specified range. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Apply\-Fun\-T , typename... Args$>$ }\\void \hyperlink{classshad_1_1Array_a6fd05a7fd2e8ef73ed288f5c1bfcf171}{For\-Each} (Apply\-Fun\-T \&\&function, Args \&...args)
+\begin{DoxyCompactList}\small\item\em Applies a user-\/defined function to every element. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Apply\-Fun\-T , typename... Args$>$ }\\void \hyperlink{classshad_1_1Array_a076303cbecce5e29fadd0a4333428efa}{Async\-For\-Each} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, Apply\-Fun\-T \&\&function, Args \&...args)
+\begin{DoxyCompactList}\small\item\em Asynchronously applies a user-\/defined function to every element. \end{DoxyCompactList}\item 
+void \hyperlink{classshad_1_1Array_a98bd6440ea4037335356cd6cc95a0cde}{Buffer\-Entry\-Insert} (const std\-::tuple$<$ size\-\_\-t, T $>$ entry)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classshad_1_1Array_a5ff91c72815df47db60fc6ed44b01d46}{Shad\-Array\-Ptr} \hyperlink{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}{Create} (size\-\_\-t size, const T \&init\-Value)
+\begin{DoxyCompactList}\small\item\em Create method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr size\-\_\-t \hyperlink{classshad_1_1Array_af4d2703149c199273eae358d1bcd8ade}{k\-Max\-Chunk\-Size}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classshad_1_1Array_a651339c6f76aea1b4f5120ebfc46bdd0}{Array} (\hyperlink{classshad_1_1Array_a69c0b0424c09d4779081e358548a3165}{Object\-I\-D} oid, size\-\_\-t size, const T \&init\-Value)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename $>$ }\\class \hyperlink{classshad_1_1Array_ab18afa4496cc863ddc11bab94b2adf57}{Abstract\-Data\-Structure}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class shad\-::\-Array$<$ T $>$}
+
+The \hyperlink{classshad_1_1Array}{Array} data structure. 
+
+S\-H\-A\-D's \hyperlink{classshad_1_1Array}{Array} is a fixed size distributed container.
+
+\begin{DoxyWarning}{Warning}
+obects of type T need to be trivially copiable.
+\end{DoxyWarning}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of the entries stored in the \hyperlink{classshad_1_1Array}{Array}. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classshad_1_1Array_a9d0f8fb34a90f8b9d232aa086ff75d2a}{\index{shad\-::\-Array@{shad\-::\-Array}!Buffers\-Vector@{Buffers\-Vector}}
+\index{Buffers\-Vector@{Buffers\-Vector}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Buffers\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ using {\bf shad\-::\-Array}$<$ T $>$\-::{\bf Buffers\-Vector} =  impl\-::\-Buffers\-Vector$<$std\-::tuple$<$size\-\_\-t, T$>$, {\bf Array}$<$T$>$$>$}}\label{classshad_1_1Array_a9d0f8fb34a90f8b9d232aa086ff75d2a}
+\hypertarget{classshad_1_1Array_a69c0b0424c09d4779081e358548a3165}{\index{shad\-::\-Array@{shad\-::\-Array}!Object\-I\-D@{Object\-I\-D}}
+\index{Object\-I\-D@{Object\-I\-D}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Object\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ using {\bf shad\-::\-Array}$<$ T $>$\-::{\bf Object\-I\-D} =  typename {\bf Abstract\-Data\-Structure}$<${\bf Array}$<$T$>$$>$\-::{\bf Object\-I\-D}}}\label{classshad_1_1Array_a69c0b0424c09d4779081e358548a3165}
+\hypertarget{classshad_1_1Array_a5ff91c72815df47db60fc6ed44b01d46}{\index{shad\-::\-Array@{shad\-::\-Array}!Shad\-Array\-Ptr@{Shad\-Array\-Ptr}}
+\index{Shad\-Array\-Ptr@{Shad\-Array\-Ptr}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Shad\-Array\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ using {\bf shad\-::\-Array}$<$ T $>$\-::{\bf Shad\-Array\-Ptr} =  typename {\bf Abstract\-Data\-Structure}$<${\bf Array}$<$T$>$$>$\-::{\bf Shared\-Ptr}}}\label{classshad_1_1Array_a5ff91c72815df47db60fc6ed44b01d46}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classshad_1_1Array_a651339c6f76aea1b4f5120ebfc46bdd0}{\index{shad\-::\-Array@{shad\-::\-Array}!Array@{Array}}
+\index{Array@{Array}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Array}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf shad\-::\-Array}$<$ T $>$\-::{\bf Array} (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\-I\-D}}]{oid, }
+\item[{size\-\_\-t}]{size, }
+\item[{const T \&}]{init\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classshad_1_1Array_a651339c6f76aea1b4f5120ebfc46bdd0}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classshad_1_1Array_a044795e62744280d74a0fc8933dc5b6c}{\index{shad\-::\-Array@{shad\-::\-Array}!Apply@{Apply}}
+\index{Apply@{Apply}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Apply}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template$<$typename Apply\-Fun\-T , typename... Args$>$ void {\bf shad\-::\-Array}$<$ T $>$\-::Apply (
+\begin{DoxyParamCaption}
+\item[{const size\-\_\-t}]{pos, }
+\item[{Apply\-Fun\-T \&\&}]{function, }
+\item[{Args \&...}]{args}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1Array_a044795e62744280d74a0fc8933dc5b6c}
+
+
+Applies a user-\/defined function to an element. 
+
+Applies a user-\/defined function to the element at the specified position.
+
+Typical usage\-: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} fn(\textcolor{keywordtype}{size\_t} i, \textcolor{keywordtype}{size\_t}& elem, \textcolor{keywordtype}{size\_t} & incr) \{ \textcolor{comment}{/* do something */} \}
+...
+auto edsPtr = \hyperlink{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}{shad::Array<size\_t>::Create}(kArraySize, kInitValue);
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < kArraySize; i++) \{
+  edsPtr->Apply(i, fn, kInitValue);
+\}
+...
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Apply\-Fun\-T} & User-\/defined function type. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\textcolor{keywordtype}{size\_t}, T&, Args& args);
+\end{DoxyCode}
+ \\
+\hline
+{\em ...\-Args} & Types of the function arguments.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pos} & The target position. \\
+\hline
+\mbox{\tt in}  & {\em function} & The function to apply. \\
+\hline
+\mbox{\tt in}  & {\em args} & The function arguments. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1Array_a7761587f45d0059212091ba33366e4e6}{\index{shad\-::\-Array@{shad\-::\-Array}!Async\-Apply@{Async\-Apply}}
+\index{Async\-Apply@{Async\-Apply}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Async\-Apply}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template$<$typename Apply\-Fun\-T , typename... Args$>$ void {\bf shad\-::\-Array}$<$ T $>$\-::Async\-Apply (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{const size\-\_\-t}]{pos, }
+\item[{Apply\-Fun\-T \&\&}]{function, }
+\item[{Args \&...}]{args}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1Array_a7761587f45d0059212091ba33366e4e6}
+
+
+Asynchronously applies a user-\/defined function to an element. 
+
+Asynchronously applies a user-\/defined function to the element at the specified position.
+
+\begin{DoxyWarning}{Warning}
+Asynchronous operations are guaranteed to have completed only after calling the \hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{rt\-::wait\-For\-Completion(rt\-::\-Handle \&handle)} method.
+\end{DoxyWarning}
+Typical usage\-: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} fn(\hyperlink{classshad_1_1rt_1_1Handle}{shad::rt::Handle}&, \textcolor{keywordtype}{size\_t} i, \textcolor{keywordtype}{size\_t}& elem, \textcolor{keywordtype}{size\_t} & incr) \{
+  \textcolor{comment}{/* do something */}
+\}
+...
+auto arrayPtr = \hyperlink{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}{shad::Array<size\_t>::Create}(kArraySize, kInitValue);
+\hyperlink{classshad_1_1rt_1_1Handle}{shad::rt::Handle} handle;
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < kArraySize; i++) \{
+  arrayPtr->AsyncApply(handle, i, fn, kInitValue);
+\}
+\hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{shad::rt::waitForCompletion}(handle);
+...
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Apply\-Fun\-T} & User-\/defined function type. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\hyperlink{classshad_1_1rt_1_1Handle}{shad::rt::Handle}&, \textcolor{keywordtype}{size\_t}, T&, Args& args);
+\end{DoxyCode}
+ \\
+\hline
+{\em ...\-Args} & Types of the function arguments.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em handle} & Reference to the handle to be used to wait for completion. \\
+\hline
+\mbox{\tt in}  & {\em pos} & The target position. \\
+\hline
+\mbox{\tt in}  & {\em function} & The function to apply. \\
+\hline
+\mbox{\tt in}  & {\em args} & The function arguments. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1Array_a23fe4840cee746b5f54c118650139ed0}{\index{shad\-::\-Array@{shad\-::\-Array}!Async\-At@{Async\-At}}
+\index{Async\-At@{Async\-At}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Async\-At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf shad\-::\-Array}$<$ T $>$\-::Async\-At (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{const size\-\_\-t}]{pos, }
+\item[{T $\ast$}]{result}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1Array_a23fe4840cee746b5f54c118650139ed0}
+
+
+Asynchronous Lookup Method. 
+
+Retireve an element at a given position asynchronously.
+
+\begin{DoxyWarning}{Warning}
+Asynchronous operations are guaranteed to have completed only after calling the \hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{rt\-::wait\-For\-Completion(rt\-::\-Handle \&handle)} method.
+\end{DoxyWarning}
+Typical usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} arrayPtr = \hyperlink{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}{shad::Array<size\_t>::Create}(kArraySize, kInitValue);
+\textcolor{comment}{// ... fill the array with useful values ...}
+
+std::vector<size\_t> top(k);
+\hyperlink{classshad_1_1rt_1_1Handle}{shad::rt::Handle} handle;
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < k; ++i)
+  arrayPtr->AsyncAt(i, &top[i]);
+
+\hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{shad::rt::waitForCompletion}(handle);
+\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} v : top)
+  PrintValue(v);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em handle} & The handle to be used to wait for completion. \\
+\hline
+\mbox{\tt in}  & {\em pos} & The target position. \\
+\hline
+\mbox{\tt out}  & {\em result} & pointer to the region where the element value is written; result must point to a valid memory allocation. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1Array_a076303cbecce5e29fadd0a4333428efa}{\index{shad\-::\-Array@{shad\-::\-Array}!Async\-For\-Each@{Async\-For\-Each}}
+\index{Async\-For\-Each@{Async\-For\-Each}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Async\-For\-Each}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template$<$typename Apply\-Fun\-T , typename... Args$>$ void {\bf shad\-::\-Array}$<$ T $>$\-::Async\-For\-Each (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{Apply\-Fun\-T \&\&}]{function, }
+\item[{Args \&...}]{args}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1Array_a076303cbecce5e29fadd0a4333428efa}
+
+
+Asynchronously applies a user-\/defined function to every element. 
+
+Asynchronously applies a user-\/defined function to all the elements.
+
+\begin{DoxyWarning}{Warning}
+Asynchronous operations are guaranteed to have completed only after calling the \hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{rt\-::wait\-For\-Completion(rt\-::\-Handle \&handle)} method.
+\end{DoxyWarning}
+Typical usage\-: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} fn(\hyperlink{classshad_1_1rt_1_1Handle}{shad::rt::Handle}&, \textcolor{keywordtype}{size\_t} i, \textcolor{keywordtype}{size\_t}& elem, \textcolor{keywordtype}{size\_t}& incr) \{
+  \textcolor{comment}{/* do something */}
+\}
+...
+auto arrayPtr = \hyperlink{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}{shad::Array<size\_t>::Create}(kArraySize, kInitValue);
+rt::Handle handle;
+arrayPtr->AsyncForEach(handle, fn, someValue);
+...
+shad::rt::waitForCompletion(handle);
+...
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Apply\-Fun\-T} & User-\/defined function type. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\hyperlink{classshad_1_1rt_1_1Handle}{shad::rt::Handle}&, \textcolor{keywordtype}{size\_t} pos, T&, Args& args);
+\end{DoxyCode}
+ \\
+\hline
+{\em ...\-Args} & Types of the function arguments.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em handle} & The handle to be used to wait for completion. \\
+\hline
+\mbox{\tt in}  & {\em function} & The function to apply. \\
+\hline
+\mbox{\tt in}  & {\em args} & The function arguments. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1Array_a993d7eb96221277f74c6fb4c36f36f8e}{\index{shad\-::\-Array@{shad\-::\-Array}!Async\-For\-Each\-In\-Range@{Async\-For\-Each\-In\-Range}}
+\index{Async\-For\-Each\-In\-Range@{Async\-For\-Each\-In\-Range}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Async\-For\-Each\-In\-Range}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template$<$typename Apply\-Fun\-T , typename... Args$>$ void {\bf shad\-::\-Array}$<$ T $>$\-::Async\-For\-Each\-In\-Range (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{const size\-\_\-t}]{first, }
+\item[{const size\-\_\-t}]{last, }
+\item[{Apply\-Fun\-T \&\&}]{function, }
+\item[{Args \&...}]{args}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1Array_a993d7eb96221277f74c6fb4c36f36f8e}
+
+
+Asynchronously applies a user-\/defined function to every element in the specified range. 
+
+Asynchronously applies a user-\/defined function to all the elements in the specified range of positions.
+
+\begin{DoxyWarning}{Warning}
+Asynchronous operations are guaranteed to have completed only after calling the \hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{rt\-::wait\-For\-Completion(rt\-::\-Handle \&handle)} method.
+\end{DoxyWarning}
+Typical usage\-: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} fn(\hyperlink{classshad_1_1rt_1_1Handle}{shad::rt::Handle}&, \textcolor{keywordtype}{size\_t} i, \textcolor{keywordtype}{size\_t}& elem, \textcolor{keywordtype}{size\_t}& incr) \{
+  \textcolor{comment}{/* do something */}
+\}
+...
+auto arrayPtr = \hyperlink{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}{shad::Array<size\_t>::Create}(kArraySize, kInitValue);
+\hyperlink{classshad_1_1rt_1_1Handle}{shad::rt::Handle} handle;
+arrayPtr->AsyncForEachInRange(handle, 0, kArraySize, fn, kInitValue);
+...
+rt::waitForCompletion(handle);
+...
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Apply\-Fun\-T} & User-\/defined function type. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\hyperlink{classshad_1_1rt_1_1Handle}{shad::rt::Handle}&, \textcolor{keywordtype}{size\_t}, T&, Args& args);
+\end{DoxyCode}
+ \\
+\hline
+{\em ...\-Args} & Types of the function arguments.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em handle} & Reference to the handle to be used to wait for completion. \\
+\hline
+\mbox{\tt in}  & {\em first} & The first position of the range. \\
+\hline
+\mbox{\tt in}  & {\em last} & The last position of the range. \\
+\hline
+\mbox{\tt in}  & {\em function} & The function to apply. \\
+\hline
+\mbox{\tt in}  & {\em args} & The function arguments. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1Array_a0e145550478683482a1601031535c8cf}{\index{shad\-::\-Array@{shad\-::\-Array}!Async\-Insert\-At@{Async\-Insert\-At}}
+\index{Async\-Insert\-At@{Async\-Insert\-At}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Async\-Insert\-At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf shad\-::\-Array}$<$ T $>$\-::Async\-Insert\-At (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{const size\-\_\-t}]{pos, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1Array_a0e145550478683482a1601031535c8cf}
+
+
+Asynchronous Insert method. 
+
+Asynchronously inserts an element at the specified position.
+
+\begin{DoxyWarning}{Warning}
+Asynchronous operations are guaranteed to have completed only after calling the \hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{rt\-::wait\-For\-Completion(rt\-::\-Handle\& handle)} method.
+\end{DoxyWarning}
+Typical usage\-: 
+\begin{DoxyCode}
+\hyperlink{classshad_1_1rt_1_1Handle}{shad::rt::Handle} handle;
+\textcolor{keyword}{auto} arrayPtr = \hyperlink{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}{shad::Array<size\_t>::Create}(kArraySize, kInitValue);
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < kArraySize; i++) \{
+  arrayPtr->AsyncInsertAt(handle, i, i+1);
+\}
+\textcolor{comment}{// ... more work here and then finally wait.}
+\hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{shad::rt::waitForCompletion}(handle);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em handle} & The handle to be used to wait for completion. \\
+\hline
+\mbox{\tt in}  & {\em pos} & The target position. \\
+\hline
+\mbox{\tt in}  & {\em value} & The value to be inserted. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1Array_af3e5d9c1664af29e635e1ed6c96eaf70}{\index{shad\-::\-Array@{shad\-::\-Array}!Async\-Insert\-At@{Async\-Insert\-At}}
+\index{Async\-Insert\-At@{Async\-Insert\-At}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Async\-Insert\-At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf shad\-::\-Array}$<$ T $>$\-::Async\-Insert\-At (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{const size\-\_\-t}]{pos, }
+\item[{const T $\ast$}]{values, }
+\item[{const size\-\_\-t}]{num\-Values}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1Array_af3e5d9c1664af29e635e1ed6c96eaf70}
+
+
+Asynchronous bulk insert method. 
+
+Asynchronously inserts multiple elements starting at the specified position.
+
+Typical usage\-: 
+\begin{DoxyCode}
+std::vector<size\_t> values(10, 1);
+\textcolor{keyword}{auto} arrayPtr = \hyperlink{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}{shad::Array<size\_t>::Create}(kArraySize, kInitValue);
+
+\hyperlink{classshad_1_1rt_1_1Handle}{shad::rt::Handle} handle;
+arrayPtr->AsyncInsertAt(handle, 0, values.data(), values.size());
+\textcolor{comment}{// ... more work here and then finally wait.}
+\hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{shad::rt::waitForCompletion}(handle);;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em handle} & The handle to be used to wait for completion. \\
+\hline
+\mbox{\tt in}  & {\em pos} & The target position. \\
+\hline
+\mbox{\tt in}  & {\em values} & Pointer to the values to be inserted. \\
+\hline
+\mbox{\tt in}  & {\em num\-Values} & Number of values to be inserted. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1Array_a56085a958b519c523540a5e8babb8045}{\index{shad\-::\-Array@{shad\-::\-Array}!At@{At}}
+\index{At@{At}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf shad\-::\-Array}$<$ T $>$\-::At (
+\begin{DoxyParamCaption}
+\item[{const size\-\_\-t}]{pos}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1Array_a56085a958b519c523540a5e8babb8045}
+
+
+Lookup Method. 
+
+Retireve an element at a given position.
+
+Typical usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} arrayPtr = \hyperlink{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}{shad::Array<size\_t>::Create}(kArraySize, kInitValue);
+\textcolor{comment}{// ... fill the array with useful values ...}
+
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < arrayPtr->Size(); ++i)
+  PrintValue(arrayPtr->At(i));  \textcolor{comment}{// Don't do this !}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pos} & The target position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the element at position pos. 
+\end{DoxyReturn}
+\hypertarget{classshad_1_1Array_a34c463d858d31e8090534405c7692580}{\index{shad\-::\-Array@{shad\-::\-Array}!Buffered\-Async\-Insert\-At@{Buffered\-Async\-Insert\-At}}
+\index{Buffered\-Async\-Insert\-At@{Buffered\-Async\-Insert\-At}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Buffered\-Async\-Insert\-At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf shad\-::\-Array}$<$ T $>$\-::Buffered\-Async\-Insert\-At (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{const size\-\_\-t}]{pos, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1Array_a34c463d858d31e8090534405c7692580}
+
+
+Asynchronous buffered insert method. 
+
+Asynchronously inserts an element at the specified position, using aggregation buffers.
+
+\begin{DoxyWarning}{Warning}
+asynchronous buffered insertions are finalized only after calling the \hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{rt\-::wait\-For\-Completion(rt\-::\-Handle \&handle)} method {\bfseries and} the \hyperlink{classshad_1_1Array_a80bdbc75aca1424f086305d9297dccec}{Wait\-For\-Buffered\-Insert()} method, in this order.
+\end{DoxyWarning}
+Typical usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} arrayPtr = \hyperlink{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}{shad::Array<size\_t>::Create}(kArraySize, kInitValue);
+
+\hyperlink{classshad_1_1rt_1_1Handle}{shad::rt::Handle} handle;
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < kArraySize; i++) \{
+  arrayPtr->BufferedAsyncInsertAt(handle, i, i+1);
+\}
+\textcolor{comment}{// ... more work here and then finally wait.}
+\hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{shad::rt::waitForCompletion}(handle);
+arrayPtr->WaitForBufferedInsert();
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em handle} & The handle to be used to wait for completion. \\
+\hline
+\mbox{\tt in}  & {\em pos} & The target position. \\
+\hline
+\mbox{\tt in}  & {\em value} & The value to be inserted. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1Array_ac684b1894e474db3e9fee060a1bd59bf}{\index{shad\-::\-Array@{shad\-::\-Array}!Buffered\-Insert\-At@{Buffered\-Insert\-At}}
+\index{Buffered\-Insert\-At@{Buffered\-Insert\-At}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Buffered\-Insert\-At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf shad\-::\-Array}$<$ T $>$\-::Buffered\-Insert\-At (
+\begin{DoxyParamCaption}
+\item[{const size\-\_\-t}]{pos, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1Array_ac684b1894e474db3e9fee060a1bd59bf}
+
+
+Buffered insert method. 
+
+Inserts an element at the specified position, using aggregation buffers.
+
+\begin{DoxyWarning}{Warning}
+Insertions are finalized only after calling the \hyperlink{classshad_1_1Array_a80bdbc75aca1424f086305d9297dccec}{Wait\-For\-Buffered\-Insert()} method.
+\end{DoxyWarning}
+Typical usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} arrayPtr = \hyperlink{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}{shad::Array<size\_t>::Create}(kArraySize, kInitValue);
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < kArraySize; i++) \{
+  arrayPtr->BufferedInsertAt(i, i+1);
+\}
+arrayPtr->WaitForBufferedInsert();
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pos} & The target position. \\
+\hline
+\mbox{\tt in}  & {\em value} & The value of the element to be inserted. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1Array_a98bd6440ea4037335356cd6cc95a0cde}{\index{shad\-::\-Array@{shad\-::\-Array}!Buffer\-Entry\-Insert@{Buffer\-Entry\-Insert}}
+\index{Buffer\-Entry\-Insert@{Buffer\-Entry\-Insert}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Buffer\-Entry\-Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf shad\-::\-Array}$<$ T $>$\-::Buffer\-Entry\-Insert (
+\begin{DoxyParamCaption}
+\item[{const std\-::tuple$<$ size\-\_\-t, T $>$}]{entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Array_a98bd6440ea4037335356cd6cc95a0cde}
+\hypertarget{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}{\index{shad\-::\-Array@{shad\-::\-Array}!Create@{Create}}
+\index{Create@{Create}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Create}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ static {\bf Shad\-Array\-Ptr} {\bf shad\-::\-Array}$<$ T $>$\-::Create (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{size, }
+\item[{const T \&}]{init\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}
+
+
+Create method. 
+
+Creates a new array instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of the array.. \\
+\hline
+{\em init\-Value} & Initialization value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A shared pointer to the newly created array instance. 
+\end{DoxyReturn}
+\hypertarget{classshad_1_1Array_a6fd05a7fd2e8ef73ed288f5c1bfcf171}{\index{shad\-::\-Array@{shad\-::\-Array}!For\-Each@{For\-Each}}
+\index{For\-Each@{For\-Each}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{For\-Each}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template$<$typename Apply\-Fun\-T , typename... Args$>$ void {\bf shad\-::\-Array}$<$ T $>$\-::For\-Each (
+\begin{DoxyParamCaption}
+\item[{Apply\-Fun\-T \&\&}]{function, }
+\item[{Args \&...}]{args}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1Array_a6fd05a7fd2e8ef73ed288f5c1bfcf171}
+
+
+Applies a user-\/defined function to every element. 
+
+Applies a user-\/defined function to all the elements.
+
+Typical usage\-: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} fn(\textcolor{keywordtype}{size\_t} i, \textcolor{keywordtype}{size\_t}& elem, \textcolor{keywordtype}{size\_t}& incr) \{
+  \textcolor{comment}{/* do something */}
+\}
+...
+auto arrayPtr = \hyperlink{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}{shad::Array<size\_t>::Create}(kArraySize, kInitValue);
+arrayPtr->ForEach(fn, someValue);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Apply\-Fun\-T} & User-\/defined function type. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\textcolor{keywordtype}{size\_t} pos, T&, Args& args);
+\end{DoxyCode}
+ \\
+\hline
+{\em ...\-Args} & Types of the function arguments.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em function} & The function to apply. \\
+\hline
+\mbox{\tt in}  & {\em args} & The function arguments. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1Array_a5136714d22b0efef01f6711e2ad2a8fc}{\index{shad\-::\-Array@{shad\-::\-Array}!For\-Each\-In\-Range@{For\-Each\-In\-Range}}
+\index{For\-Each\-In\-Range@{For\-Each\-In\-Range}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{For\-Each\-In\-Range}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template$<$typename Apply\-Fun\-T , typename... Args$>$ void {\bf shad\-::\-Array}$<$ T $>$\-::For\-Each\-In\-Range (
+\begin{DoxyParamCaption}
+\item[{const size\-\_\-t}]{first, }
+\item[{const size\-\_\-t}]{last, }
+\item[{Apply\-Fun\-T \&\&}]{function, }
+\item[{Args \&...}]{args}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1Array_a5136714d22b0efef01f6711e2ad2a8fc}
+
+
+Applies a user-\/defined function to every element in the specified range. 
+
+Applies a user-\/defined function to all the elements in the specified range of positions.
+
+Typical usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{static} \textcolor{keywordtype}{void} fn(\textcolor{keywordtype}{size\_t} i, \textcolor{keywordtype}{size\_t}& elem, \textcolor{keywordtype}{size\_t} & incr) \{
+  \textcolor{comment}{/* do something */}
+\}
+...
+auto arrayPtr = \hyperlink{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}{shad::Array<size\_t>::Create}(kArraySize, kInitValue);
+arrayPtr->ForEachInRange(0, kArraySize, fn, kInitValue);
+...
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Apply\-Fun\-T} & User-\/defined function type. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\textcolor{keywordtype}{size\_t}, T&, Args& args);
+\end{DoxyCode}
+ \\
+\hline
+{\em ...\-Args} & Types of the function arguments.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em first} & The first position of the range. \\
+\hline
+\mbox{\tt in}  & {\em last} & The last position of the range. \\
+\hline
+\mbox{\tt in}  & {\em function} & The function to apply. \\
+\hline
+\mbox{\tt in}  & {\em args} & The function arguments. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1Array_a6340a0b0ce2b34964e580a86f0c9cbcd}{\index{shad\-::\-Array@{shad\-::\-Array}!Get\-Global\-I\-D@{Get\-Global\-I\-D}}
+\index{Get\-Global\-I\-D@{Get\-Global\-I\-D}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Get\-Global\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Object\-I\-D} {\bf shad\-::\-Array}$<$ T $>$\-::Get\-Global\-I\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classshad_1_1Array_a6340a0b0ce2b34964e580a86f0c9cbcd}
+
+
+Retrieve the Global Identifier. 
+
+\begin{DoxyReturn}{Returns}
+The global identifier associated with the array instance. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classshad_1_1AbstractDataStructure_a914a6e24eec3a7f5d51d93323d3a39cc}{shad\-::\-Abstract\-Data\-Structure$<$ Array$<$ T $>$ $>$}.
+
+\hypertarget{classshad_1_1Array_ae90ba873251e3dd7afb36fc58a1aa648}{\index{shad\-::\-Array@{shad\-::\-Array}!Insert\-At@{Insert\-At}}
+\index{Insert\-At@{Insert\-At}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Insert\-At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf shad\-::\-Array}$<$ T $>$\-::Insert\-At (
+\begin{DoxyParamCaption}
+\item[{const size\-\_\-t}]{pos, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1Array_ae90ba873251e3dd7afb36fc58a1aa648}
+
+
+Synchronous insert method. 
+
+Inserts an element at the specified position synchronously.
+
+Typical usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} arrayPtr = \hyperlink{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}{shad::Array<size\_t>::Create}(kArraySize, kInitValue);
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < kArraySize; i++) \{
+  arrayPtr->InsertAt(i, i+1);
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pos} & The target position. \\
+\hline
+\mbox{\tt in}  & {\em value} & The value of the element to be inserted. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1Array_a3f460d2e4d34fe22fa2ede421e668da0}{\index{shad\-::\-Array@{shad\-::\-Array}!Insert\-At@{Insert\-At}}
+\index{Insert\-At@{Insert\-At}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Insert\-At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf shad\-::\-Array}$<$ T $>$\-::Insert\-At (
+\begin{DoxyParamCaption}
+\item[{const size\-\_\-t}]{pos, }
+\item[{const T $\ast$}]{values, }
+\item[{const size\-\_\-t}]{num\-Values}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1Array_a3f460d2e4d34fe22fa2ede421e668da0}
+
+
+Synchronous bulk insert method. 
+
+Inserts multiple elements starting at the specified position.
+
+Typical usage\-: 
+\begin{DoxyCode}
+std::vector<size\_t> values(10, 1);
+\textcolor{keyword}{auto} arrayPtr = \hyperlink{classshad_1_1Array_a4ff830861f0ace4bf0a5e39e400b50f8}{shad::Array<size\_t>::Create}(kArraySize, kInitValue);
+arrayPtr->InsertAt(0, values.data(), values.size());
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pos} & The target position. \\
+\hline
+\mbox{\tt in}  & {\em values} & Pointer to the values to be inserted. \\
+\hline
+\mbox{\tt in}  & {\em num\-Values} & Number of values to be inserted. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1Array_ab6ebd2321e693fbcbf6ff6ec90a12f56}{\index{shad\-::\-Array@{shad\-::\-Array}!Size@{Size}}
+\index{Size@{Size}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ size\-\_\-t {\bf shad\-::\-Array}$<$ T $>$\-::Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}}\label{classshad_1_1Array_ab6ebd2321e693fbcbf6ff6ec90a12f56}
+
+
+Return the size of the \hyperlink{classshad_1_1Array}{shad\-::\-Array}. 
+
+\begin{DoxyReturn}{Returns}
+The size of the \hyperlink{classshad_1_1Array}{shad\-::\-Array}. 
+\end{DoxyReturn}
+\hypertarget{classshad_1_1Array_a80bdbc75aca1424f086305d9297dccec}{\index{shad\-::\-Array@{shad\-::\-Array}!Wait\-For\-Buffered\-Insert@{Wait\-For\-Buffered\-Insert}}
+\index{Wait\-For\-Buffered\-Insert@{Wait\-For\-Buffered\-Insert}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Wait\-For\-Buffered\-Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf shad\-::\-Array}$<$ T $>$\-::Wait\-For\-Buffered\-Insert (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Array_a80bdbc75aca1424f086305d9297dccec}
+
+
+Finalize method for buffered insertions. 
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classshad_1_1Array_ab18afa4496cc863ddc11bab94b2adf57}{\index{shad\-::\-Array@{shad\-::\-Array}!Abstract\-Data\-Structure@{Abstract\-Data\-Structure}}
+\index{Abstract\-Data\-Structure@{Abstract\-Data\-Structure}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{Abstract\-Data\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ template$<$typename $>$ friend class {\bf Abstract\-Data\-Structure}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1Array_ab18afa4496cc863ddc11bab94b2adf57}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classshad_1_1Array_af4d2703149c199273eae358d1bcd8ade}{\index{shad\-::\-Array@{shad\-::\-Array}!k\-Max\-Chunk\-Size@{k\-Max\-Chunk\-Size}}
+\index{k\-Max\-Chunk\-Size@{k\-Max\-Chunk\-Size}!shad::Array@{shad\-::\-Array}}
+\subsubsection[{k\-Max\-Chunk\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ constexpr size\-\_\-t {\bf shad\-::\-Array}$<$ T $>$\-::k\-Max\-Chunk\-Size\hspace{0.3cm}{\ttfamily [static]}}}\label{classshad_1_1Array_af4d2703149c199273eae358d1bcd8ade}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+      constants::max(constants::kBufferNumBytes / \textcolor{keyword}{sizeof}(T), 1lu)
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/shad/data\-\_\-structures/\hyperlink{data__structures_2array_8h}{array.\-h}\end{DoxyCompactItemize}

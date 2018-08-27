@@ -1,0 +1,110 @@
+\hypertarget{structshad_1_1distributed__iterator__traits}{\section{shad\-:\-:distributed\-\_\-iterator\-\_\-traits$<$ Iterator $>$ Struct Template Reference}
+\label{structshad_1_1distributed__iterator__traits}\index{shad\-::distributed\-\_\-iterator\-\_\-traits$<$ Iterator $>$@{shad\-::distributed\-\_\-iterator\-\_\-traits$<$ Iterator $>$}}
+}
+
+
+{\ttfamily \#include $<$shad/distributed\-\_\-iterator\-\_\-traits.\-h$>$}
+
+
+
+Inheritance diagram for shad\-:\-:distributed\-\_\-iterator\-\_\-traits$<$ Iterator $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{structshad_1_1distributed__iterator__traits__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for shad\-:\-:distributed\-\_\-iterator\-\_\-traits$<$ Iterator $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{structshad_1_1distributed__iterator__traits__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{structshad_1_1distributed__iterator__traits_ad4f676acbe7b835cfda9f2ba84de0617}{difference\-\_\-type} = typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::\hyperlink{structshad_1_1distributed__iterator__traits_ad4f676acbe7b835cfda9f2ba84de0617}{difference\-\_\-type}
+\item 
+using \hyperlink{structshad_1_1distributed__iterator__traits_a67d1c97f6cfbb30068ed30d5fd5ef2bc}{value\-\_\-type} = typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::\hyperlink{structshad_1_1distributed__iterator__traits_a67d1c97f6cfbb30068ed30d5fd5ef2bc}{value\-\_\-type}
+\item 
+using \hyperlink{structshad_1_1distributed__iterator__traits_a3a4ebe1206d3e4d866752f2a3080f699}{pointer} = typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::\hyperlink{structshad_1_1distributed__iterator__traits_a3a4ebe1206d3e4d866752f2a3080f699}{pointer}
+\item 
+using \hyperlink{structshad_1_1distributed__iterator__traits_a82276f0370374d079f192c503f21b7a5}{reference} = typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::\hyperlink{structshad_1_1distributed__iterator__traits_a82276f0370374d079f192c503f21b7a5}{reference}
+\item 
+using \hyperlink{structshad_1_1distributed__iterator__traits_ae2c93d2849540657dd1f56c643d75c26}{iterator\-\_\-category} = typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::\hyperlink{structshad_1_1distributed__iterator__traits_ae2c93d2849540657dd1f56c643d75c26}{iterator\-\_\-category}
+\item 
+using \hyperlink{structshad_1_1distributed__iterator__traits_a7d2783595fdcaa86693980e101ce3c45}{local\-\_\-iterator\-\_\-range} = typename Iterator\-::local\-\_\-iterator\-\_\-range
+\item 
+using \hyperlink{structshad_1_1distributed__iterator__traits_afc228b2fcc17374bae1db42f3f666ac8}{local\-\_\-iterator\-\_\-type} = typename Iterator\-::local\-\_\-iterator\-\_\-type
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classshad_1_1rt_1_1localities__range}{rt\-::localities\-\_\-range} \hyperlink{structshad_1_1distributed__iterator__traits_a479232b93342d09f2622f63c69f6f08a}{localities} (Iterator begin, Iterator end)
+\item 
+static \hyperlink{structshad_1_1distributed__iterator__traits_a7d2783595fdcaa86693980e101ce3c45}{local\-\_\-iterator\-\_\-range} \hyperlink{structshad_1_1distributed__iterator__traits_a29c17a7556893708bd90da103c1ee418}{local\-\_\-range} (Iterator begin, Iterator end)
+\item 
+static Iterator \hyperlink{structshad_1_1distributed__iterator__traits_a605bd0bf614f215ca3e13dd3052037e1}{iterator\-\_\-from\-\_\-local} (Iterator begin, Iterator end, \hyperlink{structshad_1_1distributed__iterator__traits_afc228b2fcc17374bae1db42f3f666ac8}{local\-\_\-iterator\-\_\-type} itr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{structshad_1_1distributed__iterator__traits_ad4f676acbe7b835cfda9f2ba84de0617}{\index{shad\-::distributed\-\_\-iterator\-\_\-traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}!difference\-\_\-type@{difference\-\_\-type}}
+\index{difference\-\_\-type@{difference\-\_\-type}!shad::distributed_iterator_traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}}
+\subsubsection[{difference\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator$>$ using {\bf shad\-::distributed\-\_\-iterator\-\_\-traits}$<$ Iterator $>$\-::{\bf difference\-\_\-type} =  typename std\-::iterator\-\_\-traits$<$Iterator$>$\-::{\bf difference\-\_\-type}}}\label{structshad_1_1distributed__iterator__traits_ad4f676acbe7b835cfda9f2ba84de0617}
+\hypertarget{structshad_1_1distributed__iterator__traits_ae2c93d2849540657dd1f56c643d75c26}{\index{shad\-::distributed\-\_\-iterator\-\_\-traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}!iterator\-\_\-category@{iterator\-\_\-category}}
+\index{iterator\-\_\-category@{iterator\-\_\-category}!shad::distributed_iterator_traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}}
+\subsubsection[{iterator\-\_\-category}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator$>$ using {\bf shad\-::distributed\-\_\-iterator\-\_\-traits}$<$ Iterator $>$\-::{\bf iterator\-\_\-category} =  typename std\-::iterator\-\_\-traits$<$Iterator$>$\-::{\bf iterator\-\_\-category}}}\label{structshad_1_1distributed__iterator__traits_ae2c93d2849540657dd1f56c643d75c26}
+\hypertarget{structshad_1_1distributed__iterator__traits_a7d2783595fdcaa86693980e101ce3c45}{\index{shad\-::distributed\-\_\-iterator\-\_\-traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}!local\-\_\-iterator\-\_\-range@{local\-\_\-iterator\-\_\-range}}
+\index{local\-\_\-iterator\-\_\-range@{local\-\_\-iterator\-\_\-range}!shad::distributed_iterator_traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}}
+\subsubsection[{local\-\_\-iterator\-\_\-range}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator$>$ using {\bf shad\-::distributed\-\_\-iterator\-\_\-traits}$<$ Iterator $>$\-::{\bf local\-\_\-iterator\-\_\-range} =  typename Iterator\-::local\-\_\-iterator\-\_\-range}}\label{structshad_1_1distributed__iterator__traits_a7d2783595fdcaa86693980e101ce3c45}
+\hypertarget{structshad_1_1distributed__iterator__traits_afc228b2fcc17374bae1db42f3f666ac8}{\index{shad\-::distributed\-\_\-iterator\-\_\-traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}!local\-\_\-iterator\-\_\-type@{local\-\_\-iterator\-\_\-type}}
+\index{local\-\_\-iterator\-\_\-type@{local\-\_\-iterator\-\_\-type}!shad::distributed_iterator_traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}}
+\subsubsection[{local\-\_\-iterator\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator$>$ using {\bf shad\-::distributed\-\_\-iterator\-\_\-traits}$<$ Iterator $>$\-::{\bf local\-\_\-iterator\-\_\-type} =  typename Iterator\-::local\-\_\-iterator\-\_\-type}}\label{structshad_1_1distributed__iterator__traits_afc228b2fcc17374bae1db42f3f666ac8}
+\hypertarget{structshad_1_1distributed__iterator__traits_a3a4ebe1206d3e4d866752f2a3080f699}{\index{shad\-::distributed\-\_\-iterator\-\_\-traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}!pointer@{pointer}}
+\index{pointer@{pointer}!shad::distributed_iterator_traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}}
+\subsubsection[{pointer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator$>$ using {\bf shad\-::distributed\-\_\-iterator\-\_\-traits}$<$ Iterator $>$\-::{\bf pointer} =  typename std\-::iterator\-\_\-traits$<$Iterator$>$\-::{\bf pointer}}}\label{structshad_1_1distributed__iterator__traits_a3a4ebe1206d3e4d866752f2a3080f699}
+\hypertarget{structshad_1_1distributed__iterator__traits_a82276f0370374d079f192c503f21b7a5}{\index{shad\-::distributed\-\_\-iterator\-\_\-traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}!reference@{reference}}
+\index{reference@{reference}!shad::distributed_iterator_traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}}
+\subsubsection[{reference}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator$>$ using {\bf shad\-::distributed\-\_\-iterator\-\_\-traits}$<$ Iterator $>$\-::{\bf reference} =  typename std\-::iterator\-\_\-traits$<$Iterator$>$\-::{\bf reference}}}\label{structshad_1_1distributed__iterator__traits_a82276f0370374d079f192c503f21b7a5}
+\hypertarget{structshad_1_1distributed__iterator__traits_a67d1c97f6cfbb30068ed30d5fd5ef2bc}{\index{shad\-::distributed\-\_\-iterator\-\_\-traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!shad::distributed_iterator_traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator$>$ using {\bf shad\-::distributed\-\_\-iterator\-\_\-traits}$<$ Iterator $>$\-::{\bf value\-\_\-type} =  typename std\-::iterator\-\_\-traits$<$Iterator$>$\-::{\bf value\-\_\-type}}}\label{structshad_1_1distributed__iterator__traits_a67d1c97f6cfbb30068ed30d5fd5ef2bc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structshad_1_1distributed__iterator__traits_a605bd0bf614f215ca3e13dd3052037e1}{\index{shad\-::distributed\-\_\-iterator\-\_\-traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}!iterator\-\_\-from\-\_\-local@{iterator\-\_\-from\-\_\-local}}
+\index{iterator\-\_\-from\-\_\-local@{iterator\-\_\-from\-\_\-local}!shad::distributed_iterator_traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}}
+\subsubsection[{iterator\-\_\-from\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator$>$ static Iterator {\bf shad\-::distributed\-\_\-iterator\-\_\-traits}$<$ Iterator $>$\-::iterator\-\_\-from\-\_\-local (
+\begin{DoxyParamCaption}
+\item[{Iterator}]{begin, }
+\item[{Iterator}]{end, }
+\item[{{\bf local\-\_\-iterator\-\_\-type}}]{itr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structshad_1_1distributed__iterator__traits_a605bd0bf614f215ca3e13dd3052037e1}
+\hypertarget{structshad_1_1distributed__iterator__traits_a29c17a7556893708bd90da103c1ee418}{\index{shad\-::distributed\-\_\-iterator\-\_\-traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}!local\-\_\-range@{local\-\_\-range}}
+\index{local\-\_\-range@{local\-\_\-range}!shad::distributed_iterator_traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}}
+\subsubsection[{local\-\_\-range}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator$>$ static {\bf local\-\_\-iterator\-\_\-range} {\bf shad\-::distributed\-\_\-iterator\-\_\-traits}$<$ Iterator $>$\-::local\-\_\-range (
+\begin{DoxyParamCaption}
+\item[{Iterator}]{begin, }
+\item[{Iterator}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structshad_1_1distributed__iterator__traits_a29c17a7556893708bd90da103c1ee418}
+\hypertarget{structshad_1_1distributed__iterator__traits_a479232b93342d09f2622f63c69f6f08a}{\index{shad\-::distributed\-\_\-iterator\-\_\-traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}!localities@{localities}}
+\index{localities@{localities}!shad::distributed_iterator_traits@{shad\-::distributed\-\_\-iterator\-\_\-traits}}
+\subsubsection[{localities}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator$>$ static {\bf rt\-::localities\-\_\-range} {\bf shad\-::distributed\-\_\-iterator\-\_\-traits}$<$ Iterator $>$\-::localities (
+\begin{DoxyParamCaption}
+\item[{Iterator}]{begin, }
+\item[{Iterator}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structshad_1_1distributed__iterator__traits_a479232b93342d09f2622f63c69f6f08a}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/shad/\hyperlink{distributed__iterator__traits_8h}{distributed\-\_\-iterator\-\_\-traits.\-h}\end{DoxyCompactItemize}

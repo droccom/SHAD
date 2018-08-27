@@ -1,0 +1,237 @@
+\hypertarget{classshad_1_1ObjectIdentifier}{\section{shad\-:\-:Object\-Identifier$<$ T $>$ Class Template Reference}
+\label{classshad_1_1ObjectIdentifier}\index{shad\-::\-Object\-Identifier$<$ T $>$@{shad\-::\-Object\-Identifier$<$ T $>$}}
+}
+
+
+The \hyperlink{classshad_1_1ObjectIdentifier}{Object\-Identifier}.  
+
+
+
+
+{\ttfamily \#include $<$shad/data\-\_\-structures/object\-\_\-identifier.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \hyperlink{classshad_1_1ObjectIdentifier_ab6f49b8909c656bd4b39200835d0e193}{Object\-Identifier} (uint64\-\_\-t id)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classshad_1_1ObjectIdentifier_a96ad35417513964b5fa77eefc32f1b38}{Object\-Identifier} (const \hyperlink{classshad_1_1rt_1_1Locality}{rt\-::\-Locality} \&locality, uint64\-\_\-t local\-I\-D)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classshad_1_1ObjectIdentifier_a86c6936a35d1ffee1b46799ab9da3ce6}{Object\-Identifier} (const \hyperlink{classshad_1_1ObjectIdentifier}{Object\-Identifier} \&oid)=default
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classshad_1_1ObjectIdentifier_a35133e64a83bb7bc409b1a5463149884}{Object\-Identifier} (\hyperlink{classshad_1_1ObjectIdentifier}{Object\-Identifier} \&\&) noexcept=default
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\hyperlink{classshad_1_1ObjectIdentifier}{Object\-Identifier} \& \hyperlink{classshad_1_1ObjectIdentifier_ad92baa9aba59cb9eb1195944fa3b1942}{operator=} (\hyperlink{classshad_1_1ObjectIdentifier}{Object\-Identifier} \&\&) noexcept=default
+\begin{DoxyCompactList}\small\item\em Move assignment. \end{DoxyCompactList}\item 
+\hyperlink{classshad_1_1ObjectIdentifier}{Object\-Identifier} \& \hyperlink{classshad_1_1ObjectIdentifier_ac8c31064900f1296b4e8ad5236b8e59f}{operator=} (const \hyperlink{classshad_1_1ObjectIdentifier}{Object\-Identifier} \&rhs)=default
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\hyperlink{classshad_1_1ObjectIdentifier_a202421b63a4d0e8452a8a4103398838b}{operator uint64\-\_\-t} () const 
+\begin{DoxyCompactList}\small\item\em Conversion operator to uint64\-\_\-t. \end{DoxyCompactList}\item 
+\hyperlink{classshad_1_1rt_1_1Locality}{rt\-::\-Locality} \hyperlink{classshad_1_1ObjectIdentifier_a3ea730c2883ab93cd6b0e94c37762a02}{Get\-Owner\-Locality} () const 
+\begin{DoxyCompactList}\small\item\em Get the Locality owing the Object. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classshad_1_1ObjectIdentifier_a2c8d03fd2f1b0bbc631d683e26ced97c}{Get\-Local\-I\-D} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{classshad_1_1ObjectIdentifier}{Object\-Identifier}$<$ T $>$ \hyperlink{classshad_1_1ObjectIdentifier_ad093d487f38c499b7de2de100adbce23}{k\-Null\-I\-D}
+\item 
+static constexpr uint8\-\_\-t \hyperlink{classshad_1_1ObjectIdentifier_abfcf5dac66fd514eea93f86c8c404de9}{k\-Locality\-Id\-Bitsize} = 16u
+\begin{DoxyCompactList}\small\item\em The number of bits used to store the Locality where the Object is stored. \end{DoxyCompactList}\item 
+static constexpr uint8\-\_\-t \hyperlink{classshad_1_1ObjectIdentifier_a39847f9a702ec3f943657650e05b0e02}{k\-Identifier\-Bitsize} = 48u
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classshad_1_1ObjectIdentifier_a216fb3ae16bb5981b80d2ad8df755d18}{operator$<$} (const \hyperlink{classshad_1_1ObjectIdentifier}{Object\-Identifier} \&lhs, const \hyperlink{classshad_1_1ObjectIdentifier}{Object\-Identifier} \&rhs)
+\begin{DoxyCompactList}\small\item\em Operator less than. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class shad\-::\-Object\-Identifier$<$ T $>$}
+
+The \hyperlink{classshad_1_1ObjectIdentifier}{Object\-Identifier}. 
+
+The most significant 12bits store the id of the Locality where the object has been created. The remaining 48bits contain a unique number identifying the object.
+
+\begin{DoxyWarning}{Warning}
+Enforcing the previous policy is not responsibility of \hyperlink{classshad_1_1ObjectIdentifier}{Object\-Identifier} but of its users.
+\end{DoxyWarning}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the object that must be uniquely identified. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classshad_1_1ObjectIdentifier_ab6f49b8909c656bd4b39200835d0e193}{\index{shad\-::\-Object\-Identifier@{shad\-::\-Object\-Identifier}!Object\-Identifier@{Object\-Identifier}}
+\index{Object\-Identifier@{Object\-Identifier}!shad::ObjectIdentifier@{shad\-::\-Object\-Identifier}}
+\subsubsection[{Object\-Identifier}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ constexpr {\bf shad\-::\-Object\-Identifier}$<$ T $>$\-::{\bf Object\-Identifier} (
+\begin{DoxyParamCaption}
+\item[{uint64\-\_\-t}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classshad_1_1ObjectIdentifier_ab6f49b8909c656bd4b39200835d0e193}
+
+
+Constructor. 
+
+\hypertarget{classshad_1_1ObjectIdentifier_a96ad35417513964b5fa77eefc32f1b38}{\index{shad\-::\-Object\-Identifier@{shad\-::\-Object\-Identifier}!Object\-Identifier@{Object\-Identifier}}
+\index{Object\-Identifier@{Object\-Identifier}!shad::ObjectIdentifier@{shad\-::\-Object\-Identifier}}
+\subsubsection[{Object\-Identifier}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf shad\-::\-Object\-Identifier}$<$ T $>$\-::{\bf Object\-Identifier} (
+\begin{DoxyParamCaption}
+\item[{const {\bf rt\-::\-Locality} \&}]{locality, }
+\item[{uint64\-\_\-t}]{local\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1ObjectIdentifier_a96ad35417513964b5fa77eefc32f1b38}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em locality} & The locality identifier part. \\
+\hline
+\mbox{\tt in}  & {\em local\-I\-D} & The local identifier part. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1ObjectIdentifier_a86c6936a35d1ffee1b46799ab9da3ce6}{\index{shad\-::\-Object\-Identifier@{shad\-::\-Object\-Identifier}!Object\-Identifier@{Object\-Identifier}}
+\index{Object\-Identifier@{Object\-Identifier}!shad::ObjectIdentifier@{shad\-::\-Object\-Identifier}}
+\subsubsection[{Object\-Identifier}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf shad\-::\-Object\-Identifier}$<$ T $>$\-::{\bf Object\-Identifier} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Object\-Identifier}$<$ T $>$ \&}]{oid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classshad_1_1ObjectIdentifier_a86c6936a35d1ffee1b46799ab9da3ce6}
+
+
+Copy Constructor. 
+
+\hypertarget{classshad_1_1ObjectIdentifier_a35133e64a83bb7bc409b1a5463149884}{\index{shad\-::\-Object\-Identifier@{shad\-::\-Object\-Identifier}!Object\-Identifier@{Object\-Identifier}}
+\index{Object\-Identifier@{Object\-Identifier}!shad::ObjectIdentifier@{shad\-::\-Object\-Identifier}}
+\subsubsection[{Object\-Identifier}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf shad\-::\-Object\-Identifier}$<$ T $>$\-::{\bf Object\-Identifier} (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\-Identifier}$<$ T $>$ \&\&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}}\label{classshad_1_1ObjectIdentifier_a35133e64a83bb7bc409b1a5463149884}
+
+
+Move constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classshad_1_1ObjectIdentifier_a2c8d03fd2f1b0bbc631d683e26ced97c}{\index{shad\-::\-Object\-Identifier@{shad\-::\-Object\-Identifier}!Get\-Local\-I\-D@{Get\-Local\-I\-D}}
+\index{Get\-Local\-I\-D@{Get\-Local\-I\-D}!shad::ObjectIdentifier@{shad\-::\-Object\-Identifier}}
+\subsubsection[{Get\-Local\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ size\-\_\-t {\bf shad\-::\-Object\-Identifier}$<$ T $>$\-::Get\-Local\-I\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1ObjectIdentifier_a2c8d03fd2f1b0bbc631d683e26ced97c}
+Get the Local part of the \hyperlink{classshad_1_1ObjectIdentifier}{Object\-Identifier}.
+
+\begin{DoxyReturn}{Returns}
+The lowest \hyperlink{classshad_1_1ObjectIdentifier_a39847f9a702ec3f943657650e05b0e02}{Object\-Identifier\-::k\-Identifier\-Bitsize} bits of the Object\-I\-D. 
+\end{DoxyReturn}
+\hypertarget{classshad_1_1ObjectIdentifier_a3ea730c2883ab93cd6b0e94c37762a02}{\index{shad\-::\-Object\-Identifier@{shad\-::\-Object\-Identifier}!Get\-Owner\-Locality@{Get\-Owner\-Locality}}
+\index{Get\-Owner\-Locality@{Get\-Owner\-Locality}!shad::ObjectIdentifier@{shad\-::\-Object\-Identifier}}
+\subsubsection[{Get\-Owner\-Locality}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf rt\-::\-Locality} {\bf shad\-::\-Object\-Identifier}$<$ T $>$\-::Get\-Owner\-Locality (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1ObjectIdentifier_a3ea730c2883ab93cd6b0e94c37762a02}
+
+
+Get the Locality owing the Object. 
+
+\begin{DoxyReturn}{Returns}
+The Locality owing the Object. 
+\end{DoxyReturn}
+\hypertarget{classshad_1_1ObjectIdentifier_a202421b63a4d0e8452a8a4103398838b}{\index{shad\-::\-Object\-Identifier@{shad\-::\-Object\-Identifier}!operator uint64\-\_\-t@{operator uint64\-\_\-t}}
+\index{operator uint64\-\_\-t@{operator uint64\-\_\-t}!shad::ObjectIdentifier@{shad\-::\-Object\-Identifier}}
+\subsubsection[{operator uint64\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf shad\-::\-Object\-Identifier}$<$ T $>$\-::operator uint64\-\_\-t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classshad_1_1ObjectIdentifier_a202421b63a4d0e8452a8a4103398838b}
+
+
+Conversion operator to uint64\-\_\-t. 
+
+\hypertarget{classshad_1_1ObjectIdentifier_ad92baa9aba59cb9eb1195944fa3b1942}{\index{shad\-::\-Object\-Identifier@{shad\-::\-Object\-Identifier}!operator=@{operator=}}
+\index{operator=@{operator=}!shad::ObjectIdentifier@{shad\-::\-Object\-Identifier}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Object\-Identifier}\& {\bf shad\-::\-Object\-Identifier}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\-Identifier}$<$ T $>$ \&\&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}}\label{classshad_1_1ObjectIdentifier_ad92baa9aba59cb9eb1195944fa3b1942}
+
+
+Move assignment. 
+
+\hypertarget{classshad_1_1ObjectIdentifier_ac8c31064900f1296b4e8ad5236b8e59f}{\index{shad\-::\-Object\-Identifier@{shad\-::\-Object\-Identifier}!operator=@{operator=}}
+\index{operator=@{operator=}!shad::ObjectIdentifier@{shad\-::\-Object\-Identifier}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Object\-Identifier}\& {\bf shad\-::\-Object\-Identifier}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Object\-Identifier}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classshad_1_1ObjectIdentifier_ac8c31064900f1296b4e8ad5236b8e59f}
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rhs} & Right hand side of the operator. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classshad_1_1ObjectIdentifier_a216fb3ae16bb5981b80d2ad8df755d18}{\index{shad\-::\-Object\-Identifier@{shad\-::\-Object\-Identifier}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!shad::ObjectIdentifier@{shad\-::\-Object\-Identifier}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Object\-Identifier}$<$ T $>$ \&}]{lhs, }
+\item[{const {\bf Object\-Identifier}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1ObjectIdentifier_a216fb3ae16bb5981b80d2ad8df755d18}
+
+
+Operator less than. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em lhs} & Left hand side of the operator. \\
+\hline
+\mbox{\tt in}  & {\em rhs} & Right hand side of the operator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if lhs $<$ rhs, false otherwise. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classshad_1_1ObjectIdentifier_a39847f9a702ec3f943657650e05b0e02}{\index{shad\-::\-Object\-Identifier@{shad\-::\-Object\-Identifier}!k\-Identifier\-Bitsize@{k\-Identifier\-Bitsize}}
+\index{k\-Identifier\-Bitsize@{k\-Identifier\-Bitsize}!shad::ObjectIdentifier@{shad\-::\-Object\-Identifier}}
+\subsubsection[{k\-Identifier\-Bitsize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ constexpr uint8\-\_\-t {\bf shad\-::\-Object\-Identifier}$<$ T $>$\-::k\-Identifier\-Bitsize = 48u\hspace{0.3cm}{\ttfamily [static]}}}\label{classshad_1_1ObjectIdentifier_a39847f9a702ec3f943657650e05b0e02}
+The number of bits in the Row\-I\-D used for the row identifier in each Locality. \hypertarget{classshad_1_1ObjectIdentifier_abfcf5dac66fd514eea93f86c8c404de9}{\index{shad\-::\-Object\-Identifier@{shad\-::\-Object\-Identifier}!k\-Locality\-Id\-Bitsize@{k\-Locality\-Id\-Bitsize}}
+\index{k\-Locality\-Id\-Bitsize@{k\-Locality\-Id\-Bitsize}!shad::ObjectIdentifier@{shad\-::\-Object\-Identifier}}
+\subsubsection[{k\-Locality\-Id\-Bitsize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ constexpr uint8\-\_\-t {\bf shad\-::\-Object\-Identifier}$<$ T $>$\-::k\-Locality\-Id\-Bitsize = 16u\hspace{0.3cm}{\ttfamily [static]}}}\label{classshad_1_1ObjectIdentifier_abfcf5dac66fd514eea93f86c8c404de9}
+
+
+The number of bits used to store the Locality where the Object is stored. 
+
+\hypertarget{classshad_1_1ObjectIdentifier_ad093d487f38c499b7de2de100adbce23}{\index{shad\-::\-Object\-Identifier@{shad\-::\-Object\-Identifier}!k\-Null\-I\-D@{k\-Null\-I\-D}}
+\index{k\-Null\-I\-D@{k\-Null\-I\-D}!shad::ObjectIdentifier@{shad\-::\-Object\-Identifier}}
+\subsubsection[{k\-Null\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const {\bf Object\-Identifier}$<$ T $>$ {\bf shad\-::\-Object\-Identifier}$<$ T $>$\-::k\-Null\-I\-D\hspace{0.3cm}{\ttfamily [static]}}}\label{classshad_1_1ObjectIdentifier_ad093d487f38c499b7de2de100adbce23}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    ObjectIdentifier<T>(std::numeric\_limits<uint64\_t>::max())
+\end{DoxyCode}
+Null value for the \hyperlink{classshad_1_1ObjectIdentifier}{Object\-Identifier}. This value is used during \hyperlink{classshad_1_1ObjectIdentifier}{Object\-Identifier} creation when the I\-D can't be known yet or the I\-D is invalid. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/shad/data\-\_\-structures/\hyperlink{object__identifier_8h}{object\-\_\-identifier.\-h}\end{DoxyCompactItemize}

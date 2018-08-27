@@ -1,0 +1,1538 @@
+\hypertarget{namespaceshad_1_1rt}{\section{shad\-:\-:rt Namespace Reference}
+\label{namespaceshad_1_1rt}\index{shad\-::rt@{shad\-::rt}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classshad_1_1rt_1_1Handle}{Handle}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classshad_1_1rt_1_1Handle}{Handle}. \end{DoxyCompactList}\item 
+class \hyperlink{classshad_1_1rt_1_1Locality}{Locality}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classshad_1_1rt_1_1Locality}{Locality} of the system. \end{DoxyCompactList}\item 
+class \hyperlink{classshad_1_1rt_1_1localities__range}{localities\-\_\-range}
+\begin{DoxyCompactList}\small\item\em A range of localities. \end{DoxyCompactList}\item 
+class \hyperlink{classshad_1_1rt_1_1Lock}{Lock}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classshad_1_1rt_1_1Lock}{Lock}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{namespaceshad_1_1rt_a1eb8df1be67eada9b4f647ff376695b0}{Target\-System\-Tag} = impl\-::cpp\-\_\-tag
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{namespaceshad_1_1rt_a199bb50c21e9012f615520413872aef6}{num\-Localities} ()
+\begin{DoxyCompactList}\small\item\em Number of localities on which the runtime is executing. \end{DoxyCompactList}\item 
+\hyperlink{classshad_1_1rt_1_1Locality}{Locality} \hyperlink{namespaceshad_1_1rt_a7536c33738a5dd285f3a44aa6a199faf}{this\-Locality} ()
+\begin{DoxyCompactList}\small\item\em Identity of locality on which the call is made. \end{DoxyCompactList}\item 
+std\-::set$<$ \hyperlink{classshad_1_1rt_1_1Locality}{Locality} $>$ \hyperlink{namespaceshad_1_1rt_adea42bceb84b2161df8fece9d20cb7cf}{all\-Localities} ()
+\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_ae4b428e7e47fc07e01707b3abb01caa2}{execute\-At} (const \hyperlink{classshad_1_1rt_1_1Locality}{Locality} \&loc, Fun\-T \&\&func, const In\-Args\-T \&args)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality synchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a5bc582ecab17be55af910f8a6e3e31f5}{execute\-At} (const \hyperlink{classshad_1_1rt_1_1Locality}{Locality} \&loc, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality synchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_acadca86a92a75be85e51534f905b7fef}{execute\-At\-With\-Ret\-Buff} (const \hyperlink{classshad_1_1rt_1_1Locality}{Locality} \&loc, Fun\-T \&\&func, const In\-Args\-T \&args, uint8\-\_\-t $\ast$result\-Buffer, uint32\-\_\-t $\ast$result\-Size)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality synchronously and return a buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a9a77fcd35f06e3e2200ee1ca940ba8d1}{execute\-At\-With\-Ret\-Buff} (const \hyperlink{classshad_1_1rt_1_1Locality}{Locality} \&loc, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size, uint8\-\_\-t $\ast$result\-Buffer, uint32\-\_\-t $\ast$result\-Size)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality synchronously and return a result buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T , typename Res\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a750ac93a8d339b97e3a11e182b50ffbc}{execute\-At\-With\-Ret} (const \hyperlink{classshad_1_1rt_1_1Locality}{Locality} \&loc, Fun\-T \&\&func, const In\-Args\-T \&args, Res\-T $\ast$result)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality synchronously and return a result. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename Res\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_aa1c240408fd99868fe25dc35e78c9c79}{execute\-At\-With\-Ret} (const \hyperlink{classshad_1_1rt_1_1Locality}{Locality} \&loc, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size, Res\-T $\ast$result)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality synchronously and return a result. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_aeff4031b9c8382aa34ec65c853cf45b8}{execute\-On\-All} (Fun\-T \&\&func, const In\-Args\-T \&args)
+\begin{DoxyCompactList}\small\item\em Execute a function on all localities synchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_af82c01717fef30752cd60051a92a9bee}{execute\-On\-All} (Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size)
+\begin{DoxyCompactList}\small\item\em Execute a function on all localities synchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a3701740e6d6681499063a0b5fa43645b}{for\-Each\-At} (const \hyperlink{classshad_1_1rt_1_1Locality}{Locality} \&loc, Fun\-T \&\&func, const In\-Args\-T \&args, const size\-\_\-t num\-Iters)
+\begin{DoxyCompactList}\small\item\em Execute a parallel loop at a specific locality. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a7d0647bae3b6f6a7c870fee9b69bbf8e}{for\-Each\-At} (const \hyperlink{classshad_1_1rt_1_1Locality}{Locality} \&loc, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size, const size\-\_\-t num\-Iters)
+\begin{DoxyCompactList}\small\item\em Execute a parallel loop at a specific locality. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a681ee8fbfec5d92c2bc8cd3851eae0c7}{for\-Each\-On\-All} (Fun\-T \&\&func, const In\-Args\-T \&args, const size\-\_\-t num\-Iters)
+\begin{DoxyCompactList}\small\item\em Execute a parallel loop on the whole system. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a3642b67c7ddc6f9d527616e4eb6cdbde}{for\-Each\-On\-All} (Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size, const size\-\_\-t num\-Iters)
+\begin{DoxyCompactList}\small\item\em Execute a parallel loop on the whole system. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_aad88d972c54520fa6da6661c0972ca66}{async\-Execute\-At} (\hyperlink{classshad_1_1rt_1_1Handle}{Handle} \&handle, const \hyperlink{classshad_1_1rt_1_1Locality}{Locality} \&loc, Fun\-T \&\&func, const In\-Args\-T \&args)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality asynchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a8690d0c19d1d2e7acce51b9c83223c94}{async\-Execute\-At} (\hyperlink{classshad_1_1rt_1_1Handle}{Handle} \&handle, const \hyperlink{classshad_1_1rt_1_1Locality}{Locality} \&loc, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality asynchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a7021749e6a86c90e762645385e22ac5c}{async\-Execute\-At\-With\-Ret\-Buff} (\hyperlink{classshad_1_1rt_1_1Handle}{Handle} \&handle, const \hyperlink{classshad_1_1rt_1_1Locality}{Locality} \&loc, Fun\-T \&\&func, const In\-Args\-T \&args, uint8\-\_\-t $\ast$result\-Buffer, uint32\-\_\-t $\ast$result\-Size)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality synchronously and return a buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a112df602ea3878eab5f2d2ed424d8d87}{async\-Execute\-At\-With\-Ret\-Buff} (\hyperlink{classshad_1_1rt_1_1Handle}{Handle} \&handle, const \hyperlink{classshad_1_1rt_1_1Locality}{Locality} \&loc, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size, uint8\-\_\-t $\ast$result\-Buffer, uint32\-\_\-t $\ast$result\-Size)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality asynchronously and return a result buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T , typename Res\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a5ef970b04fc171862dc8b0c4cb6308d4}{async\-Execute\-At\-With\-Ret} (\hyperlink{classshad_1_1rt_1_1Handle}{Handle} \&handle, const \hyperlink{classshad_1_1rt_1_1Locality}{Locality} \&loc, Fun\-T \&\&func, const In\-Args\-T \&args, Res\-T $\ast$result)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality asynchronously and return a result. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename Res\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a52c8bfa7986d1786079e81e772a9d425}{async\-Execute\-At\-With\-Ret} (\hyperlink{classshad_1_1rt_1_1Handle}{Handle} \&handle, const \hyperlink{classshad_1_1rt_1_1Locality}{Locality} \&loc, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size, Res\-T $\ast$result)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality asynchronously and return a result. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a35ae5113d8da4942705af0a77305fe0c}{async\-Execute\-On\-All} (\hyperlink{classshad_1_1rt_1_1Handle}{Handle} \&handle, Fun\-T \&\&func, const In\-Args\-T \&args)
+\begin{DoxyCompactList}\small\item\em Execute a function on all localities asynchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_aafcdb9446fa49c00add25b4cf61f92f0}{async\-Execute\-On\-All} (\hyperlink{classshad_1_1rt_1_1Handle}{Handle} \&handle, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size)
+\begin{DoxyCompactList}\small\item\em Execute a function on all localities synchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a36e675e25238d9b5c81b8a755dce61cd}{async\-For\-Each\-At} (\hyperlink{classshad_1_1rt_1_1Handle}{Handle} \&handle, const \hyperlink{classshad_1_1rt_1_1Locality}{Locality} \&loc, Fun\-T \&\&func, const In\-Args\-T \&args, const size\-\_\-t num\-Iters)
+\begin{DoxyCompactList}\small\item\em Execute a parallel loop at a specific locality asynchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a8f5647851b74b49dc7c35d5025b07cf3}{async\-For\-Each\-At} (\hyperlink{classshad_1_1rt_1_1Handle}{Handle} \&handle, const \hyperlink{classshad_1_1rt_1_1Locality}{Locality} \&loc, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size, const size\-\_\-t num\-Iters)
+\begin{DoxyCompactList}\small\item\em Execute a parallel loop at a specific locality asynchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a540b5cecb449199c0c829141cc2ae7d5}{async\-For\-Each\-On\-All} (\hyperlink{classshad_1_1rt_1_1Handle}{Handle} \&handle, Fun\-T \&\&func, const In\-Args\-T \&args, const size\-\_\-t num\-Iters)
+\begin{DoxyCompactList}\small\item\em Execute a parallel loop on the whole system asynchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a4737e1c84ac7e830a1a306ac5b136a7d}{async\-For\-Each\-On\-All} (\hyperlink{classshad_1_1rt_1_1Handle}{Handle} \&handle, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size, const size\-\_\-t num\-Iters)
+\begin{DoxyCompactList}\small\item\em Execute a parallel loop on the whole system asynchronously. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{wait\-For\-Completion} (\hyperlink{classshad_1_1rt_1_1Handle}{Handle} \&handle)
+\begin{DoxyCompactList}\small\item\em Wait for completion of a set of tasks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{namespaceshad_1_1rt_a1eb8df1be67eada9b4f647ff376695b0}{\index{shad\-::rt@{shad\-::rt}!Target\-System\-Tag@{Target\-System\-Tag}}
+\index{Target\-System\-Tag@{Target\-System\-Tag}!shad::rt@{shad\-::rt}}
+\subsubsection[{Target\-System\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}typedef impl\-::tbb\-\_\-tag {\bf shad\-::rt\-::\-Target\-System\-Tag}}}\label{namespaceshad_1_1rt_a1eb8df1be67eada9b4f647ff376695b0}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespaceshad_1_1rt_adea42bceb84b2161df8fece9d20cb7cf}{\index{shad\-::rt@{shad\-::rt}!all\-Localities@{all\-Localities}}
+\index{all\-Localities@{all\-Localities}!shad::rt@{shad\-::rt}}
+\subsubsection[{all\-Localities}]{\setlength{\rightskip}{0pt plus 5cm}std\-::set$<${\bf Locality}$>$ shad\-::rt\-::all\-Localities (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespaceshad_1_1rt_adea42bceb84b2161df8fece9d20cb7cf}
+\hypertarget{namespaceshad_1_1rt_aad88d972c54520fa6da6661c0972ca66}{\index{shad\-::rt@{shad\-::rt}!async\-Execute\-At@{async\-Execute\-At}}
+\index{async\-Execute\-At@{async\-Execute\-At}!shad::rt@{shad\-::rt}}
+\subsubsection[{async\-Execute\-At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T , typename In\-Args\-T $>$ void shad\-::rt\-::async\-Execute\-At (
+\begin{DoxyParamCaption}
+\item[{Handle \&}]{handle, }
+\item[{const Locality \&}]{loc, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const In\-Args\-T \&}]{args}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_aad88d972c54520fa6da6661c0972ca66}
+
+
+Execute a function on a selected locality asynchronously. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+\textcolor{keywordtype}{void} task(Handle & handle, \textcolor{keyword}{const} Args & args) \{  \textcolor{comment}{/* do something */} \}
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+Handle handle;
+\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} & locality : allLocalities)
+  \textcolor{keywordflow}{if} (static\_cast<uint32\_t>(locality) % 2)
+    \hyperlink{namespaceshad_1_1rt_aad88d972c54520fa6da6661c0972ca66}{asyncExecuteAt}(handle, locality, task, args);
+
+\hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{waitForCompletion}(handle);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(Handle &, \textcolor{keyword}{const} InArgsT &);
+\end{DoxyCode}
+\\
+\hline
+{\em In\-Args\-T} & The type of the argument accepted by the function. The type can be a structure or a class but with the restriction that must be memcopy-\/able.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & An \hyperlink{classshad_1_1rt_1_1Handle}{Handle} for the associated task-\/group. \\
+\hline
+{\em loc} & The \hyperlink{classshad_1_1rt_1_1Locality}{Locality} where the function must be executed. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args} & The arguments to be passed to the function. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a8690d0c19d1d2e7acce51b9c83223c94}{\index{shad\-::rt@{shad\-::rt}!async\-Execute\-At@{async\-Execute\-At}}
+\index{async\-Execute\-At@{async\-Execute\-At}!shad::rt@{shad\-::rt}}
+\subsubsection[{async\-Execute\-At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T $>$ void shad\-::rt\-::async\-Execute\-At (
+\begin{DoxyParamCaption}
+\item[{Handle \&}]{handle, }
+\item[{const Locality \&}]{loc, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&}]{args\-Buffer, }
+\item[{const uint32\-\_\-t}]{buffer\-Size}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a8690d0c19d1d2e7acce51b9c83223c94}
+
+
+Execute a function on a selected locality asynchronously. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+\textcolor{keywordtype}{void} task(Handle & handle,
+          \textcolor{keyword}{const} uint8\_t * buff,
+          \textcolor{keyword}{const} uint32\_t size) \{  \textcolor{comment}{/* do something */} \}
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+\textcolor{comment}{/* Args doesn't need a dynamic allocated buffer but}
+\textcolor{comment}{ * more complicated data structure might need it */}
+std::shared\_ptr<uint8\_t> ptr(\textcolor{keyword}{new} uint8\_t[\textcolor{keyword}{sizeof}(Args)],
+                             std::default\_delete<uint8\_t[]>());
+memcpy(ptr.get(), &args, \textcolor{keyword}{sizeof}(Args));
+
+Handle handle;
+\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} & locality : allLocalities)
+  \textcolor{keywordflow}{if} (static\_cast<uint32\_t>(locality) % 2)
+    \hyperlink{namespaceshad_1_1rt_ae4b428e7e47fc07e01707b3abb01caa2}{executeAt}(handle, locality, task, ptr.get(), \textcolor{keyword}{sizeof}(Args));
+
+\hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{waitForCompletion}(handle)
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(Handle &, \textcolor{keyword}{const} uint8\_t *, \textcolor{keyword}{const} uint32\_t);
+\end{DoxyCode}
+\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & An \hyperlink{classshad_1_1rt_1_1Handle}{Handle} for the associated task-\/group. \\
+\hline
+{\em loc} & The \hyperlink{classshad_1_1rt_1_1Locality}{Locality} where the function must be executed. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args\-Buffer} & A buffer of bytes to be passed to the function. \\
+\hline
+{\em buffer\-Size} & The size of the buffer args\-Buffer passed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a5ef970b04fc171862dc8b0c4cb6308d4}{\index{shad\-::rt@{shad\-::rt}!async\-Execute\-At\-With\-Ret@{async\-Execute\-At\-With\-Ret}}
+\index{async\-Execute\-At\-With\-Ret@{async\-Execute\-At\-With\-Ret}!shad::rt@{shad\-::rt}}
+\subsubsection[{async\-Execute\-At\-With\-Ret}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T , typename In\-Args\-T , typename Res\-T $>$ void shad\-::rt\-::async\-Execute\-At\-With\-Ret (
+\begin{DoxyParamCaption}
+\item[{Handle \&}]{handle, }
+\item[{const Locality \&}]{loc, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const In\-Args\-T \&}]{args, }
+\item[{Res\-T $\ast$}]{result}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a5ef970b04fc171862dc8b0c4cb6308d4}
+
+
+Execute a function on a selected locality asynchronously and return a result. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+\textcolor{keywordtype}{void} task(Handle & handle, \textcolor{keyword}{const} Args & args, Args * res) \{
+  \textcolor{comment}{// Do something.}
+\}
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+\textcolor{comment}{/* Args doesn't need a dynamic allocated buffer but}
+\textcolor{comment}{ * more complicated data structure might need it */}
+std::vector<Args> outBuffers(\hyperlink{namespaceshad_1_1rt_a199bb50c21e9012f615520413872aef6}{numLocalities}());
+
+Handle handle;
+\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} & locality : \hyperlink{namespaceshad_1_1rt_adea42bceb84b2161df8fece9d20cb7cf}{allLocalities}()) \{
+  uint32\_t localityID = \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(locality);
+  \hyperlink{namespaceshad_1_1rt_a5ef970b04fc171862dc8b0c4cb6308d4}{asyncExecuteAtWithRet}(
+    handle, locality, task, args, &outBuffers[localityID]);
+\}
+\hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{waitForCompletion}(handle);
+\end{DoxyCode}
+ 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(Handle &, \textcolor{keyword}{const} InArgsT &, ResT *);
+\end{DoxyCode}
+\\
+\hline
+{\em In\-Args\-T} & The type of the argument accepted by the function. The type can be a structure or a class but with the restriction that must be memcopy-\/able.\\
+\hline
+{\em Res\-T} & The type of the result value. The type can be a structure or a class but with the restriction that must be memcopy-\/able.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & An \hyperlink{classshad_1_1rt_1_1Handle}{Handle} for the associated task-\/group. \\
+\hline
+{\em loc} & The \hyperlink{classshad_1_1rt_1_1Locality}{Locality} where the function must be executed. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args} & The arguments to be passed to the function. \\
+\hline
+{\em result} & The location where to store the result. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a52c8bfa7986d1786079e81e772a9d425}{\index{shad\-::rt@{shad\-::rt}!async\-Execute\-At\-With\-Ret@{async\-Execute\-At\-With\-Ret}}
+\index{async\-Execute\-At\-With\-Ret@{async\-Execute\-At\-With\-Ret}!shad::rt@{shad\-::rt}}
+\subsubsection[{async\-Execute\-At\-With\-Ret}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T , typename Res\-T $>$ void shad\-::rt\-::async\-Execute\-At\-With\-Ret (
+\begin{DoxyParamCaption}
+\item[{Handle \&}]{handle, }
+\item[{const Locality \&}]{loc, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&}]{args\-Buffer, }
+\item[{const uint32\-\_\-t}]{buffer\-Size, }
+\item[{Res\-T $\ast$}]{result}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a52c8bfa7986d1786079e81e772a9d425}
+
+
+Execute a function on a selected locality asynchronously and return a result. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+\textcolor{keywordtype}{void} task(Handle & handle, \textcolor{keyword}{const} uint8\_t *src, \textcolor{keyword}{const} uint32\_t size,
+          Args * res) \{
+  \textcolor{comment}{// Do something}
+\}
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+\textcolor{comment}{/* Args doesn't need a dynamic allocated buffer but}
+\textcolor{comment}{ * more complicated data structure might need it */}
+std::vector<std::unique\_ptr<Args> outBuffers(\hyperlink{namespaceshad_1_1rt_a199bb50c21e9012f615520413872aef6}{numLocalities}());
+std::unique\_ptr<uint8\_t[]> ptr(\textcolor{keyword}{new} uint8\_t[\textcolor{keyword}{sizeof}(Args)]);
+memcpy(ptr.get(), &args, \textcolor{keyword}{sizeof}(Args));
+
+Handle handle;
+\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} & locality : \hyperlink{namespaceshad_1_1rt_adea42bceb84b2161df8fece9d20cb7cf}{allLocalities}()) \{
+  uint32\_t localityID = \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(locality);
+  \hyperlink{namespaceshad_1_1rt_a5ef970b04fc171862dc8b0c4cb6308d4}{asyncExecuteAtWithRet}(
+    handle, locality, task, ptr.get(), \textcolor{keyword}{sizeof}(Args),
+    &outBuffers[localityID]);
+\}
+\hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{waitForCompletion}(handle);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(Handle &, \textcolor{keyword}{const} uint8\_t *, \textcolor{keyword}{const} uint32\_t, ResT *);
+\end{DoxyCode}
+\\
+\hline
+{\em Res\-T} & The type of the result value. The type can be a structure or a class but with the restriction that must be memcopy-\/able.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & An \hyperlink{classshad_1_1rt_1_1Handle}{Handle} for the associated task-\/group. \\
+\hline
+{\em loc} & The \hyperlink{classshad_1_1rt_1_1Locality}{Locality} where the function must be executed. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args\-Buffer} & A buffer of bytes to be passed to the function. \\
+\hline
+{\em buffer\-Size} & The size of the buffer args\-Buffer passed. \\
+\hline
+{\em result} & The location where to store the result. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a7021749e6a86c90e762645385e22ac5c}{\index{shad\-::rt@{shad\-::rt}!async\-Execute\-At\-With\-Ret\-Buff@{async\-Execute\-At\-With\-Ret\-Buff}}
+\index{async\-Execute\-At\-With\-Ret\-Buff@{async\-Execute\-At\-With\-Ret\-Buff}!shad::rt@{shad\-::rt}}
+\subsubsection[{async\-Execute\-At\-With\-Ret\-Buff}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T , typename In\-Args\-T $>$ void shad\-::rt\-::async\-Execute\-At\-With\-Ret\-Buff (
+\begin{DoxyParamCaption}
+\item[{Handle \&}]{handle, }
+\item[{const Locality \&}]{loc, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const In\-Args\-T \&}]{args, }
+\item[{uint8\-\_\-t $\ast$}]{result\-Buffer, }
+\item[{uint32\-\_\-t $\ast$}]{result\-Size}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a7021749e6a86c90e762645385e22ac5c}
+
+
+Execute a function on a selected locality synchronously and return a buffer. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+\textcolor{keywordtype}{void} task(Handle & handle, \textcolor{keyword}{const} Args & args,
+          \textcolor{keyword}{const} uint8\_t *dst, uint32\_t * outsize) \{
+  memcpy(&args, dst, \textcolor{keyword}{sizeof}(Args));
+  *outsize = \textcolor{keyword}{sizeof}(Args);
+\}
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+std::vector<std::unique\_ptr<uint8\_t[]>> outBuffers(\hyperlink{namespaceshad_1_1rt_a199bb50c21e9012f615520413872aef6}{numLocalities}());
+std::vector<uint32\_t> outSizes(\hyperlink{namespaceshad_1_1rt_a199bb50c21e9012f615520413872aef6}{numLocalities}(), 0);
+\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} & vecPtr : outBuffers) \{
+  std::unique\_ptr<uint8\_t[]> outbuff(\textcolor{keyword}{new} uint8\_t[\textcolor{keyword}{sizeof}(Args)]);
+  vecPtr = std::move(outbuff);
+\}
+
+Handle handle;
+\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} & locality : \hyperlink{namespaceshad_1_1rt_adea42bceb84b2161df8fece9d20cb7cf}{allLocalities}()) \{
+  uint32\_t localityID = \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(locality);
+  \textcolor{keywordflow}{if} (localityID % 2)
+    \textcolor{comment}{// every call will overwrite outbuff}
+    \hyperlink{namespaceshad_1_1rt_a7021749e6a86c90e762645385e22ac5c}{asyncExecuteAtWithRetBuff}(
+      handle, locality, task, args, outBuffers[localityID].\textcolor{keyword}{get}(),
+      &outSizes[localityID]);
+\}
+
+\hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{waitForCompletion}(handle);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(Handle &, \textcolor{keyword}{const} InArgsT &, \textcolor{keyword}{const} uint8\_t *, uint32\_t *);
+\end{DoxyCode}
+\\
+\hline
+{\em In\-Args\-T} & The type of the argument accepted by the function. The type can be a structure or a class but with the restriction that must be memcopy-\/able.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & An \hyperlink{classshad_1_1rt_1_1Handle}{Handle} for the associated task-\/group. \\
+\hline
+{\em loc} & The \hyperlink{classshad_1_1rt_1_1Locality}{Locality} where the function must be executed. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args} & The arguments to be passed to the function. \\
+\hline
+{\em result\-Buffer} & The buffer where to store the results. \\
+\hline
+{\em result\-Size} & The location where the runtime will store the number of bytes written in the result buffer \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a112df602ea3878eab5f2d2ed424d8d87}{\index{shad\-::rt@{shad\-::rt}!async\-Execute\-At\-With\-Ret\-Buff@{async\-Execute\-At\-With\-Ret\-Buff}}
+\index{async\-Execute\-At\-With\-Ret\-Buff@{async\-Execute\-At\-With\-Ret\-Buff}!shad::rt@{shad\-::rt}}
+\subsubsection[{async\-Execute\-At\-With\-Ret\-Buff}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T $>$ void shad\-::rt\-::async\-Execute\-At\-With\-Ret\-Buff (
+\begin{DoxyParamCaption}
+\item[{Handle \&}]{handle, }
+\item[{const Locality \&}]{loc, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&}]{args\-Buffer, }
+\item[{const uint32\-\_\-t}]{buffer\-Size, }
+\item[{uint8\-\_\-t $\ast$}]{result\-Buffer, }
+\item[{uint32\-\_\-t $\ast$}]{result\-Size}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a112df602ea3878eab5f2d2ed424d8d87}
+
+
+Execute a function on a selected locality asynchronously and return a result buffer. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+\textcolor{keywordtype}{void} task(Handle & handle, \textcolor{keyword}{const} uint8\_t *src, \textcolor{keyword}{const} uint32\_t size,
+          \textcolor{keyword}{const} uint8\_t *dst, uint32\_t * outsize) \{
+  memcpy(src, dst, size);
+  *outsize = size;
+\}
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+\textcolor{comment}{/* Args doesn't need a dynamic allocated buffer but}
+\textcolor{comment}{ * more complicated data structure might need it */}
+std::shared\_ptr<uint8\_t> ptr(\textcolor{keyword}{new} uint8\_t[\textcolor{keyword}{sizeof}(Args)],
+                             std::default\_delete<uint8\_t[]>());
+memcpy(ptr.get(), &args, \textcolor{keyword}{sizeof}(Args));
+
+std::vector<std::unique\_ptr<uint8\_t[]>> outBuffers(\hyperlink{namespaceshad_1_1rt_a199bb50c21e9012f615520413872aef6}{numLocalities}());
+std::vector<uint32\_t> outSizes(\hyperlink{namespaceshad_1_1rt_a199bb50c21e9012f615520413872aef6}{numLocalities}(), 0);
+\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} & vecPtr : outBuffers) \{
+  std::unique\_ptr<uint8\_t[]> outbuff(\textcolor{keyword}{new} uint8\_t[\textcolor{keyword}{sizeof}(Args)]);
+  vecPtr = std::move(outbuff);
+\}
+
+Handle handle;
+\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} & locality : allLocalities) \{
+  \textcolor{keywordflow}{if} (static\_cast<uint32\_t>(locality) % 2)
+    \textcolor{comment}{// every call will overwrite outbuff}
+    \hyperlink{namespaceshad_1_1rt_a7021749e6a86c90e762645385e22ac5c}{asyncExecuteAtWithRetBuff}(
+      handle, locality, task, ptr, \textcolor{keyword}{sizeof}(Args),
+      outBuffers[localityID].\textcolor{keyword}{get}(), &outSizes[localityID]);
+\}
+
+\hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{waitForCompletion}(handle);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(Handle &, \textcolor{keyword}{const} uint8\_t *, \textcolor{keyword}{const} uint32\_t, \textcolor{keyword}{const} uint8\_t *, uint32\_t *)
+\end{DoxyCode}
+\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & An \hyperlink{classshad_1_1rt_1_1Handle}{Handle} for the associated task-\/group. \\
+\hline
+{\em loc} & The \hyperlink{classshad_1_1rt_1_1Locality}{Locality} where the function must be executed. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args\-Buffer} & A buffer of bytes to be passed to the function. \\
+\hline
+{\em buffer\-Size} & The size of the buffer args\-Buffer passed. \\
+\hline
+{\em result\-Buffer} & The buffer where to store the results. \\
+\hline
+{\em result\-Size} & The location where the runtime will store the number of bytes written in the result buffer \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a35ae5113d8da4942705af0a77305fe0c}{\index{shad\-::rt@{shad\-::rt}!async\-Execute\-On\-All@{async\-Execute\-On\-All}}
+\index{async\-Execute\-On\-All@{async\-Execute\-On\-All}!shad::rt@{shad\-::rt}}
+\subsubsection[{async\-Execute\-On\-All}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T , typename In\-Args\-T $>$ void shad\-::rt\-::async\-Execute\-On\-All (
+\begin{DoxyParamCaption}
+\item[{Handle \&}]{handle, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const In\-Args\-T \&}]{args}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a35ae5113d8da4942705af0a77305fe0c}
+
+
+Execute a function on all localities asynchronously. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+\textcolor{keywordtype}{void} task(Handle & handle, \textcolor{keyword}{const} Args & args) \{  \textcolor{comment}{/* do something */} \}
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+Handle handle;
+\hyperlink{namespaceshad_1_1rt_a35ae5113d8da4942705af0a77305fe0c}{asyncExecuteOnAll}(handle, task, args);
+\textcolor{comment}{/* do something else */}
+waitForcompletion(handle);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(Handle &, \textcolor{keyword}{const} InArgsT &);
+\end{DoxyCode}
+\\
+\hline
+{\em In\-Args\-T} & The type of the argument accepted by the function. The type can be a structure or a class but with the restriction that must be memcopy-\/able.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & An \hyperlink{classshad_1_1rt_1_1Handle}{Handle} for the associated task-\/group. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args} & The arguments to be passed to the function. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_aafcdb9446fa49c00add25b4cf61f92f0}{\index{shad\-::rt@{shad\-::rt}!async\-Execute\-On\-All@{async\-Execute\-On\-All}}
+\index{async\-Execute\-On\-All@{async\-Execute\-On\-All}!shad::rt@{shad\-::rt}}
+\subsubsection[{async\-Execute\-On\-All}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T $>$ void shad\-::rt\-::async\-Execute\-On\-All (
+\begin{DoxyParamCaption}
+\item[{Handle \&}]{handle, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&}]{args\-Buffer, }
+\item[{const uint32\-\_\-t}]{buffer\-Size}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_aafcdb9446fa49c00add25b4cf61f92f0}
+
+
+Execute a function on all localities synchronously. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+\textcolor{keywordtype}{void} task(Handle & handle, \textcolor{keyword}{const} uint8\_t *,
+                           \textcolor{keyword}{const} uint32\_t) \{  \textcolor{comment}{/* do something */} \}
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+\textcolor{comment}{/* Args doesn't need a dynamic allocated buffer but}
+\textcolor{comment}{ * more complicated data structure might need it */}
+std::shared\_ptr<uint8\_t> ptr(\textcolor{keyword}{new} uint8\_t[\textcolor{keyword}{sizeof}(Args)],
+                             std::default\_delete<uint8\_t[]>());
+memcpy(ptr.get(), &args, \textcolor{keyword}{sizeof}(Args));
+
+Handle handle;
+\hyperlink{namespaceshad_1_1rt_a35ae5113d8da4942705af0a77305fe0c}{asyncExecuteOnAll}(handle, task, ptr.get(), \textcolor{keyword}{sizeof}(Args));
+\textcolor{comment}{/* do something else */}
+\hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{waitForCompletion}(handle);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(Handle & handle, \textcolor{keyword}{const} uint8\_t *, \textcolor{keyword}{const} uint32\_t);
+\end{DoxyCode}
+\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & An \hyperlink{classshad_1_1rt_1_1Handle}{Handle} for the associated task-\/group. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args\-Buffer} & A buffer of bytes to be passed to the function. \\
+\hline
+{\em buffer\-Size} & The size of the buffer args\-Buffer passed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a36e675e25238d9b5c81b8a755dce61cd}{\index{shad\-::rt@{shad\-::rt}!async\-For\-Each\-At@{async\-For\-Each\-At}}
+\index{async\-For\-Each\-At@{async\-For\-Each\-At}!shad::rt@{shad\-::rt}}
+\subsubsection[{async\-For\-Each\-At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T , typename In\-Args\-T $>$ void shad\-::rt\-::async\-For\-Each\-At (
+\begin{DoxyParamCaption}
+\item[{Handle \&}]{handle, }
+\item[{const Locality \&}]{loc, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const In\-Args\-T \&}]{args, }
+\item[{const size\-\_\-t}]{num\-Iters}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a36e675e25238d9b5c81b8a755dce61cd}
+
+
+Execute a parallel loop at a specific locality asynchronously. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+Handle handle;
+\hyperlink{namespaceshad_1_1rt_a36e675e25238d9b5c81b8a755dce61cd}{shad::rt::asyncForEachAt}(locality,
+    [](Handle & handle, \textcolor{keyword}{const} Args & input, \textcolor{keywordtype}{size\_t} itrNum) \{
+      \textcolor{comment}{// Do something.}
+    \},
+    args, iterations, handle);
+shad::rt::waitForcompletion(handle);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(Handle &, \textcolor{keyword}{const} ArgsT &, \textcolor{keywordtype}{size\_t} itrNum);
+\end{DoxyCode}
+ where the itr\-Num is the n-\/th iteration of the loop.\\
+\hline
+{\em In\-Args\-T} & The type of the argument accepted by the function. The type can be a structure or a class but with the restriction that must be memcopy-\/able.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & The \hyperlink{classshad_1_1rt_1_1Locality}{Locality} where the function must be executed. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args} & The arguments to be passed to the function. \\
+\hline
+{\em num\-Iters} & The total number of iteration of the loop. \\
+\hline
+{\em handle} & An \hyperlink{classshad_1_1rt_1_1Handle}{Handle} for the associated task-\/group. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a8f5647851b74b49dc7c35d5025b07cf3}{\index{shad\-::rt@{shad\-::rt}!async\-For\-Each\-At@{async\-For\-Each\-At}}
+\index{async\-For\-Each\-At@{async\-For\-Each\-At}!shad::rt@{shad\-::rt}}
+\subsubsection[{async\-For\-Each\-At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T $>$ void shad\-::rt\-::async\-For\-Each\-At (
+\begin{DoxyParamCaption}
+\item[{Handle \&}]{handle, }
+\item[{const Locality \&}]{loc, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&}]{args\-Buffer, }
+\item[{const uint32\-\_\-t}]{buffer\-Size, }
+\item[{const size\-\_\-t}]{num\-Iters}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a8f5647851b74b49dc7c35d5025b07cf3}
+
+
+Execute a parallel loop at a specific locality asynchronously. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+std::shared\_ptr<uint8\_t> buffer(\textcolor{keyword}{new} uint8\_t[2]\{ 5, 5 \},
+                                std::default\_delete<uint8\_t[]>());
+
+Handle handle;
+\hyperlink{namespaceshad_1_1rt_a36e675e25238d9b5c81b8a755dce61cd}{shad::rt::asyncForEachAt}(locality,
+    handle,
+    [](Handle & handle, \textcolor{keyword}{const} uint8\_t * input, \textcolor{keyword}{const} uint32\_t size,
+       \textcolor{keywordtype}{size\_t} itrNum) \{
+      \textcolor{comment}{// Do something.}
+    \},
+    buffer, 2,
+    iterations);
+\textcolor{comment}{/* do something else */}
+\hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{shad::rt::waitForCompletion}(handle);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(Handle &, \textcolor{keyword}{const} uint8\_t *, \textcolor{keyword}{const} uint32\_t, \textcolor{keywordtype}{size\_t} itrNum);
+\end{DoxyCode}
+ where the itr\-Num is the n-\/th iteration of the loop.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & An \hyperlink{classshad_1_1rt_1_1Handle}{Handle} for the associated task-\/group. \\
+\hline
+{\em loc} & The \hyperlink{classshad_1_1rt_1_1Locality}{Locality} where the function must be executed. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args\-Buffer} & A buffer of bytes to be passed to the function. \\
+\hline
+{\em buffer\-Size} & The size of the buffer args\-Buffer passed. \\
+\hline
+{\em num\-Iters} & The total number of iteration of the loop. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a540b5cecb449199c0c829141cc2ae7d5}{\index{shad\-::rt@{shad\-::rt}!async\-For\-Each\-On\-All@{async\-For\-Each\-On\-All}}
+\index{async\-For\-Each\-On\-All@{async\-For\-Each\-On\-All}!shad::rt@{shad\-::rt}}
+\subsubsection[{async\-For\-Each\-On\-All}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T , typename In\-Args\-T $>$ void shad\-::rt\-::async\-For\-Each\-On\-All (
+\begin{DoxyParamCaption}
+\item[{Handle \&}]{handle, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const In\-Args\-T \&}]{args, }
+\item[{const size\-\_\-t}]{num\-Iters}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a540b5cecb449199c0c829141cc2ae7d5}
+
+
+Execute a parallel loop on the whole system asynchronously. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+Handle handle;
+\hyperlink{namespaceshad_1_1rt_a540b5cecb449199c0c829141cc2ae7d5}{shad::rt::asyncForEachOnAll}(
+    handle,
+    [](Handle &, \textcolor{keyword}{const} Args &, \textcolor{keywordtype}{size\_t} itrNum) \{
+      \textcolor{comment}{// Do something.}
+    \},
+    args,
+    iterations);
+\textcolor{comment}{/* Do something else */}
+\hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{shad::rt::waitForCompletion}(handle);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(Handle &, \textcolor{keyword}{const} ArgsT &, \textcolor{keywordtype}{size\_t} itrNum);
+\end{DoxyCode}
+ where the itr\-Num is the n-\/th iteration of the loop.\\
+\hline
+{\em In\-Args\-T} & The type of the argument accepted by the function. The type can be a structure or a class but with the restriction that must be memcopy-\/able.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & An \hyperlink{classshad_1_1rt_1_1Handle}{Handle} for the associated task-\/group. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args} & The arguments to be passed to the function. \\
+\hline
+{\em num\-Iters} & The total number of iteration of the loop. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a4737e1c84ac7e830a1a306ac5b136a7d}{\index{shad\-::rt@{shad\-::rt}!async\-For\-Each\-On\-All@{async\-For\-Each\-On\-All}}
+\index{async\-For\-Each\-On\-All@{async\-For\-Each\-On\-All}!shad::rt@{shad\-::rt}}
+\subsubsection[{async\-For\-Each\-On\-All}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T $>$ void shad\-::rt\-::async\-For\-Each\-On\-All (
+\begin{DoxyParamCaption}
+\item[{Handle \&}]{handle, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&}]{args\-Buffer, }
+\item[{const uint32\-\_\-t}]{buffer\-Size, }
+\item[{const size\-\_\-t}]{num\-Iters}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a4737e1c84ac7e830a1a306ac5b136a7d}
+
+
+Execute a parallel loop on the whole system asynchronously. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+std::shared\_ptr<uint8\_t> buffer(\textcolor{keyword}{new} uint8\_t[2]\{ 5, 5 \},
+                                std::default\_delete<uint8\_t[]>());
+
+Handle handle;
+\hyperlink{namespaceshad_1_1rt_a540b5cecb449199c0c829141cc2ae7d5}{shad::rt::asyncForEachOnAll}(handle,
+    [](Handle &, \textcolor{keyword}{const} uint8\_t * input, \textcolor{keyword}{const} uint32\_t size,
+       \textcolor{keywordtype}{size\_t} itrNum) \{
+      \textcolor{comment}{// Do something}
+    \},
+    buffer, 2,
+    iterations);
+\textcolor{comment}{/* do something else */}
+\hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{shad::rt::waitForCompletion}(handle);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(Handle &, \textcolor{keyword}{const} uint8\_t *, \textcolor{keyword}{const} uint32\_t, \textcolor{keywordtype}{size\_t} itrNum);
+\end{DoxyCode}
+ where the itr\-Num is the n-\/th iteration of the loop.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & An \hyperlink{classshad_1_1rt_1_1Handle}{Handle} for the associated task-\/group. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args\-Buffer} & A buffer of bytes to be passed to the function. \\
+\hline
+{\em buffer\-Size} & The size of the buffer args\-Buffer passed. \\
+\hline
+{\em num\-Iters} & The total number of iteration of the loop. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_ae4b428e7e47fc07e01707b3abb01caa2}{\index{shad\-::rt@{shad\-::rt}!execute\-At@{execute\-At}}
+\index{execute\-At@{execute\-At}!shad::rt@{shad\-::rt}}
+\subsubsection[{execute\-At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T , typename In\-Args\-T $>$ void shad\-::rt\-::execute\-At (
+\begin{DoxyParamCaption}
+\item[{const Locality \&}]{loc, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const In\-Args\-T \&}]{args}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_ae4b428e7e47fc07e01707b3abb01caa2}
+
+
+Execute a function on a selected locality synchronously. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+\textcolor{keywordtype}{void} task(\textcolor{keyword}{const} Args & args) \{  \textcolor{comment}{/* do something */} \}
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} & locality : allLocalities)
+  \textcolor{keywordflow}{if} (static\_cast<uint32\_t>(locality) % 2)
+    \hyperlink{namespaceshad_1_1rt_ae4b428e7e47fc07e01707b3abb01caa2}{executeAt}(locality, task, args);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\textcolor{keyword}{const} InArgsT &);
+\end{DoxyCode}
+\\
+\hline
+{\em In\-Args\-T} & The type of the argument accepted by the function. The type can be a structure or a class but with the restriction that must be memcopy-\/able.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & The \hyperlink{classshad_1_1rt_1_1Locality}{Locality} where the function must be executed. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args} & The arguments to be passed to the function. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a5bc582ecab17be55af910f8a6e3e31f5}{\index{shad\-::rt@{shad\-::rt}!execute\-At@{execute\-At}}
+\index{execute\-At@{execute\-At}!shad::rt@{shad\-::rt}}
+\subsubsection[{execute\-At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T $>$ void shad\-::rt\-::execute\-At (
+\begin{DoxyParamCaption}
+\item[{const Locality \&}]{loc, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&}]{args\-Buffer, }
+\item[{const uint32\-\_\-t}]{buffer\-Size}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a5bc582ecab17be55af910f8a6e3e31f5}
+
+
+Execute a function on a selected locality synchronously. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+\textcolor{keywordtype}{void} task(\textcolor{keyword}{const} uint8\_t *, \textcolor{keyword}{const} uint32\_t) \{  \textcolor{comment}{/* do something */} \}
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+\textcolor{comment}{/* Args doesn't need a dynamic allocated buffer but}
+\textcolor{comment}{ * more complicated data structure might need it */}
+std::shared\_ptr<uint8\_t> ptr(\textcolor{keyword}{new} uint8\_t[\textcolor{keyword}{sizeof}(Args)],
+                             std::default\_delete<uint8\_t[]>());
+memcpy(ptr.get(), &args, \textcolor{keyword}{sizeof}(Args));
+
+\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} & locality : allLocalities)
+  \textcolor{keywordflow}{if} (static\_cast<uint32\_t>(locality) % 2)
+    \hyperlink{namespaceshad_1_1rt_ae4b428e7e47fc07e01707b3abb01caa2}{executeAt}(locality, task, ptr, \textcolor{keyword}{sizeof}(Args));
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\textcolor{keyword}{const} uint8\_t *, \textcolor{keyword}{const} uint32\_t);
+\end{DoxyCode}
+\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & The \hyperlink{classshad_1_1rt_1_1Locality}{Locality} where the function must be executed. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args\-Buffer} & A buffer of bytes to be passed to the function. \\
+\hline
+{\em buffer\-Size} & The size of the buffer args\-Buffer passed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a750ac93a8d339b97e3a11e182b50ffbc}{\index{shad\-::rt@{shad\-::rt}!execute\-At\-With\-Ret@{execute\-At\-With\-Ret}}
+\index{execute\-At\-With\-Ret@{execute\-At\-With\-Ret}!shad::rt@{shad\-::rt}}
+\subsubsection[{execute\-At\-With\-Ret}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T , typename In\-Args\-T , typename Res\-T $>$ void shad\-::rt\-::execute\-At\-With\-Ret (
+\begin{DoxyParamCaption}
+\item[{const Locality \&}]{loc, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const In\-Args\-T \&}]{args, }
+\item[{Res\-T $\ast$}]{result}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a750ac93a8d339b97e3a11e182b50ffbc}
+
+
+Execute a function on a selected locality synchronously and return a result. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+\textcolor{keywordtype}{void} task(\textcolor{keyword}{const} Args & args, Args * outArgs) \{
+  *outArgs = args;
+\}
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+Args out;
+\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} & locality : allLocalities)
+  \textcolor{keywordflow}{if} (static\_cast<uint32\_t>(locality) % 2)
+    \textcolor{comment}{// every call will overwrite outbuff}
+    \hyperlink{namespaceshad_1_1rt_a750ac93a8d339b97e3a11e182b50ffbc}{executeAtWithRet}(locality, task, args, out);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\textcolor{keyword}{const} InArgsT &, ResT *);
+\end{DoxyCode}
+\\
+\hline
+{\em In\-Args\-T} & The type of the argument accepted by the function. The type can be a structure or a class but with the restriction that must be memcopy-\/able.\\
+\hline
+{\em Res\-T} & The type of the result value. The type can be a structure or a class but with the restriction that must be memcopy-\/able.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & The \hyperlink{classshad_1_1rt_1_1Locality}{Locality} where the function must be executed. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args} & The arguments to be passed to the function. \\
+\hline
+{\em result} & The location where to store the result. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_aa1c240408fd99868fe25dc35e78c9c79}{\index{shad\-::rt@{shad\-::rt}!execute\-At\-With\-Ret@{execute\-At\-With\-Ret}}
+\index{execute\-At\-With\-Ret@{execute\-At\-With\-Ret}!shad::rt@{shad\-::rt}}
+\subsubsection[{execute\-At\-With\-Ret}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T , typename Res\-T $>$ void shad\-::rt\-::execute\-At\-With\-Ret (
+\begin{DoxyParamCaption}
+\item[{const Locality \&}]{loc, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&}]{args\-Buffer, }
+\item[{const uint32\-\_\-t}]{buffer\-Size, }
+\item[{Res\-T $\ast$}]{result}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_aa1c240408fd99868fe25dc35e78c9c79}
+
+
+Execute a function on a selected locality synchronously and return a result. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+\textcolor{keywordtype}{void} task(\textcolor{keyword}{const} uint8\_t *src, \textcolor{keyword}{const} uint32\_t size,
+          Args * res) \{
+  memcpy(src, res, \textcolor{keyword}{sizeof}(Args));
+\}
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+\textcolor{comment}{/* Args doesn't need a dynamic allocated buffer but}
+\textcolor{comment}{ * more complicated data structure might need it */}
+std::shared\_ptr<uint8\_t> ptr(\textcolor{keyword}{new} uint8\_t[\textcolor{keyword}{sizeof}(Args)],
+                             std::default\_delete<uint8\_t[]>());
+memcpy(ptr.get(), &args, \textcolor{keyword}{sizeof}(Args));
+
+Args out;
+\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} & locality : allLocalities)
+  \textcolor{keywordflow}{if} (static\_cast<uint32\_t>(locality) % 2)
+    \textcolor{comment}{// every call will overwrite out}
+    \hyperlink{namespaceshad_1_1rt_a750ac93a8d339b97e3a11e182b50ffbc}{executeAtWithRet}(locality, task, ptr, \textcolor{keyword}{sizeof}(Args), &out);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\textcolor{keyword}{const} uint8\_t *, \textcolor{keyword}{const} uint32\_t, ResT *);
+\end{DoxyCode}
+\\
+\hline
+{\em Res\-T} & The type of the result value. The type can be a structure or a class but with the restriction that must be memcopy-\/able.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & The \hyperlink{classshad_1_1rt_1_1Locality}{Locality} where the function must be executed. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args\-Buffer} & A buffer of bytes to be passed to the function. \\
+\hline
+{\em buffer\-Size} & The size of the buffer args\-Buffer passed. \\
+\hline
+{\em result} & The location where to store the result. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_acadca86a92a75be85e51534f905b7fef}{\index{shad\-::rt@{shad\-::rt}!execute\-At\-With\-Ret\-Buff@{execute\-At\-With\-Ret\-Buff}}
+\index{execute\-At\-With\-Ret\-Buff@{execute\-At\-With\-Ret\-Buff}!shad::rt@{shad\-::rt}}
+\subsubsection[{execute\-At\-With\-Ret\-Buff}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T , typename In\-Args\-T $>$ void shad\-::rt\-::execute\-At\-With\-Ret\-Buff (
+\begin{DoxyParamCaption}
+\item[{const Locality \&}]{loc, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const In\-Args\-T \&}]{args, }
+\item[{uint8\-\_\-t $\ast$}]{result\-Buffer, }
+\item[{uint32\-\_\-t $\ast$}]{result\-Size}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_acadca86a92a75be85e51534f905b7fef}
+
+
+Execute a function on a selected locality synchronously and return a buffer. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+\textcolor{keywordtype}{void} task(\textcolor{keyword}{const} Args & args,
+          \textcolor{keyword}{const} uint8\_t *dst, uint32\_t * outsize) \{
+  memcpy(&args, dst, \textcolor{keyword}{sizeof}(Args));
+  *outsize = \textcolor{keyword}{sizeof}(Args);
+\}
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+std::unique\_ptr<uint8\_t[]> outbuff(\textcolor{keyword}{new} uint8\_t[\textcolor{keyword}{sizeof}(Args)]);
+uint32\_t size(0);
+\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} & locality : allLocalities)
+  \textcolor{keywordflow}{if} (static\_cast<uint32\_t>(locality) % 2)
+    \textcolor{comment}{// every call will overwrite outbuff}
+    executeAtWithRetBuffer(locality, task, args, outbuff.get(), &size);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\textcolor{keyword}{const} InArgsT &, \textcolor{keyword}{const} uint8\_t *, uint32\_t *);
+\end{DoxyCode}
+\\
+\hline
+{\em In\-Args\-T} & The type of the argument accepted by the function. The type can be a structure or a class but with the restriction that must be memcopy-\/able.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & The \hyperlink{classshad_1_1rt_1_1Locality}{Locality} where the function must be executed. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args} & The arguments to be passed to the function. \\
+\hline
+{\em result\-Buffer} & The buffer where to store the results. \\
+\hline
+{\em result\-Size} & The location where the runtime will store the number of bytes written in the result buffer \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a9a77fcd35f06e3e2200ee1ca940ba8d1}{\index{shad\-::rt@{shad\-::rt}!execute\-At\-With\-Ret\-Buff@{execute\-At\-With\-Ret\-Buff}}
+\index{execute\-At\-With\-Ret\-Buff@{execute\-At\-With\-Ret\-Buff}!shad::rt@{shad\-::rt}}
+\subsubsection[{execute\-At\-With\-Ret\-Buff}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T $>$ void shad\-::rt\-::execute\-At\-With\-Ret\-Buff (
+\begin{DoxyParamCaption}
+\item[{const Locality \&}]{loc, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&}]{args\-Buffer, }
+\item[{const uint32\-\_\-t}]{buffer\-Size, }
+\item[{uint8\-\_\-t $\ast$}]{result\-Buffer, }
+\item[{uint32\-\_\-t $\ast$}]{result\-Size}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a9a77fcd35f06e3e2200ee1ca940ba8d1}
+
+
+Execute a function on a selected locality synchronously and return a result buffer. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+\textcolor{keywordtype}{void} task(\textcolor{keyword}{const} uint8\_t *src, \textcolor{keyword}{const} uint32\_t size,
+          \textcolor{keyword}{const} uint8\_t *dst, uint32\_t * outsize) \{
+  memcpy(src, dst, size);
+  *outsize = size;
+\}
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+\textcolor{comment}{/* Args doesn't need a dynamic allocated buffer but}
+\textcolor{comment}{ * more complicated data structure might need it */}
+std::shared\_ptr<uint8\_t> ptr(\textcolor{keyword}{new} uint8\_t[\textcolor{keyword}{sizeof}(Args)],
+                             std::default\_delete<uint8\_t[]>());
+memcpy(ptr.get(), &args, \textcolor{keyword}{sizeof}(Args));
+
+std::unique\_ptr<uint8\_t[]> outbuff(\textcolor{keyword}{new} uint8\_t[\textcolor{keyword}{sizeof}(Args)]);
+uint32\_t size(0);
+\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} & locality : allLocalities)
+  \textcolor{keywordflow}{if} (static\_cast<uint32\_t>(locality) % 2)
+    \textcolor{comment}{// every call will overwrite outbuff}
+    \hyperlink{namespaceshad_1_1rt_acadca86a92a75be85e51534f905b7fef}{executeAtWithRetBuff}(locality, task, ptr, \textcolor{keyword}{sizeof}(Args),
+                         outbuff.get(), &size);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\textcolor{keyword}{const} uint8\_t *, \textcolor{keyword}{const} uint32\_t, \textcolor{keyword}{const} uint8\_t *, uint32\_t *);
+\end{DoxyCode}
+\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & The \hyperlink{classshad_1_1rt_1_1Locality}{Locality} where the function must be executed. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args\-Buffer} & A buffer of bytes to be passed to the function. \\
+\hline
+{\em buffer\-Size} & The size of the buffer args\-Buffer passed. \\
+\hline
+{\em result\-Buffer} & The buffer where to store the results. \\
+\hline
+{\em result\-Size} & The location where the runtime will store the number of bytes written in the result buffer \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_aeff4031b9c8382aa34ec65c853cf45b8}{\index{shad\-::rt@{shad\-::rt}!execute\-On\-All@{execute\-On\-All}}
+\index{execute\-On\-All@{execute\-On\-All}!shad::rt@{shad\-::rt}}
+\subsubsection[{execute\-On\-All}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T , typename In\-Args\-T $>$ void shad\-::rt\-::execute\-On\-All (
+\begin{DoxyParamCaption}
+\item[{Fun\-T \&\&}]{func, }
+\item[{const In\-Args\-T \&}]{args}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_aeff4031b9c8382aa34ec65c853cf45b8}
+
+
+Execute a function on all localities synchronously. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+\textcolor{keywordtype}{void} task(\textcolor{keyword}{const} Args & args) \{  \textcolor{comment}{/* do something */} \}
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+\hyperlink{namespaceshad_1_1rt_aeff4031b9c8382aa34ec65c853cf45b8}{executeOnAll}(task, args);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\textcolor{keyword}{const} InArgsT &);
+\end{DoxyCode}
+\\
+\hline
+{\em In\-Args\-T} & The type of the argument accepted by the function. The type can be a structure or a class but with the restriction that must be memcopy-\/able.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em func} & The function to execute. \\
+\hline
+{\em args} & The arguments to be passed to the function. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_af82c01717fef30752cd60051a92a9bee}{\index{shad\-::rt@{shad\-::rt}!execute\-On\-All@{execute\-On\-All}}
+\index{execute\-On\-All@{execute\-On\-All}!shad::rt@{shad\-::rt}}
+\subsubsection[{execute\-On\-All}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T $>$ void shad\-::rt\-::execute\-On\-All (
+\begin{DoxyParamCaption}
+\item[{Fun\-T \&\&}]{func, }
+\item[{const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&}]{args\-Buffer, }
+\item[{const uint32\-\_\-t}]{buffer\-Size}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_af82c01717fef30752cd60051a92a9bee}
+
+
+Execute a function on all localities synchronously. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+\textcolor{keywordtype}{void} task(\textcolor{keyword}{const} uint8\_t *, \textcolor{keyword}{const} uint32\_t) \{  \textcolor{comment}{/* do something */} \}
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+\textcolor{comment}{/* Args doesn't need a dynamic allocated buffer but}
+\textcolor{comment}{ * more complicated data structure might need it */}
+std::shared\_ptr<uint8\_t> ptr(\textcolor{keyword}{new} uint8\_t[\textcolor{keyword}{sizeof}(Args)],
+                             std::default\_delete<uint8\_t[]>());
+memcpy(ptr.get(), &args, \textcolor{keyword}{sizeof}(Args));
+
+\hyperlink{namespaceshad_1_1rt_aeff4031b9c8382aa34ec65c853cf45b8}{executeOnAll}(task, ptr.get(), \textcolor{keyword}{sizeof}(Args));
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\textcolor{keyword}{const} uint8\_t *, \textcolor{keyword}{const} uint32\_t);
+\end{DoxyCode}
+\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em func} & The function to execute. \\
+\hline
+{\em args\-Buffer} & A buffer of bytes to be passed to the function. \\
+\hline
+{\em buffer\-Size} & The size of the buffer args\-Buffer passed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a3701740e6d6681499063a0b5fa43645b}{\index{shad\-::rt@{shad\-::rt}!for\-Each\-At@{for\-Each\-At}}
+\index{for\-Each\-At@{for\-Each\-At}!shad::rt@{shad\-::rt}}
+\subsubsection[{for\-Each\-At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T , typename In\-Args\-T $>$ void shad\-::rt\-::for\-Each\-At (
+\begin{DoxyParamCaption}
+\item[{const Locality \&}]{loc, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const In\-Args\-T \&}]{args, }
+\item[{const size\-\_\-t}]{num\-Iters}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a3701740e6d6681499063a0b5fa43645b}
+
+
+Execute a parallel loop at a specific locality. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+
+\hyperlink{namespaceshad_1_1rt_a3701740e6d6681499063a0b5fa43645b}{shad::rt::forEachAt}(locality,
+    [](\textcolor{keyword}{const} Args & input, \textcolor{keywordtype}{size\_t} itrNum) \{
+        \textcolor{comment}{// Do something.}
+    \},
+    args, iterations);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\textcolor{keyword}{const} ArgsT &, \textcolor{keywordtype}{size\_t} itrNum);
+\end{DoxyCode}
+ where the itr\-Num is the n-\/th iteration of the loop.\\
+\hline
+{\em In\-Args\-T} & The type of the argument accepted by the function. The type can be a structure or a class but with the restriction that must be memcopy-\/able.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & The \hyperlink{classshad_1_1rt_1_1Locality}{Locality} where the function must be executed. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args} & The arguments to be passed to the function. \\
+\hline
+{\em num\-Iters} & The total number of iteration of the loop. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a7d0647bae3b6f6a7c870fee9b69bbf8e}{\index{shad\-::rt@{shad\-::rt}!for\-Each\-At@{for\-Each\-At}}
+\index{for\-Each\-At@{for\-Each\-At}!shad::rt@{shad\-::rt}}
+\subsubsection[{for\-Each\-At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T $>$ void shad\-::rt\-::for\-Each\-At (
+\begin{DoxyParamCaption}
+\item[{const Locality \&}]{loc, }
+\item[{Fun\-T \&\&}]{func, }
+\item[{const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&}]{args\-Buffer, }
+\item[{const uint32\-\_\-t}]{buffer\-Size, }
+\item[{const size\-\_\-t}]{num\-Iters}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a7d0647bae3b6f6a7c870fee9b69bbf8e}
+
+
+Execute a parallel loop at a specific locality. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+std::shared\_ptr<uint8\_t> ptr(\textcolor{keyword}{new} uint8\_t[2]\{ 5, 5 \},
+                             std::default\_delete<uint8\_t[]>());
+
+\hyperlink{namespaceshad_1_1rt_a3701740e6d6681499063a0b5fa43645b}{shad::rt::forEachAt}(locality,
+    [](\textcolor{keyword}{const} uint8\_t * input, \textcolor{keyword}{const} uint32\_t size, \textcolor{keywordtype}{size\_t} itrNum) \{
+        \textcolor{comment}{// Do something.}
+    \},
+    buffer, \textcolor{keyword}{sizeof}(buffer),
+    iterations);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\textcolor{keyword}{const} uint8\_t *, \textcolor{keyword}{const} uint32\_t, \textcolor{keywordtype}{size\_t} itrNum);
+\end{DoxyCode}
+ where the itr\-Num is the n-\/th iteration of the loop.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & The \hyperlink{classshad_1_1rt_1_1Locality}{Locality} where the function must be executed. \\
+\hline
+{\em func} & The function to execute. \\
+\hline
+{\em args\-Buffer} & A buffer of bytes to be passed to the function. \\
+\hline
+{\em buffer\-Size} & The size of the buffer args\-Buffer passed. \\
+\hline
+{\em num\-Iters} & The total number of iteration of the loop. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a681ee8fbfec5d92c2bc8cd3851eae0c7}{\index{shad\-::rt@{shad\-::rt}!for\-Each\-On\-All@{for\-Each\-On\-All}}
+\index{for\-Each\-On\-All@{for\-Each\-On\-All}!shad::rt@{shad\-::rt}}
+\subsubsection[{for\-Each\-On\-All}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T , typename In\-Args\-T $>$ void shad\-::rt\-::for\-Each\-On\-All (
+\begin{DoxyParamCaption}
+\item[{Fun\-T \&\&}]{func, }
+\item[{const In\-Args\-T \&}]{args, }
+\item[{const size\-\_\-t}]{num\-Iters}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a681ee8fbfec5d92c2bc8cd3851eae0c7}
+
+
+Execute a parallel loop on the whole system. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }Args \{
+  \textcolor{keywordtype}{int} a;
+  \textcolor{keywordtype}{char} b;
+\};
+
+Args args \{ 2, \textcolor{charliteral}{'a'} \};
+
+\hyperlink{namespaceshad_1_1rt_a681ee8fbfec5d92c2bc8cd3851eae0c7}{shad::rt::forEachOnAll}(
+    [](\textcolor{keyword}{const} Args & args, \textcolor{keywordtype}{size\_t} itrNum) \{
+      \textcolor{comment}{// Do something}
+    \},
+    args,
+    iterations);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\textcolor{keyword}{const} ArgsT &, \textcolor{keywordtype}{size\_t} itrNum);
+\end{DoxyCode}
+ where the itr\-Num is the n-\/th iteration of the loop.\\
+\hline
+{\em In\-Args\-T} & The type of the argument accepted by the function. The type can be a structure or a class but with the restriction that must be memcopy-\/able.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em func} & The function to execute. \\
+\hline
+{\em args} & The arguments to be passed to the function. \\
+\hline
+{\em num\-Iters} & The total number of iteration of the loop. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a3642b67c7ddc6f9d527616e4eb6cdbde}{\index{shad\-::rt@{shad\-::rt}!for\-Each\-On\-All@{for\-Each\-On\-All}}
+\index{for\-Each\-On\-All@{for\-Each\-On\-All}!shad::rt@{shad\-::rt}}
+\subsubsection[{for\-Each\-On\-All}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Fun\-T $>$ void shad\-::rt\-::for\-Each\-On\-All (
+\begin{DoxyParamCaption}
+\item[{Fun\-T \&\&}]{func, }
+\item[{const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&}]{args\-Buffer, }
+\item[{const uint32\-\_\-t}]{buffer\-Size, }
+\item[{const size\-\_\-t}]{num\-Iters}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_1_1rt_a3642b67c7ddc6f9d527616e4eb6cdbde}
+
+
+Execute a parallel loop on the whole system. 
+
+Typical Usage\-: 
+\begin{DoxyCode}
+std::shared\_ptr<uint8\_t> ptr(\textcolor{keyword}{new} uint8\_t[2]\{ 5, 5 \},
+                             std::default\_delete<uint8\_t[]>());
+
+  \hyperlink{namespaceshad_1_1rt_a681ee8fbfec5d92c2bc8cd3851eae0c7}{shad::rt::forEachOnAll}(
+      [](\textcolor{keyword}{const} uint8\_t * input, \textcolor{keyword}{const} uint32\_t size, \textcolor{keywordtype}{size\_t} itrNum) \{
+        \textcolor{comment}{// Do something}
+      \},
+      buffer, \textcolor{keyword}{sizeof}(buffer),
+      iterations);
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fun\-T} & The type of the function to be executed. The function prototype must be\-: 
+\begin{DoxyCode}
+void(\textcolor{keyword}{const} uint8\_t *, \textcolor{keyword}{const} uint32\_t, \textcolor{keywordtype}{size\_t} itrNum);
+\end{DoxyCode}
+ where the itr\-Num is the n-\/th iteration of the loop.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em func} & The function to execute. \\
+\hline
+{\em args\-Buffer} & A buffer of bytes to be passed to the function. \\
+\hline
+{\em buffer\-Size} & The size of the buffer args\-Buffer passed. \\
+\hline
+{\em num\-Iters} & The total number of iteration of the loop. \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceshad_1_1rt_a199bb50c21e9012f615520413872aef6}{\index{shad\-::rt@{shad\-::rt}!num\-Localities@{num\-Localities}}
+\index{num\-Localities@{num\-Localities}!shad::rt@{shad\-::rt}}
+\subsubsection[{num\-Localities}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t shad\-::rt\-::num\-Localities (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespaceshad_1_1rt_a199bb50c21e9012f615520413872aef6}
+
+
+Number of localities on which the runtime is executing. 
+
+\hypertarget{namespaceshad_1_1rt_a7536c33738a5dd285f3a44aa6a199faf}{\index{shad\-::rt@{shad\-::rt}!this\-Locality@{this\-Locality}}
+\index{this\-Locality@{this\-Locality}!shad::rt@{shad\-::rt}}
+\subsubsection[{this\-Locality}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Locality} shad\-::rt\-::this\-Locality (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespaceshad_1_1rt_a7536c33738a5dd285f3a44aa6a199faf}
+
+
+Identity of locality on which the call is made. 
+
+\hypertarget{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{\index{shad\-::rt@{shad\-::rt}!wait\-For\-Completion@{wait\-For\-Completion}}
+\index{wait\-For\-Completion@{wait\-For\-Completion}!shad::rt@{shad\-::rt}}
+\subsubsection[{wait\-For\-Completion}]{\setlength{\rightskip}{0pt plus 5cm}void shad\-::rt\-::wait\-For\-Completion (
+\begin{DoxyParamCaption}
+\item[{Handle \&}]{handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}
+
+
+Wait for completion of a set of tasks. 
+

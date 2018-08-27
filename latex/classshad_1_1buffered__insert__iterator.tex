@@ -1,0 +1,184 @@
+\hypertarget{classshad_1_1buffered__insert__iterator}{\section{shad\-:\-:buffered\-\_\-insert\-\_\-iterator$<$ Container $>$ Class Template Reference}
+\label{classshad_1_1buffered__insert__iterator}\index{shad\-::buffered\-\_\-insert\-\_\-iterator$<$ Container $>$@{shad\-::buffered\-\_\-insert\-\_\-iterator$<$ Container $>$}}
+}
+
+
+Buffered insert iterator.  
+
+
+
+
+{\ttfamily \#include $<$shad/core/iterator.\-h$>$}
+
+
+
+Inheritance diagram for shad\-:\-:buffered\-\_\-insert\-\_\-iterator$<$ Container $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classshad_1_1buffered__insert__iterator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for shad\-:\-:buffered\-\_\-insert\-\_\-iterator$<$ Container $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classshad_1_1buffered__insert__iterator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{classshad_1_1buffered__insert__iterator_a8d1e5c22ad001becf13b9d0f452eecf2}{container\-\_\-type} = Container
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classshad_1_1buffered__insert__iterator_a30c2613f13dc91cfb3f1b37099dc00c5}{buffered\-\_\-insert\-\_\-iterator} (Container \&container, Iterator iterator)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classshad_1_1buffered__insert__iterator}{buffered\-\_\-insert\-\_\-iterator} \& \hyperlink{classshad_1_1buffered__insert__iterator_ae52408e8adbe5dfd80c6347a3b93d017}{operator=} (const value\-\_\-type \&value)
+\begin{DoxyCompactList}\small\item\em The assignment operator. \end{DoxyCompactList}\item 
+void \hyperlink{classshad_1_1buffered__insert__iterator_aadf229f6aac3dbdfc204b7f6309b2e71}{flush} ()
+\begin{DoxyCompactList}\small\item\em Flushes pending insertions to the container. \end{DoxyCompactList}\item 
+\hyperlink{classshad_1_1buffered__insert__iterator_ae375c7de831143a927f581b441aa987d}{$\sim$buffered\-\_\-insert\-\_\-iterator} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classshad_1_1buffered__insert__iterator}{buffered\-\_\-insert\-\_\-iterator} \& \hyperlink{classshad_1_1buffered__insert__iterator_a329d91c1c95a1d86fe9b3cd14032bc23}{operator$\ast$} ()
+\item 
+\hyperlink{classshad_1_1buffered__insert__iterator}{buffered\-\_\-insert\-\_\-iterator} \& \hyperlink{classshad_1_1buffered__insert__iterator_a270b0bd4c6bfaa0cf656c4e65c676bef}{operator++} ()
+\item 
+\hyperlink{classshad_1_1buffered__insert__iterator}{buffered\-\_\-insert\-\_\-iterator} \& \hyperlink{classshad_1_1buffered__insert__iterator_a326909f8fb18bdb6ae9744e3b4a189f7}{operator++} (int)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Container $\ast$ \hyperlink{classshad_1_1buffered__insert__iterator_a9503b8887e7d8c9a911293c96898007c}{container\-\_\-}
+\item 
+Iterator \hyperlink{classshad_1_1buffered__insert__iterator_a47e9e89830c5acbda85c3d6a43cc6713}{iterator\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Container$>$class shad\-::buffered\-\_\-insert\-\_\-iterator$<$ Container $>$}
+
+Buffered insert iterator. 
+
+\hyperlink{classshad_1_1buffered__insert__iterator}{shad\-::buffered\-\_\-insert\-\_\-iterator} is an Output\-Iterator that inserts elements into a distributed container for which it was constructed, at the position pointed to by the supplied iterator. The buffered insertion is performed whenever the iterator (whether dereferenced or not) is assigned to. The buffer to be flushed into the container when the \hyperlink{classshad_1_1buffered__insert__iterator_aadf229f6aac3dbdfc204b7f6309b2e71}{flush()} function is called and also upon destruction. Incrementing the \hyperlink{classshad_1_1buffered__insert__iterator}{shad\-::buffered\-\_\-insert\-\_\-iterator} is a no-\/op.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Container} & The type of the distributed container. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classshad_1_1buffered__insert__iterator_a8d1e5c22ad001becf13b9d0f452eecf2}{\index{shad\-::buffered\-\_\-insert\-\_\-iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}!container\-\_\-type@{container\-\_\-type}}
+\index{container\-\_\-type@{container\-\_\-type}!shad::buffered_insert_iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}}
+\subsubsection[{container\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Container $>$ using {\bf shad\-::buffered\-\_\-insert\-\_\-iterator}$<$ Container $>$\-::{\bf container\-\_\-type} =  Container}}\label{classshad_1_1buffered__insert__iterator_a8d1e5c22ad001becf13b9d0f452eecf2}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classshad_1_1buffered__insert__iterator_a30c2613f13dc91cfb3f1b37099dc00c5}{\index{shad\-::buffered\-\_\-insert\-\_\-iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}!buffered\-\_\-insert\-\_\-iterator@{buffered\-\_\-insert\-\_\-iterator}}
+\index{buffered\-\_\-insert\-\_\-iterator@{buffered\-\_\-insert\-\_\-iterator}!shad::buffered_insert_iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}}
+\subsubsection[{buffered\-\_\-insert\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Container $>$ {\bf shad\-::buffered\-\_\-insert\-\_\-iterator}$<$ Container $>$\-::{\bf buffered\-\_\-insert\-\_\-iterator} (
+\begin{DoxyParamCaption}
+\item[{Container \&}]{container, }
+\item[{Iterator}]{iterator}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1buffered__insert__iterator_a30c2613f13dc91cfb3f1b37099dc00c5}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em container} & The container into which the iterator inserts. \\
+\hline
+{\em iterator} & The position at which the iterator starts to insert. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1buffered__insert__iterator_ae375c7de831143a927f581b441aa987d}{\index{shad\-::buffered\-\_\-insert\-\_\-iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}!$\sim$buffered\-\_\-insert\-\_\-iterator@{$\sim$buffered\-\_\-insert\-\_\-iterator}}
+\index{$\sim$buffered\-\_\-insert\-\_\-iterator@{$\sim$buffered\-\_\-insert\-\_\-iterator}!shad::buffered_insert_iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}}
+\subsubsection[{$\sim$buffered\-\_\-insert\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Container $>$ {\bf shad\-::buffered\-\_\-insert\-\_\-iterator}$<$ Container $>$\-::$\sim${\bf buffered\-\_\-insert\-\_\-iterator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1buffered__insert__iterator_ae375c7de831143a927f581b441aa987d}
+
+
+Destructor. 
+
+The destruction flushes all pending insertions into the container. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classshad_1_1buffered__insert__iterator_aadf229f6aac3dbdfc204b7f6309b2e71}{\index{shad\-::buffered\-\_\-insert\-\_\-iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}!flush@{flush}}
+\index{flush@{flush}!shad::buffered_insert_iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}}
+\subsubsection[{flush}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Container $>$ void {\bf shad\-::buffered\-\_\-insert\-\_\-iterator}$<$ Container $>$\-::flush (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1buffered__insert__iterator_aadf229f6aac3dbdfc204b7f6309b2e71}
+
+
+Flushes pending insertions to the container. 
+
+\hypertarget{classshad_1_1buffered__insert__iterator_a329d91c1c95a1d86fe9b3cd14032bc23}{\index{shad\-::buffered\-\_\-insert\-\_\-iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!shad::buffered_insert_iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Container $>$ {\bf buffered\-\_\-insert\-\_\-iterator}\& {\bf shad\-::buffered\-\_\-insert\-\_\-iterator}$<$ Container $>$\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1buffered__insert__iterator_a329d91c1c95a1d86fe9b3cd14032bc23}
+\hypertarget{classshad_1_1buffered__insert__iterator_a270b0bd4c6bfaa0cf656c4e65c676bef}{\index{shad\-::buffered\-\_\-insert\-\_\-iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!shad::buffered_insert_iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Container $>$ {\bf buffered\-\_\-insert\-\_\-iterator}\& {\bf shad\-::buffered\-\_\-insert\-\_\-iterator}$<$ Container $>$\-::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1buffered__insert__iterator_a270b0bd4c6bfaa0cf656c4e65c676bef}
+\hypertarget{classshad_1_1buffered__insert__iterator_a326909f8fb18bdb6ae9744e3b4a189f7}{\index{shad\-::buffered\-\_\-insert\-\_\-iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!shad::buffered_insert_iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Container $>$ {\bf buffered\-\_\-insert\-\_\-iterator}\& {\bf shad\-::buffered\-\_\-insert\-\_\-iterator}$<$ Container $>$\-::operator++ (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1buffered__insert__iterator_a326909f8fb18bdb6ae9744e3b4a189f7}
+\hypertarget{classshad_1_1buffered__insert__iterator_ae52408e8adbe5dfd80c6347a3b93d017}{\index{shad\-::buffered\-\_\-insert\-\_\-iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}!operator=@{operator=}}
+\index{operator=@{operator=}!shad::buffered_insert_iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Container $>$ {\bf buffered\-\_\-insert\-\_\-iterator}\& {\bf shad\-::buffered\-\_\-insert\-\_\-iterator}$<$ Container $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const value\-\_\-type \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1buffered__insert__iterator_ae52408e8adbe5dfd80c6347a3b93d017}
+
+
+The assignment operator. 
+
+The assignment operator inserts a value (through buffering) and advance iterator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & A const reference to the value to be inserted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A self reference. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classshad_1_1buffered__insert__iterator_a9503b8887e7d8c9a911293c96898007c}{\index{shad\-::buffered\-\_\-insert\-\_\-iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}!container\-\_\-@{container\-\_\-}}
+\index{container\-\_\-@{container\-\_\-}!shad::buffered_insert_iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}}
+\subsubsection[{container\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Container $>$ Container$\ast$ {\bf shad\-::buffered\-\_\-insert\-\_\-iterator}$<$ Container $>$\-::container\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classshad_1_1buffered__insert__iterator_a9503b8887e7d8c9a911293c96898007c}
+\hypertarget{classshad_1_1buffered__insert__iterator_a47e9e89830c5acbda85c3d6a43cc6713}{\index{shad\-::buffered\-\_\-insert\-\_\-iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}!iterator\-\_\-@{iterator\-\_\-}}
+\index{iterator\-\_\-@{iterator\-\_\-}!shad::buffered_insert_iterator@{shad\-::buffered\-\_\-insert\-\_\-iterator}}
+\subsubsection[{iterator\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Container $>$ Iterator {\bf shad\-::buffered\-\_\-insert\-\_\-iterator}$<$ Container $>$\-::iterator\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classshad_1_1buffered__insert__iterator_a47e9e89830c5acbda85c3d6a43cc6713}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/shad/core/\hyperlink{iterator_8h}{iterator.\-h}\end{DoxyCompactItemize}

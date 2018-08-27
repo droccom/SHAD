@@ -1,0 +1,645 @@
+\hypertarget{classshad_1_1LocalHashmap}{\section{shad\-:\-:Local\-Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$ Class Template Reference}
+\label{classshad_1_1LocalHashmap}\index{shad\-::\-Local\-Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$@{shad\-::\-Local\-Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$}}
+}
+
+
+The \hyperlink{classshad_1_1LocalHashmap}{Local\-Hashmap} data structure.  
+
+
+
+
+{\ttfamily \#include $<$shad/data\-\_\-structures/local\-\_\-hashmap.\-h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structshad_1_1LocalHashmap_1_1LookupResult}{Lookup\-Result}
+\begin{DoxyCompactList}\small\item\em Result for the \hyperlink{classshad_1_1LocalHashmap_a9bd1b3780c1c676ce8d5eae265030080}{Lookup(const K\-T\-Y\-P\-E\&, Lookup\-Result$\ast$)} and \hyperlink{classshad_1_1LocalHashmap_a0328e22adb5dd53e819cc1791e802a56}{Async\-Lookup(rt\-::\-Handle\&, const K\-T\-Y\-P\-E\&, Lookup\-Result$\ast$)} methods. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{classshad_1_1LocalHashmap_a3fa27c320a046745e01804325f15dd0e}{value\-\_\-type} = std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$
+\item 
+using \hyperlink{classshad_1_1LocalHashmap_a130dbe16edd42ee7aa2e27eac6ee3cf4}{iterator} = \hyperlink{classshad_1_1lmap__iterator}{lmap\-\_\-iterator}$<$ \hyperlink{classshad_1_1LocalHashmap}{Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$$>$
+\item 
+using \hyperlink{classshad_1_1LocalHashmap_ad5e054bdbc20f161cd8df8e00c525401}{const\-\_\-iterator} = \hyperlink{classshad_1_1lmap__iterator}{lmap\-\_\-iterator}$<$ \hyperlink{classshad_1_1LocalHashmap}{Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$$>$
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classshad_1_1LocalHashmap_a6c0ce5d7583545126171e9de452b89d9}{Local\-Hashmap} (const size\-\_\-t num\-Init\-Buckets)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classshad_1_1LocalHashmap_ac70c307f612b97f08f5e38bba7759665}{Size} () const 
+\begin{DoxyCompactList}\small\item\em Size of the hashmap (number of entries). \end{DoxyCompactList}\item 
+V\-T\-Y\-P\-E $\ast$ \hyperlink{classshad_1_1LocalHashmap_af3ef8afed1593bf034477b8692661b97}{Insert} (const K\-T\-Y\-P\-E \&key, const V\-T\-Y\-P\-E \&value)
+\begin{DoxyCompactList}\small\item\em Insert a key-\/value pair in the hashmap. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename E\-L\-T\-Y\-P\-E $>$ }\\V\-T\-Y\-P\-E $\ast$ \hyperlink{classshad_1_1LocalHashmap_ad8062ff16023002c7aee667f3fe4cfd2}{Insert} (const K\-T\-Y\-P\-E \&key, const E\-L\-T\-Y\-P\-E \&value)
+\item 
+void \hyperlink{classshad_1_1LocalHashmap_acb5581492e044c07bd0ceaa3a6892309}{Async\-Insert} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, const K\-T\-Y\-P\-E \&key, const V\-T\-Y\-P\-E \&value)
+\begin{DoxyCompactList}\small\item\em Asynchronously Insert a key-\/value pair in the hashmap. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename E\-L\-T\-Y\-P\-E $>$ }\\void \hyperlink{classshad_1_1LocalHashmap_ace0dd4d4a9caee1d915af6efcb4fc2c6}{Async\-Insert} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, const K\-T\-Y\-P\-E \&key, const E\-L\-T\-Y\-P\-E \&value)
+\item 
+void \hyperlink{classshad_1_1LocalHashmap_a5d57f63d0515acf2d53c99fb56eda93c}{Erase} (const K\-T\-Y\-P\-E \&key)
+\begin{DoxyCompactList}\small\item\em Remove a key-\/value pair from the hashmap. \end{DoxyCompactList}\item 
+void \hyperlink{classshad_1_1LocalHashmap_a78d00a5d4b2591cefcafb44247d9131d}{Async\-Erase} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, const K\-T\-Y\-P\-E \&key)
+\begin{DoxyCompactList}\small\item\em Asynchronously remove a key-\/value pair from the hashmap. \end{DoxyCompactList}\item 
+void \hyperlink{classshad_1_1LocalHashmap_a4e95baa9af6646d2c66adc1b8ae5781c}{Clear} ()
+\begin{DoxyCompactList}\small\item\em Clear the content of the hashmap. \end{DoxyCompactList}\item 
+bool \hyperlink{classshad_1_1LocalHashmap_a0365f5c68c75b04109639e8f65cc8eb0}{Lookup} (const K\-T\-Y\-P\-E \&key, V\-T\-Y\-P\-E $\ast$res)
+\begin{DoxyCompactList}\small\item\em Get the value associated to a key. \end{DoxyCompactList}\item 
+V\-T\-Y\-P\-E $\ast$ \hyperlink{classshad_1_1LocalHashmap_ae37645e79a683b4bc8c096a37cacf74d}{Lookup} (const K\-T\-Y\-P\-E \&key)
+\begin{DoxyCompactList}\small\item\em Get the value associated to a key. \end{DoxyCompactList}\item 
+void \hyperlink{classshad_1_1LocalHashmap_ab80af4eef1ce16673c1895bd6cd3951b}{Async\-Lookup} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, const K\-T\-Y\-P\-E \&key, V\-T\-Y\-P\-E $\ast$$\ast$res)
+\begin{DoxyCompactList}\small\item\em Asynchronously get the value associated to a key. \end{DoxyCompactList}\item 
+void \hyperlink{classshad_1_1LocalHashmap_a9bd1b3780c1c676ce8d5eae265030080}{Lookup} (const K\-T\-Y\-P\-E \&key, \hyperlink{structshad_1_1LocalHashmap_1_1LookupResult}{Lookup\-Result} $\ast$res)
+\begin{DoxyCompactList}\small\item\em Lookup method. \end{DoxyCompactList}\item 
+void \hyperlink{classshad_1_1LocalHashmap_a0328e22adb5dd53e819cc1791e802a56}{Async\-Lookup} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, const K\-T\-Y\-P\-E \&key, \hyperlink{structshad_1_1LocalHashmap_1_1LookupResult}{Lookup\-Result} $\ast$res)
+\begin{DoxyCompactList}\small\item\em Asynchronous lookup method. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Apply\-Fun\-T , typename... Args$>$ }\\void \hyperlink{classshad_1_1LocalHashmap_aa95a9226e3f63dbe5ce08593552175fe}{Apply} (const K\-T\-Y\-P\-E \&key, Apply\-Fun\-T \&\&function, Args \&...args)
+\begin{DoxyCompactList}\small\item\em Apply a user-\/defined function to a key-\/value pair. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Apply\-Fun\-T , typename... Args$>$ }\\void \hyperlink{classshad_1_1LocalHashmap_a359f3fae23cbb8c4548d6abe0047ac9b}{Async\-Apply} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, const K\-T\-Y\-P\-E \&key, Apply\-Fun\-T \&\&function, Args \&...args)
+\begin{DoxyCompactList}\small\item\em Asynchronously apply a user-\/defined function to a key-\/value pair. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Apply\-Fun\-T , typename... Args$>$ }\\void \hyperlink{classshad_1_1LocalHashmap_a0532b7cb7bd734295e18699a00dc8998}{For\-Each\-Entry} (Apply\-Fun\-T \&\&function, Args \&...args)
+\begin{DoxyCompactList}\small\item\em Apply a user-\/defined function to each key-\/value pair. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Apply\-Fun\-T , typename... Args$>$ }\\void \hyperlink{classshad_1_1LocalHashmap_a82d24ff551ababdabb0d50e6c7827c0a}{Async\-For\-Each\-Entry} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, Apply\-Fun\-T \&\&function, Args \&...args)
+\begin{DoxyCompactList}\small\item\em Asynchronously apply a user-\/defined function to each key-\/value pair. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Apply\-Fun\-T , typename... Args$>$ }\\void \hyperlink{classshad_1_1LocalHashmap_af8308e042d3b4a435517404ca4679d82}{For\-Each\-Key} (Apply\-Fun\-T \&\&function, Args \&...args)
+\begin{DoxyCompactList}\small\item\em Apply a user-\/defined function to each key. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Apply\-Fun\-T , typename... Args$>$ }\\void \hyperlink{classshad_1_1LocalHashmap_a559f24258bb798fdfafbb28fc70ccbd8}{Async\-For\-Each\-Key} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, Apply\-Fun\-T \&\&function, Args \&...args)
+\begin{DoxyCompactList}\small\item\em Asynchronously apply a user-\/defined function to each key. \end{DoxyCompactList}\item 
+void \hyperlink{classshad_1_1LocalHashmap_a7dc7ac304876af70108a24c7b82d408e}{Print\-All\-Entries} ()
+\begin{DoxyCompactList}\small\item\em Print all the entries in the hashmap. \end{DoxyCompactList}\item 
+\hyperlink{classshad_1_1LocalHashmap_a130dbe16edd42ee7aa2e27eac6ee3cf4}{iterator} \hyperlink{classshad_1_1LocalHashmap_ad84d91d8fd4448a2017b39480c842984}{begin} ()
+\item 
+\hyperlink{classshad_1_1LocalHashmap_a130dbe16edd42ee7aa2e27eac6ee3cf4}{iterator} \hyperlink{classshad_1_1LocalHashmap_a6171d13fb3d6d493068e23cd166e8929}{end} ()
+\item 
+\hyperlink{classshad_1_1LocalHashmap_ad5e054bdbc20f161cd8df8e00c525401}{const\-\_\-iterator} \hyperlink{classshad_1_1LocalHashmap_a9cc4e9135d4808fbf53f253755744019}{cbegin} ()
+\item 
+\hyperlink{classshad_1_1LocalHashmap_ad5e054bdbc20f161cd8df8e00c525401}{const\-\_\-iterator} \hyperlink{classshad_1_1LocalHashmap_a18da968a5c684f5b4abbdd0bf6760574}{cend} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename , typename , typename , typename $>$ }\\class \hyperlink{classshad_1_1LocalHashmap_a14c7f14e3d86371810686e384b53cbb6}{Hashmap}
+\item 
+class \hyperlink{classshad_1_1LocalHashmap_a0782f66aa59afb708b15c0ef7782c20d}{lmap\-\_\-iterator$<$ Local\-Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}
+\item 
+class \hyperlink{classshad_1_1LocalHashmap_a409d20941abf9e3ce2b3f49f749fe1f7}{lmap\-\_\-iterator$<$ Local\-Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}
+\item 
+{\footnotesize template$<$typename , typename , typename $>$ }\\class \hyperlink{classshad_1_1LocalHashmap_ae4a075e5a8191685a74f2d18b8cd8850}{map\-\_\-iterator}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$class shad\-::\-Local\-Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$}
+
+The \hyperlink{classshad_1_1LocalHashmap}{Local\-Hashmap} data structure. 
+
+S\-H\-A\-D's \hyperlink{classshad_1_1LocalHashmap}{Local\-Hashmap} is a \char`\"{}local\char`\"{}, thread-\/safe, associative container. Local\-Hashmaps can be used O\-N\-L\-Y on the Locality on which they are created. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em K\-T\-Y\-P\-E} & type of the hashmap keys. \\
+\hline
+{\em V\-T\-Y\-P\-E} & type of the hashmap values. \\
+\hline
+{\em K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E} & key comparison function; default is Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$. \\
+\hline
+{\em I\-N\-S\-E\-R\-T\-E\-R} & default is \hyperlink{structshad_1_1Overwriter}{Overwriter} (i.\-e. insertions overwrite previous values associated to the same key, if any). \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classshad_1_1LocalHashmap_ad5e054bdbc20f161cd8df8e00c525401}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!const\-\_\-iterator@{const\-\_\-iterator}}
+\index{const\-\_\-iterator@{const\-\_\-iterator}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{const\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ using {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::{\bf const\-\_\-iterator} =  {\bf lmap\-\_\-iterator}$<${\bf Local\-Hashmap}$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R$>$, const std\-::pair$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E$>$$>$}}\label{classshad_1_1LocalHashmap_ad5e054bdbc20f161cd8df8e00c525401}
+\hypertarget{classshad_1_1LocalHashmap_a130dbe16edd42ee7aa2e27eac6ee3cf4}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!iterator@{iterator}}
+\index{iterator@{iterator}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ using {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::{\bf iterator} =  {\bf lmap\-\_\-iterator}$<${\bf Local\-Hashmap}$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R$>$, std\-::pair$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E$>$$>$}}\label{classshad_1_1LocalHashmap_a130dbe16edd42ee7aa2e27eac6ee3cf4}
+\hypertarget{classshad_1_1LocalHashmap_a3fa27c320a046745e01804325f15dd0e}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ using {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::{\bf value\-\_\-type} =  std\-::pair$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E$>$}}\label{classshad_1_1LocalHashmap_a3fa27c320a046745e01804325f15dd0e}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classshad_1_1LocalHashmap_a6c0ce5d7583545126171e9de452b89d9}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Local\-Hashmap@{Local\-Hashmap}}
+\index{Local\-Hashmap@{Local\-Hashmap}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Local\-Hashmap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::{\bf Local\-Hashmap} (
+\begin{DoxyParamCaption}
+\item[{const size\-\_\-t}]{num\-Init\-Buckets}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classshad_1_1LocalHashmap_a6c0ce5d7583545126171e9de452b89d9}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\-Init\-Buckets} & initial number of Buckets. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classshad_1_1LocalHashmap_aa95a9226e3f63dbe5ce08593552175fe}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Apply@{Apply}}
+\index{Apply@{Apply}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Apply}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ template$<$typename Apply\-Fun\-T , typename... Args$>$ void {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Apply (
+\begin{DoxyParamCaption}
+\item[{const K\-T\-Y\-P\-E \&}]{key, }
+\item[{Apply\-Fun\-T \&\&}]{function, }
+\item[{Args \&...}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1LocalHashmap_aa95a9226e3f63dbe5ce08593552175fe}
+
+
+Apply a user-\/defined function to a key-\/value pair. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Apply\-Fun\-T} & User-\/defined function type. The function prototype should be\-: 
+\begin{DoxyCode}
+void(\textcolor{keyword}{const} KTYPE&, VTYPE&, Args&);
+\end{DoxyCode}
+ \\
+\hline
+{\em ...\-Args} & Types of the function arguments.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key} & The key. \\
+\hline
+ & {\em function} & The function to apply. \\
+\hline
+ & {\em args} & The function arguments. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1LocalHashmap_a359f3fae23cbb8c4548d6abe0047ac9b}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Async\-Apply@{Async\-Apply}}
+\index{Async\-Apply@{Async\-Apply}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Async\-Apply}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-E\-R $>$ template$<$typename Apply\-Fun\-T , typename... Args$>$ void {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Async\-Apply (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{const K\-T\-Y\-P\-E \&}]{key, }
+\item[{Apply\-Fun\-T \&\&}]{function, }
+\item[{Args \&...}]{args}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1LocalHashmap_a359f3fae23cbb8c4548d6abe0047ac9b}
+
+
+Asynchronously apply a user-\/defined function to a key-\/value pair. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Apply\-Fun\-T} & User-\/defined function type. The function prototype should be\-: 
+\begin{DoxyCode}
+void(rt::Handle &handle, \textcolor{keyword}{const} KTYPE&, VTYPE&, Args&);
+\end{DoxyCode}
+ \\
+\hline
+{\em ...\-Args} & Types of the function arguments.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em handle} & Reference to the handle. \\
+\hline
+\mbox{\tt in}  & {\em key} & The key. \\
+\hline
+ & {\em function} & The function to apply. \\
+\hline
+ & {\em args} & The function arguments. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1LocalHashmap_a78d00a5d4b2591cefcafb44247d9131d}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Async\-Erase@{Async\-Erase}}
+\index{Async\-Erase@{Async\-Erase}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Async\-Erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-E\-R $>$ void {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Async\-Erase (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{const K\-T\-Y\-P\-E \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1LocalHashmap_a78d00a5d4b2591cefcafb44247d9131d}
+
+
+Asynchronously remove a key-\/value pair from the hashmap. 
+
+\begin{DoxyWarning}{Warning}
+Asynchronous operations are guaranteed to have completed. only after calling the \hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{rt\-::wait\-For\-Completion(rt\-::\-Handle \&handle)} method. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em handle} & Reference to the handle. to be used to wait for completion. \\
+\hline
+\mbox{\tt in}  & {\em key} & the key. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1LocalHashmap_a82d24ff551ababdabb0d50e6c7827c0a}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Async\-For\-Each\-Entry@{Async\-For\-Each\-Entry}}
+\index{Async\-For\-Each\-Entry@{Async\-For\-Each\-Entry}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Async\-For\-Each\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-E\-R $>$ template$<$typename Apply\-Fun\-T , typename... Args$>$ void {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Async\-For\-Each\-Entry (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{Apply\-Fun\-T \&\&}]{function, }
+\item[{Args \&...}]{args}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1LocalHashmap_a82d24ff551ababdabb0d50e6c7827c0a}
+
+
+Asynchronously apply a user-\/defined function to each key-\/value pair. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Apply\-Fun\-T} & User-\/defined function type. The function prototype should be\-: 
+\begin{DoxyCode}
+void(\hyperlink{classshad_1_1rt_1_1Handle}{shad::rt::Handle}&, \textcolor{keyword}{const} KTYPE&, VTYPE&, Args&);
+\end{DoxyCode}
+ \\
+\hline
+{\em ...\-Args} & Types of the function arguments.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyWarning}{Warning}
+Asynchronous operations are guaranteed to have completed. only after calling the \hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{rt\-::wait\-For\-Completion(rt\-::\-Handle \&handle)} method.
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em handle} & Reference to the handle. to be used to wait for completion. \\
+\hline
+ & {\em function} & The function to apply. \\
+\hline
+ & {\em args} & The function arguments. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1LocalHashmap_a559f24258bb798fdfafbb28fc70ccbd8}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Async\-For\-Each\-Key@{Async\-For\-Each\-Key}}
+\index{Async\-For\-Each\-Key@{Async\-For\-Each\-Key}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Async\-For\-Each\-Key}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-E\-R $>$ template$<$typename Apply\-Fun\-T , typename... Args$>$ void {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Async\-For\-Each\-Key (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{Apply\-Fun\-T \&\&}]{function, }
+\item[{Args \&...}]{args}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1LocalHashmap_a559f24258bb798fdfafbb28fc70ccbd8}
+
+
+Asynchronously apply a user-\/defined function to each key. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Apply\-Fun\-T} & User-\/defined function type. The function prototype should be\-: 
+\begin{DoxyCode}
+void(\hyperlink{classshad_1_1rt_1_1Handle}{shad::rt::Handle}&, \textcolor{keyword}{const} KTYPE&, Args&);
+\end{DoxyCode}
+ \\
+\hline
+{\em ...\-Args} & Types of the function arguments. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyWarning}{Warning}
+Asynchronous operations are guaranteed to have completed. only after calling the \hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{rt\-::wait\-For\-Completion(rt\-::\-Handle \&handle)} method. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em handle} & Reference to the handle. to be used to wait for completion. \\
+\hline
+ & {\em function} & The function to apply. \\
+\hline
+ & {\em args} & The function arguments. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1LocalHashmap_acb5581492e044c07bd0ceaa3a6892309}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Async\-Insert@{Async\-Insert}}
+\index{Async\-Insert@{Async\-Insert}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Async\-Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-E\-R $>$ void {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Async\-Insert (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{const K\-T\-Y\-P\-E \&}]{key, }
+\item[{const V\-T\-Y\-P\-E \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1LocalHashmap_acb5581492e044c07bd0ceaa3a6892309}
+
+
+Asynchronously Insert a key-\/value pair in the hashmap. 
+
+\begin{DoxyWarning}{Warning}
+Asynchronous operations are guaranteed to have completed only after calling the \hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{rt\-::wait\-For\-Completion(rt\-::\-Handle \&handle)} method. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em handle} & Reference to the handle to be used to wait for completion. \\
+\hline
+\mbox{\tt in}  & {\em key} & the key. \\
+\hline
+\mbox{\tt in}  & {\em value} & the value to copy into the hash\-Map. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the value if the the key-\/value was inserted or a pointer to a previously inserted value. 
+\end{DoxyReturn}
+\hypertarget{classshad_1_1LocalHashmap_ace0dd4d4a9caee1d915af6efcb4fc2c6}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Async\-Insert@{Async\-Insert}}
+\index{Async\-Insert@{Async\-Insert}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Async\-Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-E\-R $>$ template$<$typename E\-L\-T\-Y\-P\-E $>$ void {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Async\-Insert (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{const K\-T\-Y\-P\-E \&}]{key, }
+\item[{const E\-L\-T\-Y\-P\-E \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1LocalHashmap_ace0dd4d4a9caee1d915af6efcb4fc2c6}
+\hypertarget{classshad_1_1LocalHashmap_ab80af4eef1ce16673c1895bd6cd3951b}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Async\-Lookup@{Async\-Lookup}}
+\index{Async\-Lookup@{Async\-Lookup}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Async\-Lookup}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-E\-R $>$ void {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Async\-Lookup (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{const K\-T\-Y\-P\-E \&}]{key, }
+\item[{V\-T\-Y\-P\-E $\ast$$\ast$}]{res}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1LocalHashmap_ab80af4eef1ce16673c1895bd6cd3951b}
+
+
+Asynchronously get the value associated to a key. 
+
+\begin{DoxyWarning}{Warning}
+Asynchronous operations are guaranteed to have completed only after calling the \hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{rt\-::wait\-For\-Completion(rt\-::\-Handle \&handle)} method. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em handle} & Reference to the handle to be used to wait for completion. \\
+\hline
+\mbox{\tt in}  & {\em key} & the key. \\
+\hline
+\mbox{\tt out}  & {\em res} & the address where to storethe pointer to the value if the the key-\/value was found, or a nullptr otherwise. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1LocalHashmap_a0328e22adb5dd53e819cc1791e802a56}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Async\-Lookup@{Async\-Lookup}}
+\index{Async\-Lookup@{Async\-Lookup}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Async\-Lookup}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-E\-R $>$ void {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Async\-Lookup (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{const K\-T\-Y\-P\-E \&}]{key, }
+\item[{{\bf Lookup\-Result} $\ast$}]{res}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1LocalHashmap_a0328e22adb5dd53e819cc1791e802a56}
+
+
+Asynchronous lookup method. 
+
+\begin{DoxyWarning}{Warning}
+Asynchronous operations are guaranteed to have completed. only after calling the \hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{rt\-::wait\-For\-Completion(rt\-::\-Handle \&handle)} method.
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em handle} & Reference to the handle. to be used to wait for completion. \\
+\hline
+\mbox{\tt in}  & {\em key} & The key. \\
+\hline
+\mbox{\tt out}  & {\em res} & The result of the lookup operation. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1LocalHashmap_ad84d91d8fd4448a2017b39480c842984}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!begin@{begin}}
+\index{begin@{begin}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ {\bf iterator} {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1LocalHashmap_ad84d91d8fd4448a2017b39480c842984}
+\hypertarget{classshad_1_1LocalHashmap_a9cc4e9135d4808fbf53f253755744019}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{cbegin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ {\bf const\-\_\-iterator} {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::cbegin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1LocalHashmap_a9cc4e9135d4808fbf53f253755744019}
+\hypertarget{classshad_1_1LocalHashmap_a18da968a5c684f5b4abbdd0bf6760574}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!cend@{cend}}
+\index{cend@{cend}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{cend}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ {\bf const\-\_\-iterator} {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::cend (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1LocalHashmap_a18da968a5c684f5b4abbdd0bf6760574}
+\hypertarget{classshad_1_1LocalHashmap_a4e95baa9af6646d2c66adc1b8ae5781c}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Clear@{Clear}}
+\index{Clear@{Clear}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ void {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1LocalHashmap_a4e95baa9af6646d2c66adc1b8ae5781c}
+
+
+Clear the content of the hashmap. 
+
+\hypertarget{classshad_1_1LocalHashmap_a6171d13fb3d6d493068e23cd166e8929}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!end@{end}}
+\index{end@{end}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ {\bf iterator} {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1LocalHashmap_a6171d13fb3d6d493068e23cd166e8929}
+\hypertarget{classshad_1_1LocalHashmap_a5d57f63d0515acf2d53c99fb56eda93c}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Erase@{Erase}}
+\index{Erase@{Erase}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-E\-R $>$ void {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Erase (
+\begin{DoxyParamCaption}
+\item[{const K\-T\-Y\-P\-E \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1LocalHashmap_a5d57f63d0515acf2d53c99fb56eda93c}
+
+
+Remove a key-\/value pair from the hashmap. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key} & the key. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1LocalHashmap_a0532b7cb7bd734295e18699a00dc8998}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!For\-Each\-Entry@{For\-Each\-Entry}}
+\index{For\-Each\-Entry@{For\-Each\-Entry}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{For\-Each\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-E\-R $>$ template$<$typename Apply\-Fun\-T , typename... Args$>$ void {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::For\-Each\-Entry (
+\begin{DoxyParamCaption}
+\item[{Apply\-Fun\-T \&\&}]{function, }
+\item[{Args \&...}]{args}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1LocalHashmap_a0532b7cb7bd734295e18699a00dc8998}
+
+
+Apply a user-\/defined function to each key-\/value pair. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Apply\-Fun\-T} & User-\/defined function type. The function prototype should be\-: 
+\begin{DoxyCode}
+void(\textcolor{keyword}{const} KTYPE&, VTYPE&, Args&);
+\end{DoxyCode}
+ \\
+\hline
+{\em ...\-Args} & Types of the function arguments.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em function} & The function to apply. \\
+\hline
+{\em args} & The function arguments. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1LocalHashmap_af8308e042d3b4a435517404ca4679d82}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!For\-Each\-Key@{For\-Each\-Key}}
+\index{For\-Each\-Key@{For\-Each\-Key}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{For\-Each\-Key}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-E\-R $>$ template$<$typename Apply\-Fun\-T , typename... Args$>$ void {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::For\-Each\-Key (
+\begin{DoxyParamCaption}
+\item[{Apply\-Fun\-T \&\&}]{function, }
+\item[{Args \&...}]{args}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1LocalHashmap_af8308e042d3b4a435517404ca4679d82}
+
+
+Apply a user-\/defined function to each key. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Apply\-Fun\-T} & User-\/defined function type. The function prototype should be\-: 
+\begin{DoxyCode}
+void(\textcolor{keyword}{const} KTYPE&, Args&);
+\end{DoxyCode}
+ \\
+\hline
+{\em ...\-Args} & Types of the function arguments. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em function} & The function to apply. \\
+\hline
+{\em args} & The function arguments. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1LocalHashmap_af3ef8afed1593bf034477b8692661b97}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Insert@{Insert}}
+\index{Insert@{Insert}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-E\-R $>$ V\-T\-Y\-P\-E $\ast$ {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Insert (
+\begin{DoxyParamCaption}
+\item[{const K\-T\-Y\-P\-E \&}]{key, }
+\item[{const V\-T\-Y\-P\-E \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1LocalHashmap_af3ef8afed1593bf034477b8692661b97}
+
+
+Insert a key-\/value pair in the hashmap. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key} & the key. \\
+\hline
+\mbox{\tt in}  & {\em value} & the value to copy into the hash\-Map. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the inserted value; 
+\end{DoxyReturn}
+\hypertarget{classshad_1_1LocalHashmap_ad8062ff16023002c7aee667f3fe4cfd2}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Insert@{Insert}}
+\index{Insert@{Insert}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-E\-R $>$ template$<$typename E\-L\-T\-Y\-P\-E $>$ V\-T\-Y\-P\-E $\ast$ {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Insert (
+\begin{DoxyParamCaption}
+\item[{const K\-T\-Y\-P\-E \&}]{key, }
+\item[{const E\-L\-T\-Y\-P\-E \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1LocalHashmap_ad8062ff16023002c7aee667f3fe4cfd2}
+\hypertarget{classshad_1_1LocalHashmap_a0365f5c68c75b04109639e8f65cc8eb0}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Lookup@{Lookup}}
+\index{Lookup@{Lookup}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Lookup}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ bool {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Lookup (
+\begin{DoxyParamCaption}
+\item[{const K\-T\-Y\-P\-E \&}]{key, }
+\item[{V\-T\-Y\-P\-E $\ast$}]{res}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1LocalHashmap_a0365f5c68c75b04109639e8f65cc8eb0}
+
+
+Get the value associated to a key. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key} & the key. \\
+\hline
+\mbox{\tt out}  & {\em res} & the address where to store the value, if the the key-\/value is found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the entry is found, false otherwise. 
+\end{DoxyReturn}
+\hypertarget{classshad_1_1LocalHashmap_ae37645e79a683b4bc8c096a37cacf74d}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Lookup@{Lookup}}
+\index{Lookup@{Lookup}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Lookup}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-E\-R $>$ V\-T\-Y\-P\-E $\ast$ {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Lookup (
+\begin{DoxyParamCaption}
+\item[{const K\-T\-Y\-P\-E \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1LocalHashmap_ae37645e79a683b4bc8c096a37cacf74d}
+
+
+Get the value associated to a key. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key} & the key. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the value if the the key-\/value is found and nullptr if it does not exists. 
+\end{DoxyReturn}
+\hypertarget{classshad_1_1LocalHashmap_a9bd1b3780c1c676ce8d5eae265030080}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Lookup@{Lookup}}
+\index{Lookup@{Lookup}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Lookup}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ void {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Lookup (
+\begin{DoxyParamCaption}
+\item[{const K\-T\-Y\-P\-E \&}]{key, }
+\item[{{\bf Lookup\-Result} $\ast$}]{res}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1LocalHashmap_a9bd1b3780c1c676ce8d5eae265030080}
+
+
+Lookup method. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key} & The key. \\
+\hline
+\mbox{\tt out}  & {\em res} & The result of the lookup operation. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classshad_1_1LocalHashmap_a7dc7ac304876af70108a24c7b82d408e}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Print\-All\-Entries@{Print\-All\-Entries}}
+\index{Print\-All\-Entries@{Print\-All\-Entries}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Print\-All\-Entries}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-E\-R $>$ void {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Print\-All\-Entries (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classshad_1_1LocalHashmap_a7dc7ac304876af70108a24c7b82d408e}
+
+
+Print all the entries in the hashmap. 
+
+\begin{DoxyWarning}{Warning}
+std\-::ostream \& operator$<$$<$ must be defined for both K\-T\-Y\-P\-E and V\-T\-Y\-P\-E 
+\end{DoxyWarning}
+\hypertarget{classshad_1_1LocalHashmap_ac70c307f612b97f08f5e38bba7759665}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Size@{Size}}
+\index{Size@{Size}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ size\-\_\-t {\bf shad\-::\-Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$\-::Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1LocalHashmap_ac70c307f612b97f08f5e38bba7759665}
+
+
+Size of the hashmap (number of entries). 
+
+\begin{DoxyReturn}{Returns}
+the size of the hashmap. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classshad_1_1LocalHashmap_a14c7f14e3d86371810686e384b53cbb6}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!Hashmap@{Hashmap}}
+\index{Hashmap@{Hashmap}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{Hashmap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ template$<$typename , typename , typename , typename $>$ friend class {\bf Hashmap}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1LocalHashmap_a14c7f14e3d86371810686e384b53cbb6}
+\hypertarget{classshad_1_1LocalHashmap_a409d20941abf9e3ce2b3f49f749fe1f7}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!lmap\-\_\-iterator$<$ Local\-Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$@{lmap\-\_\-iterator$<$ Local\-Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}}
+\index{lmap\-\_\-iterator$<$ Local\-Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$@{lmap\-\_\-iterator$<$ Local\-Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{lmap\-\_\-iterator$<$ Local\-Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ friend class {\bf lmap\-\_\-iterator}$<$ {\bf Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$,const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1LocalHashmap_a409d20941abf9e3ce2b3f49f749fe1f7}
+\hypertarget{classshad_1_1LocalHashmap_a0782f66aa59afb708b15c0ef7782c20d}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!lmap\-\_\-iterator$<$ Local\-Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$@{lmap\-\_\-iterator$<$ Local\-Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}}
+\index{lmap\-\_\-iterator$<$ Local\-Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$@{lmap\-\_\-iterator$<$ Local\-Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{lmap\-\_\-iterator$<$ Local\-Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ friend class {\bf lmap\-\_\-iterator}$<$ {\bf Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-E\-R $>$,std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1LocalHashmap_a0782f66aa59afb708b15c0ef7782c20d}
+\hypertarget{classshad_1_1LocalHashmap_ae4a075e5a8191685a74f2d18b8cd8850}{\index{shad\-::\-Local\-Hashmap@{shad\-::\-Local\-Hashmap}!map\-\_\-iterator@{map\-\_\-iterator}}
+\index{map\-\_\-iterator@{map\-\_\-iterator}!shad::LocalHashmap@{shad\-::\-Local\-Hashmap}}
+\subsubsection[{map\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E, typename V\-T\-Y\-P\-E, typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-E\-R = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ template$<$typename , typename , typename $>$ friend class {\bf map\-\_\-iterator}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1LocalHashmap_ae4a075e5a8191685a74f2d18b8cd8850}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/shad/data\-\_\-structures/\hyperlink{local__hashmap_8h}{local\-\_\-hashmap.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,112 @@
+\hypertarget{classshad_1_1AttrEdgesPair}{\section{shad\-:\-:Attr\-Edges\-Pair$<$ Src\-Attr\-T, Dest\-T $>$ Class Template Reference}
+\label{classshad_1_1AttrEdgesPair}\index{shad\-::\-Attr\-Edges\-Pair$<$ Src\-Attr\-T, Dest\-T $>$@{shad\-::\-Attr\-Edges\-Pair$<$ Src\-Attr\-T, Dest\-T $>$}}
+}
+
+
+{\ttfamily \#include $<$shad/extensions/graph\-\_\-library/attributed\-\_\-edge\-\_\-index.\-h$>$}
+
+
+
+Collaboration diagram for shad\-:\-:Attr\-Edges\-Pair$<$ Src\-Attr\-T, Dest\-T $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classshad_1_1AttrEdgesPair__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{classshad_1_1AttrEdgesPair_a9e599e9cd0f48c8f43f601ff2964c518}{Size} ()
+\item 
+void \hyperlink{classshad_1_1AttrEdgesPair_afa9b9a09795c87ca9c9cc345ddad917e}{Erase} (const Dest\-T \&dest)
+\item 
+void \hyperlink{classshad_1_1AttrEdgesPair_af51bbca5c672249e3d4365fe56504880}{Async\-Erase} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, const Dest\-T \&dest)
+\item 
+void \hyperlink{classshad_1_1AttrEdgesPair_aeec4a60aa7a4b93b62ff8f38774e6709}{Insert} (const Dest\-T \&dest)
+\item 
+void \hyperlink{classshad_1_1AttrEdgesPair_a1f9ee442c101737b9ceb03c74e4ea78a}{Async\-Insert} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, const Dest\-T \&dest)
+\item 
+{\footnotesize template$<$typename Apply\-Fun\-T , typename... Args$>$ }\\void \hyperlink{classshad_1_1AttrEdgesPair_aa18443674f98afa01f346cd3b84086eb}{For\-Each\-Neighbor} (Apply\-Fun\-T \&\&function, Args \&...args)
+\item 
+{\footnotesize template$<$typename Apply\-Fun\-T , typename... Args$>$ }\\void \hyperlink{classshad_1_1AttrEdgesPair_ab6c5c1f21f98e09b581e920b37a89325}{Async\-For\-Each\-Neighbor} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, Apply\-Fun\-T \&\&function, Args \&...args)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Src\-Attr\-T \hyperlink{classshad_1_1AttrEdgesPair_a6296cb2ead29362d2a52f3c5ccef58a1}{attributes\-\_\-}
+\item 
+\hyperlink{classshad_1_1LocalSet}{Local\-Set}$<$ Dest\-T $>$ \hyperlink{classshad_1_1AttrEdgesPair_a2c1c5d3fac6714fdbff5d0edabf0b334}{neighbors\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classshad_1_1AttrEdgesPair_af51bbca5c672249e3d4365fe56504880}{\index{shad\-::\-Attr\-Edges\-Pair@{shad\-::\-Attr\-Edges\-Pair}!Async\-Erase@{Async\-Erase}}
+\index{Async\-Erase@{Async\-Erase}!shad::AttrEdgesPair@{shad\-::\-Attr\-Edges\-Pair}}
+\subsubsection[{Async\-Erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Src\-Attr\-T , typename Dest\-T $>$ void {\bf shad\-::\-Attr\-Edges\-Pair}$<$ Src\-Attr\-T, Dest\-T $>$\-::Async\-Erase (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{const Dest\-T \&}]{dest}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1AttrEdgesPair_af51bbca5c672249e3d4365fe56504880}
+\hypertarget{classshad_1_1AttrEdgesPair_ab6c5c1f21f98e09b581e920b37a89325}{\index{shad\-::\-Attr\-Edges\-Pair@{shad\-::\-Attr\-Edges\-Pair}!Async\-For\-Each\-Neighbor@{Async\-For\-Each\-Neighbor}}
+\index{Async\-For\-Each\-Neighbor@{Async\-For\-Each\-Neighbor}!shad::AttrEdgesPair@{shad\-::\-Attr\-Edges\-Pair}}
+\subsubsection[{Async\-For\-Each\-Neighbor}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Src\-Attr\-T , typename Dest\-T $>$ template$<$typename Apply\-Fun\-T , typename... Args$>$ void {\bf shad\-::\-Attr\-Edges\-Pair}$<$ Src\-Attr\-T, Dest\-T $>$\-::Async\-For\-Each\-Neighbor (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{Apply\-Fun\-T \&\&}]{function, }
+\item[{Args \&...}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1AttrEdgesPair_ab6c5c1f21f98e09b581e920b37a89325}
+\hypertarget{classshad_1_1AttrEdgesPair_a1f9ee442c101737b9ceb03c74e4ea78a}{\index{shad\-::\-Attr\-Edges\-Pair@{shad\-::\-Attr\-Edges\-Pair}!Async\-Insert@{Async\-Insert}}
+\index{Async\-Insert@{Async\-Insert}!shad::AttrEdgesPair@{shad\-::\-Attr\-Edges\-Pair}}
+\subsubsection[{Async\-Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Src\-Attr\-T , typename Dest\-T $>$ void {\bf shad\-::\-Attr\-Edges\-Pair}$<$ Src\-Attr\-T, Dest\-T $>$\-::Async\-Insert (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{handle, }
+\item[{const Dest\-T \&}]{dest}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1AttrEdgesPair_a1f9ee442c101737b9ceb03c74e4ea78a}
+\hypertarget{classshad_1_1AttrEdgesPair_afa9b9a09795c87ca9c9cc345ddad917e}{\index{shad\-::\-Attr\-Edges\-Pair@{shad\-::\-Attr\-Edges\-Pair}!Erase@{Erase}}
+\index{Erase@{Erase}!shad::AttrEdgesPair@{shad\-::\-Attr\-Edges\-Pair}}
+\subsubsection[{Erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Src\-Attr\-T , typename Dest\-T $>$ void {\bf shad\-::\-Attr\-Edges\-Pair}$<$ Src\-Attr\-T, Dest\-T $>$\-::Erase (
+\begin{DoxyParamCaption}
+\item[{const Dest\-T \&}]{dest}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1AttrEdgesPair_afa9b9a09795c87ca9c9cc345ddad917e}
+\hypertarget{classshad_1_1AttrEdgesPair_aa18443674f98afa01f346cd3b84086eb}{\index{shad\-::\-Attr\-Edges\-Pair@{shad\-::\-Attr\-Edges\-Pair}!For\-Each\-Neighbor@{For\-Each\-Neighbor}}
+\index{For\-Each\-Neighbor@{For\-Each\-Neighbor}!shad::AttrEdgesPair@{shad\-::\-Attr\-Edges\-Pair}}
+\subsubsection[{For\-Each\-Neighbor}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Src\-Attr\-T , typename Dest\-T $>$ template$<$typename Apply\-Fun\-T , typename... Args$>$ void {\bf shad\-::\-Attr\-Edges\-Pair}$<$ Src\-Attr\-T, Dest\-T $>$\-::For\-Each\-Neighbor (
+\begin{DoxyParamCaption}
+\item[{Apply\-Fun\-T \&\&}]{function, }
+\item[{Args \&...}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1AttrEdgesPair_aa18443674f98afa01f346cd3b84086eb}
+\hypertarget{classshad_1_1AttrEdgesPair_aeec4a60aa7a4b93b62ff8f38774e6709}{\index{shad\-::\-Attr\-Edges\-Pair@{shad\-::\-Attr\-Edges\-Pair}!Insert@{Insert}}
+\index{Insert@{Insert}!shad::AttrEdgesPair@{shad\-::\-Attr\-Edges\-Pair}}
+\subsubsection[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Src\-Attr\-T , typename Dest\-T $>$ void {\bf shad\-::\-Attr\-Edges\-Pair}$<$ Src\-Attr\-T, Dest\-T $>$\-::Insert (
+\begin{DoxyParamCaption}
+\item[{const Dest\-T \&}]{dest}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1AttrEdgesPair_aeec4a60aa7a4b93b62ff8f38774e6709}
+\hypertarget{classshad_1_1AttrEdgesPair_a9e599e9cd0f48c8f43f601ff2964c518}{\index{shad\-::\-Attr\-Edges\-Pair@{shad\-::\-Attr\-Edges\-Pair}!Size@{Size}}
+\index{Size@{Size}!shad::AttrEdgesPair@{shad\-::\-Attr\-Edges\-Pair}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Src\-Attr\-T , typename Dest\-T $>$ size\-\_\-t {\bf shad\-::\-Attr\-Edges\-Pair}$<$ Src\-Attr\-T, Dest\-T $>$\-::Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1AttrEdgesPair_a9e599e9cd0f48c8f43f601ff2964c518}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classshad_1_1AttrEdgesPair_a6296cb2ead29362d2a52f3c5ccef58a1}{\index{shad\-::\-Attr\-Edges\-Pair@{shad\-::\-Attr\-Edges\-Pair}!attributes\-\_\-@{attributes\-\_\-}}
+\index{attributes\-\_\-@{attributes\-\_\-}!shad::AttrEdgesPair@{shad\-::\-Attr\-Edges\-Pair}}
+\subsubsection[{attributes\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Src\-Attr\-T , typename Dest\-T $>$ Src\-Attr\-T {\bf shad\-::\-Attr\-Edges\-Pair}$<$ Src\-Attr\-T, Dest\-T $>$\-::attributes\-\_\-}}\label{classshad_1_1AttrEdgesPair_a6296cb2ead29362d2a52f3c5ccef58a1}
+\hypertarget{classshad_1_1AttrEdgesPair_a2c1c5d3fac6714fdbff5d0edabf0b334}{\index{shad\-::\-Attr\-Edges\-Pair@{shad\-::\-Attr\-Edges\-Pair}!neighbors\-\_\-@{neighbors\-\_\-}}
+\index{neighbors\-\_\-@{neighbors\-\_\-}!shad::AttrEdgesPair@{shad\-::\-Attr\-Edges\-Pair}}
+\subsubsection[{neighbors\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Src\-Attr\-T , typename Dest\-T $>$ {\bf Local\-Set}$<$Dest\-T$>$ {\bf shad\-::\-Attr\-Edges\-Pair}$<$ Src\-Attr\-T, Dest\-T $>$\-::neighbors\-\_\-}}\label{classshad_1_1AttrEdgesPair_a2c1c5d3fac6714fdbff5d0edabf0b334}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/shad/extensions/graph\-\_\-library/\hyperlink{attributed__edge__index_8h}{attributed\-\_\-edge\-\_\-index.\-h}\end{DoxyCompactItemize}

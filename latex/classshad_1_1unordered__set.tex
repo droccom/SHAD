@@ -1,0 +1,127 @@
+\hypertarget{classshad_1_1unordered__set}{\section{shad\-:\-:unordered\-\_\-set$<$ Key, Hash $>$ Class Template Reference}
+\label{classshad_1_1unordered__set}\index{shad\-::unordered\-\_\-set$<$ Key, Hash $>$@{shad\-::unordered\-\_\-set$<$ Key, Hash $>$}}
+}
+
+
+Distributed unordered set.  
+
+
+
+
+{\ttfamily \#include $<$shad/core/unordered\-\_\-set.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{group__Types_gae860c65ed861f8aa69b0360638f4ad5d}{key\-\_\-type} = Key
+\item 
+using \hyperlink{group__Types_ga56832ea0d8218bf22f59a2e8ff4de499}{value\-\_\-type} = typename \hyperlink{classshad_1_1Set_a20c26f02edb7c6c978a0e0b6f2b46c80}{set\-\_\-t\-::value\-\_\-type}
+\begin{DoxyCompactList}\small\item\em The type of the stored value. \end{DoxyCompactList}\item 
+using \hyperlink{group__Types_gaf733341726e3097cf440257afa76d76a}{size\-\_\-type} = std\-::size\-\_\-t
+\begin{DoxyCompactList}\small\item\em The type used to represent size. \end{DoxyCompactList}\item 
+using \hyperlink{group__Types_gaa58125290d23043a3bdfa2430291a1e8}{difference\-\_\-type} = std\-::ptrdiff\-\_\-t
+\begin{DoxyCompactList}\small\item\em The type used to represent distances. \end{DoxyCompactList}\item 
+using \hyperlink{group__Types_ga84503e3a7375cd54f32da739fe21ecc9}{pointer} = \hyperlink{group__Types_ga56832ea0d8218bf22f59a2e8ff4de499}{value\-\_\-type} $\ast$
+\begin{DoxyCompactList}\small\item\em The type for pointer to \-::value\-\_\-type. \end{DoxyCompactList}\item 
+using \hyperlink{group__Types_ga3d079442c0e215d47f0c93f05b2ddb1f}{const\-\_\-pointer} = const \hyperlink{group__Types_ga56832ea0d8218bf22f59a2e8ff4de499}{value\-\_\-type} $\ast$
+\begin{DoxyCompactList}\small\item\em The type for pointer to \-::const\-\_\-value\-\_\-type. \end{DoxyCompactList}\item 
+using \hyperlink{group__Types_gadbad50ac069a38bd820c0a9f532f903e}{iterator} = typename \hyperlink{classshad_1_1Set_a726ddfe3c1c55db2ef60c5c1960d6666}{set\-\_\-t\-::iterator}
+\begin{DoxyCompactList}\small\item\em The type of iterators on the set. \end{DoxyCompactList}\item 
+using \hyperlink{group__Types_ga074f67d0516c3a68d8c79976aef62fb1}{const\-\_\-iterator} = typename \hyperlink{classshad_1_1Set_a0b2608f92f5397a25e62fad925fc177e}{set\-\_\-t\-::const\-\_\-iterator}
+\begin{DoxyCompactList}\small\item\em The type of const iterators on the set. \end{DoxyCompactList}\item 
+using \hyperlink{group__Types_gae1ee2e5ce1b39afa3cb1ce248747324d}{local\-\_\-iterator} = typename \hyperlink{classshad_1_1Set_a12ce7d6fd8fd0569035b0eb236b22179}{set\-\_\-t\-::local\-\_\-iterator}
+\begin{DoxyCompactList}\small\item\em The type of local iterators on the set. \end{DoxyCompactList}\item 
+using \hyperlink{group__Types_gac14878d16fabddc52f8dd35465f3155e}{const\-\_\-local\-\_\-iterator} = typename \hyperlink{classshad_1_1Set_a0857d9ce7a249e860e3a67bc18f7de8b}{set\-\_\-t\-::const\-\_\-local\-\_\-iterator}
+\begin{DoxyCompactList}\small\item\em The type of const local iterators on the set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classshad_1_1unordered__set_a05537f8a3c0c08af1910e2780b113f32}{unordered\-\_\-set} (\hyperlink{group__Types_gaf733341726e3097cf440257afa76d76a}{size\-\_\-type} bucket\-\_\-count=1021, const Hash \&\hyperlink{structshad_1_1hash}{hash}=Hash())
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classshad_1_1unordered__set_aa85876afdf2158838521bcaf4b270fa7}{$\sim$unordered\-\_\-set} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_gadbad50ac069a38bd820c0a9f532f903e}{iterator} \hyperlink{group__Iterators_gaed1fcf07d265d37157a2bd2614b32693}{begin} () const noexcept
+\item 
+constexpr \hyperlink{group__Types_ga074f67d0516c3a68d8c79976aef62fb1}{const\-\_\-iterator} \hyperlink{group__Iterators_ga4317481540662a5afe3078e89b8012dd}{cbegin} () const noexcept
+\begin{DoxyCompactList}\small\item\em The iterator to the beginning of the sequence. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_gadbad50ac069a38bd820c0a9f532f903e}{iterator} \hyperlink{group__Iterators_ga8ef3a0bbbef71c5658dbb7d6bd9751e9}{end} () const noexcept
+\begin{DoxyCompactList}\small\item\em The iterator to the end of the sequence. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_ga074f67d0516c3a68d8c79976aef62fb1}{const\-\_\-iterator} \hyperlink{group__Iterators_ga5be7a60951a7f054b7770b385e370840}{cend} () const noexcept
+\begin{DoxyCompactList}\small\item\em The iterator to the end of the sequence. \end{DoxyCompactList}\item 
+bool \hyperlink{group__Capacity_gaa881674aa4274da05c2389348d09bbd3}{empty} () const noexcept
+\item 
+\hyperlink{group__Types_gaf733341726e3097cf440257afa76d76a}{size\-\_\-type} \hyperlink{group__Capacity_ga2586e3957d1c48a278edaaa1be72f92b}{size} () const noexcept
+\begin{DoxyCompactList}\small\item\em The size of the container. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classshad_1_1unordered__set_a37f994eeafee71345ca4e4e8cd1435e8}{buffered\-\_\-insert\-\_\-iterator$<$ unordered\-\_\-set $>$}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Key, class Hash = shad\-::hash$<$\-Key$>$$>$class shad\-::unordered\-\_\-set$<$ Key, Hash $>$}
+
+Distributed unordered set. 
+
+A distributed associative container that contains a set of unique objects of type Key. Search, insertion, and removal have average constant-\/time complexity. Internally, the elements are not sorted in any particular order, but organized into buckets. Which bucket an element is placed into depends entirely on the hash of its value. This allows fast access to individual elements, since once a hash is computed, it refers to the exact bucket the element is placed into.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Key} & The type of the elements. \\
+\hline
+{\em Hash} & The type of the hashing callable.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]Key\-Equal template parameter 
+
+Allocator template parameter \end{DoxyRefDesc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classshad_1_1unordered__set_a05537f8a3c0c08af1910e2780b113f32}{\index{shad\-::unordered\-\_\-set@{shad\-::unordered\-\_\-set}!unordered\-\_\-set@{unordered\-\_\-set}}
+\index{unordered\-\_\-set@{unordered\-\_\-set}!shad::unordered_set@{shad\-::unordered\-\_\-set}}
+\subsubsection[{unordered\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Hash  = shad\-::hash$<$\-Key$>$$>$ {\bf shad\-::unordered\-\_\-set}$<$ Key, Hash $>$\-::{\bf unordered\-\_\-set} (
+\begin{DoxyParamCaption}
+\item[{{\bf size\-\_\-type}}]{bucket\-\_\-count = {\ttfamily 1021}, }
+\item[{const Hash \&}]{hash = {\ttfamily Hash()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classshad_1_1unordered__set_a05537f8a3c0c08af1910e2780b113f32}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bucket\-\_\-count} & The minimum number of buckets. \\
+\hline
+{\em hash} & The hashing callable.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000004}{Todo}]add equal parameter 
+
+add allocator parameter \end{DoxyRefDesc}
+\hypertarget{classshad_1_1unordered__set_aa85876afdf2158838521bcaf4b270fa7}{\index{shad\-::unordered\-\_\-set@{shad\-::unordered\-\_\-set}!$\sim$unordered\-\_\-set@{$\sim$unordered\-\_\-set}}
+\index{$\sim$unordered\-\_\-set@{$\sim$unordered\-\_\-set}!shad::unordered_set@{shad\-::unordered\-\_\-set}}
+\subsubsection[{$\sim$unordered\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Hash  = shad\-::hash$<$\-Key$>$$>$ {\bf shad\-::unordered\-\_\-set}$<$ Key, Hash $>$\-::$\sim${\bf unordered\-\_\-set} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1unordered__set_aa85876afdf2158838521bcaf4b270fa7}
+
+
+Destructor. 
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classshad_1_1unordered__set_a37f994eeafee71345ca4e4e8cd1435e8}{\index{shad\-::unordered\-\_\-set@{shad\-::unordered\-\_\-set}!buffered\-\_\-insert\-\_\-iterator$<$ unordered\-\_\-set $>$@{buffered\-\_\-insert\-\_\-iterator$<$ unordered\-\_\-set $>$}}
+\index{buffered\-\_\-insert\-\_\-iterator$<$ unordered\-\_\-set $>$@{buffered\-\_\-insert\-\_\-iterator$<$ unordered\-\_\-set $>$}!shad::unordered_set@{shad\-::unordered\-\_\-set}}
+\subsubsection[{buffered\-\_\-insert\-\_\-iterator$<$ unordered\-\_\-set $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Hash  = shad\-::hash$<$\-Key$>$$>$ friend class {\bf buffered\-\_\-insert\-\_\-iterator}$<$ {\bf unordered\-\_\-set} $>$\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1unordered__set_a37f994eeafee71345ca4e4e8cd1435e8}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/shad/core/\hyperlink{unordered__set_8h}{unordered\-\_\-set.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,79 @@
+Warning: ignoring unsupported tag `ALLOW_UNICODE_NAMES    =' at line 79, file /home/travis/build/droccom/SHAD/build-doxygen/docs/doxygen.cfg
+Warning: ignoring unsupported tag `TOC_INCLUDE_HEADINGS   =' at line 313, file /home/travis/build/droccom/SHAD/build-doxygen/docs/doxygen.cfg
+Warning: ignoring unsupported tag `GROUP_NESTED_COMPOUNDS =' at line 370, file /home/travis/build/droccom/SHAD/build-doxygen/docs/doxygen.cfg
+Warning: ignoring unsupported tag `HIDE_COMPOUND_REFERENCE=' at line 541, file /home/travis/build/droccom/SHAD/build-doxygen/docs/doxygen.cfg
+Warning: ignoring unsupported tag `WARN_AS_ERROR          =' at line 765, file /home/travis/build/droccom/SHAD/build-doxygen/docs/doxygen.cfg
+Warning: ignoring unsupported tag `LATEX_EXTRA_STYLESHEET =' at line 1704, file /home/travis/build/droccom/SHAD/build-doxygen/docs/doxygen.cfg
+Warning: ignoring unsupported tag `LATEX_TIMESTAMP        =' at line 1771, file /home/travis/build/droccom/SHAD/build-doxygen/docs/doxygen.cfg
+Warning: ignoring unsupported tag `RTF_SOURCE_CODE        =' at line 1837, file /home/travis/build/droccom/SHAD/build-doxygen/docs/doxygen.cfg
+Warning: ignoring unsupported tag `MAN_SUBDIR             =' at line 1872, file /home/travis/build/droccom/SHAD/build-doxygen/docs/doxygen.cfg
+Warning: ignoring unsupported tag `DOCBOOK_PROGRAMLISTING =' at line 1935, file /home/travis/build/droccom/SHAD/build-doxygen/docs/doxygen.cfg
+Warning: ignoring unsupported tag `PLANTUML_JAR_PATH      =' at line 2364, file /home/travis/build/droccom/SHAD/build-doxygen/docs/doxygen.cfg
+Warning: ignoring unsupported tag `PLANTUML_INCLUDE_PATH  =' at line 2369, file /home/travis/build/droccom/SHAD/build-doxygen/docs/doxygen.cfg
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:51: warning: missing title after \defgroup Types
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:126: warning: missing title after \defgroup Iterators
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:158: warning: missing title after \defgroup Capacity
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:173: warning: missing title after \defgroup Operations
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_map.h:57: warning: missing title after \defgroup Types
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_map.h:109: warning: missing title after \defgroup Iterators
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_map.h:125: warning: missing title after \defgroup Capacity
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_set.h:56: warning: missing title after \defgroup Types
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_set.h:106: warning: missing title after \defgroup Iterators
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_set.h:122: warning: missing title after \defgroup Capacity
+/home/travis/build/droccom/SHAD/include/shad/data_structures/array.h:1103: warning: missing title after \defgroup Types
+/home/travis/build/droccom/SHAD/include/shad/data_structures/array.h:1179: warning: missing title after \defgroup Iterators
+/home/travis/build/droccom/SHAD/include/shad/data_structures/array.h:1272: warning: missing title after \defgroup Capacity
+error: Project logo '/home/travis/build/droccom/SHAD/docs/images/shadLogo.eps' specified by PROJECT_LOGO does not exist!
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:63: warning: explicit link request to 'value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:65: warning: explicit link request to 'const_value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_map.h:74: warning: explicit link request to 'value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_map.h:76: warning: explicit link request to 'const_value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_set.h:71: warning: explicit link request to 'value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_set.h:73: warning: explicit link request to 'const_value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:63: warning: explicit link request to 'value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:65: warning: explicit link request to 'const_value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_map.h:74: warning: explicit link request to 'value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_map.h:76: warning: explicit link request to 'const_value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_set.h:71: warning: explicit link request to 'value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_set.h:73: warning: explicit link request to 'const_value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:65: warning: explicit link request to 'const_value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_set.h:73: warning: explicit link request to 'const_value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_map.h:76: warning: explicit link request to 'const_value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:63: warning: explicit link request to 'value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_set.h:71: warning: explicit link request to 'value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_map.h:74: warning: explicit link request to 'value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:101: warning: explicit link request to 'reference' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:105: warning: explicit link request to 'const_reference' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:117: warning: explicit link request to 'reference' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:121: warning: explicit link request to 'const_reference' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:109: warning: explicit link request to 'reference' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:113: warning: explicit link request to 'const_reference' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:91: warning: explicit link request to 'reference' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:95: warning: explicit link request to 'const_reference' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:128: warning: explicit link request to 'iterator' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:132: warning: explicit link request to 'const_iterator' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_set.h:111: warning: explicit link request to 'const_iterator' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_map.h:114: warning: explicit link request to 'const_iterator' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:144: warning: explicit link request to 'const_iterator' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_set.h:117: warning: explicit link request to 'const_iterator' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_map.h:120: warning: explicit link request to 'const_iterator' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:148: warning: explicit link request to 'const_iterator' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_set.h:114: warning: explicit link request to 'iterator' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_map.h:117: warning: explicit link request to 'iterator' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:136: warning: explicit link request to 'iterator' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:140: warning: explicit link request to 'const_iterator' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:63: warning: explicit link request to 'value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:65: warning: explicit link request to 'const_value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:34: warning: explicit link request to 'array' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:35: warning: explicit link request to 'array' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/array.h:39: warning: explicit link request to 'array' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_map.h:74: warning: explicit link request to 'value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_map.h:76: warning: explicit link request to 'const_value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_set.h:71: warning: explicit link request to 'value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/core/unordered_set.h:73: warning: explicit link request to 'const_value_type' could not be resolved
+/home/travis/build/droccom/SHAD/include/shad/extensions/graph_library/edge_index.h:106: warning: argument 'value' of command @param is not found in the argument list of shad::EdgeIndex< SrcT, DestT, StorageT >::AsyncInsert(rt::Handle &handle, const SrcT &src, const DestT &dest)
+/home/travis/build/droccom/SHAD/include/shad/extensions/graph_library/edge_index.h:106: warning: The following parameters of shad::EdgeIndex::AsyncInsert(rt::Handle &handle, const SrcT &src, const DestT &dest) are not documented:
+  parameter 'dest'
+/home/travis/build/droccom/SHAD/include/shad/extensions/graph_library/edge_index.h:101: warning: argument 'value' of command @param is not found in the argument list of shad::EdgeIndex< SrcT, DestT, StorageT >::Insert(const SrcT &src, const DestT &dest)
+/home/travis/build/droccom/SHAD/include/shad/extensions/graph_library/edge_index.h:101: warning: The following parameters of shad::EdgeIndex::Insert(const SrcT &src, const DestT &dest) are not documented:
+  parameter 'dest'

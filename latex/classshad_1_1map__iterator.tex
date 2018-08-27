@@ -1,0 +1,201 @@
+\hypertarget{classshad_1_1map__iterator}{\section{shad\-:\-:map\-\_\-iterator$<$ Map, T, Non\-Const\-T $>$ Class Template Reference}
+\label{classshad_1_1map__iterator}\index{shad\-::map\-\_\-iterator$<$ Map, T, Non\-Const\-T $>$@{shad\-::map\-\_\-iterator$<$ Map, T, Non\-Const\-T $>$}}
+}
+
+
+{\ttfamily \#include $<$shad/data\-\_\-structures/hashmap.\-h$>$}
+
+
+
+Inheritance diagram for shad\-:\-:map\-\_\-iterator$<$ Map, T, Non\-Const\-T $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classshad_1_1map__iterator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for shad\-:\-:map\-\_\-iterator$<$ Map, T, Non\-Const\-T $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classshad_1_1map__iterator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classshad_1_1map__iterator_1_1local__iterator__range}{local\-\_\-iterator\-\_\-range}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{classshad_1_1map__iterator_aecdaced930b9dcb48d5eff9ef992fbd5}{O\-I\-D\-T} = typename Map\-T\-::\-Object\-I\-D
+\item 
+using \hyperlink{classshad_1_1map__iterator_a157d8b69a2befd7e61c0df9eb52b2a71}{L\-Map} = typename Map\-T\-::\-L\-Map\-T
+\item 
+using \hyperlink{classshad_1_1map__iterator_adceb72a3948aa860edd3a4c9ceca821d}{local\-\_\-iterator\-\_\-type} = \hyperlink{classshad_1_1lmap__iterator}{lmap\-\_\-iterator}$<$ \hyperlink{classshad_1_1map__iterator_a157d8b69a2befd7e61c0df9eb52b2a71}{L\-Map}, T $>$
+\item 
+using \hyperlink{classshad_1_1map__iterator_a52d94a1de8e6027b63d1a72daf0ff3d0}{value\-\_\-type} = T
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classshad_1_1map__iterator_a085dcb1354b6b6b7326c69efd3c228e6}{map\-\_\-iterator} ()
+\item 
+\hyperlink{classshad_1_1map__iterator_ac93f17a66ee8c0569d5700134b263f39}{map\-\_\-iterator} (uint32\-\_\-t loc\-I\-D, const \hyperlink{classshad_1_1map__iterator_aecdaced930b9dcb48d5eff9ef992fbd5}{O\-I\-D\-T} map\-O\-I\-D, \hyperlink{classshad_1_1map__iterator_adceb72a3948aa860edd3a4c9ceca821d}{local\-\_\-iterator\-\_\-type} \&lit, T element)
+\item 
+\hyperlink{classshad_1_1map__iterator_aac7de0f8d21acd08be67f02aec45f3d3}{map\-\_\-iterator} (uint32\-\_\-t loc\-I\-D, const \hyperlink{classshad_1_1map__iterator_aecdaced930b9dcb48d5eff9ef992fbd5}{O\-I\-D\-T} map\-O\-I\-D, \hyperlink{classshad_1_1map__iterator_adceb72a3948aa860edd3a4c9ceca821d}{local\-\_\-iterator\-\_\-type} \&lit)
+\item 
+bool \hyperlink{classshad_1_1map__iterator_a84b9e374f5420dbf1c3c6e22e7a0958f}{operator==} (const \hyperlink{classshad_1_1map__iterator}{map\-\_\-iterator} \&other) const 
+\item 
+bool \hyperlink{classshad_1_1map__iterator_af3bf9fb8d3abca27b66e7cfd192e34cd}{operator!=} (const \hyperlink{classshad_1_1map__iterator}{map\-\_\-iterator} \&other) const 
+\item 
+T \hyperlink{classshad_1_1map__iterator_a783e686ed5416838221177430bf136ce}{operator$\ast$} () const 
+\item 
+\hyperlink{classshad_1_1map__iterator}{map\-\_\-iterator} \& \hyperlink{classshad_1_1map__iterator_ad8d506efca132c4219e7e011230387b5}{operator++} ()
+\item 
+\hyperlink{classshad_1_1map__iterator}{map\-\_\-iterator} \hyperlink{classshad_1_1map__iterator_af899decfb38395fc586a6eb4bfe8f8f9}{operator++} (int)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classshad_1_1map__iterator}{map\-\_\-iterator} \hyperlink{classshad_1_1map__iterator_a57d139353cfaa75639f6445a0e138c7d}{map\-\_\-begin} (const Map\-T $\ast$map\-Ptr)
+\item 
+static \hyperlink{classshad_1_1map__iterator}{map\-\_\-iterator} \hyperlink{classshad_1_1map__iterator_a3f9cd178ba9a8d529844cf215be6a79b}{map\-\_\-end} (const Map\-T $\ast$map\-Ptr)
+\item 
+static \hyperlink{classshad_1_1map__iterator_1_1local__iterator__range}{local\-\_\-iterator\-\_\-range} \hyperlink{classshad_1_1map__iterator_aae44fbc7ffd3ceb7cb80a8661cb74c34}{local\-\_\-range} (\hyperlink{classshad_1_1map__iterator}{map\-\_\-iterator} \&B, \hyperlink{classshad_1_1map__iterator}{map\-\_\-iterator} \&E)
+\item 
+static \hyperlink{classshad_1_1rt_1_1localities__range}{rt\-::localities\-\_\-range} \hyperlink{classshad_1_1map__iterator_ae809bb004b5f198eae11dfe7ac9c5f8a}{localities} (\hyperlink{classshad_1_1map__iterator}{map\-\_\-iterator} \&B, \hyperlink{classshad_1_1map__iterator}{map\-\_\-iterator} \&E)
+\item 
+static \hyperlink{classshad_1_1map__iterator}{map\-\_\-iterator} \hyperlink{classshad_1_1map__iterator_af5d464e76c35e666c792bb948f5d6739}{iterator\-\_\-from\-\_\-local} (\hyperlink{classshad_1_1map__iterator}{map\-\_\-iterator} \&B, \hyperlink{classshad_1_1map__iterator}{map\-\_\-iterator} \&E, \hyperlink{classshad_1_1map__iterator_adceb72a3948aa860edd3a4c9ceca821d}{local\-\_\-iterator\-\_\-type} itr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classshad_1_1map__iterator_a157d8b69a2befd7e61c0df9eb52b2a71}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!L\-Map@{L\-Map}}
+\index{L\-Map@{L\-Map}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{L\-Map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ using {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::{\bf L\-Map} =  typename Map\-T\-::\-L\-Map\-T}}\label{classshad_1_1map__iterator_a157d8b69a2befd7e61c0df9eb52b2a71}
+\hypertarget{classshad_1_1map__iterator_adceb72a3948aa860edd3a4c9ceca821d}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!local\-\_\-iterator\-\_\-type@{local\-\_\-iterator\-\_\-type}}
+\index{local\-\_\-iterator\-\_\-type@{local\-\_\-iterator\-\_\-type}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{local\-\_\-iterator\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ using {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::{\bf local\-\_\-iterator\-\_\-type} =  {\bf lmap\-\_\-iterator}$<${\bf L\-Map}, T$>$}}\label{classshad_1_1map__iterator_adceb72a3948aa860edd3a4c9ceca821d}
+\hypertarget{classshad_1_1map__iterator_aecdaced930b9dcb48d5eff9ef992fbd5}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!O\-I\-D\-T@{O\-I\-D\-T}}
+\index{O\-I\-D\-T@{O\-I\-D\-T}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{O\-I\-D\-T}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ using {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::{\bf O\-I\-D\-T} =  typename Map\-T\-::\-Object\-I\-D}}\label{classshad_1_1map__iterator_aecdaced930b9dcb48d5eff9ef992fbd5}
+\hypertarget{classshad_1_1map__iterator_a52d94a1de8e6027b63d1a72daf0ff3d0}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ using {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::{\bf value\-\_\-type} =  T}}\label{classshad_1_1map__iterator_a52d94a1de8e6027b63d1a72daf0ff3d0}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classshad_1_1map__iterator_a085dcb1354b6b6b7326c69efd3c228e6}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!map\-\_\-iterator@{map\-\_\-iterator}}
+\index{map\-\_\-iterator@{map\-\_\-iterator}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{map\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::{\bf map\-\_\-iterator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1map__iterator_a085dcb1354b6b6b7326c69efd3c228e6}
+\hypertarget{classshad_1_1map__iterator_ac93f17a66ee8c0569d5700134b263f39}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!map\-\_\-iterator@{map\-\_\-iterator}}
+\index{map\-\_\-iterator@{map\-\_\-iterator}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{map\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::{\bf map\-\_\-iterator} (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{loc\-I\-D, }
+\item[{const {\bf O\-I\-D\-T}}]{map\-O\-I\-D, }
+\item[{{\bf local\-\_\-iterator\-\_\-type} \&}]{lit, }
+\item[{T}]{element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1map__iterator_ac93f17a66ee8c0569d5700134b263f39}
+\hypertarget{classshad_1_1map__iterator_aac7de0f8d21acd08be67f02aec45f3d3}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!map\-\_\-iterator@{map\-\_\-iterator}}
+\index{map\-\_\-iterator@{map\-\_\-iterator}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{map\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::{\bf map\-\_\-iterator} (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{loc\-I\-D, }
+\item[{const {\bf O\-I\-D\-T}}]{map\-O\-I\-D, }
+\item[{{\bf local\-\_\-iterator\-\_\-type} \&}]{lit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1map__iterator_aac7de0f8d21acd08be67f02aec45f3d3}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classshad_1_1map__iterator_af5d464e76c35e666c792bb948f5d6739}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!iterator\-\_\-from\-\_\-local@{iterator\-\_\-from\-\_\-local}}
+\index{iterator\-\_\-from\-\_\-local@{iterator\-\_\-from\-\_\-local}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{iterator\-\_\-from\-\_\-local}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ static {\bf map\-\_\-iterator} {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::iterator\-\_\-from\-\_\-local (
+\begin{DoxyParamCaption}
+\item[{{\bf map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$ \&}]{B, }
+\item[{{\bf map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$ \&}]{E, }
+\item[{{\bf local\-\_\-iterator\-\_\-type}}]{itr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classshad_1_1map__iterator_af5d464e76c35e666c792bb948f5d6739}
+\hypertarget{classshad_1_1map__iterator_aae44fbc7ffd3ceb7cb80a8661cb74c34}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!local\-\_\-range@{local\-\_\-range}}
+\index{local\-\_\-range@{local\-\_\-range}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{local\-\_\-range}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ static {\bf local\-\_\-iterator\-\_\-range} {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::local\-\_\-range (
+\begin{DoxyParamCaption}
+\item[{{\bf map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$ \&}]{B, }
+\item[{{\bf map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$ \&}]{E}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classshad_1_1map__iterator_aae44fbc7ffd3ceb7cb80a8661cb74c34}
+\hypertarget{classshad_1_1map__iterator_ae809bb004b5f198eae11dfe7ac9c5f8a}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!localities@{localities}}
+\index{localities@{localities}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{localities}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ static {\bf rt\-::localities\-\_\-range} {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::localities (
+\begin{DoxyParamCaption}
+\item[{{\bf map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$ \&}]{B, }
+\item[{{\bf map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$ \&}]{E}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classshad_1_1map__iterator_ae809bb004b5f198eae11dfe7ac9c5f8a}
+\hypertarget{classshad_1_1map__iterator_a57d139353cfaa75639f6445a0e138c7d}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!map\-\_\-begin@{map\-\_\-begin}}
+\index{map\-\_\-begin@{map\-\_\-begin}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{map\-\_\-begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ static {\bf map\-\_\-iterator} {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::map\-\_\-begin (
+\begin{DoxyParamCaption}
+\item[{const Map\-T $\ast$}]{map\-Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classshad_1_1map__iterator_a57d139353cfaa75639f6445a0e138c7d}
+\hypertarget{classshad_1_1map__iterator_a3f9cd178ba9a8d529844cf215be6a79b}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!map\-\_\-end@{map\-\_\-end}}
+\index{map\-\_\-end@{map\-\_\-end}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{map\-\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ static {\bf map\-\_\-iterator} {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::map\-\_\-end (
+\begin{DoxyParamCaption}
+\item[{const Map\-T $\ast$}]{map\-Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classshad_1_1map__iterator_a3f9cd178ba9a8d529844cf215be6a79b}
+\hypertarget{classshad_1_1map__iterator_af3bf9fb8d3abca27b66e7cfd192e34cd}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ bool {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$ \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1map__iterator_af3bf9fb8d3abca27b66e7cfd192e34cd}
+\hypertarget{classshad_1_1map__iterator_a783e686ed5416838221177430bf136ce}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ T {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1map__iterator_a783e686ed5416838221177430bf136ce}
+\hypertarget{classshad_1_1map__iterator_ad8d506efca132c4219e7e011230387b5}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ {\bf map\-\_\-iterator}\& {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1map__iterator_ad8d506efca132c4219e7e011230387b5}
+\hypertarget{classshad_1_1map__iterator_af899decfb38395fc586a6eb4bfe8f8f9}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ {\bf map\-\_\-iterator} {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::operator++ (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1map__iterator_af899decfb38395fc586a6eb4bfe8f8f9}
+\hypertarget{classshad_1_1map__iterator_a84b9e374f5420dbf1c3c6e22e7a0958f}{\index{shad\-::map\-\_\-iterator@{shad\-::map\-\_\-iterator}!operator==@{operator==}}
+\index{operator==@{operator==}!shad::map_iterator@{shad\-::map\-\_\-iterator}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Map , typename T , typename Non\-Const\-T $>$ bool {\bf shad\-::map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf map\-\_\-iterator}$<$ Map, T, Non\-Const\-T $>$ \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1map__iterator_a84b9e374f5420dbf1c3c6e22e7a0958f}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/shad/data\-\_\-structures/\hyperlink{hashmap_8h}{hashmap.\-h}\end{DoxyCompactItemize}

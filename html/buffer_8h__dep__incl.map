@@ -1,0 +1,12 @@
+<map id="include/shad/data_structures/buffer.h" name="include/shad/data_structures/buffer.h">
+<area shape="rect" id="node2" href="$data__structures_2array_8h.html" title="include/shad/data_structures\l/array.h" alt="" coords="155,97,344,138"/>
+<area shape="rect" id="node5" href="$hashmap_8h.html" title="include/shad/data_structures\l/hashmap.h" alt="" coords="787,97,976,138"/>
+<area shape="rect" id="node7" href="$set_8h.html" title="include/shad/data_structures\l/set.h" alt="" coords="368,97,557,138"/>
+<area shape="rect" id="node9" href="$vector_8h.html" title="include/shad/data_structures\l/vector.h" alt="" coords="1000,97,1189,138"/>
+<area shape="rect" id="node10" href="$edge__index_8h.html" title="include/shad/extensions\l/graph_library/edge_index.h" alt="" coords="581,97,763,138"/>
+<area shape="rect" id="node3" href="$core_2array_8h.html" title="include/shad/core/array.h" alt="" coords="5,201,173,228"/>
+<area shape="rect" id="node4" href="$sssp_8h.html" title="include/shad/extensions\l/graph_library/algorithms\l/sssp.h" alt="" coords="407,187,571,243"/>
+<area shape="rect" id="node6" href="$unordered__map_8h.html" title="include/shad/core/unordered\l_map.h" alt="" coords="789,194,973,235"/>
+<area shape="rect" id="node8" href="$unordered__set_8h.html" title="include/shad/core/unordered\l_set.h" alt="" coords="198,194,383,235"/>
+<area shape="rect" id="node11" href="$attributed__edge__index_8h.html" title="include/shad/extensions\l/graph_library/attributed\l_edge_index.h" alt="" coords="596,187,759,243"/>
+</map>

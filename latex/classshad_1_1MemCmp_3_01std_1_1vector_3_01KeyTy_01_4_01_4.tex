@@ -1,0 +1,73 @@
+\hypertarget{classshad_1_1MemCmp_3_01std_1_1vector_3_01KeyTy_01_4_01_4}{\section{shad\-:\-:Mem\-Cmp$<$ std\-:\-:vector$<$ Key\-Ty $>$ $>$ Class Template Reference}
+\label{classshad_1_1MemCmp_3_01std_1_1vector_3_01KeyTy_01_4_01_4}\index{shad\-::\-Mem\-Cmp$<$ std\-::vector$<$ Key\-Ty $>$ $>$@{shad\-::\-Mem\-Cmp$<$ std\-::vector$<$ Key\-Ty $>$ $>$}}
+}
+
+
+Comparison functor specialized for std\-::vector.  
+
+
+
+
+{\ttfamily \#include $<$shad/data\-\_\-structures/compare\-\_\-and\-\_\-hash\-\_\-utils.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classshad_1_1MemCmp_3_01std_1_1vector_3_01KeyTy_01_4_01_4_aeacb3178b19255d7c248f46bda51a7bd}{operator()} (const std\-::vector$<$ Key\-Ty $>$ $\ast$first, const std\-::vector$<$ Key\-Ty $>$ $\ast$sec) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Key\-Ty$>$class shad\-::\-Mem\-Cmp$<$ std\-::vector$<$ Key\-Ty $>$ $>$}
+
+Comparison functor specialized for std\-::vector. 
+
+This functor compares the content of two std\-::vector.
+
+Typical Usage\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }A \{
+  \textcolor{keywordtype}{int} a, b;
+\};
+
+\textcolor{keywordtype}{void} fn(std::vector<A> &value1, std::vector<A> & value2) \{
+  \textcolor{keywordflow}{if} (!MemCmp()(&value1, &value2)) \{
+    \textcolor{comment}{// they are equal so do something}
+  \} \textcolor{keywordflow}{else} \{
+    \textcolor{comment}{// do sothing different}
+  \}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Key\-Ty} & The type of the two keys to compare.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em first} & The first std\-::vector to be compared \\
+\hline
+\mbox{\tt in}  & {\em second} & The second std\-::vector to be compared \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if first == second, true otherwise. 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classshad_1_1MemCmp_3_01std_1_1vector_3_01KeyTy_01_4_01_4_aeacb3178b19255d7c248f46bda51a7bd}{\index{shad\-::\-Mem\-Cmp$<$ std\-::vector$<$ Key\-Ty $>$ $>$@{shad\-::\-Mem\-Cmp$<$ std\-::vector$<$ Key\-Ty $>$ $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!shad::MemCmp< std::vector< KeyTy > >@{shad\-::\-Mem\-Cmp$<$ std\-::vector$<$ Key\-Ty $>$ $>$}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\-Ty $>$ bool {\bf shad\-::\-Mem\-Cmp}$<$ std\-::vector$<$ Key\-Ty $>$ $>$\-::operator() (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ Key\-Ty $>$ $\ast$}]{first, }
+\item[{const std\-::vector$<$ Key\-Ty $>$ $\ast$}]{sec}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1MemCmp_3_01std_1_1vector_3_01KeyTy_01_4_01_4_aeacb3178b19255d7c248f46bda51a7bd}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/shad/data\-\_\-structures/\hyperlink{compare__and__hash__utils_8h}{compare\-\_\-and\-\_\-hash\-\_\-utils.\-h}\end{DoxyCompactItemize}

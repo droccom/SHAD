@@ -1,0 +1,49 @@
+\hypertarget{algorithm_8h}{\section{include/shad/core/algorithm.h File Reference}
+\label{algorithm_8h}\index{include/shad/core/algorithm.\-h@{include/shad/core/algorithm.\-h}}
+}
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$functional$>$}\\*
+{\ttfamily \#include $<$iterator$>$}\\*
+{\ttfamily \#include $<$numeric$>$}\\*
+{\ttfamily \#include $<$tuple$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}shad/core/execution.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shad/distributed\-\_\-iterator\-\_\-traits.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shad/runtime/runtime.\-h\char`\"{}}\\*
+Include dependency graph for algorithm.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{algorithm_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceshad}{shad}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Execution\-Policy , typename Forward\-Itr , typename Unary\-Predicate $>$ }\\bool \hyperlink{namespaceshad_ab0314482e6cdabff5bcb7f2833b0f937}{shad\-::all\-\_\-of} (Execution\-Policy \&\&policy, Forward\-Itr first, Forward\-Itr last, Unary\-Predicate p)
+\item 
+{\footnotesize template$<$typename Execution\-Policy , typename Forward\-Itr , typename Unary\-Predicate $>$ }\\bool \hyperlink{namespaceshad_a8d17ad3a3f5f25ecfee20a7ae6ebf924}{shad\-::any\-\_\-of} (Execution\-Policy \&\&policy, Forward\-Itr first, Forward\-Itr last, Unary\-Predicate p)
+\item 
+{\footnotesize template$<$typename Execution\-Policy , typename Forward\-Itr , typename Unary\-Predicate $>$ }\\bool \hyperlink{namespaceshad_a00b17ed7d3482e7fc389d344c68b42e8}{shad\-::none\-\_\-of} (Execution\-Policy \&\&policy, Forward\-Itr first, Forward\-Itr last, Unary\-Predicate p)
+\item 
+{\footnotesize template$<$typename Execution\-Policy , typename Forward\-Itr , typename T $>$ }\\Forward\-Itr \hyperlink{namespaceshad_a63ec34eb3f98177db268051179d6057a}{shad\-::find} (Execution\-Policy \&\&policy, Forward\-Itr first, Forward\-Itr last, const T \&value)
+\item 
+{\footnotesize template$<$typename Execution\-Policy , typename Forward\-Itr , typename Unary\-Predicate $>$ }\\Forward\-Itr \hyperlink{namespaceshad_ae5272738a131b86c7d9349bfff977aa4}{shad\-::find\-\_\-if} (Execution\-Policy \&\&policy, Forward\-Itr first, Forward\-Itr last, Unary\-Predicate p)
+\item 
+{\footnotesize template$<$typename Execution\-Policy , typename Forward\-Itr , typename Unary\-Predicate $>$ }\\Forward\-Itr \hyperlink{namespaceshad_a42458d0084e37bb16f4745ee085aa2f5}{shad\-::find\-\_\-if\-\_\-not} (Execution\-Policy \&\&policy, Forward\-Itr first, Forward\-Itr last, Unary\-Predicate p)
+\item 
+{\footnotesize template$<$typename Execution\-Policy , typename Forward\-Itr , typename Unary\-Predicate $>$ }\\void \hyperlink{namespaceshad_a7daf2afb8d216454ff4143be21237d0c}{shad\-::for\-\_\-each} (Execution\-Policy \&\&policy, Forward\-Itr first, Forward\-Itr last, Unary\-Predicate p)
+\item 
+{\footnotesize template$<$typename Execution\-Policy , typename Input\-Itr , typename T $>$ }\\\hyperlink{structshad_1_1distributed__iterator__traits}{shad\-::distributed\-\_\-iterator\-\_\-traits}\\*
+$<$ Input\-Itr $>$\-::difference\-\_\-type \hyperlink{namespaceshad_a2abc6976d67b071eccbb8d17e9a602fe}{shad\-::count} (Execution\-Policy \&\&policy, Input\-Itr first, Input\-Itr last, const T \&value)
+\item 
+{\footnotesize template$<$typename Execution\-Policy , typename Input\-Itr , typename Unary\-Predicate $>$ }\\\hyperlink{structshad_1_1distributed__iterator__traits}{shad\-::distributed\-\_\-iterator\-\_\-traits}\\*
+$<$ Input\-Itr $>$\-::difference\-\_\-type \hyperlink{namespaceshad_a08f4233aef9435fb627ebb82d186715e}{shad\-::count\-\_\-if} (Execution\-Policy \&\&policy, Input\-Itr first, Input\-Itr last, Unary\-Predicate p)
+\end{DoxyCompactItemize}

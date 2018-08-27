@@ -1,0 +1,50 @@
+\hypertarget{compare__and__hash__utils_8h}{\section{include/shad/data\-\_\-structures/compare\-\_\-and\-\_\-hash\-\_\-utils.h File Reference}
+\label{compare__and__hash__utils_8h}\index{include/shad/data\-\_\-structures/compare\-\_\-and\-\_\-hash\-\_\-utils.\-h@{include/shad/data\-\_\-structures/compare\-\_\-and\-\_\-hash\-\_\-utils.\-h}}
+}
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$cstdint$>$}\\*
+{\ttfamily \#include $<$cstring$>$}\\*
+{\ttfamily \#include $<$functional$>$}\\*
+{\ttfamily \#include $<$type\-\_\-traits$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+Include dependency graph for compare\-\_\-and\-\_\-hash\-\_\-utils.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{compare__and__hash__utils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{compare__and__hash__utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classshad_1_1MemCmp}{shad\-::\-Mem\-Cmp$<$ Key\-Ty $>$}
+\begin{DoxyCompactList}\small\item\em Comparison functor. \end{DoxyCompactList}\item 
+class \hyperlink{classshad_1_1MemCmp_3_01std_1_1vector_3_01KeyTy_01_4_01_4}{shad\-::\-Mem\-Cmp$<$ std\-::vector$<$ Key\-Ty $>$ $>$}
+\begin{DoxyCompactList}\small\item\em Comparison functor specialized for std\-::vector. \end{DoxyCompactList}\item 
+struct \hyperlink{structshad_1_1is__std__hashable}{shad\-::is\-\_\-std\-\_\-hashable$<$ T $>$}
+\item 
+struct \hyperlink{structshad_1_1hash}{shad\-::hash$<$ Key, bool $>$}
+\item 
+struct \hyperlink{structshad_1_1hash_3_01Key_00_01false_01_4}{shad\-::hash$<$ Key, false $>$}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceshad}{shad}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Key\-Ty $>$ }\\uint64\-\_\-t \hyperlink{namespaceshad_a21c73a78973e58a8ed4a246a74bff5b9}{shad\-::\-Hash\-Function} (const Key\-Ty \&key, uint8\-\_\-t seed)
+\begin{DoxyCompactList}\small\item\em Jenkins one-\/at-\/a-\/time hash function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Key\-Ty $>$ }\\uint64\-\_\-t \hyperlink{namespaceshad_a1bce4c68f2c688517fdc5dca70da59da}{shad\-::\-Hash\-Function} (const std\-::vector$<$ Key\-Ty $>$ \&key, uint8\-\_\-t seed)
+\begin{DoxyCompactList}\small\item\em Jenkins one-\/at-\/a-\/time hash function for std\-::vector. \end{DoxyCompactList}\end{DoxyCompactItemize}

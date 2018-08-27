@@ -1,0 +1,107 @@
+\hypertarget{runtime_8h}{\section{include/shad/runtime/runtime.h File Reference}
+\label{runtime_8h}\index{include/shad/runtime/runtime.\-h@{include/shad/runtime/runtime.\-h}}
+}
+{\ttfamily \#include $<$cstddef$>$}\\*
+{\ttfamily \#include $<$cstdint$>$}\\*
+{\ttfamily \#include $<$functional$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$iterator$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$memory$>$}\\*
+{\ttfamily \#include $<$set$>$}\\*
+{\ttfamily \#include $<$unordered\-\_\-set$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}shad/config/config.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shad/runtime/handle.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shad/runtime/locality.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shad/runtime/mapping\-\_\-traits.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shad/runtime/mappings/available\-\_\-mappings.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shad/runtime/synchronous\-\_\-interface.\-h\char`\"{}}\\*
+Include dependency graph for runtime.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{runtime_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{runtime_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classshad_1_1rt_1_1Lock}{shad\-::rt\-::\-Lock}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classshad_1_1rt_1_1Lock}{Lock}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceshad}{shad}
+\item 
+\hyperlink{namespaceshad_1_1rt}{shad\-::rt}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{namespaceshad_1_1rt_a199bb50c21e9012f615520413872aef6}{shad\-::rt\-::num\-Localities} ()
+\begin{DoxyCompactList}\small\item\em Number of localities on which the runtime is executing. \end{DoxyCompactList}\item 
+Locality \hyperlink{namespaceshad_1_1rt_a7536c33738a5dd285f3a44aa6a199faf}{shad\-::rt\-::this\-Locality} ()
+\begin{DoxyCompactList}\small\item\em Identity of locality on which the call is made. \end{DoxyCompactList}\item 
+std\-::set$<$ Locality $>$ \hyperlink{namespaceshad_1_1rt_adea42bceb84b2161df8fece9d20cb7cf}{shad\-::rt\-::all\-Localities} ()
+\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_ae4b428e7e47fc07e01707b3abb01caa2}{shad\-::rt\-::execute\-At} (const Locality \&loc, Fun\-T \&\&func, const In\-Args\-T \&args)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality synchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a5bc582ecab17be55af910f8a6e3e31f5}{shad\-::rt\-::execute\-At} (const Locality \&loc, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality synchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_acadca86a92a75be85e51534f905b7fef}{shad\-::rt\-::execute\-At\-With\-Ret\-Buff} (const Locality \&loc, Fun\-T \&\&func, const In\-Args\-T \&args, uint8\-\_\-t $\ast$result\-Buffer, uint32\-\_\-t $\ast$result\-Size)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality synchronously and return a buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a9a77fcd35f06e3e2200ee1ca940ba8d1}{shad\-::rt\-::execute\-At\-With\-Ret\-Buff} (const Locality \&loc, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size, uint8\-\_\-t $\ast$result\-Buffer, uint32\-\_\-t $\ast$result\-Size)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality synchronously and return a result buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T , typename Res\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a750ac93a8d339b97e3a11e182b50ffbc}{shad\-::rt\-::execute\-At\-With\-Ret} (const Locality \&loc, Fun\-T \&\&func, const In\-Args\-T \&args, Res\-T $\ast$result)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality synchronously and return a result. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename Res\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_aa1c240408fd99868fe25dc35e78c9c79}{shad\-::rt\-::execute\-At\-With\-Ret} (const Locality \&loc, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size, Res\-T $\ast$result)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality synchronously and return a result. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_aeff4031b9c8382aa34ec65c853cf45b8}{shad\-::rt\-::execute\-On\-All} (Fun\-T \&\&func, const In\-Args\-T \&args)
+\begin{DoxyCompactList}\small\item\em Execute a function on all localities synchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_af82c01717fef30752cd60051a92a9bee}{shad\-::rt\-::execute\-On\-All} (Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size)
+\begin{DoxyCompactList}\small\item\em Execute a function on all localities synchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a3701740e6d6681499063a0b5fa43645b}{shad\-::rt\-::for\-Each\-At} (const Locality \&loc, Fun\-T \&\&func, const In\-Args\-T \&args, const size\-\_\-t num\-Iters)
+\begin{DoxyCompactList}\small\item\em Execute a parallel loop at a specific locality. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a7d0647bae3b6f6a7c870fee9b69bbf8e}{shad\-::rt\-::for\-Each\-At} (const Locality \&loc, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size, const size\-\_\-t num\-Iters)
+\begin{DoxyCompactList}\small\item\em Execute a parallel loop at a specific locality. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a681ee8fbfec5d92c2bc8cd3851eae0c7}{shad\-::rt\-::for\-Each\-On\-All} (Fun\-T \&\&func, const In\-Args\-T \&args, const size\-\_\-t num\-Iters)
+\begin{DoxyCompactList}\small\item\em Execute a parallel loop on the whole system. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a3642b67c7ddc6f9d527616e4eb6cdbde}{shad\-::rt\-::for\-Each\-On\-All} (Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size, const size\-\_\-t num\-Iters)
+\begin{DoxyCompactList}\small\item\em Execute a parallel loop on the whole system. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_aad88d972c54520fa6da6661c0972ca66}{shad\-::rt\-::async\-Execute\-At} (Handle \&handle, const Locality \&loc, Fun\-T \&\&func, const In\-Args\-T \&args)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality asynchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a8690d0c19d1d2e7acce51b9c83223c94}{shad\-::rt\-::async\-Execute\-At} (Handle \&handle, const Locality \&loc, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality asynchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a7021749e6a86c90e762645385e22ac5c}{shad\-::rt\-::async\-Execute\-At\-With\-Ret\-Buff} (Handle \&handle, const Locality \&loc, Fun\-T \&\&func, const In\-Args\-T \&args, uint8\-\_\-t $\ast$result\-Buffer, uint32\-\_\-t $\ast$result\-Size)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality synchronously and return a buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a112df602ea3878eab5f2d2ed424d8d87}{shad\-::rt\-::async\-Execute\-At\-With\-Ret\-Buff} (Handle \&handle, const Locality \&loc, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size, uint8\-\_\-t $\ast$result\-Buffer, uint32\-\_\-t $\ast$result\-Size)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality asynchronously and return a result buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T , typename Res\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a5ef970b04fc171862dc8b0c4cb6308d4}{shad\-::rt\-::async\-Execute\-At\-With\-Ret} (Handle \&handle, const Locality \&loc, Fun\-T \&\&func, const In\-Args\-T \&args, Res\-T $\ast$result)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality asynchronously and return a result. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename Res\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a52c8bfa7986d1786079e81e772a9d425}{shad\-::rt\-::async\-Execute\-At\-With\-Ret} (Handle \&handle, const Locality \&loc, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size, Res\-T $\ast$result)
+\begin{DoxyCompactList}\small\item\em Execute a function on a selected locality asynchronously and return a result. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a35ae5113d8da4942705af0a77305fe0c}{shad\-::rt\-::async\-Execute\-On\-All} (Handle \&handle, Fun\-T \&\&func, const In\-Args\-T \&args)
+\begin{DoxyCompactList}\small\item\em Execute a function on all localities asynchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_aafcdb9446fa49c00add25b4cf61f92f0}{shad\-::rt\-::async\-Execute\-On\-All} (Handle \&handle, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size)
+\begin{DoxyCompactList}\small\item\em Execute a function on all localities synchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a36e675e25238d9b5c81b8a755dce61cd}{shad\-::rt\-::async\-For\-Each\-At} (Handle \&handle, const Locality \&loc, Fun\-T \&\&func, const In\-Args\-T \&args, const size\-\_\-t num\-Iters)
+\begin{DoxyCompactList}\small\item\em Execute a parallel loop at a specific locality asynchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a8f5647851b74b49dc7c35d5025b07cf3}{shad\-::rt\-::async\-For\-Each\-At} (Handle \&handle, const Locality \&loc, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size, const size\-\_\-t num\-Iters)
+\begin{DoxyCompactList}\small\item\em Execute a parallel loop at a specific locality asynchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T , typename In\-Args\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a540b5cecb449199c0c829141cc2ae7d5}{shad\-::rt\-::async\-For\-Each\-On\-All} (Handle \&handle, Fun\-T \&\&func, const In\-Args\-T \&args, const size\-\_\-t num\-Iters)
+\begin{DoxyCompactList}\small\item\em Execute a parallel loop on the whole system asynchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Fun\-T $>$ }\\void \hyperlink{namespaceshad_1_1rt_a4737e1c84ac7e830a1a306ac5b136a7d}{shad\-::rt\-::async\-For\-Each\-On\-All} (Handle \&handle, Fun\-T \&\&func, const std\-::shared\-\_\-ptr$<$ uint8\-\_\-t $>$ \&args\-Buffer, const uint32\-\_\-t buffer\-Size, const size\-\_\-t num\-Iters)
+\begin{DoxyCompactList}\small\item\em Execute a parallel loop on the whole system asynchronously. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceshad_1_1rt_a6ea1d3672bac3a80032863b6732a0c0a}{shad\-::rt\-::wait\-For\-Completion} (Handle \&handle)
+\begin{DoxyCompactList}\small\item\em Wait for completion of a set of tasks. \end{DoxyCompactList}\end{DoxyCompactItemize}

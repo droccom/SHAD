@@ -1,0 +1,66 @@
+\hypertarget{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk}{\section{shad\-:\-:Default\-Edge\-Index\-Storage$<$ Src\-T, Dest\-T, Neighbors\-Storage\-T $>$\-:\-:Local\-Edge\-List\-Chunk Struct Reference}
+\label{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk}\index{shad\-::\-Default\-Edge\-Index\-Storage$<$ Src\-T, Dest\-T, Neighbors\-Storage\-T $>$\-::\-Local\-Edge\-List\-Chunk@{shad\-::\-Default\-Edge\-Index\-Storage$<$ Src\-T, Dest\-T, Neighbors\-Storage\-T $>$\-::\-Local\-Edge\-List\-Chunk}}
+}
+
+
+{\ttfamily \#include $<$shad/extensions/graph\-\_\-library/local\-\_\-edge\-\_\-index.\-h$>$}
+
+
+
+Collaboration diagram for shad\-:\-:Default\-Edge\-Index\-Storage$<$ Src\-T, Dest\-T, Neighbors\-Storage\-T $>$\-:\-:Local\-Edge\-List\-Chunk\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk_a536a899e890ea5b51805efbf4c5ab8d6}{Local\-Edge\-List\-Chunk} (size\-\_\-t \-\_\-num\-Dest, bool \-\_\-ow, Dest\-T $\ast$\-\_\-dest)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk_a3091dc3831cae7d0dcc7ab1b53141225}{num\-Dest}
+\item 
+size\-\_\-t \hyperlink{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk_a6d82addc7d5c342822104d750afec0c9}{chunk\-Size}
+\item 
+bool \hyperlink{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk_af16ee8a11ee5912e40703608767038e3}{overwrite}
+\item 
+std\-::array$<$ Dest\-T, \\*
+\hyperlink{classshad_1_1DefaultEdgeIndexStorage_aae9f28f3799a6a274b0249dc1dc4313c}{k\-Edge\-List\-Chunk\-Size\-\_\-} $>$ \hyperlink{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk_adc9b9bf8d3bd6c3adb394737e3038907}{destinations}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk_a536a899e890ea5b51805efbf4c5ab8d6}{\index{shad\-::\-Default\-Edge\-Index\-Storage\-::\-Local\-Edge\-List\-Chunk@{shad\-::\-Default\-Edge\-Index\-Storage\-::\-Local\-Edge\-List\-Chunk}!Local\-Edge\-List\-Chunk@{Local\-Edge\-List\-Chunk}}
+\index{Local\-Edge\-List\-Chunk@{Local\-Edge\-List\-Chunk}!shad::DefaultEdgeIndexStorage::LocalEdgeListChunk@{shad\-::\-Default\-Edge\-Index\-Storage\-::\-Local\-Edge\-List\-Chunk}}
+\subsubsection[{Local\-Edge\-List\-Chunk}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Src\-T, typename Dest\-T, typename Neighbors\-Storage\-T = Local\-Set$<$\-Dest\-T$>$$>$ {\bf shad\-::\-Default\-Edge\-Index\-Storage}$<$ Src\-T, Dest\-T, Neighbors\-Storage\-T $>$\-::Local\-Edge\-List\-Chunk\-::\-Local\-Edge\-List\-Chunk (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{\-\_\-num\-Dest, }
+\item[{bool}]{\-\_\-ow, }
+\item[{Dest\-T $\ast$}]{\-\_\-dest}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk_a536a899e890ea5b51805efbf4c5ab8d6}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk_a6d82addc7d5c342822104d750afec0c9}{\index{shad\-::\-Default\-Edge\-Index\-Storage\-::\-Local\-Edge\-List\-Chunk@{shad\-::\-Default\-Edge\-Index\-Storage\-::\-Local\-Edge\-List\-Chunk}!chunk\-Size@{chunk\-Size}}
+\index{chunk\-Size@{chunk\-Size}!shad::DefaultEdgeIndexStorage::LocalEdgeListChunk@{shad\-::\-Default\-Edge\-Index\-Storage\-::\-Local\-Edge\-List\-Chunk}}
+\subsubsection[{chunk\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Src\-T, typename Dest\-T, typename Neighbors\-Storage\-T = Local\-Set$<$\-Dest\-T$>$$>$ size\-\_\-t {\bf shad\-::\-Default\-Edge\-Index\-Storage}$<$ Src\-T, Dest\-T, Neighbors\-Storage\-T $>$\-::Local\-Edge\-List\-Chunk\-::chunk\-Size}}\label{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk_a6d82addc7d5c342822104d750afec0c9}
+\hypertarget{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk_adc9b9bf8d3bd6c3adb394737e3038907}{\index{shad\-::\-Default\-Edge\-Index\-Storage\-::\-Local\-Edge\-List\-Chunk@{shad\-::\-Default\-Edge\-Index\-Storage\-::\-Local\-Edge\-List\-Chunk}!destinations@{destinations}}
+\index{destinations@{destinations}!shad::DefaultEdgeIndexStorage::LocalEdgeListChunk@{shad\-::\-Default\-Edge\-Index\-Storage\-::\-Local\-Edge\-List\-Chunk}}
+\subsubsection[{destinations}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Src\-T, typename Dest\-T, typename Neighbors\-Storage\-T = Local\-Set$<$\-Dest\-T$>$$>$ std\-::array$<$Dest\-T, {\bf k\-Edge\-List\-Chunk\-Size\-\_\-}$>$ {\bf shad\-::\-Default\-Edge\-Index\-Storage}$<$ Src\-T, Dest\-T, Neighbors\-Storage\-T $>$\-::Local\-Edge\-List\-Chunk\-::destinations}}\label{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk_adc9b9bf8d3bd6c3adb394737e3038907}
+\hypertarget{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk_a3091dc3831cae7d0dcc7ab1b53141225}{\index{shad\-::\-Default\-Edge\-Index\-Storage\-::\-Local\-Edge\-List\-Chunk@{shad\-::\-Default\-Edge\-Index\-Storage\-::\-Local\-Edge\-List\-Chunk}!num\-Dest@{num\-Dest}}
+\index{num\-Dest@{num\-Dest}!shad::DefaultEdgeIndexStorage::LocalEdgeListChunk@{shad\-::\-Default\-Edge\-Index\-Storage\-::\-Local\-Edge\-List\-Chunk}}
+\subsubsection[{num\-Dest}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Src\-T, typename Dest\-T, typename Neighbors\-Storage\-T = Local\-Set$<$\-Dest\-T$>$$>$ size\-\_\-t {\bf shad\-::\-Default\-Edge\-Index\-Storage}$<$ Src\-T, Dest\-T, Neighbors\-Storage\-T $>$\-::Local\-Edge\-List\-Chunk\-::num\-Dest}}\label{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk_a3091dc3831cae7d0dcc7ab1b53141225}
+\hypertarget{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk_af16ee8a11ee5912e40703608767038e3}{\index{shad\-::\-Default\-Edge\-Index\-Storage\-::\-Local\-Edge\-List\-Chunk@{shad\-::\-Default\-Edge\-Index\-Storage\-::\-Local\-Edge\-List\-Chunk}!overwrite@{overwrite}}
+\index{overwrite@{overwrite}!shad::DefaultEdgeIndexStorage::LocalEdgeListChunk@{shad\-::\-Default\-Edge\-Index\-Storage\-::\-Local\-Edge\-List\-Chunk}}
+\subsubsection[{overwrite}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Src\-T, typename Dest\-T, typename Neighbors\-Storage\-T = Local\-Set$<$\-Dest\-T$>$$>$ bool {\bf shad\-::\-Default\-Edge\-Index\-Storage}$<$ Src\-T, Dest\-T, Neighbors\-Storage\-T $>$\-::Local\-Edge\-List\-Chunk\-::overwrite}}\label{structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk_af16ee8a11ee5912e40703608767038e3}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/shad/extensions/graph\-\_\-library/\hyperlink{local__edge__index_8h}{local\-\_\-edge\-\_\-index.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,184 @@
+\hypertarget{classshad_1_1array}{\section{shad\-:\-:array$<$ T, N $>$ Class Template Reference}
+\label{classshad_1_1array}\index{shad\-::array$<$ T, N $>$@{shad\-::array$<$ T, N $>$}}
+}
+
+
+Fixed size distributed array.  
+
+
+
+
+{\ttfamily \#include $<$shad/core/array.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{group__Types_gaf417752888d4f1e19286503579310a52}{value\-\_\-type} = typename array\-\_\-t\-::value\-\_\-type
+\item 
+using \hyperlink{group__Types_ga037c76c91958f47f53bfebad4d67f8bb}{size\-\_\-type} = typename array\-\_\-t\-::size\-\_\-type
+\begin{DoxyCompactList}\small\item\em The type used to represent size. \end{DoxyCompactList}\item 
+using \hyperlink{group__Types_ga588f85dc2eccfd3b3a1a6229d4cfd04a}{difference\-\_\-type} = typename array\-\_\-t\-::difference\-\_\-type
+\begin{DoxyCompactList}\small\item\em The type used to represent distances. \end{DoxyCompactList}\item 
+using \hyperlink{group__Types_gad3f7e8f8130d2cfb3b554c72f9f29c57}{reference} = typename array\-\_\-t\-::reference
+\begin{DoxyCompactList}\small\item\em The type of references to the element in the array. \end{DoxyCompactList}\item 
+using \hyperlink{group__Types_gaac06273bdbb48ad582528e12e76bd859}{const\-\_\-reference} = typename array\-\_\-t\-::const\-\_\-reference
+\begin{DoxyCompactList}\small\item\em The type for const references to element in the array. \end{DoxyCompactList}\item 
+using \hyperlink{group__Types_gadfa9e253e7692c86d9fa4386cebf9459}{pointer} = typename array\-\_\-t\-::pointer
+\begin{DoxyCompactList}\small\item\em The type for pointer to \-::value\-\_\-type. \end{DoxyCompactList}\item 
+using \hyperlink{group__Types_gaf7a2ac6cd741ccfb7bbb1378fbc85218}{const\-\_\-pointer} = typename array\-\_\-t\-::const\-\_\-pointer
+\begin{DoxyCompactList}\small\item\em The type for pointer to \-::const\-\_\-value\-\_\-type. \end{DoxyCompactList}\item 
+using \hyperlink{group__Types_ga7b1db0deafc45673f50da5aacb8c372c}{iterator} = typename array\-\_\-t\-::iterator
+\begin{DoxyCompactList}\small\item\em The type of iterators on the array. \end{DoxyCompactList}\item 
+using \hyperlink{group__Types_ga2c50f8cbc96829f139f8138f1bac40bf}{const\-\_\-iterator} = typename array\-\_\-t\-::const\-\_\-iterator
+\begin{DoxyCompactList}\small\item\em The type of const iterators on the array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classshad_1_1array_a9ccd30dfaecc3e5a052c4b29dc7d853a}{array} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classshad_1_1array_a4d03dfb7bd7470adb567f1e22b2365d3}{$\sim$array} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classshad_1_1array}{array}$<$ T, N $>$ \& \hyperlink{classshad_1_1array_a224af2493437951bb9ff514ef4acae4e}{operator=} (const \hyperlink{classshad_1_1array}{array}$<$ T, N $>$ \&O)
+\begin{DoxyCompactList}\small\item\em The copy assignment operator. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_gad3f7e8f8130d2cfb3b554c72f9f29c57}{reference} \hyperlink{group__Element_gaedde045849710fdb88ff7aa46f7b83bb}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{group__Types_ga037c76c91958f47f53bfebad4d67f8bb}{size\-\_\-type} n)
+\begin{DoxyCompactList}\small\item\em Unchecked element access operator. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_gaac06273bdbb48ad582528e12e76bd859}{const\-\_\-reference} \hyperlink{group__Element_gac3910c3068e053991d5276a49c88450b}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{group__Types_ga037c76c91958f47f53bfebad4d67f8bb}{size\-\_\-type} n) const 
+\begin{DoxyCompactList}\small\item\em Unchecked element access operator. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_gad3f7e8f8130d2cfb3b554c72f9f29c57}{reference} \hyperlink{group__Element_gaf19fa246a5be092c19a70931728f01af}{at} (\hyperlink{group__Types_ga037c76c91958f47f53bfebad4d67f8bb}{size\-\_\-type} n)
+\begin{DoxyCompactList}\small\item\em Checked element access operator. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_gaac06273bdbb48ad582528e12e76bd859}{const\-\_\-reference} \hyperlink{group__Element_ga688d9b73d4c362ca435c5274745cc5c1}{at} (\hyperlink{group__Types_ga037c76c91958f47f53bfebad4d67f8bb}{size\-\_\-type} n) const 
+\begin{DoxyCompactList}\small\item\em Checked element access operator. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_gad3f7e8f8130d2cfb3b554c72f9f29c57}{reference} \hyperlink{group__Element_ga71e271185d26a12b8f520c082dc50f99}{front} ()
+\begin{DoxyCompactList}\small\item\em the first element in the array. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_gaac06273bdbb48ad582528e12e76bd859}{const\-\_\-reference} \hyperlink{group__Element_ga7c6cac24de62810ca02fb7b89ae876cb}{front} () const 
+\begin{DoxyCompactList}\small\item\em the first element in the array. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_gad3f7e8f8130d2cfb3b554c72f9f29c57}{reference} \hyperlink{group__Element_ga6ae02a1347393c160695b4b8d9ade659}{back} ()
+\begin{DoxyCompactList}\small\item\em the last element in the array. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_gaac06273bdbb48ad582528e12e76bd859}{const\-\_\-reference} \hyperlink{group__Element_ga15f07dceab8f58a5574ff694971af13a}{back} () const 
+\begin{DoxyCompactList}\small\item\em the last element in the array. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_ga7b1db0deafc45673f50da5aacb8c372c}{iterator} \hyperlink{group__Iterators_ga906e65071e1b075ad66d2bfa3cc33046}{begin} () noexcept
+\item 
+constexpr \hyperlink{group__Types_ga2c50f8cbc96829f139f8138f1bac40bf}{const\-\_\-iterator} \hyperlink{group__Iterators_ga0c88522dde8cb2ff1c2c523abbb01ff0}{begin} () const noexcept
+\begin{DoxyCompactList}\small\item\em The iterator to the beginning of the sequence. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_ga7b1db0deafc45673f50da5aacb8c372c}{iterator} \hyperlink{group__Iterators_ga1c4d3a9b4b7ba4890e21bad16c8b4a58}{end} () noexcept
+\begin{DoxyCompactList}\small\item\em The iterator to the end of the sequence. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_ga2c50f8cbc96829f139f8138f1bac40bf}{const\-\_\-iterator} \hyperlink{group__Iterators_ga75ec94abc79b646edb6d978b98db69da}{end} () const noexcept
+\begin{DoxyCompactList}\small\item\em The iterator to the end of the sequence. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_ga2c50f8cbc96829f139f8138f1bac40bf}{const\-\_\-iterator} \hyperlink{group__Iterators_gab6c412cc8aa5cbd90f50263e3aa76915}{cbegin} () const noexcept
+\begin{DoxyCompactList}\small\item\em The iterator to the beginning of the sequence. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_ga2c50f8cbc96829f139f8138f1bac40bf}{const\-\_\-iterator} \hyperlink{group__Iterators_ga9781beb1f058654a6b1a2580e7a5f9a4}{cend} () const noexcept
+\begin{DoxyCompactList}\small\item\em The iterator to the end of the sequence. \end{DoxyCompactList}\item 
+constexpr bool \hyperlink{group__Capacity_ga4200ae5ef6eba0507e3fb3cbf58d6ead}{empty} () const noexcept
+\item 
+constexpr \hyperlink{group__Types_ga037c76c91958f47f53bfebad4d67f8bb}{size\-\_\-type} \hyperlink{group__Capacity_gaed56012900efe8db9fdc2c6023cf0c60}{size} () const noexcept
+\begin{DoxyCompactList}\small\item\em The size of the container. \end{DoxyCompactList}\item 
+constexpr \hyperlink{group__Types_ga037c76c91958f47f53bfebad4d67f8bb}{size\-\_\-type} \hyperlink{group__Capacity_ga2c375adb82992e23aaaa947f39212e25}{max\-\_\-size} () const noexcept
+\begin{DoxyCompactList}\small\item\em The maximum size of the container. \end{DoxyCompactList}\item 
+void \hyperlink{group__Operations_gabf303c3ba4e769b45c226523225034a3}{fill} (const \hyperlink{group__Types_gaf417752888d4f1e19286503579310a52}{value\-\_\-type} \&v)
+\item 
+void \hyperlink{group__Operations_ga9914edf5870a790ad4e5fb4db7556aaa}{swap} (\hyperlink{classshad_1_1array}{array}$<$ T, N $>$ \&O) noexcept
+\begin{DoxyCompactList}\small\item\em Swap the content of two array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classshad_1_1array_a35522f2c6c1e55e99d277c6e3ac5b2de}{operator==} (const \hyperlink{classshad_1_1array}{array} \&L\-H\-S, const \hyperlink{classshad_1_1array}{array} \&R\-H\-S)
+\item 
+bool \hyperlink{classshad_1_1array_a0a3e6d802b9ffe79fa2a1f25efb1e2ee}{operator$<$} (const \hyperlink{classshad_1_1array}{array} \&L\-H\-S, const \hyperlink{classshad_1_1array}{array} \&R\-H\-S)
+\item 
+bool \hyperlink{classshad_1_1array_a8ff1cf68a11996ff7a197a40fabac631}{operator$>$} (const \hyperlink{classshad_1_1array}{array} \&L\-H\-S, const \hyperlink{classshad_1_1array}{array} \&R\-H\-S)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T, std\-::size\-\_\-t N$>$class shad\-::array$<$ T, N $>$}
+
+Fixed size distributed array. 
+
+Section 21.\-3.\-7.\-1 of the C++ standard defines the \-::array as a fixed-\/size sequence of objects. An \-::array should be a contiguous container (as defined in section 21.\-2.\-1). According to that definition, contiguous containers requires contiguous iterators. The definition of contiguous iterators implies contiguous memory allocation for the sequence, and it cannot be guaranteed in many distributed settings. Therefore, \-::array relaxes this requirement.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the elements in the distributed array. \\
+\hline
+{\em N} & The number of element in the distributed array. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classshad_1_1array_a9ccd30dfaecc3e5a052c4b29dc7d853a}{\index{shad\-::array@{shad\-::array}!array@{array}}
+\index{array@{array}!shad::array@{shad\-::array}}
+\subsubsection[{array}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T, std\-::size\-\_\-t N$>$ {\bf shad\-::array}$<$ T, N $>$\-::{\bf array} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classshad_1_1array_a9ccd30dfaecc3e5a052c4b29dc7d853a}
+
+
+Constructor. 
+
+\hypertarget{classshad_1_1array_a4d03dfb7bd7470adb567f1e22b2365d3}{\index{shad\-::array@{shad\-::array}!$\sim$array@{$\sim$array}}
+\index{$\sim$array@{$\sim$array}!shad::array@{shad\-::array}}
+\subsubsection[{$\sim$array}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T, std\-::size\-\_\-t N$>$ {\bf shad\-::array}$<$ T, N $>$\-::$\sim${\bf array} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1array_a4d03dfb7bd7470adb567f1e22b2365d3}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classshad_1_1array_a224af2493437951bb9ff514ef4acae4e}{\index{shad\-::array@{shad\-::array}!operator=@{operator=}}
+\index{operator=@{operator=}!shad::array@{shad\-::array}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T, std\-::size\-\_\-t N$>$ {\bf array}$<$T, N$>$\& {\bf shad\-::array}$<$ T, N $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf array}$<$ T, N $>$ \&}]{O}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1array_a224af2493437951bb9ff514ef4acae4e}
+
+
+The copy assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em O} & The right-\/hand side of the operator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the left-\/hand side. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classshad_1_1array_a0a3e6d802b9ffe79fa2a1f25efb1e2ee}{\index{shad\-::array@{shad\-::array}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!shad::array@{shad\-::array}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T, std\-::size\-\_\-t N$>$ bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf array}$<$ T, N $>$ \&}]{L\-H\-S, }
+\item[{const {\bf array}$<$ T, N $>$ \&}]{R\-H\-S}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1array_a0a3e6d802b9ffe79fa2a1f25efb1e2ee}
+\hypertarget{classshad_1_1array_a35522f2c6c1e55e99d277c6e3ac5b2de}{\index{shad\-::array@{shad\-::array}!operator==@{operator==}}
+\index{operator==@{operator==}!shad::array@{shad\-::array}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T, std\-::size\-\_\-t N$>$ bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf array}$<$ T, N $>$ \&}]{L\-H\-S, }
+\item[{const {\bf array}$<$ T, N $>$ \&}]{R\-H\-S}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1array_a35522f2c6c1e55e99d277c6e3ac5b2de}
+\hypertarget{classshad_1_1array_a8ff1cf68a11996ff7a197a40fabac631}{\index{shad\-::array@{shad\-::array}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!shad::array@{shad\-::array}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T, std\-::size\-\_\-t N$>$ bool operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf array}$<$ T, N $>$ \&}]{L\-H\-S, }
+\item[{const {\bf array}$<$ T, N $>$ \&}]{R\-H\-S}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1array_a8ff1cf68a11996ff7a197a40fabac631}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/shad/core/\hyperlink{core_2array_8h}{array.\-h}\end{DoxyCompactItemize}
