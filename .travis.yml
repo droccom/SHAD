@@ -55,7 +55,7 @@ branch:
 env:
   global:
     - GH_REPO_NAME: shad
-    - DOXYFILE: $TRAVIS_BUILD_DIR/Doxygen/Doxyfile
+    - DOXYFILE: $TRAVIS_BUILD_DIR/build-doxygen/docs/doxygen.cfg
     - GH_REPO_REF: github.com/droccom/shad.git
 
 # Install dependencies
@@ -101,4 +101,5 @@ script:
 after_success:
   - cd $TRAVIS_BUILD_DIR
   - chmod +x makedoc.sh
+  - mkdir build-doxygen && cd build-doxygen && cmake .. -DSHAD_ENABLE_UNIT_TEST=OFF -DSHAD_ENABLE_DOXYGEN=ON
   - ./makedoc.sh
