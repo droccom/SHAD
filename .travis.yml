@@ -1,14 +1,5 @@
 language: cpp
 
-addons:
-  apt:
-    packages:
-      - doxygen
-      - doxygen-doc
-      - doxygen-latex
-      - doxygen-gui
-      - graphviz
-
 matrix:
   include:
     - os: osx
@@ -22,9 +13,9 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-5
-
       env:
         - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
+    
     - os: linux
       addons:
         apt:
@@ -32,9 +23,9 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-6
-
       env:
         - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
+    
     - os: linux
       addons:
         apt:
@@ -42,9 +33,9 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-7
-
       env:
         - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+    
     - os: linux
       addons:
         apt:
@@ -54,7 +45,12 @@ matrix:
           packages:
             - g++-7
             - clang-5.0
-
+            - doxygen
+            - doxygen-doc
+            - doxygen-latex
+            - doxygen-gui
+            - graphviz
+                  
       env:
         - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
 
