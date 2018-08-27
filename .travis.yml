@@ -98,5 +98,5 @@ script:
 after_success:
   - cd $TRAVIS_BUILD_DIR
   - chmod +x makedoc.sh
-  - mkdir build-doxygen && cd build-doxygen && cmake .. -DSHAD_ENABLE_UNIT_TEST=OFF -DSHAD_ENABLE_DOXYGEN=ON
+  - mkdir build-doxygen && cd build-doxygen && cmake .. -DSHAD_ENABLE_UNIT_TEST=OFF -DSHAD_ENABLE_DOXYGEN=ON && cd ..
   - ./makedoc.sh
