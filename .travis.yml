@@ -1,10 +1,20 @@
 language: cpp
 
+addons:
+  apt:
+    packages:
+      - doxygen
+      - doxygen-doc
+      - doxygen-latex
+      - doxygen-gui
+      - graphviz
+
 matrix:
   include:
     - os: osx
       env:
         - MATRIX_EVAL="CC=clang && CXX=clang++"
+    
     - os: linux
       addons:
         apt:
@@ -44,6 +54,7 @@ matrix:
           packages:
             - g++-7
             - clang-5.0
+
       env:
         - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
 
@@ -57,16 +68,6 @@ env:
     - GH_REPO_NAME: shad
     - DOXYFILE: $TRAVIS_BUILD_DIR/build-doxygen/docs/doxygen.cfg
     - GH_REPO_REF: github.com/droccom/shad.git
-
-# Install dependencies
-addons:
-  apt:
-    packages:
-      - doxygen
-      - doxygen-doc
-      - doxygen-latex
-      - doxygen-gui
-      - graphviz
 
 before_install:
   - eval "${MATRIX_EVAL}"
