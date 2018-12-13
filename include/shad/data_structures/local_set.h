@@ -76,12 +76,6 @@ class LocalSet {
   explicit LocalSet(const size_t numInitBuckets = 16)
       : numBuckets_(numInitBuckets), buckets_array_(numInitBuckets), size_(0) {}
 
-  ~LocalSet() {
-    fprintf(stderr, "[l=%d] ~LocalSet %p #buckets=%d\n",
-            static_cast<uint32_t>(rt::thisLocality()), this,
-            buckets_array_.size());
-  }
-
   /// @brief Size of the set (number of entries).
   /// @return the size of the set.
   size_t Size() const { return size_.load(); }
@@ -197,9 +191,21 @@ class LocalSet {
 
   const_iterator cend() { return const_iterator::lset_end(numBuckets_); }
 
-  void track_entries() {
-    fprintf(stderr, "[l=%d] %d local-set-entry leaks\n",
-            static_cast<uint32_t>(rt::thisLocality()), entries_track.size());
+  size_t track_entries() {
+    size_t res = 0;
+    typename std::vector<Bucket>::size_type i = 0;
+    for (auto& b : buckets_array_) {
+      if (entries_track[&b].size()) {
+        fprintf(stderr, "[l=%d] LEAKING bucket=%d n=%d\n",
+                static_cast<uint32_t>(rt::thisLocality()), i,
+                entries_track[&b].size());
+        res += entries_track[&b].size() * numBuckets_ * sizeof(T);
+        for (auto p : entries_track[&b]) delete[] p;
+        entries_track[&b].clear();
+      }
+      ++i;
+    }
+    return res;
   }
 
  private:
@@ -220,8 +226,6 @@ class LocalSet {
     Entry() : state(EMPTY) {}
   };
 
-  static std::unordered_set<Entry *> entries_track;
-
   struct Bucket {
     std::shared_ptr<Bucket> next;
     bool isNextAllocated;
@@ -238,7 +242,7 @@ class LocalSet {
         if (!entries) {
 //          entries = std::move(std::shared_ptr<Entry>(
 //              new Entry[bucketSize_], std::default_delete<Entry[]>()));
-        	entries = make_entries(bucketSize_);
+        	entries = make_entries(bucketSize_, this);
         }
       }
       return entries.get()[i];
@@ -251,13 +255,15 @@ class LocalSet {
     std::shared_ptr<Entry> entries;
     rt::Lock _entriesLock;
 
-    std::shared_ptr<Entry> make_entries(size_t s) {
+    std::shared_ptr<Entry> make_entries(size_t s, Bucket *bp) {
     	auto p = new Entry[bucketSize_];
-    	entries_track.insert(p);
+    	entries_track[bp].insert(p);
     	return std::shared_ptr<Entry>(
-    	    p, [](Entry *p){entries_track.erase(p); delete[] p;});
+    	    p, [&](Entry *p){entries_track[bp].erase(p); delete[] p;});
     }
   };
+
+  static std::unordered_map<typename LocalSet::Bucket *, std::unordered_set<Entry *>> entries_track;
 
   ElemCompare ElemComp_;
   size_t numBuckets_;
@@ -674,7 +680,9 @@ void LocalSet<T, ELEM_COMPARE>::AsyncForEachElement(rt::Handle& handle,
 }
 
 template <typename T, typename ELEM_COMPARE>
-std::unordered_set<typename LocalSet<T, ELEM_COMPARE>::Entry*>
+std::unordered_map<
+    typename LocalSet<T, ELEM_COMPARE>::Bucket *,
+    std::unordered_set<typename LocalSet<T, ELEM_COMPARE>::Entry*>>
     LocalSet<T, ELEM_COMPARE>::entries_track;
 
 template <typename LSet, typename T>

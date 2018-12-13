@@ -240,10 +240,12 @@ class Set : public AbstractDataStructure<Set<T, ELEM_COMPARE>> {
   void buffered_flush() { WaitForBufferedInsert(); }
 
   ~Set() {
-    fprintf(stderr, "[l=%d] ~Set() %d (local=%p)\n",
-            static_cast<uint32_t>(rt::thisLocality()), GetGlobalID(), &localSet_);
     localSet_.Clear();
-    localSet_.track_entries();
+    auto leaks = localSet_.track_entries();
+    if (leaks)
+      fprintf(stderr, "> [l=%d] LEAKING ~Set() id=%d (local=%p) bytes=%lu\n",
+              static_cast<uint32_t>(rt::thisLocality()), GetGlobalID(),
+              &localSet_, leaks);
   }
 
  private:
