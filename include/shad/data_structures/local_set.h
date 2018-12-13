@@ -191,6 +191,13 @@ class LocalSet {
 
   const_iterator cend() { return const_iterator::lset_end(numBuckets_); }
 
+  void track_entries() {
+    if (!entries_track.empty()) {
+      fprintf(stderr, "[l=%d] %d local-set-entry LEAKs\n",
+              static_cast<uint32_t>(rt::thisLocality()), entries_track.size());
+    }
+  }
+
  private:
   static const size_t kNumEntriesPerBucket =
       constants::kSetDefaultNumEntriesPerBucket;
@@ -209,6 +216,8 @@ class LocalSet {
     Entry() : state(EMPTY) {}
   };
 
+  static std::unordered_set<Entry *> entries_track;
+
   struct Bucket {
     std::shared_ptr<Bucket> next;
     bool isNextAllocated;
@@ -223,8 +232,9 @@ class LocalSet {
       if (!entries) {
         std::lock_guard<rt::Lock> _(_entriesLock);
         if (!entries) {
-          entries = std::move(std::shared_ptr<Entry>(
-              new Entry[bucketSize_], std::default_delete<Entry[]>()));
+//          entries = std::move(std::shared_ptr<Entry>(
+//              new Entry[bucketSize_], std::default_delete<Entry[]>()));
+        	entries = make_entries(bucketSize_);
         }
       }
       return entries.get()[i];
@@ -236,6 +246,13 @@ class LocalSet {
     size_t bucketSize_;
     std::shared_ptr<Entry> entries;
     rt::Lock _entriesLock;
+
+    std::shared_ptr<Entry> make_entries(size_t s) {
+    	auto p = new Entry[bucketSize_];
+    	entries_track.insert(p);
+    	return std::shared_ptr<Entry>(
+    	    p, [](Entry *p){entries_track.erase(p); delete[] p;});
+    }
   };
 
   ElemCompare ElemComp_;
@@ -651,6 +668,10 @@ void LocalSet<T, ELEM_COMPARE>::AsyncForEachElement(rt::Handle& handle,
                      AsyncForEachElementFunWrapper<ArgsTuple, Args...>,
                      argsTuple, numBuckets_);
 }
+
+template <typename T, typename ELEM_COMPARE>
+std::unordered_set<typename LocalSet<T, ELEM_COMPARE>::Entry*>
+    LocalSet<T, ELEM_COMPARE>::entries_track;
 
 template <typename LSet, typename T>
 class lset_iterator : public std::iterator<std::forward_iterator_tag, T> {

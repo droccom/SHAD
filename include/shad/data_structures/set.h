@@ -239,6 +239,13 @@ class Set : public AbstractDataStructure<Set<T, ELEM_COMPARE>> {
 
   void buffered_flush() { WaitForBufferedInsert(); }
 
+  ~Set() {
+    fprintf(stderr, "[l=%d] ~Set()\n",
+            static_cast<uint32_t>(rt::thisLocality()));
+    localSet_.~LocalSet();
+    localSet_.track_entries();
+  }
+
  private:
   ObjectID oid_;
   LocalSet<T, ELEM_COMPARE> localSet_;
