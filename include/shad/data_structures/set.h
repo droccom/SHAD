@@ -240,9 +240,9 @@ class Set : public AbstractDataStructure<Set<T, ELEM_COMPARE>> {
   void buffered_flush() { WaitForBufferedInsert(); }
 
   ~Set() {
-    fprintf(stderr, "[l=%d] ~Set()\n",
-            static_cast<uint32_t>(rt::thisLocality()));
-    localSet_.~LocalSet();
+    fprintf(stderr, "[l=%d] ~Set() %d (local=%p)\n",
+            static_cast<uint32_t>(rt::thisLocality()), GetGlobalID(), &localSet_);
+    localSet_.Clear();
     localSet_.track_entries();
   }
 

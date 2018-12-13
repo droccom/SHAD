@@ -76,6 +76,12 @@ class LocalSet {
   explicit LocalSet(const size_t numInitBuckets = 16)
       : numBuckets_(numInitBuckets), buckets_array_(numInitBuckets), size_(0) {}
 
+  ~LocalSet() {
+    fprintf(stderr, "[l=%d] ~LocalSet %p #buckets=%d\n",
+            static_cast<uint32_t>(rt::thisLocality()), this,
+            buckets_array_.size());
+  }
+
   /// @brief Size of the set (number of entries).
   /// @return the size of the set.
   size_t Size() const { return size_.load(); }
@@ -192,10 +198,8 @@ class LocalSet {
   const_iterator cend() { return const_iterator::lset_end(numBuckets_); }
 
   void track_entries() {
-    if (!entries_track.empty()) {
-      fprintf(stderr, "[l=%d] %d local-set-entry LEAKs\n",
-              static_cast<uint32_t>(rt::thisLocality()), entries_track.size());
-    }
+    fprintf(stderr, "[l=%d] %d local-set-entry leaks\n",
+            static_cast<uint32_t>(rt::thisLocality()), entries_track.size());
   }
 
  private:
