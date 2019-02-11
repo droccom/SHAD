@@ -153,7 +153,7 @@ struct optional_vector {
     T value;
     bool valid;
   };
-  optional_vector(size_t s) : data(s) {}
+  optional_vector(size_t s, const T& init) : data(s, entry_t{init, false}) {}
   std::vector<entry_t> data;
 };
 
@@ -161,13 +161,14 @@ struct optional_vector {
 template <typename ForwardIt, typename MapF, typename... Args>
 std::vector<
     typename std::result_of<MapF&(ForwardIt, ForwardIt, Args&&...)>::type>
-distributed_map(ForwardIt first, ForwardIt last, MapF&& map_kernel,
-                Args&&... args) {
+distributed_map_init(
+    ForwardIt first, ForwardIt last, MapF&& map_kernel,
+    const typename std::result_of<MapF&(ForwardIt, ForwardIt, Args&&...)>::type&
+        init,
+    Args&&... args) {
   using itr_traits = distributed_iterator_traits<ForwardIt>;
   using mapped_t =
       typename std::result_of<MapF&(ForwardIt, ForwardIt, Args && ...)>::type;
-  static_assert(std::is_default_constructible<mapped_t>::value,
-                "distributed_map requires DefaultConstructible value type");
   static_assert(
       !std::is_same<mapped_t, bool>::value,
       "distributed-map kernels returning bool are not supported (yet)");
@@ -177,7 +178,7 @@ distributed_map(ForwardIt first, ForwardIt last, MapF&& map_kernel,
   size_t i = 0;
   rt::Handle h;
   auto d_args = std::make_tuple(map_kernel, first, last, args...);
-  optional_vector<mapped_t> opt_res(localities.size());
+  optional_vector<mapped_t> opt_res(localities.size(), init);
   for (auto locality = localities.begin(), end = localities.end();
        locality != end; ++locality, ++i) {
     rt::asyncExecuteAtWithRet(
@@ -199,9 +200,22 @@ distributed_map(ForwardIt first, ForwardIt last, MapF&& map_kernel,
   rt::waitForCompletion(h);
   std::vector<mapped_t> res;
   for (auto& x : opt_res.data)
-    if (x.valid)
-      res.push_back(x.value);
+    if (x.valid) res.push_back(x.value);
   return res;
+}
+
+template <typename ForwardIt, typename MapF, typename... Args>
+std::vector<
+    typename std::result_of<MapF&(ForwardIt, ForwardIt, Args&&...)>::type>
+distributed_map(ForwardIt first, ForwardIt last, MapF&& map_kernel,
+                Args&&... args) {
+  using itr_traits = distributed_iterator_traits<ForwardIt>;
+  using mapped_t =
+      typename std::result_of<MapF&(ForwardIt, ForwardIt, Args && ...)>::type;
+  static_assert(std::is_default_constructible<mapped_t>::value,
+                "distributed_map requires DefaultConstructible value type");
+  return distributed_map_init(first, last, map_kernel, mapped_t{},
+                              std::forward<Args>(args)...);
 }
 
 template <typename ForwardIt, typename MapF, typename... Args>

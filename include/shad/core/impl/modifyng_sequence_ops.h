@@ -180,20 +180,22 @@ ForwardIt2 dseq_kernel(std::true_type, ForwardIt1 first, ForwardIt1 last,
 
 // distributed-parallel kernel for non-block-contiguous output-iterators
 template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
-void dpar_kernel(std::false_type, ForwardIt1 first, ForwardIt1 last,
-                 ForwardIt2 d_first, ForwardIt2* res_ptr, UnaryOperation op) {
+ForwardIt2 dpar_kernel(std::false_type, ForwardIt1 first, ForwardIt1 last,
+                       ForwardIt2 d_first, UnaryOperation op) {
   using itr_traits1 = distributed_iterator_traits<ForwardIt1>;
   auto local_range = itr_traits1::local_range(first, last);
   auto begin = local_range.begin();
   auto end = local_range.end();
   auto it = itr_traits1::iterator_from_local(first, last, begin);
-  *res_ptr = std::transform(begin, end, d_first, op);
+  auto res = std::transform(begin, end, d_first, op);
+  flush_iterator(res);
+  return res;
 }
 
 // distributed-parallel kernel for block-contiguous output-iterators
 template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
-void dpar_kernel(std::true_type, ForwardIt1 first, ForwardIt1 last,
-                 ForwardIt2 d_first, ForwardIt2* res_ptr, UnaryOperation op) {
+ForwardIt2 dpar_kernel(std::true_type, ForwardIt1 first, ForwardIt1 last,
+                       ForwardIt2 d_first, UnaryOperation op) {
   using itr_traits1 = distributed_iterator_traits<ForwardIt1>;
   using itr_traits2 = distributed_random_access_iterator_trait<ForwardIt2>;
   auto loc_range = itr_traits1::local_range(first, last);
@@ -207,12 +209,11 @@ void dpar_kernel(std::true_type, ForwardIt1 first, ForwardIt1 last,
   for (auto i : dmap) {
     auto l = i.first;
     std::advance(loc_last, i.second);
-    d_last = transform_impl::block_contiguous_kernel(l, loc_first, loc_last,
-                                                     d_first, op);
+    d_first = transform_impl::block_contiguous_kernel(l, loc_first, loc_last,
+                                                      d_first, op);
     std::advance(loc_first, i.second);
-    std::advance(d_first, i.second);
   }
-  *res_ptr = d_last;
+  return d_first;
 }
 
 // dispatchers
@@ -224,10 +225,10 @@ ForwardIt2 dseq_kernel(ForwardIt1 first, ForwardIt1 last, ForwardIt2 d_first,
 }
 
 template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
-void dpar_kernel(ForwardIt1 first, ForwardIt1 last, ForwardIt2 d_first,
-                 ForwardIt2* res_ptr, UnaryOperation op) {
-  dpar_kernel(is_block_contiguous<ForwardIt2>::value, first, last, d_first,
-              res_ptr, op);
+ForwardIt2 dpar_kernel(ForwardIt1 first, ForwardIt1 last, ForwardIt2 d_first,
+                       UnaryOperation op) {
+  return dpar_kernel(is_block_contiguous<ForwardIt2>::value, first, last,
+                     d_first, op);
 }
 
 }  // namespace transform_impl
@@ -236,31 +237,24 @@ template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
 ForwardIt2 transform(distributed_parallel_tag&& policy, ForwardIt1 first1,
                      ForwardIt1 last1, ForwardIt2 d_first,
                      UnaryOperation unary_op) {
-  using itr_traits1 = distributed_iterator_traits<ForwardIt1>;
-  using itr_traits2 = distributed_random_access_iterator_trait<ForwardIt2>;
-  auto localities = itr_traits1::localities(first1, last1);
-  std::vector<ForwardIt2> res(localities.size(), d_first);
-  auto res_it = res.begin();
-  rt::Handle h;
-  for (auto locality = localities.begin(), end = localities.end();
-       locality != end; ++locality, ++res_it) {
-    rt::asyncExecuteAtWithRet(
-        h, locality,
-        [](rt::Handle&,
-           const std::tuple<ForwardIt1, ForwardIt1, ForwardIt2, UnaryOperation>&
-               args,
-           ForwardIt2* res_ptr) {
-          auto first = std::get<0>(args);
-          auto last = std::get<1>(args);
-          auto d_first = std::get<2>(args);
-          auto op = std::get<3>(args);
-          transform_impl::dpar_kernel(first, last, d_first, res_ptr, op);
-          flush_iterator(*res_ptr);
-        },
-        std::make_tuple(first1, last1, d_first, unary_op), &(*res_it));
-  }
-  rt::waitForCompletion(h);
-  return res.back();
+  using itr_traits = distributed_iterator_traits<ForwardIt1>;
+
+  // distributed map
+  auto map_res = distributed_map_init(
+      // range
+      first1, last1,
+      // kernel
+      [](ForwardIt1 first1, ForwardIt1 last1, ForwardIt2 d_first,
+         UnaryOperation unary_op) {
+        return transform_impl::dpar_kernel(first1, last1, d_first, unary_op);
+      },
+      // init value
+      d_first,
+      // map arguments
+      d_first, unary_op);
+
+  // reduce
+  return map_res.back();
 }
 
 template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
