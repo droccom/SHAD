@@ -44,6 +44,7 @@ using ATF_TestTypes =
     ::testing::Types<shad::array<int, shad_test_stl::kNumElements>>;
 TYPED_TEST_CASE(ATF, ATF_TestTypes);
 
+#if 0
 // min_element, max_element, minmax_element
 TYPED_TEST(ATF, shad_min_element) {
   using it_t = typename TypeParam::iterator;
@@ -392,6 +393,7 @@ TYPED_TEST(ATF, shad_fill) {
       shad_test_stl::fill_<it_t, val_t>, shad_test_stl::ordered_checksum<it_t>,
       42);
 }
+#endif
 
 // transform
 TYPED_TEST(ATF, shad_transform) {
@@ -408,8 +410,14 @@ TYPED_TEST(ATF, shad_transform) {
       shad::transform<shad::distributed_parallel_tag, it_t, it_t, map_f>,
       shad_test_stl::transform_<it_t, it_t, map_f>,
       shad_test_stl::ordered_checksum<it_t>, map_f{});
+  this->test_io_unaligned_assignment_with_policy(
+      shad::distributed_parallel_tag{},
+      shad::transform<shad::distributed_parallel_tag, it_t,
+                      typename TestFixture::unaligned_iterator, map_f>,
+      shad_test_stl::transform_<it_t, it_t, map_f>, map_f{});
 }
 
+#if 0
 // generate
 TYPED_TEST(ATF, shad_generate) {
   using it_t = typename TypeParam::iterator;
@@ -463,6 +471,7 @@ TYPED_TEST(ATF, shad_replace_if) {
       shad_test_stl::replace_if_<it_t, typeof(pred), val_t>,
       shad_test_stl::ordered_checksum<it_t>, pred, 3);
 }
+#endif
 
 ///////////////////////////////////////
 //
