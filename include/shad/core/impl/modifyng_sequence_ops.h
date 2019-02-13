@@ -131,7 +131,7 @@ void block_contiguous_local_par(rt::Handle& h, ForwardIt1 first,
                                 std::transform(
                                     b, e, local_d_range.begin() + offset, op);
                               });
-  rt::waitForCompletion(h); //FIXME should be moved outside
+  rt::waitForCompletion(h);  // FIXME should be moved outside
 }
 
 template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
@@ -230,7 +230,7 @@ ForwardIt2 dpar_kernel(std::true_type, ForwardIt1 first, ForwardIt1 last,
   if (coloc_first != coloc_last)
     block_contiguous_local_par(h, coloc_first, coloc_last, coloc_d_first, op);
   // join
-  if (!h.IsNull()) rt::waitForCompletion(h); //FIXME should be enough
+  if (!h.IsNull()) rt::waitForCompletion(h);  // FIXME should be enough
   return d_last;
 }
 
@@ -239,12 +239,24 @@ template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
 ForwardIt2 dpar_kernel(std::false_type, ForwardIt1 first, ForwardIt1 last,
                        ForwardIt2 d_first, UnaryOperation op) {
   using itr_traits1 = distributed_iterator_traits<ForwardIt1>;
-  auto local_range = itr_traits1::local_range(first, last);
-  auto begin = local_range.begin();
-  auto end = local_range.end();
-  auto res = std::transform(begin, end, d_first, op);
-  flush_iterator(res);
-  return res;
+  using local_iterator_t = typename itr_traits1::local_iterator_type;
+  auto lrange = itr_traits1::local_range(first, last);
+
+  // local map
+  auto map_res = local_map_init(
+      // range
+      lrange.begin(), lrange.end(),
+      // kernel
+      [&](local_iterator_t b, local_iterator_t e) {
+        auto res = std::transform(b, e, d_first, op);
+        return res;
+      },
+      // init val
+      d_first);
+
+  // local reduce
+  for (auto& x : map_res) flush_iterator(x);
+  return map_res.back();
 }
 
 // distributed-sequential kernel for non-block-contiguous output-iterators

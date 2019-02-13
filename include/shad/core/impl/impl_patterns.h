@@ -250,10 +250,10 @@ void distributed_map_void(ForwardIt first, ForwardIt last, MapF&& map_kernel,
 // TODO specialize mapped_t to support lambdas returning bool
 template <typename ForwardIt, typename MapF>
 std::vector<typename std::result_of<MapF&(ForwardIt, ForwardIt)>::type>
-local_map(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
+local_map_init(
+    ForwardIt first, ForwardIt last, MapF&& map_kernel,
+    const typename std::result_of<MapF&(ForwardIt, ForwardIt)>::type& init) {
   using mapped_t = typename std::result_of<MapF&(ForwardIt, ForwardIt)>::type;
-  static_assert(std::is_default_constructible<mapped_t>::value,
-                "local_map requires DefaultConstructible value type");
   static_assert(
       !std::is_same<mapped_t, bool>::value,
       "distributed-map kernels returning bool are not supported (yet)");
@@ -261,7 +261,7 @@ local_map(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
   // allocate partial results
   auto range_len = std::distance(first, last);
   auto n_blocks = std::min(rt::impl::getConcurrency(), (size_t)range_len);
-  std::vector<mapped_t> map_res(n_blocks);
+  std::vector<mapped_t> map_res(n_blocks, init);
 
   if (n_blocks) {
     auto block_size = (range_len + n_blocks - 1) / n_blocks;
@@ -297,6 +297,19 @@ local_map(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
   }
 
   return map_res;
+}
+
+template <typename ForwardIt, typename MapF>
+std::vector<typename std::result_of<MapF&(ForwardIt, ForwardIt)>::type>
+local_map(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
+  using mapped_t = typename std::result_of<MapF&(ForwardIt, ForwardIt)>::type;
+  static_assert(std::is_default_constructible<mapped_t>::value,
+                "local_map requires DefaultConstructible value type");
+  static_assert(
+      !std::is_same<mapped_t, bool>::value,
+      "distributed-map kernels returning bool are not supported (yet)");
+
+  return local_map_init(first, last, map_kernel, mapped_t{});
 }
 
 template <typename ForwardIt, typename MapF>
