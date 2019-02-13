@@ -350,6 +350,19 @@ struct to_int64<std::pair<T1, T2>> {
   int64_t operator()(const std::pair<T1, T2> &x) { return x.first + x.second; }
 };
 
+// increment
+template <typename T>
+struct inc {
+  T operator()(const T &x) { return x + 1; }
+};
+
+template <typename T, typename U>
+struct inc<std::pair<T, U>> {
+  std::pair<T, U> operator()(const std::pair<T, U> &x) {
+    return std::make_pair(x.first, x.second + 1);
+  }
+};
+
 // checksums
 template <typename It>
 int64_t checksum(It first, It last) {
@@ -489,7 +502,6 @@ class TestFixture : public ::testing::Test {
     auto obs = checksum_f(out1->begin(), out1->end());
     auto exp = checksum_f(out2->begin(), out2->end());
     ASSERT_EQ(obs, exp);
-    printf("chcksm=%lld\n", obs);
   }
 
  protected:
