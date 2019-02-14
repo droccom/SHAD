@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">SHAD: Scalable High-performance Algorithms and Data-structures
-   &#160;<span id="projectnumber">0.0.1 (heads/auto-doxygen-0-gc82a2c4-dirty)</span>
+   &#160;<span id="projectnumber">0.0.1 (heads/auto-doxygen-0-g60ff073-dirty)</span>
    </div>
   </td>
  </tr>
@@ -153,26 +153,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classshad_1_1IDCmp.html#a8a31a95514a7bc4196cb2c55d7cf4d4d">shad::IDCmp&lt; T &gt;</a>
 , <a class="el" href="classshad_1_1MemCmp.html#aab48de1966a6e2056bcb9aa6232707b0">shad::MemCmp&lt; KeyTy &gt;</a>
 , <a class="el" href="classshad_1_1MemCmp_3_01std_1_1vector_3_01KeyTy_01_4_01_4.html#aeacb3178b19255d7c248f46bda51a7bd">shad::MemCmp&lt; std::vector&lt; KeyTy &gt; &gt;</a>
-, <a class="el" href="structshad_1_1Overwriter.html#abe35de940744abbf1061aed8c0768bff">shad::Overwriter&lt; T &gt;</a>
+, <a class="el" href="structshad_1_1Overwriter.html#afa430a0e2b445ff2f7bbd2b77e237bc0">shad::Overwriter&lt; T &gt;</a>
+, <a class="el" href="structshad_1_1Updater.html#a5edad1e56b0b35ed884e3d744e1e47e8">shad::Updater&lt; T &gt;</a>
 </li>
 <li>operator*()
 : <a class="el" href="classshad_1_1buffered__insert__iterator.html#a329d91c1c95a1d86fe9b3cd14032bc23">shad::buffered_insert_iterator&lt; Container &gt;</a>
+, <a class="el" href="classshad_1_1insert__iterator.html#a58059a463666bc70b7804c399317d87d">shad::insert_iterator&lt; Container &gt;</a>
 , <a class="el" href="classshad_1_1lmap__iterator.html#a0a93b6df2a3dd0a342f018bae3700d95">shad::lmap_iterator&lt; LMap, T &gt;</a>
 , <a class="el" href="classshad_1_1lset__iterator.html#a05c8551aad5145322484979eecc96c60">shad::lset_iterator&lt; LSet, T &gt;</a>
 , <a class="el" href="classshad_1_1map__iterator.html#a783e686ed5416838221177430bf136ce">shad::map_iterator&lt; Map, T, NonConstT &gt;</a>
 , <a class="el" href="classshad_1_1set__iterator.html#a3ae23533d7aa28c234d61e7626f9e635">shad::set_iterator&lt; Set, T, NonConstT &gt;</a>
 </li>
+<li>operator+()
+: <a class="el" href="classshad_1_1rt_1_1Locality.html#ae5bd60f46c421db3da70d0b1ec084319">shad::rt::Locality</a>
+</li>
 <li>operator++()
 : <a class="el" href="classshad_1_1buffered__insert__iterator.html#a270b0bd4c6bfaa0cf656c4e65c676bef">shad::buffered_insert_iterator&lt; Container &gt;</a>
+, <a class="el" href="classshad_1_1insert__iterator.html#adf7bda892033b37e6cb139b62350c9c2">shad::insert_iterator&lt; Container &gt;</a>
 , <a class="el" href="classshad_1_1lmap__iterator.html#a2fb20e73193dc51da1278f91724a119e">shad::lmap_iterator&lt; LMap, T &gt;</a>
 , <a class="el" href="classshad_1_1lset__iterator.html#ab6efcb0bb2f2feeaf0259ebd256aeee5">shad::lset_iterator&lt; LSet, T &gt;</a>
 , <a class="el" href="classshad_1_1map__iterator.html#af899decfb38395fc586a6eb4bfe8f8f9">shad::map_iterator&lt; Map, T, NonConstT &gt;</a>
 , <a class="el" href="classshad_1_1ObjectIdentifierCounter.html#a0169eb5cd10c47d139690300e29628a2">shad::ObjectIdentifierCounter&lt; T &gt;</a>
 , <a class="el" href="classshad_1_1rt_1_1Locality.html#aad64f6e45b3083a552aec0dd2c582c1e">shad::rt::Locality</a>
-, <a class="el" href="classshad_1_1set__iterator.html#ab1dc70400a6aac2e3fb89f0cbb7dee57">shad::set_iterator&lt; Set, T, NonConstT &gt;</a>
+, <a class="el" href="classshad_1_1set__iterator.html#ad87b4d58f5c5febdc8ac4075df1b9781">shad::set_iterator&lt; Set, T, NonConstT &gt;</a>
 </li>
 <li>operator+=()
 : <a class="el" href="classshad_1_1rt_1_1Locality.html#a22f1d152384124ac1f78c8fc5e359f3f">shad::rt::Locality</a>
+</li>
+<li>operator-()
+: <a class="el" href="classshad_1_1rt_1_1Locality.html#a6a96e2e9922bcc6d79accec3d75e2c82">shad::rt::Locality</a>
+</li>
+<li>operator--()
+: <a class="el" href="classshad_1_1rt_1_1Locality.html#ae17cf482dce4cc87c716ba62e92ed478">shad::rt::Locality</a>
 </li>
 <li>operator-=()
 : <a class="el" href="classshad_1_1rt_1_1Locality.html#aa550d9488262a580dc553350eccf75ba">shad::rt::Locality</a>
@@ -186,7 +198,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>operator=()
 : <a class="el" href="classshad_1_1array.html#a224af2493437951bb9ff514ef4acae4e">shad::array&lt; T, N &gt;</a>
 , <a class="el" href="classshad_1_1buffered__insert__iterator.html#ae52408e8adbe5dfd80c6347a3b93d017">shad::buffered_insert_iterator&lt; Container &gt;</a>
-, <a class="el" href="classshad_1_1ObjectIdentifier.html#ac8c31064900f1296b4e8ad5236b8e59f">shad::ObjectIdentifier&lt; T &gt;</a>
+, <a class="el" href="classshad_1_1insert__iterator.html#a8f5d1c522b2f339db25b69974a41e0d6">shad::insert_iterator&lt; Container &gt;</a>
+, <a class="el" href="classshad_1_1ObjectIdentifier.html#ad92baa9aba59cb9eb1195944fa3b1942">shad::ObjectIdentifier&lt; T &gt;</a>
 , <a class="el" href="classshad_1_1OnePerLocality.html#a82c608896e00521bffcba78fe7a0b88b">shad::OnePerLocality&lt; T &gt;</a>
 , <a class="el" href="classshad_1_1rt_1_1Handle.html#aa038b056582fc8a6c57c8a32edba0228">shad::rt::Handle</a>
 , <a class="el" href="classshad_1_1rt_1_1Locality.html#a43bec72669ab0053cbb32583120f98e8">shad::rt::Locality</a>

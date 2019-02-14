@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">SHAD: Scalable High-performance Algorithms and Data-structures
-   &#160;<span id="projectnumber">0.0.1 (heads/auto-doxygen-0-gc82a2c4-dirty)</span>
+   &#160;<span id="projectnumber">0.0.1 (heads/auto-doxygen-0-g60ff073-dirty)</span>
    </div>
   </td>
  </tr>
@@ -118,16 +118,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef INCLUDE_SHAD_CORE_EXECUTION_H</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define INCLUDE_SHAD_CORE_EXECUTION_H</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>shad {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structshad_1_1distributed__sequential__tag.html">   30</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structshad_1_1distributed__sequential__tag.html">distributed_sequential_tag</a> {};</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structshad_1_1distributed__parallel__tag.html">   31</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structshad_1_1distributed__parallel__tag.html">distributed_parallel_tag</a> {};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}  <span class="comment">// namespace shad</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>shad {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structshad_1_1distributed__sequential__tag.html">   32</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structshad_1_1distributed__sequential__tag.html">distributed_sequential_tag</a> {};</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structshad_1_1distributed__parallel__tag.html">   33</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structshad_1_1distributed__parallel__tag.html">distributed_parallel_tag</a> {};</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INCLUDE_SHAD_CORE_EXECUTION_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="structshad_1_1distributed__parallel__tag_html"><div class="ttname"><a href="structshad_1_1distributed__parallel__tag.html">shad::distributed_parallel_tag</a></div><div class="ttdef"><b>Definition:</b> execution.h:31</div></div>
-<div class="ttc" id="structshad_1_1distributed__sequential__tag_html"><div class="ttname"><a href="structshad_1_1distributed__sequential__tag.html">shad::distributed_sequential_tag</a></div><div class="ttdef"><b>Definition:</b> execution.h:30</div></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> ExecutionPolicy&gt;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structshad_1_1is__execution__policy.html">   36</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structshad_1_1is__execution__policy.html">is_execution_policy</a> :</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;         std::integral_constant&lt;bool,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                std::is_same&lt;ExecutionPolicy,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                          distributed_sequential_tag&gt;::value ||</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                std::is_same&lt;ExecutionPolicy,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                          distributed_parallel_tag&gt;::value&gt;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}  <span class="comment">// namespace shad</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INCLUDE_SHAD_CORE_EXECUTION_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="structshad_1_1distributed__parallel__tag_html"><div class="ttname"><a href="structshad_1_1distributed__parallel__tag.html">shad::distributed_parallel_tag</a></div><div class="ttdef"><b>Definition:</b> execution.h:33</div></div>
+<div class="ttc" id="structshad_1_1is__execution__policy_html"><div class="ttname"><a href="structshad_1_1is__execution__policy.html">shad::is_execution_policy</a></div><div class="ttdef"><b>Definition:</b> execution.h:36</div></div>
+<div class="ttc" id="structshad_1_1distributed__sequential__tag_html"><div class="ttname"><a href="structshad_1_1distributed__sequential__tag.html">shad::distributed_sequential_tag</a></div><div class="ttdef"><b>Definition:</b> execution.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

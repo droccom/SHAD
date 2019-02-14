@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">SHAD: Scalable High-performance Algorithms and Data-structures
-   &#160;<span id="projectnumber">0.0.1 (heads/auto-doxygen-0-gc82a2c4-dirty)</span>
+   &#160;<span id="projectnumber">0.0.1 (heads/auto-doxygen-0-g60ff073-dirty)</span>
    </div>
   </td>
  </tr>
@@ -107,15 +107,15 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa8be4546469e47a794bd9a51b790c3af"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshad_1_1DefaultEdgeIndexStorage_1_1ElementInserter.html#aa8be4546469e47a794bd9a51b790c3af">Insert</a> (NeighborsStorageT *const lhs, const DestT value)</td></tr>
-<tr class="separator:aa8be4546469e47a794bd9a51b790c3af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8fb1add56dd442b4a675052f210a6c7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshad_1_1DefaultEdgeIndexStorage_1_1ElementInserter.html#ae8fb1add56dd442b4a675052f210a6c7">Insert</a> (NeighborsStorageT *const lhs, const <a class="el" href="structshad_1_1DefaultEdgeIndexStorage_1_1FlatEdgeList.html">FlatEdgeList</a> values)</td></tr>
-<tr class="separator:ae8fb1add56dd442b4a675052f210a6c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7de53ee4e4e5d05677cf8fb28235a23f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshad_1_1DefaultEdgeIndexStorage_1_1ElementInserter.html#a7de53ee4e4e5d05677cf8fb28235a23f">Insert</a> (NeighborsStorageT *const lhs, const <a class="el" href="structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk.html">LocalEdgeListChunk</a> &amp;chunk)</td></tr>
-<tr class="separator:a7de53ee4e4e5d05677cf8fb28235a23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8682d14d56f4f1d481c5e9a0ea6b8190"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshad_1_1DefaultEdgeIndexStorage_1_1ElementInserter.html#a8682d14d56f4f1d481c5e9a0ea6b8190">Insert</a> (NeighborsStorageT *const lhs, const DestT value, bool)</td></tr>
+<tr class="separator:a8682d14d56f4f1d481c5e9a0ea6b8190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01a24ca8a68abd02e633946fb7601c7e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshad_1_1DefaultEdgeIndexStorage_1_1ElementInserter.html#a01a24ca8a68abd02e633946fb7601c7e">Insert</a> (NeighborsStorageT *const lhs, const <a class="el" href="structshad_1_1DefaultEdgeIndexStorage_1_1FlatEdgeList.html">FlatEdgeList</a> values, bool)</td></tr>
+<tr class="separator:a01a24ca8a68abd02e633946fb7601c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab90df045439b9dd26d13229c2e9ea643"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshad_1_1DefaultEdgeIndexStorage_1_1ElementInserter.html#ab90df045439b9dd26d13229c2e9ea643">Insert</a> (NeighborsStorageT *const lhs, const <a class="el" href="structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk.html">LocalEdgeListChunk</a> &amp;chunk, bool)</td></tr>
+<tr class="separator:ab90df045439b9dd26d13229c2e9ea643"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa8be4546469e47a794bd9a51b790c3af"></a>
+<a class="anchor" id="a8682d14d56f4f1d481c5e9a0ea6b8190"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -125,7 +125,7 @@ template&lt;typename SrcT, typename DestT, typename NeighborsStorageT = LocalSet
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="classshad_1_1DefaultEdgeIndexStorage.html">shad::DefaultEdgeIndexStorage</a>&lt; SrcT, DestT, NeighborsStorageT &gt;::ElementInserter::Insert </td>
+          <td class="memname">static bool <a class="el" href="classshad_1_1DefaultEdgeIndexStorage.html">shad::DefaultEdgeIndexStorage</a>&lt; SrcT, DestT, NeighborsStorageT &gt;::ElementInserter::Insert </td>
           <td>(</td>
           <td class="paramtype">NeighborsStorageT *const&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>
@@ -134,7 +134,13 @@ template&lt;typename SrcT, typename DestT, typename NeighborsStorageT = LocalSet
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const DestT&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -151,7 +157,7 @@ template&lt;typename SrcT, typename DestT, typename NeighborsStorageT = LocalSet
 
 </div>
 </div>
-<a class="anchor" id="ae8fb1add56dd442b4a675052f210a6c7"></a>
+<a class="anchor" id="a01a24ca8a68abd02e633946fb7601c7e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -161,7 +167,7 @@ template&lt;typename SrcT, typename DestT, typename NeighborsStorageT = LocalSet
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="classshad_1_1DefaultEdgeIndexStorage.html">shad::DefaultEdgeIndexStorage</a>&lt; SrcT, DestT, NeighborsStorageT &gt;::ElementInserter::Insert </td>
+          <td class="memname">static bool <a class="el" href="classshad_1_1DefaultEdgeIndexStorage.html">shad::DefaultEdgeIndexStorage</a>&lt; SrcT, DestT, NeighborsStorageT &gt;::ElementInserter::Insert </td>
           <td>(</td>
           <td class="paramtype">NeighborsStorageT *const&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>
@@ -170,7 +176,13 @@ template&lt;typename SrcT, typename DestT, typename NeighborsStorageT = LocalSet
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structshad_1_1DefaultEdgeIndexStorage_1_1FlatEdgeList.html">FlatEdgeList</a>&#160;</td>
-          <td class="paramname"><em>values</em>&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -187,7 +199,7 @@ template&lt;typename SrcT, typename DestT, typename NeighborsStorageT = LocalSet
 
 </div>
 </div>
-<a class="anchor" id="a7de53ee4e4e5d05677cf8fb28235a23f"></a>
+<a class="anchor" id="ab90df045439b9dd26d13229c2e9ea643"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -197,7 +209,7 @@ template&lt;typename SrcT, typename DestT, typename NeighborsStorageT = LocalSet
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="classshad_1_1DefaultEdgeIndexStorage.html">shad::DefaultEdgeIndexStorage</a>&lt; SrcT, DestT, NeighborsStorageT &gt;::ElementInserter::Insert </td>
+          <td class="memname">static bool <a class="el" href="classshad_1_1DefaultEdgeIndexStorage.html">shad::DefaultEdgeIndexStorage</a>&lt; SrcT, DestT, NeighborsStorageT &gt;::ElementInserter::Insert </td>
           <td>(</td>
           <td class="paramtype">NeighborsStorageT *const&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>
@@ -206,7 +218,13 @@ template&lt;typename SrcT, typename DestT, typename NeighborsStorageT = LocalSet
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk.html">LocalEdgeListChunk</a> &amp;&#160;</td>
-          <td class="paramname"><em>chunk</em>&#160;</td>
+          <td class="paramname"><em>chunk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['iterator_5f',['iterator_',['../classshad_1_1buffered__insert__iterator.html#a47e9e89830c5acbda85c3d6a43cc6713',1,'shad::buffered_insert_iterator']]]
+  ['hasher',['hasher',['../structshad_1_1hash.html#ac9882386ae06eafe4720d76e1356c6b1',1,'shad::hash']]]
 ];

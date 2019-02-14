@@ -1,0 +1,150 @@
+\hypertarget{numeric_8h}{\section{include/shad/core/numeric.h File Reference}
+\label{numeric_8h}\index{include/shad/core/numeric.\-h@{include/shad/core/numeric.\-h}}
+}
+{\ttfamily \#include $<$functional$>$}\\*
+{\ttfamily \#include $<$iterator$>$}\\*
+{\ttfamily \#include $<$tuple$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}shad/core/execution.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shad/core/impl/numeric\-\_\-ops.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shad/distributed\-\_\-iterator\-\_\-traits.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shad/runtime/runtime.\-h\char`\"{}}\\*
+Include dependency graph for numeric.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{numeric_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceshad}{shad}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Forward\-Iterator , class T $>$ }\\void \hyperlink{namespaceshad_a1406d52ae9f56d5b4a160d37b2b20f3a}{shad\-::iota} (Forward\-Iterator first, Forward\-Iterator last, T value)
+\item 
+{\footnotesize template$<$class Input\-It , class T , class Binary\-Operation $>$ }\\T \hyperlink{namespaceshad_a79535b2ad05d27266485f8e299b776cd}{shad\-::accumulate} (Input\-It first, Input\-It last, T init, Binary\-Operation op)
+\item 
+{\footnotesize template$<$class Input\-It , class T $>$ }\\T \hyperlink{namespaceshad_a7286bb0b681bec70602b31083a0b0680}{shad\-::accumulate} (Input\-It first, Input\-It last, T init)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 , class T $>$ }\\T \hyperlink{namespaceshad_ae17dfe23117ed2d68100db112d13d5e2}{shad\-::inner\-\_\-product} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, T init)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 , class T , class Binary\-Operation1 , class Binary\-Operation2 $>$ }\\T \hyperlink{namespaceshad_a9e35d019afa66a7d241f01c4c28a5c14}{shad\-::inner\-\_\-product} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, T init, Binary\-Operation1 op1, Binary\-Operation2 op2)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It $>$ }\\Output\-It \hyperlink{namespaceshad_a740dc92192ebb80d0651a62c31ad92ec}{shad\-::adjacent\-\_\-difference} (Input\-It first, Input\-It last, Output\-It d\-\_\-first)
+\item 
+{\footnotesize template$<$typename Execution\-Policy , class Input\-It , class Output\-It $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+Output\-It $>$ \hyperlink{namespaceshad_affad70e4283f19271fe3ab0ea3ce1b90}{shad\-::adjacent\-\_\-difference} (Execution\-Policy \&\&policy, Input\-It first, Input\-It last, Output\-It d\-\_\-first)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class Binary\-Operation $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It $>$\-::value, Output\-It $>$ \hyperlink{namespaceshad_ac72a7771f9b490b5948c84da221e9a83}{shad\-::adjacent\-\_\-difference} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, Binary\-Operation op)
+\item 
+{\footnotesize template$<$typename Execution\-Policy , class Input\-It , class Output\-It , class Binary\-Operation $>$ }\\Output\-It \hyperlink{namespaceshad_a390a66f6af57d674bfcd5aced6b69a9d}{shad\-::adjacent\-\_\-difference} (Execution\-Policy \&\&policy, Input\-It first, Input\-It last, Output\-It d\-\_\-first, Binary\-Operation op)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It $>$ }\\Output\-It \hyperlink{namespaceshad_a08d8882161e132a6fb3f9253b9a3bdef}{shad\-::partial\-\_\-sum} (Input\-It first, Input\-It last, Output\-It d\-\_\-first)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class Binary\-Operation $>$ }\\Output\-It \hyperlink{namespaceshad_a82089f3b0373f5062395613e51d16fa3}{shad\-::partial\-\_\-sum} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, Binary\-Operation op)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class T , class Binary\-Op $>$ }\\T \hyperlink{namespaceshad_a23bc7c39dc6aa69f526570d07967a185}{shad\-::reduce} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, T init, Binary\-Op binary\-\_\-op)
+\item 
+{\footnotesize template$<$class Input\-It $>$ }\\std\-::iterator\-\_\-traits$<$ Input\-It $>$\\*
+\-::value\-\_\-type \hyperlink{namespaceshad_a0cb65c2ad084f15e5fd33058445b7f10}{shad\-::reduce} (Input\-It first, Input\-It last)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+typename std\-::iterator\-\_\-traits\\*
+$<$ Forward\-It $>$\-::value\-\_\-type $>$ \hyperlink{namespaceshad_a329ef698d7c8b55b8b967ad07e9bf84d}{shad\-::reduce} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last)
+\item 
+{\footnotesize template$<$class Input\-It , class T $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It $>$\-::value, T $>$ \hyperlink{namespaceshad_aea9e6912fe7e3a494de8b7eaad2fd345}{shad\-::reduce} (Input\-It first, Input\-It last, T init)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class T $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, T $>$ \hyperlink{namespaceshad_a047e9c9a109948515a14306d4a169893}{shad\-::reduce} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, T init)
+\item 
+{\footnotesize template$<$class Input\-It , class T , class Binary\-Op $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It $>$\-::value, T $>$ \hyperlink{namespaceshad_a2807d313b1e6586657c742ae2b4c132d}{shad\-::reduce} (Input\-It first, Input\-It last, T init, Binary\-Op binary\-\_\-op)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class T $>$ }\\Output\-It \hyperlink{namespaceshad_af0252dc307b8ba0b96885c00e8871bbc}{shad\-::exclusive\-\_\-scan} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, T init)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class T $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+Forward\-It2 $>$ \hyperlink{namespaceshad_a04c9040a1562793e895edaf3517dcfd6}{shad\-::exclusive\-\_\-scan} (Execution\-Policy \&\&policy, Forward\-It1 first, Forward\-It1 last, Forward\-It2 d\-\_\-first, T init)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class T , class Binary\-Operation $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It $>$\-::value, Output\-It $>$ \hyperlink{namespaceshad_a3c4542507eba2afe28bb5d8af386b76d}{shad\-::exclusive\-\_\-scan} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, T init, Binary\-Operation binary\-\_\-op)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class T , class Binary\-Operation $>$ }\\Forward\-It2 \hyperlink{namespaceshad_af1776fbb5971b5b37331938fa9f55e09}{shad\-::exclusive\-\_\-scan} (Execution\-Policy \&\&policy, Forward\-It1 first, Forward\-It1 last, Forward\-It2 d\-\_\-first, T init, Binary\-Operation binary\-\_\-op)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It $>$ }\\Output\-It \hyperlink{namespaceshad_a2854c58c1b96a1d20320f22a34bc2231}{shad\-::inclusive\-\_\-scan} (Input\-It first, Input\-It last, Output\-It d\-\_\-first)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+Forward\-It2 $>$ \hyperlink{namespaceshad_a1d3a1d24cc9d681bd236220c3db36a4b}{shad\-::inclusive\-\_\-scan} (Execution\-Policy \&\&policy, Forward\-It1 first, Forward\-It1 last, Forward\-It2 d\-\_\-first)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class Binary\-Operation $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It $>$\-::value, Output\-It $>$ \hyperlink{namespaceshad_ab2f0bce9d14c5ec29670dbbcae4a7e58}{shad\-::inclusive\-\_\-scan} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, Binary\-Operation binary\-\_\-op)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Operation $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+Forward\-It2 $>$ \hyperlink{namespaceshad_adc86ffac5f28d6798c40434c5017d86f}{shad\-::inclusive\-\_\-scan} (Execution\-Policy \&\&policy, Forward\-It1 first, Forward\-It1 last, Forward\-It2 d\-\_\-first, Binary\-Operation binary\-\_\-op)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class Binary\-Operation , class T $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It $>$\-::value, Output\-It $>$ \hyperlink{namespaceshad_a3a46378a583f1c96000caa42e640ab5c}{shad\-::inclusive\-\_\-scan} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, Binary\-Operation binary\-\_\-op, T init)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Operation , class T $>$ }\\Forward\-It2 \hyperlink{namespaceshad_ac268ceb6647308bdfa9a510f346cc560}{shad\-::inclusive\-\_\-scan} (Execution\-Policy \&\&policy, Forward\-It1 first, Forward\-It1 last, Forward\-It2 d\-\_\-first, Binary\-Operation binary\-\_\-op, T init)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class T , class Binary\-Op , class Unary\-Op $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, T $>$ \hyperlink{namespaceshad_a45c6b8c67b4d583819c334dc29a969b1}{shad\-::transform\-\_\-reduce} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, T init, Binary\-Op binary\-\_\-op, Unary\-Op unary\-\_\-op)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class T , class Binary\-Op1 , class Binary\-Op2 $>$ }\\T \hyperlink{namespaceshad_a9ada8d6b6cb63fd3b5b459ff608b5027}{shad\-::transform\-\_\-reduce} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 first2, T init, Binary\-Op1 binary\-\_\-op1, Binary\-Op2 binary\-\_\-op2)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 , class T $>$ }\\T \hyperlink{namespaceshad_a9fb77cb6187be97748be38c5632a406c}{shad\-::transform\-\_\-reduce} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, T init)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 , class T , class Binary\-Op1 , class Binary\-Op2 $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It1 $>$\-::value, T $>$ \hyperlink{namespaceshad_a6764e68a376e02ec492499b12eac8dc1}{shad\-::transform\-\_\-reduce} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, T init, Binary\-Op1 binary\-\_\-op1, Binary\-Op2 binary\-\_\-op2)
+\item 
+{\footnotesize template$<$class Input\-It , class T , class Binary\-Op , class Unary\-Op $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It $>$\-::value, T $>$ \hyperlink{namespaceshad_a68e4deac86c665ff2d3d3550c7042331}{shad\-::transform\-\_\-reduce} (Input\-It first, Input\-It last, T init, Binary\-Op binop, Unary\-Op unary\-\_\-op)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class T $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, T $>$ \hyperlink{namespaceshad_a1de0e51e5616aabd05a68412086358ae}{shad\-::transform\-\_\-reduce} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 first2, T init)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class T , class Binary\-Operation , class Unary\-Operation $>$ }\\Output\-It \hyperlink{namespaceshad_a58f5206d294f2437782ed7f197eb1d0d}{shad\-::transform\-\_\-exclusive\-\_\-scan} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, T init, Binary\-Operation binary\-\_\-op, Unary\-Operation unary\-\_\-op)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class T , class Binary\-Operation , class Unary\-Operation $>$ }\\Forward\-It2 \hyperlink{namespaceshad_a1ad8ba4e807e353d19cbe7f118914856}{shad\-::transform\-\_\-exclusive\-\_\-scan} (Execution\-Policy \&\&policy, Forward\-It1 first, Forward\-It1 last, Forward\-It2 d\-\_\-first, T init, Binary\-Operation binary\-\_\-op, Unary\-Operation unary\-\_\-op)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class Binary\-Operation , class Unary\-Operation $>$ }\\Output\-It \hyperlink{namespaceshad_abae2714cc427e081f0f399648d5cfdef}{shad\-::transform\-\_\-inclusive\-\_\-scan} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, Binary\-Operation binary\-\_\-op, Unary\-Operation unary\-\_\-op)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Operation , class Unary\-Operation $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+Forward\-It2 $>$ \hyperlink{namespaceshad_a0d3e58f6b91d06bf7d3f46e7d2e478bc}{shad\-::transform\-\_\-inclusive\-\_\-scan} (Execution\-Policy \&\&policy, Forward\-It1 first, Forward\-It1 last, Forward\-It2 d\-\_\-first, Binary\-Operation binary\-\_\-op, Unary\-Operation unary\-\_\-op)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class Binary\-Operation , class Unary\-Operation , class T $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It $>$\-::value, Output\-It $>$ \hyperlink{namespaceshad_aa7967d1c57c2457d65e5a8dc09b98c0e}{shad\-::transform\-\_\-inclusive\-\_\-scan} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, Binary\-Operation binary\-\_\-op, Unary\-Operation unary\-\_\-op, T init)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Operation , class Unary\-Operation , class T $>$ }\\Forward\-It2 \hyperlink{namespaceshad_a7731b3ca77801af3286844f6db55364c}{shad\-::transform\-\_\-inclusive\-\_\-scan} (Execution\-Policy \&\&policy, Forward\-It1 first, Forward\-It1 last, Forward\-It2 d\-\_\-first, Binary\-Operation binary\-\_\-op, Unary\-Operation unary\-\_\-op, T init)
+\end{DoxyCompactItemize}

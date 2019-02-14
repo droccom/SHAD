@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">SHAD: Scalable High-performance Algorithms and Data-structures
-   &#160;<span id="projectnumber">0.0.1 (heads/auto-doxygen-0-gc82a2c4-dirty)</span>
+   &#160;<span id="projectnumber">0.0.1 (heads/auto-doxygen-0-g60ff073-dirty)</span>
    </div>
   </td>
  </tr>
@@ -115,8 +115,8 @@ Classes</h2></td></tr>
 Public Types</h2></td></tr>
 <tr class="memitem:a3fa27c320a046745e01804325f15dd0e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#a3fa27c320a046745e01804325f15dd0e">value_type</a> = std::pair&lt; KTYPE, VTYPE &gt;</td></tr>
 <tr class="separator:a3fa27c320a046745e01804325f15dd0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a130dbe16edd42ee7aa2e27eac6ee3cf4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#a130dbe16edd42ee7aa2e27eac6ee3cf4">iterator</a> = <a class="el" href="classshad_1_1lmap__iterator.html">lmap_iterator</a>&lt; <a class="el" href="classshad_1_1LocalHashmap.html">LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;, std::pair&lt; KTYPE, VTYPE &gt;&gt;</td></tr>
-<tr class="separator:a130dbe16edd42ee7aa2e27eac6ee3cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafdf55e8d9fa4799bcef4881baf25a71"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#aafdf55e8d9fa4799bcef4881baf25a71">iterator</a> = <a class="el" href="classshad_1_1lmap__iterator.html">lmap_iterator</a>&lt; <a class="el" href="classshad_1_1LocalHashmap.html">LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;, const std::pair&lt; KTYPE, VTYPE &gt;&gt;</td></tr>
+<tr class="separator:aafdf55e8d9fa4799bcef4881baf25a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5e054bdbc20f161cd8df8e00c525401"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#ad5e054bdbc20f161cd8df8e00c525401">const_iterator</a> = <a class="el" href="classshad_1_1lmap__iterator.html">lmap_iterator</a>&lt; <a class="el" href="classshad_1_1LocalHashmap.html">LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;, const std::pair&lt; KTYPE, VTYPE &gt;&gt;</td></tr>
 <tr class="separator:ad5e054bdbc20f161cd8df8e00c525401"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -128,12 +128,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac70c307f612b97f08f5e38bba7759665"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#ac70c307f612b97f08f5e38bba7759665">Size</a> () const </td></tr>
 <tr class="memdesc:ac70c307f612b97f08f5e38bba7759665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the hashmap (number of entries).  <a href="#ac70c307f612b97f08f5e38bba7759665">More...</a><br/></td></tr>
 <tr class="separator:ac70c307f612b97f08f5e38bba7759665"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3ef8afed1593bf034477b8692661b97"><td class="memItemLeft" align="right" valign="top">VTYPE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#af3ef8afed1593bf034477b8692661b97">Insert</a> (const KTYPE &amp;key, const VTYPE &amp;value)</td></tr>
-<tr class="memdesc:af3ef8afed1593bf034477b8692661b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a key-value pair in the hashmap.  <a href="#af3ef8afed1593bf034477b8692661b97">More...</a><br/></td></tr>
-<tr class="separator:af3ef8afed1593bf034477b8692661b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8062ff16023002c7aee667f3fe4cfd2"><td class="memTemplParams" colspan="2">template&lt;typename ELTYPE &gt; </td></tr>
-<tr class="memitem:ad8062ff16023002c7aee667f3fe4cfd2"><td class="memTemplItemLeft" align="right" valign="top">VTYPE *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#ad8062ff16023002c7aee667f3fe4cfd2">Insert</a> (const KTYPE &amp;key, const ELTYPE &amp;value)</td></tr>
-<tr class="separator:ad8062ff16023002c7aee667f3fe4cfd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc8cd3f5cf2147fb1e2a7b75900127d7"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classshad_1_1LocalHashmap.html#aafdf55e8d9fa4799bcef4881baf25a71">iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#acc8cd3f5cf2147fb1e2a7b75900127d7">Insert</a> (const KTYPE &amp;key, const VTYPE &amp;value)</td></tr>
+<tr class="memdesc:acc8cd3f5cf2147fb1e2a7b75900127d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a key-value pair in the hashmap.  <a href="#acc8cd3f5cf2147fb1e2a7b75900127d7">More...</a><br/></td></tr>
+<tr class="separator:acc8cd3f5cf2147fb1e2a7b75900127d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2492968014825ebe7ff90c40c623268d"><td class="memTemplParams" colspan="2">template&lt;typename ELTYPE &gt; </td></tr>
+<tr class="memitem:a2492968014825ebe7ff90c40c623268d"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classshad_1_1LocalHashmap.html#aafdf55e8d9fa4799bcef4881baf25a71">iterator</a>, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#a2492968014825ebe7ff90c40c623268d">Insert</a> (const KTYPE &amp;key, const ELTYPE &amp;value)</td></tr>
+<tr class="separator:a2492968014825ebe7ff90c40c623268d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb5581492e044c07bd0ceaa3a6892309"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#acb5581492e044c07bd0ceaa3a6892309">AsyncInsert</a> (<a class="el" href="classshad_1_1rt_1_1Handle.html">rt::Handle</a> &amp;handle, const KTYPE &amp;key, const VTYPE &amp;value)</td></tr>
 <tr class="memdesc:acb5581492e044c07bd0ceaa3a6892309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously Insert a key-value pair in the hashmap.  <a href="#acb5581492e044c07bd0ceaa3a6892309">More...</a><br/></td></tr>
 <tr class="separator:acb5581492e044c07bd0ceaa3a6892309"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,22 +191,26 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7dc7ac304876af70108a24c7b82d408e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#a7dc7ac304876af70108a24c7b82d408e">PrintAllEntries</a> ()</td></tr>
 <tr class="memdesc:a7dc7ac304876af70108a24c7b82d408e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print all the entries in the hashmap.  <a href="#a7dc7ac304876af70108a24c7b82d408e">More...</a><br/></td></tr>
 <tr class="separator:a7dc7ac304876af70108a24c7b82d408e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad84d91d8fd4448a2017b39480c842984"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classshad_1_1LocalHashmap.html#a130dbe16edd42ee7aa2e27eac6ee3cf4">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#ad84d91d8fd4448a2017b39480c842984">begin</a> ()</td></tr>
+<tr class="memitem:ad84d91d8fd4448a2017b39480c842984"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classshad_1_1LocalHashmap.html#aafdf55e8d9fa4799bcef4881baf25a71">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#ad84d91d8fd4448a2017b39480c842984">begin</a> ()</td></tr>
 <tr class="separator:ad84d91d8fd4448a2017b39480c842984"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6171d13fb3d6d493068e23cd166e8929"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classshad_1_1LocalHashmap.html#a130dbe16edd42ee7aa2e27eac6ee3cf4">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#a6171d13fb3d6d493068e23cd166e8929">end</a> ()</td></tr>
+<tr class="memitem:a6171d13fb3d6d493068e23cd166e8929"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classshad_1_1LocalHashmap.html#aafdf55e8d9fa4799bcef4881baf25a71">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#a6171d13fb3d6d493068e23cd166e8929">end</a> ()</td></tr>
 <tr class="separator:a6171d13fb3d6d493068e23cd166e8929"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cc4e9135d4808fbf53f253755744019"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classshad_1_1LocalHashmap.html#ad5e054bdbc20f161cd8df8e00c525401">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#a9cc4e9135d4808fbf53f253755744019">cbegin</a> ()</td></tr>
 <tr class="separator:a9cc4e9135d4808fbf53f253755744019"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18da968a5c684f5b4abbdd0bf6760574"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classshad_1_1LocalHashmap.html#ad5e054bdbc20f161cd8df8e00c525401">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#a18da968a5c684f5b4abbdd0bf6760574">cend</a> ()</td></tr>
 <tr class="separator:a18da968a5c684f5b4abbdd0bf6760574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a861d1d1edc97d3a6ef3818bdc06bd11a"><td class="memTemplParams" colspan="2">template&lt;typename ELTYPE &gt; </td></tr>
+<tr class="memitem:a861d1d1edc97d3a6ef3818bdc06bd11a"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; typename <br class="typebreak"/>
+<a class="el" href="classshad_1_1LocalHashmap.html">LocalHashmap</a>&lt; KTYPE, VTYPE, <br class="typebreak"/>
+KEY_COMPARE, INSERTER &gt;<br class="typebreak"/>
+::<a class="el" href="classshad_1_1LocalHashmap.html#aafdf55e8d9fa4799bcef4881baf25a71">iterator</a>, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#a861d1d1edc97d3a6ef3818bdc06bd11a">Insert</a> (const KTYPE &amp;key, const ELTYPE &amp;value)</td></tr>
+<tr class="separator:a861d1d1edc97d3a6ef3818bdc06bd11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a14c7f14e3d86371810686e384b53cbb6"><td class="memTemplParams" colspan="2">template&lt;typename , typename , typename , typename &gt; </td></tr>
 <tr class="memitem:a14c7f14e3d86371810686e384b53cbb6"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#a14c7f14e3d86371810686e384b53cbb6">Hashmap</a></td></tr>
 <tr class="separator:a14c7f14e3d86371810686e384b53cbb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0782f66aa59afb708b15c0ef7782c20d"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#a0782f66aa59afb708b15c0ef7782c20d">lmap_iterator&lt; LocalHashmap&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;, std::pair&lt; KTYPE, VTYPE &gt; &gt;</a></td></tr>
-<tr class="separator:a0782f66aa59afb708b15c0ef7782c20d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a409d20941abf9e3ce2b3f49f749fe1f7"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshad_1_1LocalHashmap.html#a409d20941abf9e3ce2b3f49f749fe1f7">lmap_iterator&lt; LocalHashmap&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;, const std::pair&lt; KTYPE, VTYPE &gt; &gt;</a></td></tr>
 <tr class="separator:a409d20941abf9e3ce2b3f49f749fe1f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4a075e5a8191685a74f2d18b8cd8850"><td class="memTemplParams" colspan="2">template&lt;typename , typename , typename &gt; </td></tr>
@@ -243,14 +247,14 @@ template&lt;typename KTYPE, typename VTYPE, typename KEY_COMPARE = MemCmp&lt;KTY
 
 </div>
 </div>
-<a class="anchor" id="a130dbe16edd42ee7aa2e27eac6ee3cf4"></a>
+<a class="anchor" id="aafdf55e8d9fa4799bcef4881baf25a71"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename KTYPE, typename VTYPE, typename KEY_COMPARE = MemCmp&lt;KTYPE&gt;, typename INSERTER = Overwriter&lt;VTYPE&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classshad_1_1LocalHashmap.html">shad::LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;::<a class="el" href="classshad_1_1LocalHashmap.html#a130dbe16edd42ee7aa2e27eac6ee3cf4">iterator</a> =  <a class="el" href="classshad_1_1lmap__iterator.html">lmap_iterator</a>&lt;<a class="el" href="classshad_1_1LocalHashmap.html">LocalHashmap</a>&lt;KTYPE, VTYPE, KEY_COMPARE, INSERTER&gt;, std::pair&lt;KTYPE, VTYPE&gt;&gt;</td>
+          <td class="memname">using <a class="el" href="classshad_1_1LocalHashmap.html">shad::LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;::<a class="el" href="classshad_1_1LocalHashmap.html#aafdf55e8d9fa4799bcef4881baf25a71">iterator</a> =  <a class="el" href="classshad_1_1lmap__iterator.html">lmap_iterator</a>&lt;<a class="el" href="classshad_1_1LocalHashmap.html">LocalHashmap</a>&lt;KTYPE, VTYPE, KEY_COMPARE, INSERTER&gt;, const std::pair&lt;KTYPE, VTYPE&gt;&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -760,7 +764,7 @@ template&lt;typename KTYPE, typename VTYPE, typename KEY_COMPARE = MemCmp&lt;KTY
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classshad_1_1LocalHashmap.html#a130dbe16edd42ee7aa2e27eac6ee3cf4">iterator</a> <a class="el" href="classshad_1_1LocalHashmap.html">shad::LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;::begin </td>
+          <td class="memname"><a class="el" href="classshad_1_1LocalHashmap.html#aafdf55e8d9fa4799bcef4881baf25a71">iterator</a> <a class="el" href="classshad_1_1LocalHashmap.html">shad::LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;::begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -862,7 +866,7 @@ template&lt;typename KTYPE, typename VTYPE, typename KEY_COMPARE = MemCmp&lt;KTY
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classshad_1_1LocalHashmap.html#a130dbe16edd42ee7aa2e27eac6ee3cf4">iterator</a> <a class="el" href="classshad_1_1LocalHashmap.html">shad::LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;::end </td>
+          <td class="memname"><a class="el" href="classshad_1_1LocalHashmap.html#aafdf55e8d9fa4799bcef4881baf25a71">iterator</a> <a class="el" href="classshad_1_1LocalHashmap.html">shad::LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;::end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -997,14 +1001,14 @@ template&lt;typename ApplyFunT , typename... Args&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="af3ef8afed1593bf034477b8692661b97"></a>
+<a class="anchor" id="acc8cd3f5cf2147fb1e2a7b75900127d7"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename KTYPE, typename VTYPE, typename KEY_COMPARE , typename INSERTER &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">VTYPE * <a class="el" href="classshad_1_1LocalHashmap.html">shad::LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;::Insert </td>
+          <td class="memname">std::pair&lt; typename <a class="el" href="classshad_1_1LocalHashmap.html">LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;::<a class="el" href="classshad_1_1LocalHashmap.html#aafdf55e8d9fa4799bcef4881baf25a71">iterator</a>, bool &gt; <a class="el" href="classshad_1_1LocalHashmap.html">shad::LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;::Insert </td>
           <td>(</td>
           <td class="paramtype">const KTYPE &amp;&#160;</td>
           <td class="paramname"><em>key</em>, </td>
@@ -1031,20 +1035,50 @@ template&lt;typename KTYPE, typename VTYPE, typename KEY_COMPARE , typename INSE
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>pointer to the inserted value; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>an iterator to the inserted value </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ad8062ff16023002c7aee667f3fe4cfd2"></a>
+<a class="anchor" id="a2492968014825ebe7ff90c40c623268d"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename KTYPE, typename VTYPE , typename KEY_COMPARE , typename INSERTER &gt; </div>
+template&lt;typename KTYPE, typename VTYPE, typename KEY_COMPARE = MemCmp&lt;KTYPE&gt;, typename INSERTER = Overwriter&lt;VTYPE&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;typename ELTYPE &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">VTYPE * <a class="el" href="classshad_1_1LocalHashmap.html">shad::LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;::Insert </td>
+          <td class="memname">std::pair&lt;<a class="el" href="classshad_1_1LocalHashmap.html#aafdf55e8d9fa4799bcef4881baf25a71">iterator</a>, bool&gt; <a class="el" href="classshad_1_1LocalHashmap.html">shad::LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;::Insert </td>
+          <td>(</td>
+          <td class="paramtype">const KTYPE &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ELTYPE &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a861d1d1edc97d3a6ef3818bdc06bd11a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KTYPE, typename VTYPE, typename KEY_COMPARE = MemCmp&lt;KTYPE&gt;, typename INSERTER = Overwriter&lt;VTYPE&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename ELTYPE &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;typename <a class="el" href="classshad_1_1LocalHashmap.html">LocalHashmap</a>&lt;KTYPE, VTYPE, KEY_COMPARE, INSERTER&gt;::<a class="el" href="classshad_1_1LocalHashmap.html#aafdf55e8d9fa4799bcef4881baf25a71">iterator</a>, bool&gt; <a class="el" href="classshad_1_1LocalHashmap.html">shad::LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;::Insert </td>
           <td>(</td>
           <td class="paramtype">const KTYPE &amp;&#160;</td>
           <td class="paramname"><em>key</em>, </td>
@@ -1267,28 +1301,6 @@ template&lt;typename KTYPE, typename VTYPE, typename KEY_COMPARE = MemCmp&lt;KTY
       <table class="memname">
         <tr>
           <td class="memname">friend class <a class="el" href="classshad_1_1lmap__iterator.html">lmap_iterator</a>&lt; <a class="el" href="classshad_1_1LocalHashmap.html">LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;,const std::pair&lt; KTYPE, VTYPE &gt; &gt;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a0782f66aa59afb708b15c0ef7782c20d"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename KTYPE, typename VTYPE, typename KEY_COMPARE = MemCmp&lt;KTYPE&gt;, typename INSERTER = Overwriter&lt;VTYPE&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">friend class <a class="el" href="classshad_1_1lmap__iterator.html">lmap_iterator</a>&lt; <a class="el" href="classshad_1_1LocalHashmap.html">LocalHashmap</a>&lt; KTYPE, VTYPE, KEY_COMPARE, INSERTER &gt;,std::pair&lt; KTYPE, VTYPE &gt; &gt;</td>
         </tr>
       </table>
   </td>

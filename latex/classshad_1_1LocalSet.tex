@@ -15,7 +15,7 @@ The \hyperlink{classshad_1_1LocalSet}{Local\-Set} data structure.
 \item 
 using \hyperlink{classshad_1_1LocalSet_a2116351b475e6f8cb21f78f11486e9e7}{value\-\_\-type} = T
 \item 
-using \hyperlink{classshad_1_1LocalSet_aea5fcaed21331e4dcb23811bc3f59e0d}{iterator} = \hyperlink{classshad_1_1lset__iterator}{lset\-\_\-iterator}$<$ \hyperlink{classshad_1_1LocalSet}{Local\-Set}$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, T $>$
+using \hyperlink{classshad_1_1LocalSet_a90ad05d816b6336fea56e6511093d4f6}{iterator} = \hyperlink{classshad_1_1lset__iterator}{lset\-\_\-iterator}$<$ \hyperlink{classshad_1_1LocalSet}{Local\-Set}$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, const T $>$
 \item 
 using \hyperlink{classshad_1_1LocalSet_a3a1104a2552f91dcdf37b057440ba182}{const\-\_\-iterator} = \hyperlink{classshad_1_1lset__iterator}{lset\-\_\-iterator}$<$ \hyperlink{classshad_1_1LocalSet}{Local\-Set}$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, const T $>$
 \end{DoxyCompactItemize}
@@ -26,7 +26,7 @@ using \hyperlink{classshad_1_1LocalSet_a3a1104a2552f91dcdf37b057440ba182}{const\
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 size\-\_\-t \hyperlink{classshad_1_1LocalSet_a2a83315ad49f8b4b480ebc4ac2f3b332}{Size} () const 
 \begin{DoxyCompactList}\small\item\em Size of the set (number of entries). \end{DoxyCompactList}\item 
-void \hyperlink{classshad_1_1LocalSet_accfd1f83d7c95609a838f0913c99e8b5}{Insert} (const T \&element)
+std\-::pair$<$ \hyperlink{classshad_1_1LocalSet_a90ad05d816b6336fea56e6511093d4f6}{iterator}, bool $>$ \hyperlink{classshad_1_1LocalSet_a66da6676f1ef1692b237c52271a3b4df}{Insert} (const T \&element)
 \begin{DoxyCompactList}\small\item\em Insert an element in the set. \end{DoxyCompactList}\item 
 void \hyperlink{classshad_1_1LocalSet_a44073e097981a573ab59c6eb94c9fce6}{Async\-Insert} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, const T \&element)
 \begin{DoxyCompactList}\small\item\em Asynchronously Insert an element in the set. \end{DoxyCompactList}\item 
@@ -48,9 +48,9 @@ void \hyperlink{classshad_1_1LocalSet_a02a733b9dfac60163cf9ad479adb7781}{Async\-
 \begin{DoxyCompactList}\small\item\em Asynchronously apply a user-\/defined function to each element in the set. \end{DoxyCompactList}\item 
 void \hyperlink{classshad_1_1LocalSet_a81d5e14f5673441a23499b0c6935d5f3}{Print\-All\-Elements} ()
 \begin{DoxyCompactList}\small\item\em Print all the entries in the set. \end{DoxyCompactList}\item 
-\hyperlink{classshad_1_1LocalSet_aea5fcaed21331e4dcb23811bc3f59e0d}{iterator} \hyperlink{classshad_1_1LocalSet_a5a65d59343c4636fef46da660b2a7eb6}{begin} ()
+\hyperlink{classshad_1_1LocalSet_a90ad05d816b6336fea56e6511093d4f6}{iterator} \hyperlink{classshad_1_1LocalSet_a5a65d59343c4636fef46da660b2a7eb6}{begin} ()
 \item 
-\hyperlink{classshad_1_1LocalSet_aea5fcaed21331e4dcb23811bc3f59e0d}{iterator} \hyperlink{classshad_1_1LocalSet_a53dc0f1dc7b515f9cf555e781a933bd2}{end} ()
+\hyperlink{classshad_1_1LocalSet_a90ad05d816b6336fea56e6511093d4f6}{iterator} \hyperlink{classshad_1_1LocalSet_a53dc0f1dc7b515f9cf555e781a933bd2}{end} ()
 \item 
 \hyperlink{classshad_1_1LocalSet_a3a1104a2552f91dcdf37b057440ba182}{const\-\_\-iterator} \hyperlink{classshad_1_1LocalSet_a695b93811d46a8022840ee42ed91b6e5}{cbegin} ()
 \item 
@@ -71,8 +71,6 @@ void \hyperlink{classshad_1_1LocalSet_a81d5e14f5673441a23499b0c6935d5f3}{Print\-
 {\footnotesize template$<$typename , typename , typename $>$ }\\class \hyperlink{classshad_1_1LocalSet_afc8d107f39c9ea0b8848ea970eb36b93}{Local\-Edge\-Index}
 \item 
 {\footnotesize template$<$typename , typename $>$ }\\class \hyperlink{classshad_1_1LocalSet_af9dbb4ffd51a4c29389ab2f892cd5e82}{Attr\-Edges\-Pair}
-\item 
-class \hyperlink{classshad_1_1LocalSet_ac228f5f5ba29b686cbd20956e0fe23bc}{lset\-\_\-iterator$<$ Local\-Set$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, T $>$}
 \item 
 class \hyperlink{classshad_1_1LocalSet_a7fa8272788381da5a3b8cadef548a77f}{lset\-\_\-iterator$<$ Local\-Set$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, const T $>$}
 \item 
@@ -98,9 +96,9 @@ S\-H\-A\-D's \hyperlink{classshad_1_1LocalSet}{Local\-Set} is a \char`\"{}local\
 \hypertarget{classshad_1_1LocalSet_a3a1104a2552f91dcdf37b057440ba182}{\index{shad\-::\-Local\-Set@{shad\-::\-Local\-Set}!const\-\_\-iterator@{const\-\_\-iterator}}
 \index{const\-\_\-iterator@{const\-\_\-iterator}!shad::LocalSet@{shad\-::\-Local\-Set}}
 \subsubsection[{const\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-T$>$$>$ using {\bf shad\-::\-Local\-Set}$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$\-::{\bf const\-\_\-iterator} =  {\bf lset\-\_\-iterator}$<${\bf Local\-Set}$<$T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E$>$, const T$>$}}\label{classshad_1_1LocalSet_a3a1104a2552f91dcdf37b057440ba182}
-\hypertarget{classshad_1_1LocalSet_aea5fcaed21331e4dcb23811bc3f59e0d}{\index{shad\-::\-Local\-Set@{shad\-::\-Local\-Set}!iterator@{iterator}}
+\hypertarget{classshad_1_1LocalSet_a90ad05d816b6336fea56e6511093d4f6}{\index{shad\-::\-Local\-Set@{shad\-::\-Local\-Set}!iterator@{iterator}}
 \index{iterator@{iterator}!shad::LocalSet@{shad\-::\-Local\-Set}}
-\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-T$>$$>$ using {\bf shad\-::\-Local\-Set}$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$\-::{\bf iterator} =  {\bf lset\-\_\-iterator}$<${\bf Local\-Set}$<$T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E$>$, T$>$}}\label{classshad_1_1LocalSet_aea5fcaed21331e4dcb23811bc3f59e0d}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-T$>$$>$ using {\bf shad\-::\-Local\-Set}$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$\-::{\bf iterator} =  {\bf lset\-\_\-iterator}$<${\bf Local\-Set}$<$T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E$>$, const T$>$}}\label{classshad_1_1LocalSet_a90ad05d816b6336fea56e6511093d4f6}
 \hypertarget{classshad_1_1LocalSet_a2116351b475e6f8cb21f78f11486e9e7}{\index{shad\-::\-Local\-Set@{shad\-::\-Local\-Set}!value\-\_\-type@{value\-\_\-type}}
 \index{value\-\_\-type@{value\-\_\-type}!shad::LocalSet@{shad\-::\-Local\-Set}}
 \subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-T$>$$>$ using {\bf shad\-::\-Local\-Set}$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$\-::{\bf value\-\_\-type} =  T}}\label{classshad_1_1LocalSet_a2116351b475e6f8cb21f78f11486e9e7}
@@ -354,13 +352,13 @@ void(\textcolor{keyword}{const} T&, Args&);
 \item[{Args...}]{args}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classshad_1_1LocalSet_a2b9339aab76b1cfa1a31e6f68efc93b6}
-\hypertarget{classshad_1_1LocalSet_accfd1f83d7c95609a838f0913c99e8b5}{\index{shad\-::\-Local\-Set@{shad\-::\-Local\-Set}!Insert@{Insert}}
+\hypertarget{classshad_1_1LocalSet_a66da6676f1ef1692b237c52271a3b4df}{\index{shad\-::\-Local\-Set@{shad\-::\-Local\-Set}!Insert@{Insert}}
 \index{Insert@{Insert}!shad::LocalSet@{shad\-::\-Local\-Set}}
-\subsubsection[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$ void {\bf shad\-::\-Local\-Set}$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$\-::Insert (
+\subsubsection[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$ std\-::pair$<$ typename {\bf Local\-Set}$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$\-::{\bf iterator}, bool $>$ {\bf shad\-::\-Local\-Set}$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$\-::Insert (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{element}
 \end{DoxyParamCaption}
-)}}\label{classshad_1_1LocalSet_accfd1f83d7c95609a838f0913c99e8b5}
+)}}\label{classshad_1_1LocalSet_a66da6676f1ef1692b237c52271a3b4df}
 
 
 Insert an element in the set. 
@@ -370,6 +368,9 @@ Insert an element in the set.
 \mbox{\tt in}  & {\em element} & the element to insert. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool denoting whether the insertion took place. 
+\end{DoxyReturn}
 \hypertarget{classshad_1_1LocalSet_a81d5e14f5673441a23499b0c6935d5f3}{\index{shad\-::\-Local\-Set@{shad\-::\-Local\-Set}!Print\-All\-Elements@{Print\-All\-Elements}}
 \index{Print\-All\-Elements@{Print\-All\-Elements}!shad::LocalSet@{shad\-::\-Local\-Set}}
 \subsubsection[{Print\-All\-Elements}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$ void {\bf shad\-::\-Local\-Set}$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$\-::Print\-All\-Elements (
@@ -421,9 +422,6 @@ the size of the set.
 \hypertarget{classshad_1_1LocalSet_a7fa8272788381da5a3b8cadef548a77f}{\index{shad\-::\-Local\-Set@{shad\-::\-Local\-Set}!lset\-\_\-iterator$<$ Local\-Set$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, const T $>$@{lset\-\_\-iterator$<$ Local\-Set$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, const T $>$}}
 \index{lset\-\_\-iterator$<$ Local\-Set$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, const T $>$@{lset\-\_\-iterator$<$ Local\-Set$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, const T $>$}!shad::LocalSet@{shad\-::\-Local\-Set}}
 \subsubsection[{lset\-\_\-iterator$<$ Local\-Set$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, const T $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-T$>$$>$ friend class {\bf lset\-\_\-iterator}$<$ {\bf Local\-Set}$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, const T $>$\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1LocalSet_a7fa8272788381da5a3b8cadef548a77f}
-\hypertarget{classshad_1_1LocalSet_ac228f5f5ba29b686cbd20956e0fe23bc}{\index{shad\-::\-Local\-Set@{shad\-::\-Local\-Set}!lset\-\_\-iterator$<$ Local\-Set$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, T $>$@{lset\-\_\-iterator$<$ Local\-Set$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, T $>$}}
-\index{lset\-\_\-iterator$<$ Local\-Set$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, T $>$@{lset\-\_\-iterator$<$ Local\-Set$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, T $>$}!shad::LocalSet@{shad\-::\-Local\-Set}}
-\subsubsection[{lset\-\_\-iterator$<$ Local\-Set$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, T $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-T$>$$>$ friend class {\bf lset\-\_\-iterator}$<$ {\bf Local\-Set}$<$ T, E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E $>$, T $>$\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1LocalSet_ac228f5f5ba29b686cbd20956e0fe23bc}
 \hypertarget{classshad_1_1LocalSet_abe8ae75525fd5b29f58e1b5537b92ba1}{\index{shad\-::\-Local\-Set@{shad\-::\-Local\-Set}!Set@{Set}}
 \index{Set@{Set}!shad::LocalSet@{shad\-::\-Local\-Set}}
 \subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, typename E\-L\-E\-M\-\_\-\-C\-O\-M\-P\-A\-R\-E = Mem\-Cmp$<$\-T$>$$>$ template$<$typename , typename $>$ friend class {\bf Set}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1LocalSet_abe8ae75525fd5b29f58e1b5537b92ba1}

@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['neighbors_5f',['neighbors_',['../classshad_1_1AttrEdgesPair.html#a2c1c5d3fac6714fdbff5d0edabf0b334',1,'shad::AttrEdgesPair']]],
-  ['numdest',['numDest',['../structshad_1_1AttributedEdgeIndexStorage_1_1LocalEdgeListChunk.html#a61208febc1046cfbc776d4ba5373049b',1,'shad::AttributedEdgeIndexStorage::LocalEdgeListChunk::numDest()'],['../structshad_1_1DefaultEdgeIndexStorage_1_1LocalEdgeListChunk.html#a3091dc3831cae7d0dcc7ab1b53141225',1,'shad::DefaultEdgeIndexStorage::LocalEdgeListChunk::numDest()']]],
-  ['numvalues',['numValues',['../structshad_1_1AttributedEdgeIndexStorage_1_1FlatEdgeList.html#a8ca2b13482b07be3cb2f6e831a05ae37',1,'shad::AttributedEdgeIndexStorage::FlatEdgeList::numValues()'],['../structshad_1_1DefaultEdgeIndexStorage_1_1FlatEdgeList.html#ad805a1579ec182e2ad5878268e3aee7d',1,'shad::DefaultEdgeIndexStorage::FlatEdgeList::numValues()']]]
+  ['kedgelistchunksize_5f',['kEdgeListChunkSize_',['../classshad_1_1AttributedEdgeIndexStorage.html#a25f1c4ea3b8065bccaa587576d29e262',1,'shad::AttributedEdgeIndexStorage::kEdgeListChunkSize_()'],['../classshad_1_1DefaultEdgeIndexStorage.html#aae9f28f3799a6a274b0249dc1dc4313c',1,'shad::DefaultEdgeIndexStorage::kEdgeListChunkSize_()']]],
+  ['key',['key',['../structshad_1_1Hashmap_1_1EntryT.html#a645bc59daa16e8d0780489e5fbaa3b64',1,'shad::Hashmap::EntryT']]],
+  ['kidentifierbitsize',['kIdentifierBitsize',['../classshad_1_1ObjectIdentifier.html#a39847f9a702ec3f943657650e05b0e02',1,'shad::ObjectIdentifier']]],
+  ['klocalityidbitsize',['kLocalityIdBitsize',['../classshad_1_1ObjectIdentifier.html#abfcf5dac66fd514eea93f86c8c404de9',1,'shad::ObjectIdentifier']]],
+  ['kmaxchunksize',['kMaxChunkSize',['../classshad_1_1Array.html#af4d2703149c199273eae358d1bcd8ade',1,'shad::Array']]],
+  ['knullid',['kNullID',['../classshad_1_1ObjectIdentifier.html#ad093d487f38c499b7de2de100adbce23',1,'shad::ObjectIdentifier']]]
 ];

@@ -27,11 +27,11 @@ using \hyperlink{group__Types_ga94466a187a2da262cb5b58356c3ac24c}{pointer} = \hy
 \begin{DoxyCompactList}\small\item\em The type for pointer to \-::value\-\_\-type. \end{DoxyCompactList}\item 
 using \hyperlink{group__Types_ga4db9d56c27ddb72ccad61249ef55c54c}{const\-\_\-pointer} = const \hyperlink{group__Types_ga930e4848d41a2efe4d2e47f52650a76c}{value\-\_\-type} $\ast$
 \begin{DoxyCompactList}\small\item\em The type for pointer to \-::const\-\_\-value\-\_\-type. \end{DoxyCompactList}\item 
-using \hyperlink{group__Types_gab52d604c26835c20a0363f9affa7ff57}{iterator} = typename \hyperlink{classshad_1_1Hashmap_a4603e48d3ad3a380abc888671e55bf01}{hashmap\-\_\-t\-::iterator}
+using \hyperlink{group__Types_gab52d604c26835c20a0363f9affa7ff57}{iterator} = typename \hyperlink{classshad_1_1Hashmap_a2500b369fd011d6a9d5e98ff213c9c66}{hashmap\-\_\-t\-::iterator}
 \begin{DoxyCompactList}\small\item\em The type of iterators on the map. \end{DoxyCompactList}\item 
 using \hyperlink{group__Types_ga102c3cd521767bf4b22f3788ccc054e8}{const\-\_\-iterator} = typename \hyperlink{classshad_1_1Hashmap_a1f8a379c42bc2d4b67dcc9f519dc537e}{hashmap\-\_\-t\-::const\-\_\-iterator}
 \begin{DoxyCompactList}\small\item\em The type of const iterators on the map. \end{DoxyCompactList}\item 
-using \hyperlink{group__Types_ga520d395c30b2b19179153108ea694cec}{local\-\_\-iterator} = typename \hyperlink{classshad_1_1Hashmap_abf95d16be9ba9060bff9fa591ece302f}{hashmap\-\_\-t\-::local\-\_\-iterator}
+using \hyperlink{group__Types_ga520d395c30b2b19179153108ea694cec}{local\-\_\-iterator} = typename \hyperlink{classshad_1_1Hashmap_a64f114b7ab44339efad138ec0c72b052}{hashmap\-\_\-t\-::local\-\_\-iterator}
 \begin{DoxyCompactList}\small\item\em The type of local iterators on the map. \end{DoxyCompactList}\item 
 using \hyperlink{group__Types_ga2242fb2071462a5f8a420d8cd8a7d8e8}{const\-\_\-local\-\_\-iterator} = typename \hyperlink{classshad_1_1Hashmap_afdf2dad495223a7d8bcec4256b591d89}{hashmap\-\_\-t\-::const\-\_\-local\-\_\-iterator}
 \begin{DoxyCompactList}\small\item\em The type of const local iterators on the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -42,20 +42,30 @@ using \hyperlink{group__Types_ga2242fb2071462a5f8a420d8cd8a7d8e8}{const\-\_\-loc
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hyperlink{classshad_1_1unordered__map_a3964d9033e56109fbbcabdf565c2d8a9}{$\sim$unordered\-\_\-map} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-constexpr \hyperlink{group__Types_gab52d604c26835c20a0363f9affa7ff57}{iterator} \hyperlink{group__Iterators_ga3753eddf67b531a3718ae7eb1e33b131}{begin} () const noexcept
+\hyperlink{group__Types_gab52d604c26835c20a0363f9affa7ff57}{iterator} \hyperlink{group__Iterators_gad6f6e325f3b1ce921af1e410dbfe9710}{begin} () noexcept
 \item 
-constexpr \hyperlink{group__Types_ga102c3cd521767bf4b22f3788ccc054e8}{const\-\_\-iterator} \hyperlink{group__Iterators_gaf264a3126cd78a96da927c0f17890fca}{cbegin} () const noexcept
+\hyperlink{group__Types_ga102c3cd521767bf4b22f3788ccc054e8}{const\-\_\-iterator} \hyperlink{group__Iterators_ga64e3e05b7d2e44f6996b32ac84722bc0}{begin} () const noexcept
 \begin{DoxyCompactList}\small\item\em The iterator to the beginning of the sequence. \end{DoxyCompactList}\item 
-constexpr \hyperlink{group__Types_gab52d604c26835c20a0363f9affa7ff57}{iterator} \hyperlink{group__Iterators_ga5a1c3f388ffec559f61de7e2eb17eaa2}{end} () const noexcept
+\hyperlink{group__Types_ga102c3cd521767bf4b22f3788ccc054e8}{const\-\_\-iterator} \hyperlink{group__Iterators_ga8d91fc63376329a528ac21d618efafb5}{cbegin} () const noexcept
+\begin{DoxyCompactList}\small\item\em The iterator to the beginning of the sequence. \end{DoxyCompactList}\item 
+\hyperlink{group__Types_gab52d604c26835c20a0363f9affa7ff57}{iterator} \hyperlink{group__Iterators_ga34c20916fffb91405b135133803b69f9}{end} () noexcept
 \begin{DoxyCompactList}\small\item\em The iterator to the end of the sequence. \end{DoxyCompactList}\item 
-constexpr \hyperlink{group__Types_ga102c3cd521767bf4b22f3788ccc054e8}{const\-\_\-iterator} \hyperlink{group__Iterators_ga563bf6f0949e2ed31c86fc2b22f26df1}{cend} () const noexcept
+\hyperlink{group__Types_ga102c3cd521767bf4b22f3788ccc054e8}{const\-\_\-iterator} \hyperlink{group__Iterators_gadc7ab9a75de9a65c0b74fe21f5ec5704}{end} () const noexcept
+\begin{DoxyCompactList}\small\item\em The iterator to the end of the sequence. \end{DoxyCompactList}\item 
+\hyperlink{group__Types_ga102c3cd521767bf4b22f3788ccc054e8}{const\-\_\-iterator} \hyperlink{group__Iterators_ga2d943633cd73b5040014600a9cfe7084}{cend} () const noexcept
 \begin{DoxyCompactList}\small\item\em The iterator to the end of the sequence. \end{DoxyCompactList}\item 
 bool \hyperlink{group__Capacity_gade6abbe1bedf25b8c2fb53eab2420e71}{empty} () const noexcept
 \item 
 \hyperlink{group__Types_ga2a84980e6d435a8a7b1a99f78b828a65}{size\-\_\-type} \hyperlink{group__Capacity_ga0d8b21fa4842806604fa7a5f82d6f637}{size} () const noexcept
-\begin{DoxyCompactList}\small\item\em The size of the container. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The size of the container. \end{DoxyCompactList}\item 
+std\-::pair$<$ \hyperlink{group__Types_gab52d604c26835c20a0363f9affa7ff57}{iterator}, bool $>$ \hyperlink{group__Modifiers_gaca23a3638ad26f39038d7535b70b337d}{insert} (const \hyperlink{group__Types_ga930e4848d41a2efe4d2e47f52650a76c}{value\-\_\-type} \&value)
+\item 
+\hyperlink{group__Types_gab52d604c26835c20a0363f9affa7ff57}{iterator} \hyperlink{group__Modifiers_ga93d0a1781c0b474b44ec1fccc691a6f2}{insert} (\hyperlink{group__Types_ga102c3cd521767bf4b22f3788ccc054e8}{const\-\_\-iterator} it, const \hyperlink{group__Types_ga930e4848d41a2efe4d2e47f52650a76c}{value\-\_\-type} \&value)
+\begin{DoxyCompactList}\small\item\em Inserts an element into the container, if the container does not already contain an element with an equivalent key. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classshad_1_1unordered__map_a585b0ce25cd77eb35696929ffdc9fffe}{insert\-\_\-iterator$<$ unordered\-\_\-map $>$}
 \item 
 class \hyperlink{classshad_1_1unordered__map_a178983bb5902294d2c70ed8b802b4a03}{buffered\-\_\-insert\-\_\-iterator$<$ unordered\-\_\-map $>$}
 \end{DoxyCompactItemize}
@@ -124,6 +134,9 @@ Destructor.
 \hypertarget{classshad_1_1unordered__map_a178983bb5902294d2c70ed8b802b4a03}{\index{shad\-::unordered\-\_\-map@{shad\-::unordered\-\_\-map}!buffered\-\_\-insert\-\_\-iterator$<$ unordered\-\_\-map $>$@{buffered\-\_\-insert\-\_\-iterator$<$ unordered\-\_\-map $>$}}
 \index{buffered\-\_\-insert\-\_\-iterator$<$ unordered\-\_\-map $>$@{buffered\-\_\-insert\-\_\-iterator$<$ unordered\-\_\-map $>$}!shad::unordered_map@{shad\-::unordered\-\_\-map}}
 \subsubsection[{buffered\-\_\-insert\-\_\-iterator$<$ unordered\-\_\-map $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class T , class Hash  = shad\-::hash$<$\-Key$>$$>$ friend class {\bf buffered\-\_\-insert\-\_\-iterator}$<$ {\bf unordered\-\_\-map} $>$\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1unordered__map_a178983bb5902294d2c70ed8b802b4a03}
+\hypertarget{classshad_1_1unordered__map_a585b0ce25cd77eb35696929ffdc9fffe}{\index{shad\-::unordered\-\_\-map@{shad\-::unordered\-\_\-map}!insert\-\_\-iterator$<$ unordered\-\_\-map $>$@{insert\-\_\-iterator$<$ unordered\-\_\-map $>$}}
+\index{insert\-\_\-iterator$<$ unordered\-\_\-map $>$@{insert\-\_\-iterator$<$ unordered\-\_\-map $>$}!shad::unordered_map@{shad\-::unordered\-\_\-map}}
+\subsubsection[{insert\-\_\-iterator$<$ unordered\-\_\-map $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class T , class Hash  = shad\-::hash$<$\-Key$>$$>$ friend class {\bf insert\-\_\-iterator}$<$ {\bf unordered\-\_\-map} $>$\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1unordered__map_a585b0ce25cd77eb35696929ffdc9fffe}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

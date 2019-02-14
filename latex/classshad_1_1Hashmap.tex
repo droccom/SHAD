@@ -48,11 +48,11 @@ using \hyperlink{classshad_1_1Hashmap_a1f10a3b0cce639008b5b9444eb167f8b}{Object\
 \item 
 using \hyperlink{classshad_1_1Hashmap_a5d013a5199b5745a1877b321af1b86ee}{Shad\-Hashmap\-Ptr} = typename \hyperlink{classshad_1_1AbstractDataStructure}{Abstract\-Data\-Structure}$<$ \hyperlink{classshad_1_1Hashmap_a8a56b050ace0e26454959cc45cdcb211}{Hmap\-T} $>$\-::\hyperlink{classshad_1_1AbstractDataStructure_a8bb29450966955c546d40421ce46316f}{Shared\-Ptr}
 \item 
-using \hyperlink{classshad_1_1Hashmap_a4603e48d3ad3a380abc888671e55bf01}{iterator} = \hyperlink{classshad_1_1map__iterator}{map\-\_\-iterator}$<$ \hyperlink{classshad_1_1Hashmap}{Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$$>$
+using \hyperlink{classshad_1_1Hashmap_a2500b369fd011d6a9d5e98ff213c9c66}{iterator} = \hyperlink{classshad_1_1map__iterator}{map\-\_\-iterator}$<$ \hyperlink{classshad_1_1Hashmap}{Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$$>$
 \item 
 using \hyperlink{classshad_1_1Hashmap_a1f8a379c42bc2d4b67dcc9f519dc537e}{const\-\_\-iterator} = \hyperlink{classshad_1_1map__iterator}{map\-\_\-iterator}$<$ \hyperlink{classshad_1_1Hashmap}{Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$$>$
 \item 
-using \hyperlink{classshad_1_1Hashmap_abf95d16be9ba9060bff9fa591ece302f}{local\-\_\-iterator} = \hyperlink{classshad_1_1lmap__iterator}{lmap\-\_\-iterator}$<$ \hyperlink{classshad_1_1LocalHashmap}{Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$$>$
+using \hyperlink{classshad_1_1Hashmap_a64f114b7ab44339efad138ec0c72b052}{local\-\_\-iterator} = \hyperlink{classshad_1_1lmap__iterator}{lmap\-\_\-iterator}$<$ \hyperlink{classshad_1_1LocalHashmap}{Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$$>$
 \item 
 using \hyperlink{classshad_1_1Hashmap_afdf2dad495223a7d8bcec4256b591d89}{const\-\_\-local\-\_\-iterator} = \hyperlink{classshad_1_1lmap__iterator}{lmap\-\_\-iterator}$<$ \hyperlink{classshad_1_1LocalHashmap}{Local\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$$>$
 \item 
@@ -67,7 +67,7 @@ using \hyperlink{classshad_1_1Hashmap_acc8ac68502c6c886d18d660e907fef0a}{Lookup\
 \begin{DoxyCompactList}\small\item\em Getter of the Global Identifier. \end{DoxyCompactList}\item 
 size\-\_\-t \hyperlink{classshad_1_1Hashmap_ae05da08d72f0a2097a64603f49cc91ac}{Size} () const 
 \begin{DoxyCompactList}\small\item\em Overall size of the hashmap (number of entries). \end{DoxyCompactList}\item 
-void \hyperlink{classshad_1_1Hashmap_af3f0622044572a21c74f192714065f5f}{Insert} (const K\-T\-Y\-P\-E \&key, const V\-T\-Y\-P\-E \&value)
+std\-::pair$<$ \hyperlink{classshad_1_1Hashmap_a2500b369fd011d6a9d5e98ff213c9c66}{iterator}, bool $>$ \hyperlink{classshad_1_1Hashmap_afd44f019edac86a4b397bc36294c47ab}{Insert} (const K\-T\-Y\-P\-E \&key, const V\-T\-Y\-P\-E \&value)
 \begin{DoxyCompactList}\small\item\em Insert a key-\/value pair in the hashmap. \end{DoxyCompactList}\item 
 void \hyperlink{classshad_1_1Hashmap_a6cfddc1040192ee87e5c41f443e6557d}{Async\-Insert} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&handle, const K\-T\-Y\-P\-E \&key, const V\-T\-Y\-P\-E \&value)
 \begin{DoxyCompactList}\small\item\em Asynchronously Insert a key-\/value pair in the hashmap. \end{DoxyCompactList}\item 
@@ -103,21 +103,33 @@ void \hyperlink{classshad_1_1Hashmap_aee2b37787d771a453bfe49a85e352e3e}{Print\-A
 \item 
 void \hyperlink{classshad_1_1Hashmap_a313c1401e0dd0cc51cfc750a740f3772}{Buffer\-Entry\-Insert} (const \hyperlink{structshad_1_1Hashmap_1_1EntryT}{Entry\-T} \&entry)
 \item 
-\hyperlink{classshad_1_1Hashmap_a4603e48d3ad3a380abc888671e55bf01}{iterator} \hyperlink{classshad_1_1Hashmap_a8f4a24ff42fd6f6c3394a352169bccb9}{begin} ()
+\hyperlink{classshad_1_1Hashmap_a2500b369fd011d6a9d5e98ff213c9c66}{iterator} \hyperlink{classshad_1_1Hashmap_a8f4a24ff42fd6f6c3394a352169bccb9}{begin} ()
 \item 
-\hyperlink{classshad_1_1Hashmap_a4603e48d3ad3a380abc888671e55bf01}{iterator} \hyperlink{classshad_1_1Hashmap_a72709bee83695661dbd0a43699cd1833}{end} ()
+\hyperlink{classshad_1_1Hashmap_a2500b369fd011d6a9d5e98ff213c9c66}{iterator} \hyperlink{classshad_1_1Hashmap_a72709bee83695661dbd0a43699cd1833}{end} ()
 \item 
-\hyperlink{classshad_1_1Hashmap_a1f8a379c42bc2d4b67dcc9f519dc537e}{const\-\_\-iterator} \hyperlink{classshad_1_1Hashmap_aa014bed8d66b4adb7274687b9074cc53}{cbegin} ()
+\hyperlink{classshad_1_1Hashmap_a1f8a379c42bc2d4b67dcc9f519dc537e}{const\-\_\-iterator} \hyperlink{classshad_1_1Hashmap_a1a5209eaa6ee08a67f6bd1bfa97e7419}{cbegin} () const 
 \item 
-\hyperlink{classshad_1_1Hashmap_a1f8a379c42bc2d4b67dcc9f519dc537e}{const\-\_\-iterator} \hyperlink{classshad_1_1Hashmap_a75006495ce7c58a32c5724cae27944ed}{cend} ()
+\hyperlink{classshad_1_1Hashmap_a1f8a379c42bc2d4b67dcc9f519dc537e}{const\-\_\-iterator} \hyperlink{classshad_1_1Hashmap_a6c26c36950a5ed3e4e988f4c992c43f5}{cend} () const 
 \item 
-\hyperlink{classshad_1_1Hashmap_abf95d16be9ba9060bff9fa591ece302f}{local\-\_\-iterator} \hyperlink{classshad_1_1Hashmap_a4706991a9277cc89fcd154bf73025183}{local\-\_\-begin} ()
+\hyperlink{classshad_1_1Hashmap_a1f8a379c42bc2d4b67dcc9f519dc537e}{const\-\_\-iterator} \hyperlink{classshad_1_1Hashmap_a38737ea18bd7f7514377774d791f2cf7}{begin} () const 
 \item 
-\hyperlink{classshad_1_1Hashmap_abf95d16be9ba9060bff9fa591ece302f}{local\-\_\-iterator} \hyperlink{classshad_1_1Hashmap_a6fff153fc13d2d3c3337ac0dfa594b28}{local\-\_\-end} ()
+\hyperlink{classshad_1_1Hashmap_a1f8a379c42bc2d4b67dcc9f519dc537e}{const\-\_\-iterator} \hyperlink{classshad_1_1Hashmap_a9e6ecb2d7433942bcbf032365125d57c}{end} () const 
+\item 
+\hyperlink{classshad_1_1Hashmap_a64f114b7ab44339efad138ec0c72b052}{local\-\_\-iterator} \hyperlink{classshad_1_1Hashmap_a4706991a9277cc89fcd154bf73025183}{local\-\_\-begin} ()
+\item 
+\hyperlink{classshad_1_1Hashmap_a64f114b7ab44339efad138ec0c72b052}{local\-\_\-iterator} \hyperlink{classshad_1_1Hashmap_a6fff153fc13d2d3c3337ac0dfa594b28}{local\-\_\-end} ()
 \item 
 \hyperlink{classshad_1_1Hashmap_afdf2dad495223a7d8bcec4256b591d89}{const\-\_\-local\-\_\-iterator} \hyperlink{classshad_1_1Hashmap_a04a14f79c423b6bef9fba77f642be9b6}{clocal\-\_\-begin} ()
 \item 
 \hyperlink{classshad_1_1Hashmap_afdf2dad495223a7d8bcec4256b591d89}{const\-\_\-local\-\_\-iterator} \hyperlink{classshad_1_1Hashmap_a41013ec16375b3de1af140c8f2e54627}{clocal\-\_\-end} ()
+\item 
+std\-::pair$<$ \hyperlink{classshad_1_1Hashmap_a2500b369fd011d6a9d5e98ff213c9c66}{iterator}, bool $>$ \hyperlink{classshad_1_1Hashmap_ab49d3f791ad9ba7af13349b2ae1a273f}{insert} (const \hyperlink{classshad_1_1Hashmap_ad8c0108347b59bcd19ccb8070a313dd8}{value\-\_\-type} \&value)
+\item 
+std\-::pair$<$ \hyperlink{classshad_1_1Hashmap_a2500b369fd011d6a9d5e98ff213c9c66}{iterator}, bool $>$ \hyperlink{classshad_1_1Hashmap_aea07d5e23d3978bb0858becef75dd24f}{insert} (\hyperlink{classshad_1_1Hashmap_a1f8a379c42bc2d4b67dcc9f519dc537e}{const\-\_\-iterator}, const \hyperlink{classshad_1_1Hashmap_ad8c0108347b59bcd19ccb8070a313dd8}{value\-\_\-type} \&value)
+\item 
+void \hyperlink{classshad_1_1Hashmap_ad47705f8fd28f908864edaf55ffe0713}{buffered\-\_\-async\-\_\-insert} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&h, const \hyperlink{classshad_1_1Hashmap_ad8c0108347b59bcd19ccb8070a313dd8}{value\-\_\-type} \&value)
+\item 
+void \hyperlink{classshad_1_1Hashmap_adb0d51549addcbd2d2945198093765dc}{buffered\-\_\-async\-\_\-flush} (\hyperlink{classshad_1_1rt_1_1Handle}{rt\-::\-Handle} \&h)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -134,9 +146,7 @@ static \hyperlink{classshad_1_1Hashmap_a5d013a5199b5745a1877b321af1b86ee}{Shad\-
 \item 
 {\footnotesize template$<$typename $>$ }\\class \hyperlink{classshad_1_1Hashmap_ab18afa4496cc863ddc11bab94b2adf57}{Abstract\-Data\-Structure}
 \item 
-class \hyperlink{classshad_1_1Hashmap_a9f6643e9369026a8c41dff0b7bca9e4b}{map\-\_\-iterator$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}
-\item 
-class \hyperlink{classshad_1_1Hashmap_a901992501a956914085e608ae303244f}{map\-\_\-iterator$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}
+class \hyperlink{classshad_1_1Hashmap_a92846a6772a0f2fa3e0756f5029fcb0b}{map\-\_\-iterator$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -178,15 +188,15 @@ obects of type K\-T\-Y\-P\-E and V\-T\-Y\-P\-E need to be trivially copiable.
 \hypertarget{classshad_1_1Hashmap_a8a56b050ace0e26454959cc45cdcb211}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!Hmap\-T@{Hmap\-T}}
 \index{Hmap\-T@{Hmap\-T}!shad::Hashmap@{shad\-::\-Hashmap}}
 \subsubsection[{Hmap\-T}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ using {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::{\bf Hmap\-T} =  {\bf Hashmap}$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y$>$}}\label{classshad_1_1Hashmap_a8a56b050ace0e26454959cc45cdcb211}
-\hypertarget{classshad_1_1Hashmap_a4603e48d3ad3a380abc888671e55bf01}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!iterator@{iterator}}
+\hypertarget{classshad_1_1Hashmap_a2500b369fd011d6a9d5e98ff213c9c66}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!iterator@{iterator}}
 \index{iterator@{iterator}!shad::Hashmap@{shad\-::\-Hashmap}}
-\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ using {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::{\bf iterator} =  {\bf map\-\_\-iterator}$<${\bf Hashmap}$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y$>$, std\-::pair$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E$>$, std\-::pair$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E$>$$>$}}\label{classshad_1_1Hashmap_a4603e48d3ad3a380abc888671e55bf01}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ using {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::{\bf iterator} =  {\bf map\-\_\-iterator}$<${\bf Hashmap}$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y$>$, const std\-::pair$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E$>$, std\-::pair$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E$>$$>$}}\label{classshad_1_1Hashmap_a2500b369fd011d6a9d5e98ff213c9c66}
 \hypertarget{classshad_1_1Hashmap_aace37116c38330a70352a3081d0ec07e}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!L\-Map\-T@{L\-Map\-T}}
 \index{L\-Map\-T@{L\-Map\-T}!shad::Hashmap@{shad\-::\-Hashmap}}
 \subsubsection[{L\-Map\-T}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ using {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::{\bf L\-Map\-T} =  {\bf Local\-Hashmap}$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y$>$}}\label{classshad_1_1Hashmap_aace37116c38330a70352a3081d0ec07e}
-\hypertarget{classshad_1_1Hashmap_abf95d16be9ba9060bff9fa591ece302f}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!local\-\_\-iterator@{local\-\_\-iterator}}
+\hypertarget{classshad_1_1Hashmap_a64f114b7ab44339efad138ec0c72b052}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!local\-\_\-iterator@{local\-\_\-iterator}}
 \index{local\-\_\-iterator@{local\-\_\-iterator}!shad::Hashmap@{shad\-::\-Hashmap}}
-\subsubsection[{local\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ using {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::{\bf local\-\_\-iterator} =  {\bf lmap\-\_\-iterator}$<${\bf Local\-Hashmap}$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y$>$, std\-::pair$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E$>$$>$}}\label{classshad_1_1Hashmap_abf95d16be9ba9060bff9fa591ece302f}
+\subsubsection[{local\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ using {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::{\bf local\-\_\-iterator} =  {\bf lmap\-\_\-iterator}$<${\bf Local\-Hashmap}$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y$>$, const std\-::pair$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E$>$$>$}}\label{classshad_1_1Hashmap_a64f114b7ab44339efad138ec0c72b052}
 \hypertarget{classshad_1_1Hashmap_acc8ac68502c6c886d18d660e907fef0a}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!Lookup\-Result@{Lookup\-Result}}
 \index{Lookup\-Result@{Lookup\-Result}!shad::Hashmap@{shad\-::\-Hashmap}}
 \subsubsection[{Lookup\-Result}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ using {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::{\bf Lookup\-Result} =  typename {\bf Local\-Hashmap}$<$K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E$>$\-::{\bf Lookup\-Result}}}\label{classshad_1_1Hashmap_acc8ac68502c6c886d18d660e907fef0a}
@@ -430,6 +440,28 @@ Asynchronous operations are guaranteed to have completed. only after calling the
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Hashmap_a8f4a24ff42fd6f6c3394a352169bccb9}
+\hypertarget{classshad_1_1Hashmap_a38737ea18bd7f7514377774d791f2cf7}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!begin@{begin}}
+\index{begin@{begin}!shad::Hashmap@{shad\-::\-Hashmap}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ {\bf const\-\_\-iterator} {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Hashmap_a38737ea18bd7f7514377774d791f2cf7}
+\hypertarget{classshad_1_1Hashmap_adb0d51549addcbd2d2945198093765dc}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!buffered\-\_\-async\-\_\-flush@{buffered\-\_\-async\-\_\-flush}}
+\index{buffered\-\_\-async\-\_\-flush@{buffered\-\_\-async\-\_\-flush}!shad::Hashmap@{shad\-::\-Hashmap}}
+\subsubsection[{buffered\-\_\-async\-\_\-flush}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ void {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::buffered\-\_\-async\-\_\-flush (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{h}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Hashmap_adb0d51549addcbd2d2945198093765dc}
+\hypertarget{classshad_1_1Hashmap_ad47705f8fd28f908864edaf55ffe0713}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!buffered\-\_\-async\-\_\-insert@{buffered\-\_\-async\-\_\-insert}}
+\index{buffered\-\_\-async\-\_\-insert@{buffered\-\_\-async\-\_\-insert}!shad::Hashmap@{shad\-::\-Hashmap}}
+\subsubsection[{buffered\-\_\-async\-\_\-insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ void {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::buffered\-\_\-async\-\_\-insert (
+\begin{DoxyParamCaption}
+\item[{{\bf rt\-::\-Handle} \&}]{h, }
+\item[{const {\bf value\-\_\-type} \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Hashmap_ad47705f8fd28f908864edaf55ffe0713}
 \hypertarget{classshad_1_1Hashmap_a81d82387ec408ec61db465e60401c77a}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!Buffered\-Async\-Insert@{Buffered\-Async\-Insert}}
 \index{Buffered\-Async\-Insert@{Buffered\-Async\-Insert}!shad::Hashmap@{shad\-::\-Hashmap}}
 \subsubsection[{Buffered\-Async\-Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$ void {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::Buffered\-Async\-Insert (
@@ -484,20 +516,20 @@ Insertions are finalized only after calling the \hyperlink{classshad_1_1Hashmap_
 \item[{const {\bf Entry\-T} \&}]{entry}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Hashmap_a313c1401e0dd0cc51cfc750a740f3772}
-\hypertarget{classshad_1_1Hashmap_aa014bed8d66b4adb7274687b9074cc53}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!cbegin@{cbegin}}
+\hypertarget{classshad_1_1Hashmap_a1a5209eaa6ee08a67f6bd1bfa97e7419}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!cbegin@{cbegin}}
 \index{cbegin@{cbegin}!shad::Hashmap@{shad\-::\-Hashmap}}
 \subsubsection[{cbegin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ {\bf const\-\_\-iterator} {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::cbegin (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Hashmap_aa014bed8d66b4adb7274687b9074cc53}
-\hypertarget{classshad_1_1Hashmap_a75006495ce7c58a32c5724cae27944ed}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!cend@{cend}}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Hashmap_a1a5209eaa6ee08a67f6bd1bfa97e7419}
+\hypertarget{classshad_1_1Hashmap_a6c26c36950a5ed3e4e988f4c992c43f5}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!cend@{cend}}
 \index{cend@{cend}!shad::Hashmap@{shad\-::\-Hashmap}}
 \subsubsection[{cend}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ {\bf const\-\_\-iterator} {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::cend (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Hashmap_a75006495ce7c58a32c5724cae27944ed}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Hashmap_a6c26c36950a5ed3e4e988f4c992c43f5}
 \hypertarget{classshad_1_1Hashmap_a708b4f1033b3119ed2cc2afd0d469341}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!Clear@{Clear}}
 \index{Clear@{Clear}!shad::Hashmap@{shad\-::\-Hashmap}}
 \subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ void {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::Clear (
@@ -549,6 +581,13 @@ A shared pointer to the newly created hashmap instance.
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Hashmap_a72709bee83695661dbd0a43699cd1833}
+\hypertarget{classshad_1_1Hashmap_a9e6ecb2d7433942bcbf032365125d57c}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!end@{end}}
+\index{end@{end}!shad::Hashmap@{shad\-::\-Hashmap}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ {\bf const\-\_\-iterator} {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Hashmap_a9e6ecb2d7433942bcbf032365125d57c}
 \hypertarget{classshad_1_1Hashmap_ad93d311ba86a6a7d80120f67d846dbd5}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!Erase@{Erase}}
 \index{Erase@{Erase}!shad::Hashmap@{shad\-::\-Hashmap}}
 \subsubsection[{Erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$ void {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::Erase (
@@ -643,14 +682,14 @@ The global identifier associated with the hashmap instance.
 
 Implements \hyperlink{classshad_1_1AbstractDataStructure_a914a6e24eec3a7f5d51d93323d3a39cc}{shad\-::\-Abstract\-Data\-Structure$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$ $>$}.
 
-\hypertarget{classshad_1_1Hashmap_af3f0622044572a21c74f192714065f5f}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!Insert@{Insert}}
+\hypertarget{classshad_1_1Hashmap_afd44f019edac86a4b397bc36294c47ab}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!Insert@{Insert}}
 \index{Insert@{Insert}!shad::Hashmap@{shad\-::\-Hashmap}}
-\subsubsection[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$ void {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::Insert (
+\subsubsection[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E , typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$ std\-::pair$<$ typename {\bf Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::{\bf iterator}, bool $>$ {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::Insert (
 \begin{DoxyParamCaption}
 \item[{const K\-T\-Y\-P\-E \&}]{key, }
 \item[{const V\-T\-Y\-P\-E \&}]{value}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Hashmap_af3f0622044572a21c74f192714065f5f}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Hashmap_afd44f019edac86a4b397bc36294c47ab}
 
 
 Insert a key-\/value pair in the hashmap. 
@@ -662,6 +701,24 @@ Insert a key-\/value pair in the hashmap.
 \mbox{\tt in}  & {\em value} & the value to copy into the hashmap. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an iterator either to the inserted value or to the previously inserted value that prevented the insertion. 
+\end{DoxyReturn}
+\hypertarget{classshad_1_1Hashmap_ab49d3f791ad9ba7af13349b2ae1a273f}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!insert@{insert}}
+\index{insert@{insert}!shad::Hashmap@{shad\-::\-Hashmap}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ std\-::pair$<${\bf iterator}, bool$>$ {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::insert (
+\begin{DoxyParamCaption}
+\item[{const {\bf value\-\_\-type} \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Hashmap_ab49d3f791ad9ba7af13349b2ae1a273f}
+\hypertarget{classshad_1_1Hashmap_aea07d5e23d3978bb0858becef75dd24f}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!insert@{insert}}
+\index{insert@{insert}!shad::Hashmap@{shad\-::\-Hashmap}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ std\-::pair$<${\bf iterator}, bool$>$ {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::insert (
+\begin{DoxyParamCaption}
+\item[{{\bf const\-\_\-iterator}}]{, }
+\item[{const {\bf value\-\_\-type} \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classshad_1_1Hashmap_aea07d5e23d3978bb0858becef75dd24f}
 \hypertarget{classshad_1_1Hashmap_a4706991a9277cc89fcd154bf73025183}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!local\-\_\-begin@{local\-\_\-begin}}
 \index{local\-\_\-begin@{local\-\_\-begin}!shad::Hashmap@{shad\-::\-Hashmap}}
 \subsubsection[{local\-\_\-begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ {\bf local\-\_\-iterator} {\bf shad\-::\-Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$\-::local\-\_\-begin (
@@ -739,12 +796,9 @@ Finalize method for buffered insertions.
 \hypertarget{classshad_1_1Hashmap_ab18afa4496cc863ddc11bab94b2adf57}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!Abstract\-Data\-Structure@{Abstract\-Data\-Structure}}
 \index{Abstract\-Data\-Structure@{Abstract\-Data\-Structure}!shad::Hashmap@{shad\-::\-Hashmap}}
 \subsubsection[{Abstract\-Data\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ template$<$typename $>$ friend class {\bf Abstract\-Data\-Structure}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1Hashmap_ab18afa4496cc863ddc11bab94b2adf57}
-\hypertarget{classshad_1_1Hashmap_a901992501a956914085e608ae303244f}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!map\-\_\-iterator$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$@{map\-\_\-iterator$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}}
+\hypertarget{classshad_1_1Hashmap_a92846a6772a0f2fa3e0756f5029fcb0b}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!map\-\_\-iterator$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$@{map\-\_\-iterator$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}}
 \index{map\-\_\-iterator$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$@{map\-\_\-iterator$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}!shad::Hashmap@{shad\-::\-Hashmap}}
-\subsubsection[{map\-\_\-iterator$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ friend class {\bf map\-\_\-iterator}$<$ {\bf Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$,const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1Hashmap_a901992501a956914085e608ae303244f}
-\hypertarget{classshad_1_1Hashmap_a9f6643e9369026a8c41dff0b7bca9e4b}{\index{shad\-::\-Hashmap@{shad\-::\-Hashmap}!map\-\_\-iterator$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$@{map\-\_\-iterator$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}}
-\index{map\-\_\-iterator$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$@{map\-\_\-iterator$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}!shad::Hashmap@{shad\-::\-Hashmap}}
-\subsubsection[{map\-\_\-iterator$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ friend class {\bf map\-\_\-iterator}$<$ {\bf Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$,std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1Hashmap_a9f6643e9369026a8c41dff0b7bca9e4b}
+\subsubsection[{map\-\_\-iterator$<$ Hashmap$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$, const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$, std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K\-T\-Y\-P\-E , typename V\-T\-Y\-P\-E , typename K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E  = Mem\-Cmp$<$\-K\-T\-Y\-P\-E$>$, typename I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y  = Overwriter$<$\-V\-T\-Y\-P\-E$>$$>$ friend class {\bf map\-\_\-iterator}$<$ {\bf Hashmap}$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E, K\-E\-Y\-\_\-\-C\-O\-M\-P\-A\-R\-E, I\-N\-S\-E\-R\-T\-\_\-\-P\-O\-L\-I\-C\-Y $>$,const std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$,std\-::pair$<$ K\-T\-Y\-P\-E, V\-T\-Y\-P\-E $>$ $>$\hspace{0.3cm}{\ttfamily [friend]}}}\label{classshad_1_1Hashmap_a92846a6772a0f2fa3e0756f5029fcb0b}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

@@ -9,6 +9,10 @@
 {\ttfamily \#include $<$utility$>$}\\*
 {\ttfamily \#include $<$vector$>$}\\*
 {\ttfamily \#include \char`\"{}shad/core/execution.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shad/core/impl/comparison\-\_\-ops.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shad/core/impl/minimum\-\_\-maximum\-\_\-ops.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shad/core/impl/modifyng\-\_\-sequence\-\_\-ops.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shad/core/impl/non\-\_\-modifyng\-\_\-sequence\-\_\-ops.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}shad/distributed\-\_\-iterator\-\_\-traits.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}shad/runtime/runtime.\-h\char`\"{}}\\*
 Include dependency graph for algorithm.\-h\-:
@@ -46,4 +50,102 @@ $<$ Input\-Itr $>$\-::difference\-\_\-type \hyperlink{namespaceshad_a2abc6976d67
 \item 
 {\footnotesize template$<$typename Execution\-Policy , typename Input\-Itr , typename Unary\-Predicate $>$ }\\\hyperlink{structshad_1_1distributed__iterator__traits}{shad\-::distributed\-\_\-iterator\-\_\-traits}\\*
 $<$ Input\-Itr $>$\-::difference\-\_\-type \hyperlink{namespaceshad_a08f4233aef9435fb627ebb82d186715e}{shad\-::count\-\_\-if} (Execution\-Policy \&\&policy, Input\-Itr first, Input\-Itr last, Unary\-Predicate p)
+\item 
+{\footnotesize template$<$class Forward\-It $>$ }\\Forward\-It \hyperlink{namespaceshad_a81976ee44edd512260a625c628f6094b}{shad\-::max\-\_\-element} (Forward\-It first, Forward\-It last)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+Forward\-It $>$ \hyperlink{namespaceshad_a3f4b06918fc7b1425c9bc8aa942d894d}{shad\-::max\-\_\-element} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last)
+\item 
+{\footnotesize template$<$class Forward\-It , class Compare $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Forward\-It $>$\-::value, \\*
+Forward\-It $>$ \hyperlink{namespaceshad_aceab28870f92123bc4489897c5e7d640}{shad\-::max\-\_\-element} (Forward\-It first, Forward\-It last, Compare comp)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class Compare $>$ }\\Forward\-It \hyperlink{namespaceshad_a507fdc64c5881f464e3c6dd7e470bfa1}{shad\-::max\-\_\-element} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, Compare comp)
+\item 
+{\footnotesize template$<$class Forward\-It $>$ }\\Forward\-It \hyperlink{namespaceshad_a8fa362bdd1e3f20d68a86f80cd5d47e5}{shad\-::min\-\_\-element} (Forward\-It first, Forward\-It last)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+Forward\-It $>$ \hyperlink{namespaceshad_ab2b1735a5a797bce70247ebf95081238}{shad\-::min\-\_\-element} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last)
+\item 
+{\footnotesize template$<$class Forward\-It , class Compare $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Forward\-It $>$\-::value, \\*
+Forward\-It $>$ \hyperlink{namespaceshad_aaea0353fe93d75d2a5dbe4409921a25e}{shad\-::min\-\_\-element} (Forward\-It first, Forward\-It last, Compare comp)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class Compare $>$ }\\Forward\-It \hyperlink{namespaceshad_ade79004d9d2b57d94717640536689f30}{shad\-::min\-\_\-element} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, Compare comp)
+\item 
+{\footnotesize template$<$class Forward\-It $>$ }\\std\-::pair$<$ Forward\-It, Forward\-It $>$ \hyperlink{namespaceshad_a04498eaaa7278dc429fcdf93f5915bfd}{shad\-::minmax\-\_\-element} (Forward\-It first, Forward\-It last)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+std\-::pair$<$ Forward\-It, \\*
+Forward\-It $>$ $>$ \hyperlink{namespaceshad_af24b9e8c34031c3eb513512540d75220}{shad\-::minmax\-\_\-element} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last)
+\item 
+{\footnotesize template$<$class Forward\-It , class Compare $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Forward\-It $>$\-::value, \\*
+std\-::pair$<$ Forward\-It, \\*
+Forward\-It $>$ $>$ \hyperlink{namespaceshad_a16fcfebd88d79295c4f5ff4762e17329}{shad\-::minmax\-\_\-element} (Forward\-It first, Forward\-It last, Compare comp)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class Compare $>$ }\\std\-::pair$<$ Forward\-It, Forward\-It $>$ \hyperlink{namespaceshad_a19b6f97e22a10d008622ad4e49de5f6b}{shad\-::minmax\-\_\-element} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, Compare comp)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class T $>$ }\\void \hyperlink{namespaceshad_ab21c74ec57b46160ad590b2e989c4ea6}{shad\-::fill} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, const T \&value)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Unary\-Operation $>$ }\\Forward\-It2 \hyperlink{namespaceshad_a7a39d855612f2a2957f27b7571e9dc54}{shad\-::transform} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 d\-\_\-first, Unary\-Operation unary\-\_\-op)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class Generator $>$ }\\void \hyperlink{namespaceshad_a9bd5736fe5e18ec23a7d7e5913a11df8}{shad\-::generate} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, Generator g)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class T $>$ }\\void \hyperlink{namespaceshad_a0c0ef45cc72fdfcc83ec82af01154289}{shad\-::replace} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, const T \&old\-\_\-value, const T \&new\-\_\-value)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class Unary\-Predicate , class T $>$ }\\void \hyperlink{namespaceshad_aef6165d38034e9fd6e2fa8bb433a6f61}{shad\-::replace\-\_\-if} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, Unary\-Predicate p, const T \&new\-\_\-value)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 $>$ }\\bool \hyperlink{namespaceshad_a8141e857a877c6eb44095a7578281ecd}{shad\-::equal} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+bool $>$ \hyperlink{namespaceshad_ad909faa4c50e8fe776668cd39e776602}{shad\-::equal} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 first2)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 , class Binary\-Predicate $>$ }\\std\-::enable\-\_\-if\-\_\-t$<$!std\-::is\-\_\-same\\*
+$<$ Input\-It2, Binary\-Predicate $>$\\*
+\-::value, bool $>$ \hyperlink{namespaceshad_a9be869b9241eafbec6af016a45fa8f45}{shad\-::equal} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, Binary\-Predicate p)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Predicate $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$(\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value \\*
+\&\&!std\-::is\-\_\-same$<$ Forward\-It2, \\*
+Binary\-Predicate $>$\-::value), \\*
+bool $>$ \hyperlink{namespaceshad_a1d99da6ce33f2013b3ff47b9a05a0916}{shad\-::equal} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 first2, Binary\-Predicate p)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 $>$ }\\bool \hyperlink{namespaceshad_aa5dcd90777a8948f8cb240d51bd1346b}{shad\-::equal} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, Input\-It2 last2)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+bool $>$ \hyperlink{namespaceshad_ae452511628cb333e23458bb2af8cfa83}{shad\-::equal} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 first2, Forward\-It2 last2)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 , class Binary\-Predicate $>$ }\\std\-::enable\-\_\-if\-\_\-t$<$!std\-::is\-\_\-same\\*
+$<$ Input\-It2, Binary\-Predicate $>$\\*
+\-::value, bool $>$ \hyperlink{namespaceshad_a729216b8f76b721c9e1ae8fdcb63ee03}{shad\-::equal} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, Input\-It2 last2, Binary\-Predicate p)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Predicate $>$ }\\bool \hyperlink{namespaceshad_a8566c24e54c82d15757af3f776c54c40}{shad\-::equal} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 first2, Forward\-It2 last2, Binary\-Predicate p)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 $>$ }\\bool \hyperlink{namespaceshad_a65aac88682894c75b4b1caee38cc9c8f}{shad\-::lexicographical\-\_\-compare} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, Input\-It2 last2)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+bool $>$ \hyperlink{namespaceshad_a060c390865e5dbec41c7e2526fae8803}{shad\-::lexicographical\-\_\-compare} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 first2, Forward\-It2 last2)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 , class Compare $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It1 $>$\-::value, bool $>$ \hyperlink{namespaceshad_a05a181e15eb05bb17cf7bedcacc98585}{shad\-::lexicographical\-\_\-compare} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, Input\-It2 last2, Compare comp)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Compare $>$ }\\bool \hyperlink{namespaceshad_a10090ea72775e10b015408d8c9050ac3}{shad\-::lexicographical\-\_\-compare} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 first2, Forward\-It2 last2, Compare comp)
 \end{DoxyCompactItemize}

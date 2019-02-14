@@ -15,8 +15,20 @@ struct \hyperlink{structshad_1_1distributed__sequential__tag}{distributed\-\_\-s
 \item 
 struct \hyperlink{structshad_1_1distributed__parallel__tag}{distributed\-\_\-parallel\-\_\-tag}
 \item 
+struct \hyperlink{structshad_1_1is__execution__policy}{is\-\_\-execution\-\_\-policy}
+\item 
+class \hyperlink{classshad_1_1insert__iterator}{insert\-\_\-iterator}
+\begin{DoxyCompactList}\small\item\em Insert iterator (over a shad container). \end{DoxyCompactList}\item 
 class \hyperlink{classshad_1_1buffered__insert__iterator}{buffered\-\_\-insert\-\_\-iterator}
 \begin{DoxyCompactList}\small\item\em Buffered insert iterator. \end{DoxyCompactList}\item 
+struct \hyperlink{structshad_1_1is__block__contiguous}{is\-\_\-block\-\_\-contiguous}
+\item 
+struct \hyperlink{structshad_1_1is__block__contiguous_3_01shad_1_1insert__iterator_3_01Container_01_4_01_4}{is\-\_\-block\-\_\-contiguous$<$ shad\-::insert\-\_\-iterator$<$ Container $>$ $>$}
+\item 
+struct \hyperlink{structshad_1_1is__block__contiguous_3_01shad_1_1buffered__insert__iterator_3_01Container_01_4_01_4}{is\-\_\-block\-\_\-contiguous$<$ shad\-::buffered\-\_\-insert\-\_\-iterator$<$ Container $>$ $>$}
+\item 
+struct \hyperlink{structshad_1_1is__std__hashable}{is\-\_\-std\-\_\-hashable}
+\item 
 class \hyperlink{classshad_1_1unordered__map}{unordered\-\_\-map}
 \begin{DoxyCompactList}\small\item\em Distributed unordered associative map. \end{DoxyCompactList}\item 
 class \hyperlink{classshad_1_1unordered__set}{unordered\-\_\-set}
@@ -29,8 +41,6 @@ class \hyperlink{classshad_1_1MemCmp}{Mem\-Cmp}
 \begin{DoxyCompactList}\small\item\em Comparison functor. \end{DoxyCompactList}\item 
 class \hyperlink{classshad_1_1MemCmp_3_01std_1_1vector_3_01KeyTy_01_4_01_4}{Mem\-Cmp$<$ std\-::vector$<$ Key\-Ty $>$ $>$}
 \begin{DoxyCompactList}\small\item\em Comparison functor specialized for std\-::vector. \end{DoxyCompactList}\item 
-struct \hyperlink{structshad_1_1is__std__hashable}{is\-\_\-std\-\_\-hashable}
-\item 
 struct \hyperlink{structshad_1_1hash}{hash}
 \item 
 struct \hyperlink{structshad_1_1hash_3_01Key_00_01false_01_4}{hash$<$ Key, false $>$}
@@ -42,6 +52,8 @@ class \hyperlink{classshad_1_1Hashmap}{Hashmap}
 class \hyperlink{classshad_1_1lmap__iterator}{lmap\-\_\-iterator}
 \item 
 struct \hyperlink{structshad_1_1Overwriter}{Overwriter}
+\item 
+struct \hyperlink{structshad_1_1Updater}{Updater}
 \item 
 class \hyperlink{classshad_1_1LocalHashmap}{Local\-Hashmap}
 \begin{DoxyCompactList}\small\item\em The \hyperlink{classshad_1_1LocalHashmap}{Local\-Hashmap} data structure. \end{DoxyCompactList}\item 
@@ -62,6 +74,12 @@ class \hyperlink{classshad_1_1Set}{Set}
 class \hyperlink{classshad_1_1Vector}{Vector}
 \begin{DoxyCompactList}\small\item\em The \hyperlink{classshad_1_1Vector}{Vector} data Structure. \end{DoxyCompactList}\item 
 struct \hyperlink{structshad_1_1distributed__iterator__traits}{distributed\-\_\-iterator\-\_\-traits}
+\item 
+struct \hyperlink{structshad_1_1is__distributed__iterator}{is\-\_\-distributed\-\_\-iterator}
+\item 
+struct \hyperlink{structshad_1_1is__distributed__iterator_3_01T_00_01typename_01std_1_1enable__if_3_9std_1_1is__sa51db7b1d56bd82f65c31391ac3bbe077}{is\-\_\-distributed\-\_\-iterator$<$ T, typename std\-::enable\-\_\-if$<$!std\-::is\-\_\-same$<$ typename distributed\-\_\-iterator\-\_\-traits$<$ T $>$\-::value\-\_\-type, void $>$\-::value $>$\-::type $>$}
+\item 
+struct \hyperlink{structshad_1_1distributed__random__access__iterator__trait}{distributed\-\_\-random\-\_\-access\-\_\-iterator\-\_\-trait}
 \item 
 class \hyperlink{classshad_1_1AttrEdgesPair}{Attr\-Edges\-Pair}
 \item 
@@ -107,6 +125,226 @@ $<$ Input\-Itr $>$\-::difference\-\_\-type \hyperlink{namespaceshad_a2abc6976d67
 {\footnotesize template$<$typename Execution\-Policy , typename Input\-Itr , typename Unary\-Predicate $>$ }\\\hyperlink{structshad_1_1distributed__iterator__traits}{shad\-::distributed\-\_\-iterator\-\_\-traits}\\*
 $<$ Input\-Itr $>$\-::difference\-\_\-type \hyperlink{namespaceshad_a08f4233aef9435fb627ebb82d186715e}{count\-\_\-if} (Execution\-Policy \&\&policy, Input\-Itr first, Input\-Itr last, Unary\-Predicate p)
 \item 
+{\footnotesize template$<$class Forward\-It $>$ }\\Forward\-It \hyperlink{namespaceshad_a81976ee44edd512260a625c628f6094b}{max\-\_\-element} (Forward\-It first, Forward\-It last)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+Forward\-It $>$ \hyperlink{namespaceshad_a3f4b06918fc7b1425c9bc8aa942d894d}{max\-\_\-element} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last)
+\item 
+{\footnotesize template$<$class Forward\-It , class Compare $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Forward\-It $>$\-::value, \\*
+Forward\-It $>$ \hyperlink{namespaceshad_aceab28870f92123bc4489897c5e7d640}{max\-\_\-element} (Forward\-It first, Forward\-It last, Compare comp)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class Compare $>$ }\\Forward\-It \hyperlink{namespaceshad_a507fdc64c5881f464e3c6dd7e470bfa1}{max\-\_\-element} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, Compare comp)
+\item 
+{\footnotesize template$<$class Forward\-It $>$ }\\Forward\-It \hyperlink{namespaceshad_a8fa362bdd1e3f20d68a86f80cd5d47e5}{min\-\_\-element} (Forward\-It first, Forward\-It last)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+Forward\-It $>$ \hyperlink{namespaceshad_ab2b1735a5a797bce70247ebf95081238}{min\-\_\-element} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last)
+\item 
+{\footnotesize template$<$class Forward\-It , class Compare $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Forward\-It $>$\-::value, \\*
+Forward\-It $>$ \hyperlink{namespaceshad_aaea0353fe93d75d2a5dbe4409921a25e}{min\-\_\-element} (Forward\-It first, Forward\-It last, Compare comp)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class Compare $>$ }\\Forward\-It \hyperlink{namespaceshad_ade79004d9d2b57d94717640536689f30}{min\-\_\-element} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, Compare comp)
+\item 
+{\footnotesize template$<$class Forward\-It $>$ }\\std\-::pair$<$ Forward\-It, Forward\-It $>$ \hyperlink{namespaceshad_a04498eaaa7278dc429fcdf93f5915bfd}{minmax\-\_\-element} (Forward\-It first, Forward\-It last)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+std\-::pair$<$ Forward\-It, \\*
+Forward\-It $>$ $>$ \hyperlink{namespaceshad_af24b9e8c34031c3eb513512540d75220}{minmax\-\_\-element} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last)
+\item 
+{\footnotesize template$<$class Forward\-It , class Compare $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Forward\-It $>$\-::value, \\*
+std\-::pair$<$ Forward\-It, \\*
+Forward\-It $>$ $>$ \hyperlink{namespaceshad_a16fcfebd88d79295c4f5ff4762e17329}{minmax\-\_\-element} (Forward\-It first, Forward\-It last, Compare comp)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class Compare $>$ }\\std\-::pair$<$ Forward\-It, Forward\-It $>$ \hyperlink{namespaceshad_a19b6f97e22a10d008622ad4e49de5f6b}{minmax\-\_\-element} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, Compare comp)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class T $>$ }\\void \hyperlink{namespaceshad_ab21c74ec57b46160ad590b2e989c4ea6}{fill} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, const T \&value)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Unary\-Operation $>$ }\\Forward\-It2 \hyperlink{namespaceshad_a7a39d855612f2a2957f27b7571e9dc54}{transform} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 d\-\_\-first, Unary\-Operation unary\-\_\-op)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class Generator $>$ }\\void \hyperlink{namespaceshad_a9bd5736fe5e18ec23a7d7e5913a11df8}{generate} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, Generator g)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class T $>$ }\\void \hyperlink{namespaceshad_a0c0ef45cc72fdfcc83ec82af01154289}{replace} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, const T \&old\-\_\-value, const T \&new\-\_\-value)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class Unary\-Predicate , class T $>$ }\\void \hyperlink{namespaceshad_aef6165d38034e9fd6e2fa8bb433a6f61}{replace\-\_\-if} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, Unary\-Predicate p, const T \&new\-\_\-value)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 $>$ }\\bool \hyperlink{namespaceshad_a8141e857a877c6eb44095a7578281ecd}{equal} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+bool $>$ \hyperlink{namespaceshad_ad909faa4c50e8fe776668cd39e776602}{equal} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 first2)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 , class Binary\-Predicate $>$ }\\std\-::enable\-\_\-if\-\_\-t$<$!std\-::is\-\_\-same\\*
+$<$ Input\-It2, Binary\-Predicate $>$\\*
+\-::value, bool $>$ \hyperlink{namespaceshad_a9be869b9241eafbec6af016a45fa8f45}{equal} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, Binary\-Predicate p)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Predicate $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$(\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value \\*
+\&\&!std\-::is\-\_\-same$<$ Forward\-It2, \\*
+Binary\-Predicate $>$\-::value), \\*
+bool $>$ \hyperlink{namespaceshad_a1d99da6ce33f2013b3ff47b9a05a0916}{equal} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 first2, Binary\-Predicate p)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 $>$ }\\bool \hyperlink{namespaceshad_aa5dcd90777a8948f8cb240d51bd1346b}{equal} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, Input\-It2 last2)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+bool $>$ \hyperlink{namespaceshad_ae452511628cb333e23458bb2af8cfa83}{equal} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 first2, Forward\-It2 last2)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 , class Binary\-Predicate $>$ }\\std\-::enable\-\_\-if\-\_\-t$<$!std\-::is\-\_\-same\\*
+$<$ Input\-It2, Binary\-Predicate $>$\\*
+\-::value, bool $>$ \hyperlink{namespaceshad_a729216b8f76b721c9e1ae8fdcb63ee03}{equal} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, Input\-It2 last2, Binary\-Predicate p)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Predicate $>$ }\\bool \hyperlink{namespaceshad_a8566c24e54c82d15757af3f776c54c40}{equal} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 first2, Forward\-It2 last2, Binary\-Predicate p)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 $>$ }\\bool \hyperlink{namespaceshad_a65aac88682894c75b4b1caee38cc9c8f}{lexicographical\-\_\-compare} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, Input\-It2 last2)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+bool $>$ \hyperlink{namespaceshad_a060c390865e5dbec41c7e2526fae8803}{lexicographical\-\_\-compare} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 first2, Forward\-It2 last2)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 , class Compare $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It1 $>$\-::value, bool $>$ \hyperlink{namespaceshad_a05a181e15eb05bb17cf7bedcacc98585}{lexicographical\-\_\-compare} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, Input\-It2 last2, Compare comp)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Compare $>$ }\\bool \hyperlink{namespaceshad_a10090ea72775e10b015408d8c9050ac3}{lexicographical\-\_\-compare} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 first2, Forward\-It2 last2, Compare comp)
+\item 
+{\footnotesize template$<$class Forward\-Iterator , class T $>$ }\\void \hyperlink{namespaceshad_a1406d52ae9f56d5b4a160d37b2b20f3a}{iota} (Forward\-Iterator first, Forward\-Iterator last, T value)
+\item 
+{\footnotesize template$<$class Input\-It , class T , class Binary\-Operation $>$ }\\T \hyperlink{namespaceshad_a79535b2ad05d27266485f8e299b776cd}{accumulate} (Input\-It first, Input\-It last, T init, Binary\-Operation op)
+\item 
+{\footnotesize template$<$class Input\-It , class T $>$ }\\T \hyperlink{namespaceshad_a7286bb0b681bec70602b31083a0b0680}{accumulate} (Input\-It first, Input\-It last, T init)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 , class T $>$ }\\T \hyperlink{namespaceshad_ae17dfe23117ed2d68100db112d13d5e2}{inner\-\_\-product} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, T init)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 , class T , class Binary\-Operation1 , class Binary\-Operation2 $>$ }\\T \hyperlink{namespaceshad_a9e35d019afa66a7d241f01c4c28a5c14}{inner\-\_\-product} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, T init, Binary\-Operation1 op1, Binary\-Operation2 op2)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It $>$ }\\Output\-It \hyperlink{namespaceshad_a740dc92192ebb80d0651a62c31ad92ec}{adjacent\-\_\-difference} (Input\-It first, Input\-It last, Output\-It d\-\_\-first)
+\item 
+{\footnotesize template$<$typename Execution\-Policy , class Input\-It , class Output\-It $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+Output\-It $>$ \hyperlink{namespaceshad_affad70e4283f19271fe3ab0ea3ce1b90}{adjacent\-\_\-difference} (Execution\-Policy \&\&policy, Input\-It first, Input\-It last, Output\-It d\-\_\-first)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class Binary\-Operation $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It $>$\-::value, Output\-It $>$ \hyperlink{namespaceshad_ac72a7771f9b490b5948c84da221e9a83}{adjacent\-\_\-difference} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, Binary\-Operation op)
+\item 
+{\footnotesize template$<$typename Execution\-Policy , class Input\-It , class Output\-It , class Binary\-Operation $>$ }\\Output\-It \hyperlink{namespaceshad_a390a66f6af57d674bfcd5aced6b69a9d}{adjacent\-\_\-difference} (Execution\-Policy \&\&policy, Input\-It first, Input\-It last, Output\-It d\-\_\-first, Binary\-Operation op)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It $>$ }\\Output\-It \hyperlink{namespaceshad_a08d8882161e132a6fb3f9253b9a3bdef}{partial\-\_\-sum} (Input\-It first, Input\-It last, Output\-It d\-\_\-first)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class Binary\-Operation $>$ }\\Output\-It \hyperlink{namespaceshad_a82089f3b0373f5062395613e51d16fa3}{partial\-\_\-sum} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, Binary\-Operation op)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class T , class Binary\-Op $>$ }\\T \hyperlink{namespaceshad_a23bc7c39dc6aa69f526570d07967a185}{reduce} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, T init, Binary\-Op binary\-\_\-op)
+\item 
+{\footnotesize template$<$class Input\-It $>$ }\\std\-::iterator\-\_\-traits$<$ Input\-It $>$\\*
+\-::value\-\_\-type \hyperlink{namespaceshad_a0cb65c2ad084f15e5fd33058445b7f10}{reduce} (Input\-It first, Input\-It last)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+typename std\-::iterator\-\_\-traits\\*
+$<$ Forward\-It $>$\-::value\-\_\-type $>$ \hyperlink{namespaceshad_a329ef698d7c8b55b8b967ad07e9bf84d}{reduce} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last)
+\item 
+{\footnotesize template$<$class Input\-It , class T $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It $>$\-::value, T $>$ \hyperlink{namespaceshad_aea9e6912fe7e3a494de8b7eaad2fd345}{reduce} (Input\-It first, Input\-It last, T init)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class T $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, T $>$ \hyperlink{namespaceshad_a047e9c9a109948515a14306d4a169893}{reduce} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, T init)
+\item 
+{\footnotesize template$<$class Input\-It , class T , class Binary\-Op $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It $>$\-::value, T $>$ \hyperlink{namespaceshad_a2807d313b1e6586657c742ae2b4c132d}{reduce} (Input\-It first, Input\-It last, T init, Binary\-Op binary\-\_\-op)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class T $>$ }\\Output\-It \hyperlink{namespaceshad_af0252dc307b8ba0b96885c00e8871bbc}{exclusive\-\_\-scan} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, T init)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class T $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+Forward\-It2 $>$ \hyperlink{namespaceshad_a04c9040a1562793e895edaf3517dcfd6}{exclusive\-\_\-scan} (Execution\-Policy \&\&policy, Forward\-It1 first, Forward\-It1 last, Forward\-It2 d\-\_\-first, T init)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class T , class Binary\-Operation $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It $>$\-::value, Output\-It $>$ \hyperlink{namespaceshad_a3c4542507eba2afe28bb5d8af386b76d}{exclusive\-\_\-scan} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, T init, Binary\-Operation binary\-\_\-op)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class T , class Binary\-Operation $>$ }\\Forward\-It2 \hyperlink{namespaceshad_af1776fbb5971b5b37331938fa9f55e09}{exclusive\-\_\-scan} (Execution\-Policy \&\&policy, Forward\-It1 first, Forward\-It1 last, Forward\-It2 d\-\_\-first, T init, Binary\-Operation binary\-\_\-op)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It $>$ }\\Output\-It \hyperlink{namespaceshad_a2854c58c1b96a1d20320f22a34bc2231}{inclusive\-\_\-scan} (Input\-It first, Input\-It last, Output\-It d\-\_\-first)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+Forward\-It2 $>$ \hyperlink{namespaceshad_a1d3a1d24cc9d681bd236220c3db36a4b}{inclusive\-\_\-scan} (Execution\-Policy \&\&policy, Forward\-It1 first, Forward\-It1 last, Forward\-It2 d\-\_\-first)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class Binary\-Operation $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It $>$\-::value, Output\-It $>$ \hyperlink{namespaceshad_ab2f0bce9d14c5ec29670dbbcae4a7e58}{inclusive\-\_\-scan} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, Binary\-Operation binary\-\_\-op)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Operation $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+Forward\-It2 $>$ \hyperlink{namespaceshad_adc86ffac5f28d6798c40434c5017d86f}{inclusive\-\_\-scan} (Execution\-Policy \&\&policy, Forward\-It1 first, Forward\-It1 last, Forward\-It2 d\-\_\-first, Binary\-Operation binary\-\_\-op)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class Binary\-Operation , class T $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It $>$\-::value, Output\-It $>$ \hyperlink{namespaceshad_a3a46378a583f1c96000caa42e640ab5c}{inclusive\-\_\-scan} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, Binary\-Operation binary\-\_\-op, T init)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Operation , class T $>$ }\\Forward\-It2 \hyperlink{namespaceshad_ac268ceb6647308bdfa9a510f346cc560}{inclusive\-\_\-scan} (Execution\-Policy \&\&policy, Forward\-It1 first, Forward\-It1 last, Forward\-It2 d\-\_\-first, Binary\-Operation binary\-\_\-op, T init)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It , class T , class Binary\-Op , class Unary\-Op $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, T $>$ \hyperlink{namespaceshad_a45c6b8c67b4d583819c334dc29a969b1}{transform\-\_\-reduce} (Execution\-Policy \&\&policy, Forward\-It first, Forward\-It last, T init, Binary\-Op binary\-\_\-op, Unary\-Op unary\-\_\-op)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class T , class Binary\-Op1 , class Binary\-Op2 $>$ }\\T \hyperlink{namespaceshad_a9ada8d6b6cb63fd3b5b459ff608b5027}{transform\-\_\-reduce} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 first2, T init, Binary\-Op1 binary\-\_\-op1, Binary\-Op2 binary\-\_\-op2)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 , class T $>$ }\\T \hyperlink{namespaceshad_a9fb77cb6187be97748be38c5632a406c}{transform\-\_\-reduce} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, T init)
+\item 
+{\footnotesize template$<$class Input\-It1 , class Input\-It2 , class T , class Binary\-Op1 , class Binary\-Op2 $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It1 $>$\-::value, T $>$ \hyperlink{namespaceshad_a6764e68a376e02ec492499b12eac8dc1}{transform\-\_\-reduce} (Input\-It1 first1, Input\-It1 last1, Input\-It2 first2, T init, Binary\-Op1 binary\-\_\-op1, Binary\-Op2 binary\-\_\-op2)
+\item 
+{\footnotesize template$<$class Input\-It , class T , class Binary\-Op , class Unary\-Op $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It $>$\-::value, T $>$ \hyperlink{namespaceshad_a68e4deac86c665ff2d3d3550c7042331}{transform\-\_\-reduce} (Input\-It first, Input\-It last, T init, Binary\-Op binop, Unary\-Op unary\-\_\-op)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class T $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, T $>$ \hyperlink{namespaceshad_a1de0e51e5616aabd05a68412086358ae}{transform\-\_\-reduce} (Execution\-Policy \&\&policy, Forward\-It1 first1, Forward\-It1 last1, Forward\-It2 first2, T init)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class T , class Binary\-Operation , class Unary\-Operation $>$ }\\Output\-It \hyperlink{namespaceshad_a58f5206d294f2437782ed7f197eb1d0d}{transform\-\_\-exclusive\-\_\-scan} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, T init, Binary\-Operation binary\-\_\-op, Unary\-Operation unary\-\_\-op)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class T , class Binary\-Operation , class Unary\-Operation $>$ }\\Forward\-It2 \hyperlink{namespaceshad_a1ad8ba4e807e353d19cbe7f118914856}{transform\-\_\-exclusive\-\_\-scan} (Execution\-Policy \&\&policy, Forward\-It1 first, Forward\-It1 last, Forward\-It2 d\-\_\-first, T init, Binary\-Operation binary\-\_\-op, Unary\-Operation unary\-\_\-op)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class Binary\-Operation , class Unary\-Operation $>$ }\\Output\-It \hyperlink{namespaceshad_abae2714cc427e081f0f399648d5cfdef}{transform\-\_\-inclusive\-\_\-scan} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, Binary\-Operation binary\-\_\-op, Unary\-Operation unary\-\_\-op)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Operation , class Unary\-Operation $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$ \hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Execution\-Policy $>$\-::value, \\*
+Forward\-It2 $>$ \hyperlink{namespaceshad_a0d3e58f6b91d06bf7d3f46e7d2e478bc}{transform\-\_\-inclusive\-\_\-scan} (Execution\-Policy \&\&policy, Forward\-It1 first, Forward\-It1 last, Forward\-It2 d\-\_\-first, Binary\-Operation binary\-\_\-op, Unary\-Operation unary\-\_\-op)
+\item 
+{\footnotesize template$<$class Input\-It , class Output\-It , class Binary\-Operation , class Unary\-Operation , class T $>$ }\\std\-::enable\-\_\-if\-\_\-t\\*
+$<$!\hyperlink{structshad_1_1is__execution__policy}{shad\-::is\-\_\-execution\-\_\-policy}\\*
+$<$ Input\-It $>$\-::value, Output\-It $>$ \hyperlink{namespaceshad_aa7967d1c57c2457d65e5a8dc09b98c0e}{transform\-\_\-inclusive\-\_\-scan} (Input\-It first, Input\-It last, Output\-It d\-\_\-first, Binary\-Operation binary\-\_\-op, Unary\-Operation unary\-\_\-op, T init)
+\item 
+{\footnotesize template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Operation , class Unary\-Operation , class T $>$ }\\Forward\-It2 \hyperlink{namespaceshad_a7731b3ca77801af3286844f6db55364c}{transform\-\_\-inclusive\-\_\-scan} (Execution\-Policy \&\&policy, Forward\-It1 first, Forward\-It1 last, Forward\-It2 d\-\_\-first, Binary\-Operation binary\-\_\-op, Unary\-Operation unary\-\_\-op, T init)
+\item 
 {\footnotesize template$<$typename Key\-Ty $>$ }\\uint64\-\_\-t \hyperlink{namespaceshad_a21c73a78973e58a8ed4a246a74bff5b9}{Hash\-Function} (const Key\-Ty \&key, uint8\-\_\-t seed)
 \begin{DoxyCompactList}\small\item\em Jenkins one-\/at-\/a-\/time hash function. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Key\-Ty $>$ }\\uint64\-\_\-t \hyperlink{namespaceshad_a1bce4c68f2c688517fdc5dca70da59da}{Hash\-Function} (const std\-::vector$<$ Key\-Ty $>$ \&key, uint8\-\_\-t seed)
@@ -139,6 +377,65 @@ int \hyperlink{namespaceshad_a9f30a41da5e389095d44fe5b1c9e6f5e}{main} (int argc,
 
 
 \subsection{Function Documentation}
+\hypertarget{namespaceshad_a79535b2ad05d27266485f8e299b776cd}{\index{shad@{shad}!accumulate@{accumulate}}
+\index{accumulate@{accumulate}!shad@{shad}}
+\subsubsection[{accumulate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class T , class Binary\-Operation $>$ T shad\-::accumulate (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{T}]{init, }
+\item[{Binary\-Operation}]{op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a79535b2ad05d27266485f8e299b776cd}
+\hypertarget{namespaceshad_a7286bb0b681bec70602b31083a0b0680}{\index{shad@{shad}!accumulate@{accumulate}}
+\index{accumulate@{accumulate}!shad@{shad}}
+\subsubsection[{accumulate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class T $>$ T shad\-::accumulate (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{T}]{init}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a7286bb0b681bec70602b31083a0b0680}
+\hypertarget{namespaceshad_a740dc92192ebb80d0651a62c31ad92ec}{\index{shad@{shad}!adjacent\-\_\-difference@{adjacent\-\_\-difference}}
+\index{adjacent\-\_\-difference@{adjacent\-\_\-difference}!shad@{shad}}
+\subsubsection[{adjacent\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class Output\-It $>$ Output\-It shad\-::adjacent\-\_\-difference (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{Output\-It}]{d\-\_\-first}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a740dc92192ebb80d0651a62c31ad92ec}
+\hypertarget{namespaceshad_affad70e4283f19271fe3ab0ea3ce1b90}{\index{shad@{shad}!adjacent\-\_\-difference@{adjacent\-\_\-difference}}
+\index{adjacent\-\_\-difference@{adjacent\-\_\-difference}!shad@{shad}}
+\subsubsection[{adjacent\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Execution\-Policy , class Input\-It , class Output\-It $>$ std\-::enable\-\_\-if\-\_\-t$<${\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Execution\-Policy$>$\-::value, Output\-It$>$ shad\-::adjacent\-\_\-difference (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{Output\-It}]{d\-\_\-first}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_affad70e4283f19271fe3ab0ea3ce1b90}
+\hypertarget{namespaceshad_ac72a7771f9b490b5948c84da221e9a83}{\index{shad@{shad}!adjacent\-\_\-difference@{adjacent\-\_\-difference}}
+\index{adjacent\-\_\-difference@{adjacent\-\_\-difference}!shad@{shad}}
+\subsubsection[{adjacent\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class Output\-It , class Binary\-Operation $>$ std\-::enable\-\_\-if\-\_\-t$<$!{\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Input\-It$>$\-::value, Output\-It$>$ shad\-::adjacent\-\_\-difference (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{Output\-It}]{d\-\_\-first, }
+\item[{Binary\-Operation}]{op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_ac72a7771f9b490b5948c84da221e9a83}
+\hypertarget{namespaceshad_a390a66f6af57d674bfcd5aced6b69a9d}{\index{shad@{shad}!adjacent\-\_\-difference@{adjacent\-\_\-difference}}
+\index{adjacent\-\_\-difference@{adjacent\-\_\-difference}!shad@{shad}}
+\subsubsection[{adjacent\-\_\-difference}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Execution\-Policy , class Input\-It , class Output\-It , class Binary\-Operation $>$ Output\-It shad\-::adjacent\-\_\-difference (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{Output\-It}]{d\-\_\-first, }
+\item[{Binary\-Operation}]{op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a390a66f6af57d674bfcd5aced6b69a9d}
 \hypertarget{namespaceshad_ab0314482e6cdabff5bcb7f2833b0f937}{\index{shad@{shad}!all\-\_\-of@{all\-\_\-of}}
 \index{all\-\_\-of@{all\-\_\-of}!shad@{shad}}
 \subsubsection[{all\-\_\-of}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Execution\-Policy , typename Forward\-Itr , typename Unary\-Predicate $>$ bool shad\-::all\-\_\-of (
@@ -179,6 +476,144 @@ int \hyperlink{namespaceshad_a9f30a41da5e389095d44fe5b1c9e6f5e}{main} (int argc,
 \item[{Unary\-Predicate}]{p}
 \end{DoxyParamCaption}
 )}}\label{namespaceshad_a08f4233aef9435fb627ebb82d186715e}
+\hypertarget{namespaceshad_a8141e857a877c6eb44095a7578281ecd}{\index{shad@{shad}!equal@{equal}}
+\index{equal@{equal}!shad@{shad}}
+\subsubsection[{equal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It1 , class Input\-It2 $>$ bool shad\-::equal (
+\begin{DoxyParamCaption}
+\item[{Input\-It1}]{first1, }
+\item[{Input\-It1}]{last1, }
+\item[{Input\-It2}]{first2}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a8141e857a877c6eb44095a7578281ecd}
+\hypertarget{namespaceshad_ad909faa4c50e8fe776668cd39e776602}{\index{shad@{shad}!equal@{equal}}
+\index{equal@{equal}!shad@{shad}}
+\subsubsection[{equal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 $>$ std\-::enable\-\_\-if\-\_\-t$<${\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Execution\-Policy$>$\-::value, bool$>$ shad\-::equal (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first1, }
+\item[{Forward\-It1}]{last1, }
+\item[{Forward\-It2}]{first2}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_ad909faa4c50e8fe776668cd39e776602}
+\hypertarget{namespaceshad_a9be869b9241eafbec6af016a45fa8f45}{\index{shad@{shad}!equal@{equal}}
+\index{equal@{equal}!shad@{shad}}
+\subsubsection[{equal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It1 , class Input\-It2 , class Binary\-Predicate $>$ std\-::enable\-\_\-if\-\_\-t$<$!std\-::is\-\_\-same$<$Input\-It2, Binary\-Predicate$>$\-::value, bool$>$ shad\-::equal (
+\begin{DoxyParamCaption}
+\item[{Input\-It1}]{first1, }
+\item[{Input\-It1}]{last1, }
+\item[{Input\-It2}]{first2, }
+\item[{Binary\-Predicate}]{p}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a9be869b9241eafbec6af016a45fa8f45}
+\hypertarget{namespaceshad_a1d99da6ce33f2013b3ff47b9a05a0916}{\index{shad@{shad}!equal@{equal}}
+\index{equal@{equal}!shad@{shad}}
+\subsubsection[{equal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Predicate $>$ std\-::enable\-\_\-if\-\_\-t$<$({\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Execution\-Policy$>$\-::value \&\& !std\-::is\-\_\-same$<$Forward\-It2, Binary\-Predicate$>$\-::value), bool$>$ shad\-::equal (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first1, }
+\item[{Forward\-It1}]{last1, }
+\item[{Forward\-It2}]{first2, }
+\item[{Binary\-Predicate}]{p}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a1d99da6ce33f2013b3ff47b9a05a0916}
+\hypertarget{namespaceshad_aa5dcd90777a8948f8cb240d51bd1346b}{\index{shad@{shad}!equal@{equal}}
+\index{equal@{equal}!shad@{shad}}
+\subsubsection[{equal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It1 , class Input\-It2 $>$ bool shad\-::equal (
+\begin{DoxyParamCaption}
+\item[{Input\-It1}]{first1, }
+\item[{Input\-It1}]{last1, }
+\item[{Input\-It2}]{first2, }
+\item[{Input\-It2}]{last2}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_aa5dcd90777a8948f8cb240d51bd1346b}
+\hypertarget{namespaceshad_ae452511628cb333e23458bb2af8cfa83}{\index{shad@{shad}!equal@{equal}}
+\index{equal@{equal}!shad@{shad}}
+\subsubsection[{equal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 $>$ std\-::enable\-\_\-if\-\_\-t$<${\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Execution\-Policy$>$\-::value, bool$>$ shad\-::equal (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first1, }
+\item[{Forward\-It1}]{last1, }
+\item[{Forward\-It2}]{first2, }
+\item[{Forward\-It2}]{last2}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_ae452511628cb333e23458bb2af8cfa83}
+\hypertarget{namespaceshad_a729216b8f76b721c9e1ae8fdcb63ee03}{\index{shad@{shad}!equal@{equal}}
+\index{equal@{equal}!shad@{shad}}
+\subsubsection[{equal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It1 , class Input\-It2 , class Binary\-Predicate $>$ std\-::enable\-\_\-if\-\_\-t$<$!std\-::is\-\_\-same$<$Input\-It2, Binary\-Predicate$>$\-::value, bool$>$ shad\-::equal (
+\begin{DoxyParamCaption}
+\item[{Input\-It1}]{first1, }
+\item[{Input\-It1}]{last1, }
+\item[{Input\-It2}]{first2, }
+\item[{Input\-It2}]{last2, }
+\item[{Binary\-Predicate}]{p}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a729216b8f76b721c9e1ae8fdcb63ee03}
+\hypertarget{namespaceshad_a8566c24e54c82d15757af3f776c54c40}{\index{shad@{shad}!equal@{equal}}
+\index{equal@{equal}!shad@{shad}}
+\subsubsection[{equal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Predicate $>$ bool shad\-::equal (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first1, }
+\item[{Forward\-It1}]{last1, }
+\item[{Forward\-It2}]{first2, }
+\item[{Forward\-It2}]{last2, }
+\item[{Binary\-Predicate}]{p}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a8566c24e54c82d15757af3f776c54c40}
+\hypertarget{namespaceshad_af0252dc307b8ba0b96885c00e8871bbc}{\index{shad@{shad}!exclusive\-\_\-scan@{exclusive\-\_\-scan}}
+\index{exclusive\-\_\-scan@{exclusive\-\_\-scan}!shad@{shad}}
+\subsubsection[{exclusive\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class Output\-It , class T $>$ Output\-It shad\-::exclusive\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{Output\-It}]{d\-\_\-first, }
+\item[{T}]{init}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_af0252dc307b8ba0b96885c00e8871bbc}
+\hypertarget{namespaceshad_a04c9040a1562793e895edaf3517dcfd6}{\index{shad@{shad}!exclusive\-\_\-scan@{exclusive\-\_\-scan}}
+\index{exclusive\-\_\-scan@{exclusive\-\_\-scan}!shad@{shad}}
+\subsubsection[{exclusive\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class T $>$ std\-::enable\-\_\-if\-\_\-t$<${\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Execution\-Policy$>$\-::value, Forward\-It2$>$ shad\-::exclusive\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first, }
+\item[{Forward\-It1}]{last, }
+\item[{Forward\-It2}]{d\-\_\-first, }
+\item[{T}]{init}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a04c9040a1562793e895edaf3517dcfd6}
+\hypertarget{namespaceshad_a3c4542507eba2afe28bb5d8af386b76d}{\index{shad@{shad}!exclusive\-\_\-scan@{exclusive\-\_\-scan}}
+\index{exclusive\-\_\-scan@{exclusive\-\_\-scan}!shad@{shad}}
+\subsubsection[{exclusive\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class Output\-It , class T , class Binary\-Operation $>$ std\-::enable\-\_\-if\-\_\-t$<$!{\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Input\-It$>$\-::value, Output\-It$>$ shad\-::exclusive\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{Output\-It}]{d\-\_\-first, }
+\item[{T}]{init, }
+\item[{Binary\-Operation}]{binary\-\_\-op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a3c4542507eba2afe28bb5d8af386b76d}
+\hypertarget{namespaceshad_af1776fbb5971b5b37331938fa9f55e09}{\index{shad@{shad}!exclusive\-\_\-scan@{exclusive\-\_\-scan}}
+\index{exclusive\-\_\-scan@{exclusive\-\_\-scan}!shad@{shad}}
+\subsubsection[{exclusive\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class T , class Binary\-Operation $>$ Forward\-It2 shad\-::exclusive\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first, }
+\item[{Forward\-It1}]{last, }
+\item[{Forward\-It2}]{d\-\_\-first, }
+\item[{T}]{init, }
+\item[{Binary\-Operation}]{binary\-\_\-op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_af1776fbb5971b5b37331938fa9f55e09}
+\hypertarget{namespaceshad_ab21c74ec57b46160ad590b2e989c4ea6}{\index{shad@{shad}!fill@{fill}}
+\index{fill@{fill}!shad@{shad}}
+\subsubsection[{fill}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It , class T $>$ void shad\-::fill (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_ab21c74ec57b46160ad590b2e989c4ea6}
 \hypertarget{namespaceshad_a63ec34eb3f98177db268051179d6057a}{\index{shad@{shad}!find@{find}}
 \index{find@{find}!shad@{shad}}
 \subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Execution\-Policy , typename Forward\-Itr , typename T $>$ Forward\-Itr shad\-::find (
@@ -219,6 +654,16 @@ int \hyperlink{namespaceshad_a9f30a41da5e389095d44fe5b1c9e6f5e}{main} (int argc,
 \item[{Unary\-Predicate}]{p}
 \end{DoxyParamCaption}
 )}}\label{namespaceshad_a7daf2afb8d216454ff4143be21237d0c}
+\hypertarget{namespaceshad_a9bd5736fe5e18ec23a7d7e5913a11df8}{\index{shad@{shad}!generate@{generate}}
+\index{generate@{generate}!shad@{shad}}
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It , class Generator $>$ void shad\-::generate (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last, }
+\item[{Generator}]{g}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a9bd5736fe5e18ec23a7d7e5913a11df8}
 \hypertarget{namespaceshad_a21c73a78973e58a8ed4a246a74bff5b9}{\index{shad@{shad}!Hash\-Function@{Hash\-Function}}
 \index{Hash\-Function@{Hash\-Function}!shad@{shad}}
 \subsubsection[{Hash\-Function}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\-Ty $>$ uint64\-\_\-t shad\-::\-Hash\-Function (
@@ -293,6 +738,144 @@ uint8\_t ultimateSeed = 42;
 \begin{DoxyReturn}{Returns}
 A 8-\/bytes long hash value. 
 \end{DoxyReturn}
+\hypertarget{namespaceshad_a2854c58c1b96a1d20320f22a34bc2231}{\index{shad@{shad}!inclusive\-\_\-scan@{inclusive\-\_\-scan}}
+\index{inclusive\-\_\-scan@{inclusive\-\_\-scan}!shad@{shad}}
+\subsubsection[{inclusive\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class Output\-It $>$ Output\-It shad\-::inclusive\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{Output\-It}]{d\-\_\-first}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a2854c58c1b96a1d20320f22a34bc2231}
+\hypertarget{namespaceshad_a1d3a1d24cc9d681bd236220c3db36a4b}{\index{shad@{shad}!inclusive\-\_\-scan@{inclusive\-\_\-scan}}
+\index{inclusive\-\_\-scan@{inclusive\-\_\-scan}!shad@{shad}}
+\subsubsection[{inclusive\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 $>$ std\-::enable\-\_\-if\-\_\-t$<${\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Execution\-Policy$>$\-::value, Forward\-It2$>$ shad\-::inclusive\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first, }
+\item[{Forward\-It1}]{last, }
+\item[{Forward\-It2}]{d\-\_\-first}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a1d3a1d24cc9d681bd236220c3db36a4b}
+\hypertarget{namespaceshad_ab2f0bce9d14c5ec29670dbbcae4a7e58}{\index{shad@{shad}!inclusive\-\_\-scan@{inclusive\-\_\-scan}}
+\index{inclusive\-\_\-scan@{inclusive\-\_\-scan}!shad@{shad}}
+\subsubsection[{inclusive\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class Output\-It , class Binary\-Operation $>$ std\-::enable\-\_\-if\-\_\-t$<$!{\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Input\-It$>$\-::value, Output\-It$>$ shad\-::inclusive\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{Output\-It}]{d\-\_\-first, }
+\item[{Binary\-Operation}]{binary\-\_\-op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_ab2f0bce9d14c5ec29670dbbcae4a7e58}
+\hypertarget{namespaceshad_adc86ffac5f28d6798c40434c5017d86f}{\index{shad@{shad}!inclusive\-\_\-scan@{inclusive\-\_\-scan}}
+\index{inclusive\-\_\-scan@{inclusive\-\_\-scan}!shad@{shad}}
+\subsubsection[{inclusive\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Operation $>$ std\-::enable\-\_\-if\-\_\-t$<${\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Execution\-Policy$>$\-::value, Forward\-It2$>$ shad\-::inclusive\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first, }
+\item[{Forward\-It1}]{last, }
+\item[{Forward\-It2}]{d\-\_\-first, }
+\item[{Binary\-Operation}]{binary\-\_\-op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_adc86ffac5f28d6798c40434c5017d86f}
+\hypertarget{namespaceshad_a3a46378a583f1c96000caa42e640ab5c}{\index{shad@{shad}!inclusive\-\_\-scan@{inclusive\-\_\-scan}}
+\index{inclusive\-\_\-scan@{inclusive\-\_\-scan}!shad@{shad}}
+\subsubsection[{inclusive\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class Output\-It , class Binary\-Operation , class T $>$ std\-::enable\-\_\-if\-\_\-t$<$!{\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Input\-It$>$\-::value, Output\-It$>$ shad\-::inclusive\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{Output\-It}]{d\-\_\-first, }
+\item[{Binary\-Operation}]{binary\-\_\-op, }
+\item[{T}]{init}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a3a46378a583f1c96000caa42e640ab5c}
+\hypertarget{namespaceshad_ac268ceb6647308bdfa9a510f346cc560}{\index{shad@{shad}!inclusive\-\_\-scan@{inclusive\-\_\-scan}}
+\index{inclusive\-\_\-scan@{inclusive\-\_\-scan}!shad@{shad}}
+\subsubsection[{inclusive\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Operation , class T $>$ Forward\-It2 shad\-::inclusive\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first, }
+\item[{Forward\-It1}]{last, }
+\item[{Forward\-It2}]{d\-\_\-first, }
+\item[{Binary\-Operation}]{binary\-\_\-op, }
+\item[{T}]{init}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_ac268ceb6647308bdfa9a510f346cc560}
+\hypertarget{namespaceshad_ae17dfe23117ed2d68100db112d13d5e2}{\index{shad@{shad}!inner\-\_\-product@{inner\-\_\-product}}
+\index{inner\-\_\-product@{inner\-\_\-product}!shad@{shad}}
+\subsubsection[{inner\-\_\-product}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It1 , class Input\-It2 , class T $>$ T shad\-::inner\-\_\-product (
+\begin{DoxyParamCaption}
+\item[{Input\-It1}]{first1, }
+\item[{Input\-It1}]{last1, }
+\item[{Input\-It2}]{first2, }
+\item[{T}]{init}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_ae17dfe23117ed2d68100db112d13d5e2}
+\hypertarget{namespaceshad_a9e35d019afa66a7d241f01c4c28a5c14}{\index{shad@{shad}!inner\-\_\-product@{inner\-\_\-product}}
+\index{inner\-\_\-product@{inner\-\_\-product}!shad@{shad}}
+\subsubsection[{inner\-\_\-product}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It1 , class Input\-It2 , class T , class Binary\-Operation1 , class Binary\-Operation2 $>$ T shad\-::inner\-\_\-product (
+\begin{DoxyParamCaption}
+\item[{Input\-It1}]{first1, }
+\item[{Input\-It1}]{last1, }
+\item[{Input\-It2}]{first2, }
+\item[{T}]{init, }
+\item[{Binary\-Operation1}]{op1, }
+\item[{Binary\-Operation2}]{op2}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a9e35d019afa66a7d241f01c4c28a5c14}
+\hypertarget{namespaceshad_a1406d52ae9f56d5b4a160d37b2b20f3a}{\index{shad@{shad}!iota@{iota}}
+\index{iota@{iota}!shad@{shad}}
+\subsubsection[{iota}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\-Iterator , class T $>$ void shad\-::iota (
+\begin{DoxyParamCaption}
+\item[{Forward\-Iterator}]{first, }
+\item[{Forward\-Iterator}]{last, }
+\item[{T}]{value}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a1406d52ae9f56d5b4a160d37b2b20f3a}
+\hypertarget{namespaceshad_a65aac88682894c75b4b1caee38cc9c8f}{\index{shad@{shad}!lexicographical\-\_\-compare@{lexicographical\-\_\-compare}}
+\index{lexicographical\-\_\-compare@{lexicographical\-\_\-compare}!shad@{shad}}
+\subsubsection[{lexicographical\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It1 , class Input\-It2 $>$ bool shad\-::lexicographical\-\_\-compare (
+\begin{DoxyParamCaption}
+\item[{Input\-It1}]{first1, }
+\item[{Input\-It1}]{last1, }
+\item[{Input\-It2}]{first2, }
+\item[{Input\-It2}]{last2}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a65aac88682894c75b4b1caee38cc9c8f}
+\hypertarget{namespaceshad_a060c390865e5dbec41c7e2526fae8803}{\index{shad@{shad}!lexicographical\-\_\-compare@{lexicographical\-\_\-compare}}
+\index{lexicographical\-\_\-compare@{lexicographical\-\_\-compare}!shad@{shad}}
+\subsubsection[{lexicographical\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 $>$ std\-::enable\-\_\-if\-\_\-t$<${\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Execution\-Policy$>$\-::value, bool$>$ shad\-::lexicographical\-\_\-compare (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first1, }
+\item[{Forward\-It1}]{last1, }
+\item[{Forward\-It2}]{first2, }
+\item[{Forward\-It2}]{last2}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a060c390865e5dbec41c7e2526fae8803}
+\hypertarget{namespaceshad_a05a181e15eb05bb17cf7bedcacc98585}{\index{shad@{shad}!lexicographical\-\_\-compare@{lexicographical\-\_\-compare}}
+\index{lexicographical\-\_\-compare@{lexicographical\-\_\-compare}!shad@{shad}}
+\subsubsection[{lexicographical\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It1 , class Input\-It2 , class Compare $>$ std\-::enable\-\_\-if\-\_\-t$<$!{\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Input\-It1$>$\-::value, bool$>$ shad\-::lexicographical\-\_\-compare (
+\begin{DoxyParamCaption}
+\item[{Input\-It1}]{first1, }
+\item[{Input\-It1}]{last1, }
+\item[{Input\-It2}]{first2, }
+\item[{Input\-It2}]{last2, }
+\item[{Compare}]{comp}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a05a181e15eb05bb17cf7bedcacc98585}
+\hypertarget{namespaceshad_a10090ea72775e10b015408d8c9050ac3}{\index{shad@{shad}!lexicographical\-\_\-compare@{lexicographical\-\_\-compare}}
+\index{lexicographical\-\_\-compare@{lexicographical\-\_\-compare}!shad@{shad}}
+\subsubsection[{lexicographical\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Compare $>$ bool shad\-::lexicographical\-\_\-compare (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first1, }
+\item[{Forward\-It1}]{last1, }
+\item[{Forward\-It2}]{first2, }
+\item[{Forward\-It2}]{last2, }
+\item[{Compare}]{comp}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a10090ea72775e10b015408d8c9050ac3}
 \hypertarget{namespaceshad_a9f30a41da5e389095d44fe5b1c9e6f5e}{\index{shad@{shad}!main@{main}}
 \index{main@{main}!shad@{shad}}
 \subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int shad\-::main (
@@ -305,7 +888,115 @@ A 8-\/bytes long hash value.
 
 The entrypoint of a program using S\-H\-A\-D. 
 
-The main within the shad namespace is called after the rest of the S\-H\-A\-D stack is initialized. \hypertarget{namespaceshad_a00b17ed7d3482e7fc389d344c68b42e8}{\index{shad@{shad}!none\-\_\-of@{none\-\_\-of}}
+The main within the shad namespace is called after the rest of the S\-H\-A\-D stack is initialized. \hypertarget{namespaceshad_a81976ee44edd512260a625c628f6094b}{\index{shad@{shad}!max\-\_\-element@{max\-\_\-element}}
+\index{max\-\_\-element@{max\-\_\-element}!shad@{shad}}
+\subsubsection[{max\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\-It $>$ Forward\-It shad\-::max\-\_\-element (
+\begin{DoxyParamCaption}
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a81976ee44edd512260a625c628f6094b}
+\hypertarget{namespaceshad_a3f4b06918fc7b1425c9bc8aa942d894d}{\index{shad@{shad}!max\-\_\-element@{max\-\_\-element}}
+\index{max\-\_\-element@{max\-\_\-element}!shad@{shad}}
+\subsubsection[{max\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It $>$ std\-::enable\-\_\-if\-\_\-t$<${\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Execution\-Policy$>$\-::value, Forward\-It$>$ shad\-::max\-\_\-element (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a3f4b06918fc7b1425c9bc8aa942d894d}
+\hypertarget{namespaceshad_aceab28870f92123bc4489897c5e7d640}{\index{shad@{shad}!max\-\_\-element@{max\-\_\-element}}
+\index{max\-\_\-element@{max\-\_\-element}!shad@{shad}}
+\subsubsection[{max\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\-It , class Compare $>$ std\-::enable\-\_\-if\-\_\-t$<$!{\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Forward\-It$>$\-::value, Forward\-It$>$ shad\-::max\-\_\-element (
+\begin{DoxyParamCaption}
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last, }
+\item[{Compare}]{comp}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_aceab28870f92123bc4489897c5e7d640}
+\hypertarget{namespaceshad_a507fdc64c5881f464e3c6dd7e470bfa1}{\index{shad@{shad}!max\-\_\-element@{max\-\_\-element}}
+\index{max\-\_\-element@{max\-\_\-element}!shad@{shad}}
+\subsubsection[{max\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It , class Compare $>$ Forward\-It shad\-::max\-\_\-element (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last, }
+\item[{Compare}]{comp}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a507fdc64c5881f464e3c6dd7e470bfa1}
+\hypertarget{namespaceshad_a8fa362bdd1e3f20d68a86f80cd5d47e5}{\index{shad@{shad}!min\-\_\-element@{min\-\_\-element}}
+\index{min\-\_\-element@{min\-\_\-element}!shad@{shad}}
+\subsubsection[{min\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\-It $>$ Forward\-It shad\-::min\-\_\-element (
+\begin{DoxyParamCaption}
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a8fa362bdd1e3f20d68a86f80cd5d47e5}
+\hypertarget{namespaceshad_ab2b1735a5a797bce70247ebf95081238}{\index{shad@{shad}!min\-\_\-element@{min\-\_\-element}}
+\index{min\-\_\-element@{min\-\_\-element}!shad@{shad}}
+\subsubsection[{min\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It $>$ std\-::enable\-\_\-if\-\_\-t$<${\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Execution\-Policy$>$\-::value, Forward\-It$>$ shad\-::min\-\_\-element (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_ab2b1735a5a797bce70247ebf95081238}
+\hypertarget{namespaceshad_aaea0353fe93d75d2a5dbe4409921a25e}{\index{shad@{shad}!min\-\_\-element@{min\-\_\-element}}
+\index{min\-\_\-element@{min\-\_\-element}!shad@{shad}}
+\subsubsection[{min\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\-It , class Compare $>$ std\-::enable\-\_\-if\-\_\-t$<$!{\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Forward\-It$>$\-::value, Forward\-It$>$ shad\-::min\-\_\-element (
+\begin{DoxyParamCaption}
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last, }
+\item[{Compare}]{comp}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_aaea0353fe93d75d2a5dbe4409921a25e}
+\hypertarget{namespaceshad_ade79004d9d2b57d94717640536689f30}{\index{shad@{shad}!min\-\_\-element@{min\-\_\-element}}
+\index{min\-\_\-element@{min\-\_\-element}!shad@{shad}}
+\subsubsection[{min\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It , class Compare $>$ Forward\-It shad\-::min\-\_\-element (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last, }
+\item[{Compare}]{comp}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_ade79004d9d2b57d94717640536689f30}
+\hypertarget{namespaceshad_a04498eaaa7278dc429fcdf93f5915bfd}{\index{shad@{shad}!minmax\-\_\-element@{minmax\-\_\-element}}
+\index{minmax\-\_\-element@{minmax\-\_\-element}!shad@{shad}}
+\subsubsection[{minmax\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\-It $>$ std\-::pair$<$Forward\-It, Forward\-It$>$ shad\-::minmax\-\_\-element (
+\begin{DoxyParamCaption}
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a04498eaaa7278dc429fcdf93f5915bfd}
+\hypertarget{namespaceshad_af24b9e8c34031c3eb513512540d75220}{\index{shad@{shad}!minmax\-\_\-element@{minmax\-\_\-element}}
+\index{minmax\-\_\-element@{minmax\-\_\-element}!shad@{shad}}
+\subsubsection[{minmax\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It $>$ std\-::enable\-\_\-if\-\_\-t$<${\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Execution\-Policy$>$\-::value, std\-::pair$<$Forward\-It, Forward\-It$>$ $>$ shad\-::minmax\-\_\-element (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_af24b9e8c34031c3eb513512540d75220}
+\hypertarget{namespaceshad_a16fcfebd88d79295c4f5ff4762e17329}{\index{shad@{shad}!minmax\-\_\-element@{minmax\-\_\-element}}
+\index{minmax\-\_\-element@{minmax\-\_\-element}!shad@{shad}}
+\subsubsection[{minmax\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\-It , class Compare $>$ std\-::enable\-\_\-if\-\_\-t$<$!{\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Forward\-It$>$\-::value, std\-::pair$<$Forward\-It, Forward\-It$>$ $>$ shad\-::minmax\-\_\-element (
+\begin{DoxyParamCaption}
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last, }
+\item[{Compare}]{comp}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a16fcfebd88d79295c4f5ff4762e17329}
+\hypertarget{namespaceshad_a19b6f97e22a10d008622ad4e49de5f6b}{\index{shad@{shad}!minmax\-\_\-element@{minmax\-\_\-element}}
+\index{minmax\-\_\-element@{minmax\-\_\-element}!shad@{shad}}
+\subsubsection[{minmax\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It , class Compare $>$ std\-::pair$<$Forward\-It, Forward\-It$>$ shad\-::minmax\-\_\-element (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last, }
+\item[{Compare}]{comp}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a19b6f97e22a10d008622ad4e49de5f6b}
+\hypertarget{namespaceshad_a00b17ed7d3482e7fc389d344c68b42e8}{\index{shad@{shad}!none\-\_\-of@{none\-\_\-of}}
 \index{none\-\_\-of@{none\-\_\-of}!shad@{shad}}
 \subsubsection[{none\-\_\-of}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Execution\-Policy , typename Forward\-Itr , typename Unary\-Predicate $>$ bool shad\-::none\-\_\-of (
 \begin{DoxyParamCaption}
@@ -502,3 +1193,254 @@ Operator greater than or equal.
 \begin{DoxyReturn}{Returns}
 true if lhs $>$= rhs, false otherwise. 
 \end{DoxyReturn}
+\hypertarget{namespaceshad_a08d8882161e132a6fb3f9253b9a3bdef}{\index{shad@{shad}!partial\-\_\-sum@{partial\-\_\-sum}}
+\index{partial\-\_\-sum@{partial\-\_\-sum}!shad@{shad}}
+\subsubsection[{partial\-\_\-sum}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class Output\-It $>$ Output\-It shad\-::partial\-\_\-sum (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{Output\-It}]{d\-\_\-first}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a08d8882161e132a6fb3f9253b9a3bdef}
+\hypertarget{namespaceshad_a82089f3b0373f5062395613e51d16fa3}{\index{shad@{shad}!partial\-\_\-sum@{partial\-\_\-sum}}
+\index{partial\-\_\-sum@{partial\-\_\-sum}!shad@{shad}}
+\subsubsection[{partial\-\_\-sum}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class Output\-It , class Binary\-Operation $>$ Output\-It shad\-::partial\-\_\-sum (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{Output\-It}]{d\-\_\-first, }
+\item[{Binary\-Operation}]{op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a82089f3b0373f5062395613e51d16fa3}
+\hypertarget{namespaceshad_a23bc7c39dc6aa69f526570d07967a185}{\index{shad@{shad}!reduce@{reduce}}
+\index{reduce@{reduce}!shad@{shad}}
+\subsubsection[{reduce}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It , class T , class Binary\-Op $>$ T shad\-::reduce (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last, }
+\item[{T}]{init, }
+\item[{Binary\-Op}]{binary\-\_\-op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a23bc7c39dc6aa69f526570d07967a185}
+\hypertarget{namespaceshad_a0cb65c2ad084f15e5fd33058445b7f10}{\index{shad@{shad}!reduce@{reduce}}
+\index{reduce@{reduce}!shad@{shad}}
+\subsubsection[{reduce}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It $>$ std\-::iterator\-\_\-traits$<$Input\-It$>$\-::value\-\_\-type shad\-::reduce (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a0cb65c2ad084f15e5fd33058445b7f10}
+\hypertarget{namespaceshad_a329ef698d7c8b55b8b967ad07e9bf84d}{\index{shad@{shad}!reduce@{reduce}}
+\index{reduce@{reduce}!shad@{shad}}
+\subsubsection[{reduce}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It $>$ std\-::enable\-\_\-if\-\_\-t$<${\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Execution\-Policy$>$\-::value, typename std\-::iterator\-\_\-traits$<$Forward\-It$>$\-::value\-\_\-type$>$ shad\-::reduce (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a329ef698d7c8b55b8b967ad07e9bf84d}
+\hypertarget{namespaceshad_aea9e6912fe7e3a494de8b7eaad2fd345}{\index{shad@{shad}!reduce@{reduce}}
+\index{reduce@{reduce}!shad@{shad}}
+\subsubsection[{reduce}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class T $>$ std\-::enable\-\_\-if\-\_\-t$<$!{\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Input\-It$>$\-::value, T$>$ shad\-::reduce (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{T}]{init}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_aea9e6912fe7e3a494de8b7eaad2fd345}
+\hypertarget{namespaceshad_a047e9c9a109948515a14306d4a169893}{\index{shad@{shad}!reduce@{reduce}}
+\index{reduce@{reduce}!shad@{shad}}
+\subsubsection[{reduce}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It , class T $>$ std\-::enable\-\_\-if\-\_\-t$<${\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Execution\-Policy$>$\-::value, T$>$ shad\-::reduce (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last, }
+\item[{T}]{init}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a047e9c9a109948515a14306d4a169893}
+\hypertarget{namespaceshad_a2807d313b1e6586657c742ae2b4c132d}{\index{shad@{shad}!reduce@{reduce}}
+\index{reduce@{reduce}!shad@{shad}}
+\subsubsection[{reduce}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class T , class Binary\-Op $>$ std\-::enable\-\_\-if\-\_\-t$<$!{\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Input\-It$>$\-::value, T$>$ shad\-::reduce (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{T}]{init, }
+\item[{Binary\-Op}]{binary\-\_\-op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a2807d313b1e6586657c742ae2b4c132d}
+\hypertarget{namespaceshad_a0c0ef45cc72fdfcc83ec82af01154289}{\index{shad@{shad}!replace@{replace}}
+\index{replace@{replace}!shad@{shad}}
+\subsubsection[{replace}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It , class T $>$ void shad\-::replace (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last, }
+\item[{const T \&}]{old\-\_\-value, }
+\item[{const T \&}]{new\-\_\-value}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a0c0ef45cc72fdfcc83ec82af01154289}
+\hypertarget{namespaceshad_aef6165d38034e9fd6e2fa8bb433a6f61}{\index{shad@{shad}!replace\-\_\-if@{replace\-\_\-if}}
+\index{replace\-\_\-if@{replace\-\_\-if}!shad@{shad}}
+\subsubsection[{replace\-\_\-if}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It , class Unary\-Predicate , class T $>$ void shad\-::replace\-\_\-if (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last, }
+\item[{Unary\-Predicate}]{p, }
+\item[{const T \&}]{new\-\_\-value}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_aef6165d38034e9fd6e2fa8bb433a6f61}
+\hypertarget{namespaceshad_a7a39d855612f2a2957f27b7571e9dc54}{\index{shad@{shad}!transform@{transform}}
+\index{transform@{transform}!shad@{shad}}
+\subsubsection[{transform}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Unary\-Operation $>$ Forward\-It2 shad\-::transform (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first1, }
+\item[{Forward\-It1}]{last1, }
+\item[{Forward\-It2}]{d\-\_\-first, }
+\item[{Unary\-Operation}]{unary\-\_\-op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a7a39d855612f2a2957f27b7571e9dc54}
+\hypertarget{namespaceshad_a58f5206d294f2437782ed7f197eb1d0d}{\index{shad@{shad}!transform\-\_\-exclusive\-\_\-scan@{transform\-\_\-exclusive\-\_\-scan}}
+\index{transform\-\_\-exclusive\-\_\-scan@{transform\-\_\-exclusive\-\_\-scan}!shad@{shad}}
+\subsubsection[{transform\-\_\-exclusive\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class Output\-It , class T , class Binary\-Operation , class Unary\-Operation $>$ Output\-It shad\-::transform\-\_\-exclusive\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{Output\-It}]{d\-\_\-first, }
+\item[{T}]{init, }
+\item[{Binary\-Operation}]{binary\-\_\-op, }
+\item[{Unary\-Operation}]{unary\-\_\-op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a58f5206d294f2437782ed7f197eb1d0d}
+\hypertarget{namespaceshad_a1ad8ba4e807e353d19cbe7f118914856}{\index{shad@{shad}!transform\-\_\-exclusive\-\_\-scan@{transform\-\_\-exclusive\-\_\-scan}}
+\index{transform\-\_\-exclusive\-\_\-scan@{transform\-\_\-exclusive\-\_\-scan}!shad@{shad}}
+\subsubsection[{transform\-\_\-exclusive\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class T , class Binary\-Operation , class Unary\-Operation $>$ Forward\-It2 shad\-::transform\-\_\-exclusive\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first, }
+\item[{Forward\-It1}]{last, }
+\item[{Forward\-It2}]{d\-\_\-first, }
+\item[{T}]{init, }
+\item[{Binary\-Operation}]{binary\-\_\-op, }
+\item[{Unary\-Operation}]{unary\-\_\-op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a1ad8ba4e807e353d19cbe7f118914856}
+\hypertarget{namespaceshad_abae2714cc427e081f0f399648d5cfdef}{\index{shad@{shad}!transform\-\_\-inclusive\-\_\-scan@{transform\-\_\-inclusive\-\_\-scan}}
+\index{transform\-\_\-inclusive\-\_\-scan@{transform\-\_\-inclusive\-\_\-scan}!shad@{shad}}
+\subsubsection[{transform\-\_\-inclusive\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class Output\-It , class Binary\-Operation , class Unary\-Operation $>$ Output\-It shad\-::transform\-\_\-inclusive\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{Output\-It}]{d\-\_\-first, }
+\item[{Binary\-Operation}]{binary\-\_\-op, }
+\item[{Unary\-Operation}]{unary\-\_\-op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_abae2714cc427e081f0f399648d5cfdef}
+\hypertarget{namespaceshad_a0d3e58f6b91d06bf7d3f46e7d2e478bc}{\index{shad@{shad}!transform\-\_\-inclusive\-\_\-scan@{transform\-\_\-inclusive\-\_\-scan}}
+\index{transform\-\_\-inclusive\-\_\-scan@{transform\-\_\-inclusive\-\_\-scan}!shad@{shad}}
+\subsubsection[{transform\-\_\-inclusive\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Operation , class Unary\-Operation $>$ std\-::enable\-\_\-if\-\_\-t$<${\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Execution\-Policy$>$\-::value, Forward\-It2$>$ shad\-::transform\-\_\-inclusive\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first, }
+\item[{Forward\-It1}]{last, }
+\item[{Forward\-It2}]{d\-\_\-first, }
+\item[{Binary\-Operation}]{binary\-\_\-op, }
+\item[{Unary\-Operation}]{unary\-\_\-op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a0d3e58f6b91d06bf7d3f46e7d2e478bc}
+\hypertarget{namespaceshad_aa7967d1c57c2457d65e5a8dc09b98c0e}{\index{shad@{shad}!transform\-\_\-inclusive\-\_\-scan@{transform\-\_\-inclusive\-\_\-scan}}
+\index{transform\-\_\-inclusive\-\_\-scan@{transform\-\_\-inclusive\-\_\-scan}!shad@{shad}}
+\subsubsection[{transform\-\_\-inclusive\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class Output\-It , class Binary\-Operation , class Unary\-Operation , class T $>$ std\-::enable\-\_\-if\-\_\-t$<$!{\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Input\-It$>$\-::value, Output\-It$>$ shad\-::transform\-\_\-inclusive\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{Output\-It}]{d\-\_\-first, }
+\item[{Binary\-Operation}]{binary\-\_\-op, }
+\item[{Unary\-Operation}]{unary\-\_\-op, }
+\item[{T}]{init}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_aa7967d1c57c2457d65e5a8dc09b98c0e}
+\hypertarget{namespaceshad_a7731b3ca77801af3286844f6db55364c}{\index{shad@{shad}!transform\-\_\-inclusive\-\_\-scan@{transform\-\_\-inclusive\-\_\-scan}}
+\index{transform\-\_\-inclusive\-\_\-scan@{transform\-\_\-inclusive\-\_\-scan}!shad@{shad}}
+\subsubsection[{transform\-\_\-inclusive\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class Binary\-Operation , class Unary\-Operation , class T $>$ Forward\-It2 shad\-::transform\-\_\-inclusive\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first, }
+\item[{Forward\-It1}]{last, }
+\item[{Forward\-It2}]{d\-\_\-first, }
+\item[{Binary\-Operation}]{binary\-\_\-op, }
+\item[{Unary\-Operation}]{unary\-\_\-op, }
+\item[{T}]{init}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a7731b3ca77801af3286844f6db55364c}
+\hypertarget{namespaceshad_a45c6b8c67b4d583819c334dc29a969b1}{\index{shad@{shad}!transform\-\_\-reduce@{transform\-\_\-reduce}}
+\index{transform\-\_\-reduce@{transform\-\_\-reduce}!shad@{shad}}
+\subsubsection[{transform\-\_\-reduce}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It , class T , class Binary\-Op , class Unary\-Op $>$ std\-::enable\-\_\-if\-\_\-t$<${\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Execution\-Policy$>$\-::value, T$>$ shad\-::transform\-\_\-reduce (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It}]{first, }
+\item[{Forward\-It}]{last, }
+\item[{T}]{init, }
+\item[{Binary\-Op}]{binary\-\_\-op, }
+\item[{Unary\-Op}]{unary\-\_\-op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a45c6b8c67b4d583819c334dc29a969b1}
+\hypertarget{namespaceshad_a9ada8d6b6cb63fd3b5b459ff608b5027}{\index{shad@{shad}!transform\-\_\-reduce@{transform\-\_\-reduce}}
+\index{transform\-\_\-reduce@{transform\-\_\-reduce}!shad@{shad}}
+\subsubsection[{transform\-\_\-reduce}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class T , class Binary\-Op1 , class Binary\-Op2 $>$ T shad\-::transform\-\_\-reduce (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first1, }
+\item[{Forward\-It1}]{last1, }
+\item[{Forward\-It2}]{first2, }
+\item[{T}]{init, }
+\item[{Binary\-Op1}]{binary\-\_\-op1, }
+\item[{Binary\-Op2}]{binary\-\_\-op2}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a9ada8d6b6cb63fd3b5b459ff608b5027}
+\hypertarget{namespaceshad_a9fb77cb6187be97748be38c5632a406c}{\index{shad@{shad}!transform\-\_\-reduce@{transform\-\_\-reduce}}
+\index{transform\-\_\-reduce@{transform\-\_\-reduce}!shad@{shad}}
+\subsubsection[{transform\-\_\-reduce}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It1 , class Input\-It2 , class T $>$ T shad\-::transform\-\_\-reduce (
+\begin{DoxyParamCaption}
+\item[{Input\-It1}]{first1, }
+\item[{Input\-It1}]{last1, }
+\item[{Input\-It2}]{first2, }
+\item[{T}]{init}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a9fb77cb6187be97748be38c5632a406c}
+\hypertarget{namespaceshad_a6764e68a376e02ec492499b12eac8dc1}{\index{shad@{shad}!transform\-\_\-reduce@{transform\-\_\-reduce}}
+\index{transform\-\_\-reduce@{transform\-\_\-reduce}!shad@{shad}}
+\subsubsection[{transform\-\_\-reduce}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It1 , class Input\-It2 , class T , class Binary\-Op1 , class Binary\-Op2 $>$ std\-::enable\-\_\-if\-\_\-t$<$!{\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Input\-It1$>$\-::value, T$>$ shad\-::transform\-\_\-reduce (
+\begin{DoxyParamCaption}
+\item[{Input\-It1}]{first1, }
+\item[{Input\-It1}]{last1, }
+\item[{Input\-It2}]{first2, }
+\item[{T}]{init, }
+\item[{Binary\-Op1}]{binary\-\_\-op1, }
+\item[{Binary\-Op2}]{binary\-\_\-op2}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a6764e68a376e02ec492499b12eac8dc1}
+\hypertarget{namespaceshad_a68e4deac86c665ff2d3d3550c7042331}{\index{shad@{shad}!transform\-\_\-reduce@{transform\-\_\-reduce}}
+\index{transform\-\_\-reduce@{transform\-\_\-reduce}!shad@{shad}}
+\subsubsection[{transform\-\_\-reduce}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\-It , class T , class Binary\-Op , class Unary\-Op $>$ std\-::enable\-\_\-if\-\_\-t$<$!{\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Input\-It$>$\-::value, T$>$ shad\-::transform\-\_\-reduce (
+\begin{DoxyParamCaption}
+\item[{Input\-It}]{first, }
+\item[{Input\-It}]{last, }
+\item[{T}]{init, }
+\item[{Binary\-Op}]{binop, }
+\item[{Unary\-Op}]{unary\-\_\-op}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a68e4deac86c665ff2d3d3550c7042331}
+\hypertarget{namespaceshad_a1de0e51e5616aabd05a68412086358ae}{\index{shad@{shad}!transform\-\_\-reduce@{transform\-\_\-reduce}}
+\index{transform\-\_\-reduce@{transform\-\_\-reduce}!shad@{shad}}
+\subsubsection[{transform\-\_\-reduce}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Execution\-Policy , class Forward\-It1 , class Forward\-It2 , class T $>$ std\-::enable\-\_\-if\-\_\-t$<${\bf shad\-::is\-\_\-execution\-\_\-policy}$<$Execution\-Policy$>$\-::value, T$>$ shad\-::transform\-\_\-reduce (
+\begin{DoxyParamCaption}
+\item[{Execution\-Policy \&\&}]{policy, }
+\item[{Forward\-It1}]{first1, }
+\item[{Forward\-It1}]{last1, }
+\item[{Forward\-It2}]{first2, }
+\item[{T}]{init}
+\end{DoxyParamCaption}
+)}}\label{namespaceshad_a1de0e51e5616aabd05a68412086358ae}
