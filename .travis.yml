@@ -97,6 +97,13 @@ script:
 # Generate and deploy documentation
 after_success:
   - cd $TRAVIS_BUILD_DIR
-  - chmod +x makedoc.sh
   - mkdir build-doxygen && cd build-doxygen && cmake .. -DSHAD_ENABLE_UNIT_TEST=OFF -DSHAD_ENABLE_DOXYGEN=ON && cd ..
-  - ./makedoc.sh
+
+deploy:
+  provider: pages
+  local-dir: $TRAVIS_BUILD_DIR/build-doxygen/docs/html
+  skip-cleanup: true
+  github-token: $GH_REPO_TOKEN
+  keep-history: true
+  on:
+    branch: master
