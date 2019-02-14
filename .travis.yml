@@ -59,11 +59,11 @@ branch:
     - gh-pages
 
 # Environment variables
-env:
-  global:
-    - GH_REPO_NAME: shad
-    - DOXYFILE: $TRAVIS_BUILD_DIR/build-doxygen/docs/doxygen.cfg
-    - GH_REPO_REF: github.com/droccom/shad.git
+#env:
+#  global:
+#    - GH_REPO_NAME: shad
+#    - DOXYFILE: $TRAVIS_BUILD_DIR/build-doxygen/docs/doxygen.cfg
+#    - GH_REPO_REF: github.com/droccom/shad.git
 
 before_install:
   - eval "${MATRIX_EVAL}"
@@ -106,4 +106,4 @@ deploy:
   github-token: $GH_REPO_TOKEN
   keep-history: true
   on:
-    branch: master
+    branch: auto-doxygen
