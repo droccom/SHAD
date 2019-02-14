@@ -35,6 +35,7 @@
 #include "shad/data_structures/buffer.h"
 #include "shad/data_structures/compare_and_hash_utils.h"
 #include "shad/data_structures/local_hashmap.h"
+#include "shad/distributed_iterator_traits.h"
 #include "shad/runtime/runtime.h"
 
 namespace shad {
@@ -59,9 +60,11 @@ class Hashmap : public AbstractDataStructure<
   template <typename>
   friend class AbstractDataStructure;
   friend class map_iterator<Hashmap<KTYPE, VTYPE, KEY_COMPARE, INSERT_POLICY>,
-                            std::pair<KTYPE, VTYPE>, std::pair<KTYPE, VTYPE>>;
+                            const std::pair<KTYPE, VTYPE>,
+                            std::pair<KTYPE, VTYPE>>;
   friend class map_iterator<Hashmap<KTYPE, VTYPE, KEY_COMPARE, INSERT_POLICY>,
-                            const std::pair<KTYPE, VTYPE>, std::pair<KTYPE, VTYPE>>;
+                            const std::pair<KTYPE, VTYPE>,
+                            std::pair<KTYPE, VTYPE>>;
 
  public:
   using value_type = std::pair<KTYPE, VTYPE>;
@@ -72,13 +75,13 @@ class Hashmap : public AbstractDataStructure<
 
   using iterator =
       map_iterator<Hashmap<KTYPE, VTYPE, KEY_COMPARE, INSERT_POLICY>,
-                   std::pair<KTYPE, VTYPE>, std::pair<KTYPE, VTYPE>>;
+                   const std::pair<KTYPE, VTYPE>, std::pair<KTYPE, VTYPE>>;
   using const_iterator =
       map_iterator<Hashmap<KTYPE, VTYPE, KEY_COMPARE, INSERT_POLICY>,
                    const std::pair<KTYPE, VTYPE>, std::pair<KTYPE, VTYPE>>;
   using local_iterator =
       lmap_iterator<LocalHashmap<KTYPE, VTYPE, KEY_COMPARE, INSERT_POLICY>,
-                    std::pair<KTYPE, VTYPE>>;
+                    const std::pair<KTYPE, VTYPE>>;
   using const_local_iterator =
       lmap_iterator<LocalHashmap<KTYPE, VTYPE, KEY_COMPARE, INSERT_POLICY>,
                     const std::pair<KTYPE, VTYPE>>;
@@ -113,7 +116,9 @@ class Hashmap : public AbstractDataStructure<
   /// @brief Insert a key-value pair in the hashmap.
   /// @param[in] key the key.
   /// @param[in] value the value to copy into the hashmap.
-  void Insert(const KTYPE &key, const VTYPE &value);
+  /// @return an iterator either to the inserted value or to the previously
+  /// inserted value that prevented the insertion.
+  std::pair<iterator, bool> Insert(const KTYPE &key, const VTYPE &value);
 
   /// @brief Asynchronously Insert a key-value pair in the hashmap.
   /// @warning Asynchronous operations are guaranteed to have completed
@@ -302,8 +307,10 @@ class Hashmap : public AbstractDataStructure<
 
   iterator begin() { return iterator::map_begin(this); }
   iterator end() { return iterator::map_end(this); }
-  const_iterator cbegin() { return const_iterator::map_begin(this); }
-  const_iterator cend() { return const_iterator::map_end(this); }
+  const_iterator cbegin() const { return const_iterator::map_begin(this); }
+  const_iterator cend() const { return const_iterator::map_end(this); }
+  const_iterator begin() const { return cbegin(); }
+  const_iterator end() const { return cend(); }
   local_iterator local_begin() {
     return local_iterator::lmap_begin(&localMap_);
   }
@@ -313,6 +320,23 @@ class Hashmap : public AbstractDataStructure<
   }
   const_local_iterator clocal_end() {
     return const_local_iterator::lmap_end(&localMap_);
+  }
+
+  std::pair<iterator, bool> insert(const value_type &value) {
+    return Insert(value.first, value.second);
+  }
+
+  std::pair<iterator, bool> insert(const_iterator, const value_type &value) {
+    return insert(value);
+  }
+
+  void buffered_async_insert(rt::Handle &h, const value_type &value) {
+    BufferedAsyncInsert(h, value.first, value.second);
+  }
+
+  void buffered_async_flush(rt::Handle &h) {
+    rt::waitForCompletion(h);
+    WaitForBufferedInsert();
   }
 
  private:
@@ -334,8 +358,10 @@ class Hashmap : public AbstractDataStructure<
  protected:
   Hashmap(ObjectID oid, const size_t numEntries)
       : oid_(oid),
-        localMap_(
-            std::max(numEntries / constants::kDefaultNumEntriesPerBucket, 1lu)),
+        localMap_(std::max(
+            numEntries /
+                (constants::kDefaultNumEntriesPerBucket * rt::numLocalities()),
+            1lu)),
         buffers_(oid) {}
 };
 
@@ -359,21 +385,35 @@ inline size_t Hashmap<KTYPE, VTYPE, KEY_COMPARE, INSERT_POLICY>::Size() const {
 
 template <typename KTYPE, typename VTYPE, typename KEY_COMPARE,
           typename INSERT_POLICY>
-inline void Hashmap<KTYPE, VTYPE, KEY_COMPARE, INSERT_POLICY>::Insert(
-    const KTYPE &key, const VTYPE &value) {
+inline std::pair<
+    typename Hashmap<KTYPE, VTYPE, KEY_COMPARE, INSERT_POLICY>::iterator, bool>
+Hashmap<KTYPE, VTYPE, KEY_COMPARE, INSERT_POLICY>::Insert(const KTYPE &key,
+                                                          const VTYPE &value) {
+  using itr_traits = distributed_iterator_traits<iterator>;
   size_t targetId = shad::hash<KTYPE>{}(key) % rt::numLocalities();
   rt::Locality targetLocality(targetId);
+  std::pair<iterator, bool> res;
 
   if (targetLocality == rt::thisLocality()) {
-    localMap_.Insert(key, value);
+    auto lres = localMap_.Insert(key, value);
+    res.first = itr_traits::iterator_from_local(begin(), end(), lres.first);
+    res.second = lres.second;
   } else {
-    auto insertLambda = [](const InsertArgs &args) {
-      auto mapPtr = HmapT::GetPtr(args.oid);
-      mapPtr->localMap_.Insert(args.key, args.value);
-    };
-    InsertArgs args = {oid_, key, value};
-    rt::executeAt(targetLocality, insertLambda, args);
+    auto insertLambda =
+        [](const std::tuple<iterator, iterator, InsertArgs> &args_,
+           std::pair<iterator, bool> *res_ptr) {
+          auto &args(std::get<2>(args_));
+          auto mapPtr = HmapT::GetPtr(args.oid);
+          auto lres = mapPtr->localMap_.Insert(args.key, args.value);
+          res_ptr->first = itr_traits::iterator_from_local(
+              std::get<0>(args_), std::get<1>(args_), lres.first);
+          res_ptr->second = lres.second;
+        };
+    rt::executeAtWithRet(
+        targetLocality, insertLambda,
+        std::make_tuple(begin(), end(), InsertArgs{oid_, key, value}), &res);
   }
+  return res;
 }
 
 template <typename KTYPE, typename VTYPE, typename KEY_COMPARE,
@@ -401,11 +441,7 @@ inline void Hashmap<KTYPE, VTYPE, KEY_COMPARE, INSERT_POLICY>::BufferedInsert(
     const KTYPE &key, const VTYPE &value) {
   size_t targetId = shad::hash<KTYPE>{}(key) % rt::numLocalities();
   rt::Locality targetLocality(targetId);
-  if (targetLocality == rt::thisLocality()) {
-    localMap_.Insert(key, value);
-  } else {
-    buffers_.Insert(EntryT(key, value), targetLocality);
-  }
+  buffers_.Insert(EntryT(key, value), targetLocality);
 }
 
 template <typename KTYPE, typename VTYPE, typename KEY_COMPARE,
@@ -416,12 +452,7 @@ inline void Hashmap<KTYPE, VTYPE, KEY_COMPARE,
                                                         const VTYPE &value) {
   size_t targetId = shad::hash<KTYPE>{}(key) % rt::numLocalities();
   rt::Locality targetLocality(targetId);
-  if (targetLocality == rt::thisLocality()) {
-    localMap_.AsyncInsert(handle, key, value);
-  } else {
-    EntryT entry(key, value);
-    buffers_.AsyncInsert(handle, entry, targetLocality);
-  }
+  buffers_.AsyncInsert(handle, EntryT(key, value), targetLocality);
 }
 
 template <typename KTYPE, typename VTYPE, typename KEY_COMPARE,
@@ -660,15 +691,21 @@ class map_iterator : public std::iterator<std::forward_iterator_tag, T> {
   using OIDT = typename MapT::ObjectID;
   using LMap = typename MapT::LMapT;
   using local_iterator_type = lmap_iterator<LMap, T>;
-  using value_type = T;
+  using value_type = NonConstT;
 
   map_iterator() {}
-  map_iterator(uint32_t locID, const OIDT mapOID, local_iterator_type &lit, T element) {
+  map_iterator(uint32_t locID, const OIDT mapOID, local_iterator_type &lit,
+               T element) {
     data_ = {locID, mapOID, lit, element};
   }
 
   map_iterator(uint32_t locID, const OIDT mapOID, local_iterator_type &lit) {
-    data_ = itData(locID, mapOID, lit, *lit);
+    auto mapPtr = MapT::GetPtr(mapOID);
+    const LMap *lmapPtr = &(mapPtr->localMap_);
+    if (lit != local_iterator_type::lmap_end(lmapPtr))
+      data_ = itData(locID, mapOID, lit, *lit);
+    else
+      *this = map_end(mapPtr.get());
   }
 
   static map_iterator map_begin(const MapT *mapPtr) {
@@ -700,7 +737,8 @@ class map_iterator : public std::iterator<std::forward_iterator_tag, T> {
   }
 
   static map_iterator map_end(const MapT *mapPtr) {
-    local_iterator_type lend = local_iterator_type::lmap_end(&(mapPtr->localMap_));
+    local_iterator_type lend =
+        local_iterator_type::lmap_end(&(mapPtr->localMap_));
     map_iterator end(rt::numLocalities(), OIDT(0), lend, T());
     return end;
   }
@@ -762,8 +800,7 @@ class map_iterator : public std::iterator<std::forward_iterator_tag, T> {
     local_iterator_type begin_;
     local_iterator_type end_;
   };
-  static local_iterator_range local_range(map_iterator &B,
-                                          map_iterator &E) {
+  static local_iterator_range local_range(map_iterator &B, map_iterator &E) {
     auto mapPtr = MapT::GetPtr(B.data_.oid_);
     local_iterator_type lbeg, lend;
     uint32_t thisLocId = static_cast<uint32_t>(rt::thisLocality());
@@ -780,18 +817,17 @@ class map_iterator : public std::iterator<std::forward_iterator_tag, T> {
     return local_iterator_range(lbeg, lend);
   }
   static rt::localities_range localities(map_iterator &B, map_iterator &E) {
-    return rt::localities_range(
-        rt::Locality(B.data_.locId_),
-        rt::Locality(std::min<uint32_t>(rt::numLocalities(),
-                                        E.data_.locId_+ 1)));
+    return rt::localities_range(rt::Locality(B.data_.locId_),
+                                rt::Locality(std::min<uint32_t>(
+                                    rt::numLocalities(), E.data_.locId_ + 1)));
   }
 
-  static map_iterator iterator_from_local(map_iterator &B,
-                                          map_iterator &E,
+  static map_iterator iterator_from_local(map_iterator &B, map_iterator &E,
                                           local_iterator_type itr) {
-    return map_iterator(static_cast<uint32_t>(rt::thisLocality()),
-                        B.data_.oid_, itr);
+    return map_iterator(static_cast<uint32_t>(rt::thisLocality()), B.data_.oid_,
+                        itr);
   }
+
  private:
   struct itData {
     itData() : oid_(0), lmapIt_(nullptr, 0, 0, nullptr, nullptr) {}

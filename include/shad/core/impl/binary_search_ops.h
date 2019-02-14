@@ -22,25 +22,21 @@
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef INCLUDE_SHAD_CORE_EXECUTION_H
-#define INCLUDE_SHAD_CORE_EXECUTION_H
+#ifndef INCLUDE_SHAD_CORE_IMPL_BINARY_SEARCH_OPS_H
+#define INCLUDE_SHAD_CORE_IMPL_BINARY_SEARCH_OPS_H
 
-#include <type_traits>
+#include <algorithm>
+#include <functional>
+#include <iterator>
+#include "shad/core/execution.h"
+#include "shad/distributed_iterator_traits.h"
+#include "shad/runtime/runtime.h"
 
 namespace shad {
+namespace impl {
 
-struct distributed_sequential_tag {};
-struct distributed_parallel_tag {};
 
-template <class ExecutionPolicy>
-struct is_execution_policy :
-         std::integral_constant<bool,
-                                std::is_same<ExecutionPolicy,
-                                          distributed_sequential_tag>::value ||
-                                std::is_same<ExecutionPolicy,
-                                          distributed_parallel_tag>::value>{
-};
-
+}  // namespace impl
 }  // namespace shad
 
-#endif /* INCLUDE_SHAD_CORE_EXECUTION_H */
+#endif /* INCLUDE_SHAD_CORE_IMPL_BINARY_SEARCH_OPS_H */

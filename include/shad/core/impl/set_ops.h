@@ -22,35 +22,21 @@
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef TEST_UNIT_TESTS_STL_STL_EMULATION_NUMERIC_H_
-#define TEST_UNIT_TESTS_STL_STL_EMULATION_NUMERIC_H_
+#ifndef INCLUDE_SHAD_CORE_IMPL_SET_OPS_H
+#define INCLUDE_SHAD_CORE_IMPL_SET_OPS_H
 
-namespace shad_test_stl {
+#include <algorithm>
+#include <functional>
+#include <iterator>
+#include "shad/core/execution.h"
+#include "shad/distributed_iterator_traits.h"
+#include "shad/runtime/runtime.h"
 
-template <class InputIt, class T>
-T accumulate_(InputIt first, InputIt last, T init) {
-  for (; first != last; ++first) {
-    init = std::move(init) + *first;  // std::move since C++20
-  }
-  return init;
-}
+namespace shad {
+namespace impl {
 
-template <class InputIt, class T, class BinaryOperation>
-T accumulate_(InputIt first, InputIt last, T init, BinaryOperation op) {
-  for (; first != last; ++first) {
-    init = op(std::move(init), *first);  // std::move since C++20
-  }
-  return init;
-}
 
-template <class InputIt>
-typename std::iterator_traits<InputIt>::value_type reduce_(InputIt first,
-                                                           InputIt last) {
-  assert(first != last);
-  auto init = *first++;
-  return accumulate_(first, last, init);
-}
+}  // namespace impl
+}  // namespace shad
 
-}  // namespace shad_test_stl
-
-#endif
+#endif /* INCLUDE_SHAD_CORE_IMPL_SET_OPS_H */

@@ -49,8 +49,9 @@ namespace shad {
 /// @todo Allocator template parameter
 template <class Key, class T, class Hash = shad::hash<Key>>
 class unordered_map {
-  using hashmap_t = Hashmap<Key, T>;
+  using hashmap_t = Hashmap<Key, T, shad::MemCmp<Key>, shad::Updater<T>>;
 
+  friend class insert_iterator<unordered_map>;
   friend class buffered_insert_iterator<unordered_map>;
 
  public:
@@ -110,16 +111,22 @@ class unordered_map {
   /// @{
   /// @brief The iterator to the beginning of the sequence.
   /// @return an ::iterator to the beginning of the sequence.
-  constexpr iterator begin() const noexcept { return ptr->begin(); }
+  iterator begin() noexcept { return impl()->begin(); }
   /// @brief The iterator to the beginning of the sequence.
   /// @return a ::const_iterator to the beginning of the sequence.
-  constexpr const_iterator cbegin() const noexcept { return ptr->cbegin(); }
-  /// @brief The iterator to the end of the sequence.
-  /// @return an ::iterator to the end of the sequence.
-  constexpr iterator end() const noexcept { return ptr->end(); }
+  const_iterator begin() const noexcept { return impl()->begin(); }
+  /// @brief The iterator to the beginning of the sequence.
+  /// @return a ::const_iterator to the beginning of the sequence.
+  const_iterator cbegin() const noexcept { return impl()->cbegin(); }
   /// @brief The iterator to the end of the sequence.
   /// @return a ::const_iterator to the end of the sequence.
-  constexpr const_iterator cend() const noexcept { return ptr->cend(); }
+  iterator end() noexcept { return impl()->end(); }
+  /// @brief The iterator to the end of the sequence.
+  /// @return a ::const_iterator to the end of the sequence.
+  const_iterator end() const noexcept { return impl()->end(); }
+  /// @brief The iterator to the end of the sequence.
+  /// @return a ::const_iterator to the end of the sequence.
+  const_iterator cend() const noexcept { return impl()->cend(); }
   /// @}
 
   /// @defgroup Capacity
@@ -129,12 +136,32 @@ class unordered_map {
   bool empty() const noexcept { return size() == 0; }
   /// @brief The size of the container.
   /// @return the size of the container.
-  size_type size() const noexcept { return ptr->Size(); }
+  size_type size() const noexcept { return impl()->Size(); }
   // todo max_size
   /// @}
 
   /// @defgroup Modifiers - todo
   /// @{
+  /// @brief Inserts an element into the container, if the container does not
+  /// already contain an element with an equivalent key.
+  ///
+  /// @param value The value to be inserted.
+  /// @return a pair consisting of an iterator to the inserted element (or to
+  /// the element that prevented the insertion) and a bool denoting whether the
+  /// insertion took place.
+  std::pair<iterator, bool> insert(const value_type &value) {
+    return impl()->insert(value);
+  }
+
+  /// @brief Inserts an element into the container, if the container does not
+  /// already contain an element with an equivalent key.
+  ///
+  /// @param value The value to be inserted.
+  /// @return an iterator to the inserted element (or to the element that
+  /// prevented the insertion).
+  iterator insert(const_iterator it, const value_type &value) {
+    return impl()->insert(it, value).first;
+  }
   /// @}
 
   /// @defgroup Lookup - todo
@@ -158,12 +185,16 @@ class unordered_map {
   /// @}
 
  private:
-  std::shared_ptr<hashmap_t> ptr = nullptr;
-
-  void buffered_insert(iterator, const value_type &value) {
-    ptr->BufferedInsert(value.first, value.second);
+  using internal_container_t = hashmap_t;
+  using oid_t = typename internal_container_t::ObjectID;
+  oid_t global_id() { return impl()->GetGlobalID(); }
+  static internal_container_t *from_global_id(oid_t oid) {
+    return internal_container_t::GetPtr(oid).get();
   }
-  void buffered_flush() { ptr->WaitForBufferedInsert(); }
+
+  std::shared_ptr<hashmap_t> ptr = nullptr;
+  const hashmap_t *impl() const { return ptr.get(); }
+  hashmap_t *impl() { return ptr.get(); }
 };
 
 // todo operator==

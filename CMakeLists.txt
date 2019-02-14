@@ -75,7 +75,6 @@ option(SHAD_ENABLE_CPPLINT "Enable the linting of source code" ON)
 option(SHAD_ENABLE_DOXYGEN "Use doxygen to generate the shad API documentation" OFF)
 option(SHAD_ENABLE_UNIT_TEST "Enable the compilation of Unit Tests" ON)
 option(SHAD_ENABLE_PERFORMANCE_TEST "Enable the compilation of the Performance Tests" OFF)
-option(SHAD_ENABLE_STD_REDUCE_TEST "Enable the tests based on std::reduce" OFF)
 
 set(
   SHAD_RUNTIME_SYSTEM "CPP_SIMPLE" CACHE STRING
@@ -118,7 +117,6 @@ install(FILES ${SHAD_MAIN_SRC_DIR}/cmake/FindSHAD.cmake DESTINATION cmake)
 
 # Test commands
 set(SHAD_TEST_COMMAND "")
-set(SHAD_TEST_NODES 2)
 if (SHAD_RUNTIME_SYSTEM STREQUAL "TBB")
   set(SHAD_TEST_NODES 1)
 endif()
@@ -126,6 +124,9 @@ if (SHAD_RUNTIME_SYSTEM STREQUAL "CPP_SIMPLE")
   set(SHAD_TEST_NODES 1)
 endif()
 if (SLURM_FOUND)
+  if (NOT DEFINED SHAD_TEST_NODES)
+    set(SHAD_TEST_NODES 2)
+  endif()
   set(SLURM_SALLOC_FLAGS -p all -N ${SHAD_TEST_NODES}
     CACHE STRING "Flags used running srun.")
   set(SHAD_TEST_COMMAND ${SLURM_SALLOC_COMMAND} ${SLURM_SALLOC_FLAGS})
