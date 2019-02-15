@@ -52,6 +52,7 @@ matrix:
             - graphviz
                   
       env:
+        - DOXYGEN=1
         - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
 
 branch:
@@ -108,3 +109,4 @@ deploy:
   keep-history: true
   on:
     branch: auto-doxygen
+    condition: $DOXYGEN = 1
