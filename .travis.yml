@@ -53,17 +53,11 @@ matrix:
                   
       env:
         - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
+	- DOXYGEN=1
 
 branch:
   except:
     - gh-pages
-
-# Environment variables
-#env:
-#  global:
-#    - GH_REPO_NAME: shad
-#    - DOXYFILE: $TRAVIS_BUILD_DIR/build-doxygen/docs/doxygen.cfg
-#    - GH_REPO_REF: github.com/droccom/shad.git
 
 before_install:
   - eval "${MATRIX_EVAL}"
@@ -108,3 +102,7 @@ deploy:
   keep-history: true
   on:
     branch: auto-doxygen
+
+stages:
+  - name: deploy
+    if: env(DOXYGEN) = 1
