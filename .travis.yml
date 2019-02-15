@@ -97,7 +97,8 @@ script:
 # Generate and deploy documentation
 after_success:
   - cd $TRAVIS_BUILD_DIR
-  - mkdir build-doxygen && cd build-doxygen && cmake .. -DSHAD_ENABLE_UNIT_TEST=OFF -DSHAD_ENABLE_DOXYGEN=ON && cd ..
+  - mkdir build-doxygen && cd build-doxygen && cmake .. -DSHAD_ENABLE_UNIT_TEST=OFF -DSHAD_ENABLE_DOXYGEN=ON
+  - make doxygen-shad
 
 deploy:
   provider: pages
