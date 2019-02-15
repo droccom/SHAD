@@ -105,5 +105,5 @@ deploy:
   github-token: $GH_REPO_TOKEN
   keep-history: true
   on:
-    branch: auto-doxygen
+    branch: auto-pages #to be changed to 'master' after merging
     condition: $DEPLOY_PAGES = 1
