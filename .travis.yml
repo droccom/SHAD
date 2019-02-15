@@ -5,6 +5,7 @@ matrix:
     - os: osx
       env:
         - MATRIX_EVAL="CC=clang && CXX=clang++"
+	- DEPLOY_PAGES=0
     
     - os: linux
       addons:
@@ -15,6 +16,7 @@ matrix:
             - g++-5
       env:
         - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
+	- DEPLOY_PAGES=0
     
     - os: linux
       addons:
@@ -25,6 +27,7 @@ matrix:
             - g++-6
       env:
         - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
+	- DEPLOY_PAGES=0
     
     - os: linux
       addons:
@@ -35,6 +38,7 @@ matrix:
             - g++-7
       env:
         - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+	- DEPLOY_PAGES=0
     
     - os: linux
       addons:
@@ -50,21 +54,13 @@ matrix:
             - doxygen-latex
             - doxygen-gui
             - graphviz
-                  
       env:
-        - DOXYGEN=1
         - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
+	- DEPLOY_PAGES=1
 
 branch:
   except:
     - gh-pages
-
-# Environment variables
-#env:
-#  global:
-#    - GH_REPO_NAME: shad
-#    - DOXYFILE: $TRAVIS_BUILD_DIR/build-doxygen/docs/doxygen.cfg
-#    - GH_REPO_REF: github.com/droccom/shad.git
 
 before_install:
   - eval "${MATRIX_EVAL}"
@@ -97,7 +93,7 @@ script:
 
 # Generate documentation
 after_success:
-  - test $DOXYGEN = 1 &&
+  - test $DEPLOY_PAGES = 1 &&
     cd $TRAVIS_BUILD_DIR &&
     mkdir build-doxygen && cd build-doxygen && cmake .. -DSHAD_ENABLE_UNIT_TEST=OFF -DSHAD_ENABLE_DOXYGEN=ON &&
     make doxygen-shad
@@ -110,4 +106,4 @@ deploy:
   keep-history: true
   on:
     branch: auto-doxygen
-    condition: $DOXYGEN = 1
+    condition: $DEPLOY_PAGES = 1
