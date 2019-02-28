@@ -295,40 +295,29 @@ local_map_init(
       "distributed-map kernels returning bool are not supported (yet)");
 
   // allocate partial results
-  auto range_len = std::distance(first, last);
-  auto n_blocks =
-      std::min(rt::impl::getConcurrency(), static_cast<size_t>(range_len));
-  std::vector<mapped_t> map_res(n_blocks, init);
+  auto parts = local_iterator_traits<ForwardIt>::partitions(
+      first, last, rt::impl::getConcurrency());
+  auto n_parts = std::distance(parts.begin(), parts.end());
+  std::vector<mapped_t> map_res(n_parts, init);
 
-  if (n_blocks) {
-    auto block_size = (range_len + n_blocks - 1) / n_blocks;
-
+  if (n_parts) {
     rt::Handle map_h;
-    for (size_t block_id = 0; block_id < n_blocks; ++block_id) {
-      auto map_args = std::make_tuple(block_id, block_size, first, last,
-                                      map_kernel, &map_res[block_id]);
+    size_t block_id = 0;
+    for (auto pit = parts.begin(); pit != parts.end(); ++pit) {
+      auto map_args = std::make_tuple(pit->begin(), pit->end(), map_kernel,
+                                      &map_res[block_id]);
       rt::asyncExecuteAt(
           map_h, rt::thisLocality(),
           [](rt::Handle&, const typeof(map_args)& map_args) {
-            size_t block_id = std::get<0>(map_args);
-            size_t block_size = std::get<1>(map_args);
-            auto begin = std::get<2>(map_args);
-            auto end = std::get<3>(map_args);
-            auto map_kernel = std::get<4>(map_args);
-            auto res_unit = std::get<5>(map_args);
-            // iteration-block boundaries
-            auto block_begin = begin;
-            std::advance(block_begin, block_id * block_size);
-            auto block_end = block_begin;
-            if (std::distance(block_begin, end) < block_size)
-              block_end = end;
-            else
-              std::advance(block_end, block_size);
+            auto pfirst = std::get<0>(map_args);
+            auto plast = std::get<1>(map_args);
+            auto map_kernel = std::get<2>(map_args);
+            auto res_unit = std::get<3>(map_args);
             // map over the block
-            auto m = map_kernel(block_begin, block_end);
-            *res_unit = m;
+            *res_unit = map_kernel(pfirst, plast);
           },
           map_args);
+      ++block_id;
     }
     rt::waitForCompletion(map_h);
   }
@@ -353,36 +342,22 @@ local_map(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
 // local_map_init variant with void operation
 template <typename ForwardIt, typename MapF>
 void local_map_void(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
-  // allocate partial results
-  auto range_len = std::distance(first, last);
-  auto n_blocks =
-      std::min(rt::impl::getConcurrency(), static_cast<size_t>(range_len));
+  auto parts = local_iterator_traits<ForwardIt>::partitions(
+      first, last, rt::impl::getConcurrency());
+  auto n_parts = std::distance(parts.begin(), parts.end());
 
-  if (n_blocks) {
-    auto block_size = (range_len + n_blocks - 1) / n_blocks;
-
+  if (n_parts) {
     rt::Handle map_h;
-    for (size_t block_id = 0; block_id < n_blocks; ++block_id) {
-      auto map_args =
-          std::make_tuple(block_id, block_size, first, last, map_kernel);
+    for (auto pit = parts.begin(); pit != parts.end(); ++pit) {
+      auto map_args = std::make_tuple(pit->begin(), pit->end(), map_kernel);
       rt::asyncExecuteAt(
           map_h, rt::thisLocality(),
           [](rt::Handle&, const typeof(map_args)& map_args) {
-            size_t block_id = std::get<0>(map_args);
-            size_t block_size = std::get<1>(map_args);
-            auto begin = std::get<2>(map_args);
-            auto end = std::get<3>(map_args);
-            auto map_kernel = std::get<4>(map_args);
-            // iteration-block boundaries
-            auto block_begin = begin;
-            std::advance(block_begin, block_id * block_size);
-            auto block_end = block_begin;
-            if (std::distance(block_begin, end) < block_size)
-              block_end = end;
-            else
-              std::advance(block_end, block_size);
+            auto pfirst = std::get<0>(map_args);
+            auto plast = std::get<1>(map_args);
+            auto map_kernel = std::get<2>(map_args);
             // map over the block
-            map_kernel(block_begin, block_end);
+            map_kernel(pfirst, plast);
           },
           map_args);
     }
@@ -394,38 +369,28 @@ void local_map_void(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
 // of the processed partition with respect to the input range
 template <typename ForwardIt, typename MapF>
 void local_map_void_offset(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
-  // allocate partial results
-  auto range_len = std::distance(first, last);
-  auto n_blocks =
-      std::min(rt::impl::getConcurrency(), static_cast<size_t>(range_len));
+  auto parts = local_iterator_traits<ForwardIt>::partitions(
+      first, last, rt::impl::getConcurrency());
+  auto n_parts = std::distance(parts.begin(), parts.end());
 
-  if (n_blocks) {
-    auto block_size = (range_len + n_blocks - 1) / n_blocks;
-
-    for (size_t block_id = 0; block_id < n_blocks; ++block_id) {
-      auto map_args =
-          std::make_tuple(block_id, block_size, first, last, map_kernel);
-      rt::executeAt(
-          rt::thisLocality(),
-          [](const typeof(map_args)& map_args) {
-            size_t block_id = std::get<0>(map_args);
-            size_t block_size = std::get<1>(map_args);
-            auto begin = std::get<2>(map_args);
-            auto end = std::get<3>(map_args);
-            auto map_kernel = std::get<4>(map_args);
-            // iteration-block boundaries
-            auto block_begin = begin;
-            std::advance(block_begin, block_id * block_size);
-            auto block_end = block_begin;
-            if (std::distance(block_begin, end) < block_size)
-              block_end = end;
-            else
-              std::advance(block_end, block_size);
+  if (n_parts) {
+    rt::Handle map_h;
+    for (auto pit = parts.begin(); pit != parts.end(); ++pit) {
+      auto map_args = std::make_tuple(pit->begin(), pit->end(), map_kernel,
+                                      std::distance(first, pit->begin()));
+      rt::asyncExecuteAt(
+          map_h, rt::thisLocality(),
+          [](rt::Handle&, const typeof(map_args)& map_args) {
+            auto pfirst = std::get<0>(map_args);
+            auto plast = std::get<1>(map_args);
+            auto map_kernel = std::get<2>(map_args);
+            auto poffset = std::get<3>(map_args);
             // map over the block
-            map_kernel(block_begin, block_end, block_id * block_size);
+            map_kernel(pfirst, plast, poffset);
           },
           map_args);
     }
+    rt::waitForCompletion(map_h);
   }
 }
 

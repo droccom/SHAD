@@ -60,19 +60,20 @@ struct distributed_iterator_traits : public std::iterator_traits<Iterator> {
 
 template <typename T, typename = void>
 struct is_distributed_iterator {
-   static constexpr bool value = false;
+  static constexpr bool value = false;
 };
 
 template <typename T>
-struct is_distributed_iterator<T, typename std::enable_if<!std::is_same<
-                                  typename distributed_iterator_traits<T>
-                                  ::value_type, void>::value>::type> {
-   static constexpr bool value = true;
+struct is_distributed_iterator<
+    T, typename std::enable_if<
+           !std::is_same<typename distributed_iterator_traits<T>::value_type,
+                         void>::value>::type> {
+  static constexpr bool value = true;
 };
 
 template <typename Iterator>
-struct distributed_random_access_iterator_trait :
-      public distributed_iterator_traits<Iterator> {
+struct distributed_random_access_iterator_trait
+    : public distributed_iterator_traits<Iterator> {
   using value_type = typename distributed_iterator_traits<Iterator>::value_type;
   using pointer = typename distributed_iterator_traits<Iterator>::pointer;
   using reference = typename distributed_iterator_traits<Iterator>::reference;
@@ -80,9 +81,52 @@ struct distributed_random_access_iterator_trait :
       typename distributed_iterator_traits<Iterator>::iterator_category;
   using distribution_range = typename Iterator::distribution_range;
 
-  static distribution_range
-  distribution(Iterator begin, Iterator end) {
+  static distribution_range distribution(Iterator begin, Iterator end) {
     return Iterator::distribution(begin, end);
+  }
+};
+
+// support for partitioning of local ranges
+template <typename Iterator>
+struct local_iterator_traits : public std::iterator_traits<Iterator> {
+  // split a range into n sub-ranges
+  static typename Iterator::partitions_range partitions(Iterator begin,
+                                                        Iterator end,
+                                                        size_t n) {
+    return Iterator::local_partitions(begin, end, n);
+  }
+};
+
+// specialization for raw pointers (e.g., array, vector)
+template <typename T>
+struct local_iterator_traits<T *> {
+  using partition_range = struct {
+    T *begin() { return begin_; }
+    T *end() { return end_; }
+    T *begin_;
+    T *end_;
+  };
+
+  // split a range into n sub-ranges
+  static std::vector<partition_range> partitions(T *begin, T *end, size_t n) {
+    auto range_len = std::distance(begin, end);
+    auto n_parts = std::min(n, static_cast<size_t>(range_len));
+    std::vector<partition_range> res;
+    if (n_parts) {
+      auto block_size = (range_len + n - 1) / n;
+      for (size_t block_id = 0; block_id < n; ++block_id) {
+        auto block_begin = begin;
+        std::advance(block_begin, block_id * block_size);
+        auto block_end = block_begin;
+        if (std::distance(block_begin, end) < block_size)
+          block_end = end;
+        else
+          std::advance(block_end, block_size);
+        // map over the block
+        res.push_back(partition_range{block_begin, block_end});
+      }
+    }
+    return res;
   }
 };
 

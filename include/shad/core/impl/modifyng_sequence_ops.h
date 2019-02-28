@@ -32,7 +32,9 @@
 #include <tuple>
 
 #include "shad/core/execution.h"
+#include "shad/core/impl/impl_patterns.h"
 #include "shad/core/impl/utils.h"
+#include "shad/core/iterator.h"
 #include "shad/distributed_iterator_traits.h"
 #include "shad/runtime/runtime.h"
 
@@ -86,20 +88,17 @@ void fill(distributed_sequential_tag&& policy, ForwardIt first, ForwardIt last,
 }
 
 namespace transform_impl {
-template <typename ForwardIt>
-struct gen_args_t {
-  static constexpr size_t buf_size =
-      (2 << 10) / sizeof(typename ForwardIt::value_type);
-  typename ForwardIt::value_type buf[buf_size];
-  ForwardIt w_first;
-  size_t size;
-};
-
+////////////////////////////////////////////////////////////////////////////////
+//
+// process a local input-portion into a local output-portion of a
+// block-contiguous output-range
+//
+////////////////////////////////////////////////////////////////////////////////
+// sequential
 template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
 void block_contiguous_local(ForwardIt1 first, ForwardIt1 last,
                             ForwardIt2 d_first, UnaryOperation op) {
   using itr_traits2 = distributed_iterator_traits<ForwardIt2>;
-  using args_t = gen_args_t<ForwardIt2>;
   auto size = std::distance(first, last);
   auto d_last = d_first;
   std::advance(d_last, size);
@@ -109,13 +108,12 @@ void block_contiguous_local(ForwardIt1 first, ForwardIt1 last,
   auto loc_res = std::transform(first, last, local_d_range.begin(), op);
 }
 
+// parallel
 template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
-void block_contiguous_local_par(rt::Handle& h, ForwardIt1 first,
-                                ForwardIt1 last, ForwardIt2 d_first,
-                                UnaryOperation op) {
+void block_contiguous_local_par(ForwardIt1 first, ForwardIt1 last,
+                                ForwardIt2 d_first, UnaryOperation op) {
   using itr_traits1 = std::iterator_traits<ForwardIt1>;
   using itr_traits2 = distributed_iterator_traits<ForwardIt2>;
-  using args_t = gen_args_t<ForwardIt2>;
   auto size = std::distance(first, last);
   auto d_last = d_first;
   std::advance(d_last, size);
@@ -123,21 +121,37 @@ void block_contiguous_local_par(rt::Handle& h, ForwardIt1 first,
   // local map
   auto local_d_range = itr_traits2::local_range(d_first, d_last);
   using offset_t = typename std::iterator_traits<ForwardIt1>::difference_type;
-  async_local_map_void_offset(h,
-                              // range
-                              first, last,
-                              // kernel
-                              [&](ForwardIt1 b, ForwardIt1 e, offset_t offset) {
-                                std::transform(
-                                    b, e, local_d_range.begin() + offset, op);
-                              });
-  rt::waitForCompletion(h);  // FIXME should be moved outside
+  local_map_void_offset(
+      // range
+      first, last,
+      // kernel
+      [&](ForwardIt1 b, ForwardIt1 e, offset_t offset) {
+        std::transform(b, e, local_d_range.begin() + offset, op);
+      });
 }
 
+////////////////////////////////////////////////////////////////////////////////
+//
+// process a local input-portion into a remote portion (i.e., located at a
+// single locality) of a block-contiguous output iterator. Output is written in
+// an RMA fashion.
+//
+////////////////////////////////////////////////////////////////////////////////
+// buffer for RMA arguments
+template <typename ForwardIt>
+struct gen_args_t {
+  static constexpr size_t buf_size =
+      (2 << 10) / sizeof(typename ForwardIt::value_type);
+  typename ForwardIt::value_type buf[buf_size];
+  ForwardIt w_first;
+  size_t size;
+};
+
+// asynchronous, attached to a caller-provided handle.
 template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
-void block_contiguous_remote(rt::Locality l, rt::Handle& h, ForwardIt1 first,
-                             ForwardIt1 last, ForwardIt2 d_first,
-                             UnaryOperation op) {
+void async_block_contiguous_remote(rt::Locality l, rt::Handle& h,
+                                   ForwardIt1 first, ForwardIt1 last,
+                                   ForwardIt2 d_first, UnaryOperation op) {
   using itr_traits2 = distributed_iterator_traits<ForwardIt2>;
   using args_t = gen_args_t<ForwardIt2>;
 
@@ -148,8 +162,8 @@ void block_contiguous_remote(rt::Locality l, rt::Handle& h, ForwardIt1 first,
   auto block_last = first;
   while (first != last) {
     typed_args_buf->w_first = d_first;
-    typed_args_buf->size =
-        std::min(args_t::buf_size, (size_t)std::distance(first, last));
+    typed_args_buf->size = std::min(
+        args_t::buf_size, static_cast<size_t>(std::distance(first, last)));
     std::advance(block_last, typed_args_buf->size);
     std::transform(first, block_last, typed_args_buf->buf, op);
     rt::asyncExecuteAt(
@@ -168,7 +182,46 @@ void block_contiguous_remote(rt::Locality l, rt::Handle& h, ForwardIt1 first,
   }
 }
 
-// distributed-sequential kernel for block-contiguous output-iterators
+// synchronous
+template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
+void block_contiguous_remote(rt::Locality l, ForwardIt1 first, ForwardIt1 last,
+                             ForwardIt2 d_first, UnaryOperation op) {
+  using itr_traits2 = distributed_iterator_traits<ForwardIt2>;
+  using args_t = gen_args_t<ForwardIt2>;
+
+  // remote assign
+  std::shared_ptr<uint8_t> args_buf(new uint8_t[sizeof(args_t)],
+                                    std::default_delete<uint8_t[]>());
+  auto typed_args_buf = reinterpret_cast<args_t*>(args_buf.get());
+  auto block_last = first;
+  while (first != last) {
+    typed_args_buf->w_first = d_first;
+    typed_args_buf->size = std::min(
+        args_t::buf_size, static_cast<size_t>(std::distance(first, last)));
+    std::advance(block_last, typed_args_buf->size);
+    std::transform(first, block_last, typed_args_buf->buf, op);
+    rt::executeAt(
+        l,
+        [](const uint8_t* args_buf, const uint32_t) {
+          const args_t& args = *reinterpret_cast<const args_t*>(args_buf);
+          using val_t = typename ForwardIt2::value_type;
+          ForwardIt2 w_last = args.w_first;
+          std::advance(w_last, args.size);
+          auto w_range = itr_traits2::local_range(args.w_first, w_last);
+          std::memcpy(w_range.begin(), args.buf, sizeof(val_t) * args.size);
+        },
+        args_buf, sizeof(args_t));
+    std::advance(first, typed_args_buf->size);
+    std::advance(d_first, typed_args_buf->size);
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// kernels for block-contiguous output-iterators
+//
+////////////////////////////////////////////////////////////////////////////////
+// sequential
 template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
 ForwardIt2 dseq_kernel(std::true_type, ForwardIt1 first, ForwardIt1 last,
                        ForwardIt2 d_first, UnaryOperation op) {
@@ -180,15 +233,13 @@ ForwardIt2 dseq_kernel(std::true_type, ForwardIt1 first, ForwardIt1 last,
   std::advance(d_last, std::distance(loc_first, loc_range.end()));
   auto dmap = itr_traits2::distribution(d_first, d_last);
   auto loc_last = loc_first;
-  rt::Handle h;
   for (auto i : dmap) {
     auto l = i.first;
     std::advance(loc_last, i.second);
     if (rt::thisLocality() == l)
       block_contiguous_local(loc_first, loc_last, d_first, op);
     else {
-      block_contiguous_remote(l, h, loc_first, loc_last, d_first, op);
-      rt::waitForCompletion(h);
+      block_contiguous_remote(l, loc_first, loc_last, d_first, op);
     }
     std::advance(loc_first, i.second);
     std::advance(d_first, i.second);
@@ -196,7 +247,7 @@ ForwardIt2 dseq_kernel(std::true_type, ForwardIt1 first, ForwardIt1 last,
   return d_last;
 }
 
-// distributed-parallel kernel for block-contiguous output-iterators
+// parallel
 template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
 ForwardIt2 dpar_kernel(std::true_type, ForwardIt1 first, ForwardIt1 last,
                        ForwardIt2 d_first, UnaryOperation op) {
@@ -210,10 +261,11 @@ ForwardIt2 dpar_kernel(std::true_type, ForwardIt1 first, ForwardIt1 last,
   std::advance(d_last, std::distance(loc_first, loc_range.end()));
   auto dmap = itr_traits2::distribution(d_first, d_last);
   auto loc_last = loc_first;
-  rt::Handle h;
   auto coloc_first = loc_first, coloc_last = loc_first;
   auto coloc_d_first = d_first;
+
   // create remote tasks
+  rt::Handle h;
   for (auto i : dmap) {
     auto l = i.first;
     std::advance(loc_last, i.second);
@@ -222,19 +274,40 @@ ForwardIt2 dpar_kernel(std::true_type, ForwardIt1 first, ForwardIt1 last,
       coloc_last = loc_last;
       coloc_d_first = d_first;
     } else
-      block_contiguous_remote(l, h, loc_first, loc_last, d_first, op);
+      async_block_contiguous_remote(l, h, loc_first, loc_last, d_first, op);
     std::advance(loc_first, i.second);
     std::advance(d_first, i.second);
   }
+
   // process local portion
   if (coloc_first != coloc_last)
-    block_contiguous_local_par(h, coloc_first, coloc_last, coloc_d_first, op);
+    block_contiguous_local_par(coloc_first, coloc_last, coloc_d_first, op);
+
   // join
-  if (!h.IsNull()) rt::waitForCompletion(h);  // FIXME should be enough
+  if (!h.IsNull()) rt::waitForCompletion(h);
+
   return d_last;
 }
 
-// distributed-parallel kernel for non-block-contiguous output-iterators
+////////////////////////////////////////////////////////////////////////////////
+//
+// kernels for non-block-contiguous output-iterators
+//
+////////////////////////////////////////////////////////////////////////////////
+// sequential
+template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
+ForwardIt2 dseq_kernel(std::false_type, ForwardIt1 first, ForwardIt1 last,
+                       ForwardIt2 d_first, UnaryOperation op) {
+  using itr_traits1 = distributed_iterator_traits<ForwardIt1>;
+  auto local_range = itr_traits1::local_range(first, last);
+  auto begin = local_range.begin();
+  auto end = local_range.end();
+  auto res = std::transform(begin, end, d_first, op);
+  flush_iterator(res);
+  return res;
+}
+
+// parallel
 template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
 ForwardIt2 dpar_kernel(std::false_type, ForwardIt1 first, ForwardIt1 last,
                        ForwardIt2 d_first, UnaryOperation op) {
@@ -249,30 +322,22 @@ ForwardIt2 dpar_kernel(std::false_type, ForwardIt1 first, ForwardIt1 last,
       // kernel
       [&](local_iterator_t b, local_iterator_t e) {
         auto res = std::transform(b, e, d_first, op);
+        flush_iterator(res);
         return res;
       },
       // init val
       d_first);
 
   // local reduce
-  for (auto& x : map_res) flush_iterator(x);
   return map_res.back();
 }
 
-// distributed-sequential kernel for non-block-contiguous output-iterators
-template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
-ForwardIt2 dseq_kernel(std::false_type, ForwardIt1 first, ForwardIt1 last,
-                       ForwardIt2 d_first, UnaryOperation op) {
-  using itr_traits1 = distributed_iterator_traits<ForwardIt1>;
-  auto local_range = itr_traits1::local_range(first, last);
-  auto begin = local_range.begin();
-  auto end = local_range.end();
-  auto res = std::transform(begin, end, d_first, op);
-  flush_iterator(res);
-  return res;
-}
-
-// dispatchers
+////////////////////////////////////////////////////////////////////////////////
+//
+// dispatchers based on whether the output-iterator is block-contiguous (e.g.,
+// array) or not (e.g., set)
+//
+////////////////////////////////////////////////////////////////////////////////
 template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
 ForwardIt2 dseq_kernel(ForwardIt1 first, ForwardIt1 last, ForwardIt2 d_first,
                        UnaryOperation op) {

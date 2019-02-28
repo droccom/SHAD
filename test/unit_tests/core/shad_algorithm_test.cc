@@ -478,6 +478,7 @@ TYPED_TEST(ATF, shad_replace_if) {
       shad_test_stl::ordered_checksum<it_t>, pred, 3);
 }
 
+#if 0
 ///////////////////////////////////////
 //
 // shad::unordered_set
@@ -1305,3 +1306,4 @@ TYPED_TEST(MTF, shad_transform) {
                                 unaligned_map_f>,
       shad_test_stl::checksum<it_t>, unaligned_map_f{});
 }
+#endif
