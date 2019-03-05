@@ -107,14 +107,14 @@ struct local_iterator_traits<T *> {
     T *end_;
   };
 
-  // split a range into n sub-ranges
+  // split a range into at most n sub-ranges
   static std::vector<partition_range> partitions(T *begin, T *end, size_t n) {
     auto range_len = std::distance(begin, end);
     auto n_parts = std::min(n, static_cast<size_t>(range_len));
-    std::vector<partition_range> res;
+    std::vector<partition_range> res(n_parts);
     if (n_parts) {
-      auto block_size = (range_len + n - 1) / n;
-      for (size_t block_id = 0; block_id < n; ++block_id) {
+      auto block_size = (range_len + n_parts - 1) / n_parts;
+      for (size_t block_id = 0; block_id < n_parts; ++block_id) {
         auto block_begin = begin;
         std::advance(block_begin, block_id * block_size);
         auto block_end = block_begin;
@@ -122,8 +122,7 @@ struct local_iterator_traits<T *> {
           block_end = end;
         else
           std::advance(block_end, block_size);
-        // map over the block
-        res.push_back(partition_range{block_begin, block_end});
+        res[block_id] = partition_range{block_begin, block_end};
       }
     }
     return res;

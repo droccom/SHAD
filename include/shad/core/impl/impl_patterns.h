@@ -302,10 +302,10 @@ local_map_init(
 
   if (n_parts) {
     rt::Handle map_h;
-    size_t block_id = 0;
+    size_t part_id = 0;
     for (auto pit = parts.begin(); pit != parts.end(); ++pit) {
       auto map_args = std::make_tuple(pit->begin(), pit->end(), map_kernel,
-                                      &map_res[block_id]);
+                                      &map_res[part_id]);
       rt::asyncExecuteAt(
           map_h, rt::thisLocality(),
           [](rt::Handle&, const typeof(map_args)& map_args) {
@@ -313,11 +313,11 @@ local_map_init(
             auto plast = std::get<1>(map_args);
             auto map_kernel = std::get<2>(map_args);
             auto res_unit = std::get<3>(map_args);
-            // map over the block
+            // map over the partition
             *res_unit = map_kernel(pfirst, plast);
           },
           map_args);
-      ++block_id;
+      ++part_id;
     }
     rt::waitForCompletion(map_h);
   }
@@ -356,7 +356,7 @@ void local_map_void(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
             auto pfirst = std::get<0>(map_args);
             auto plast = std::get<1>(map_args);
             auto map_kernel = std::get<2>(map_args);
-            // map over the block
+            // map over the partition
             map_kernel(pfirst, plast);
           },
           map_args);
@@ -385,7 +385,7 @@ void local_map_void_offset(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
             auto plast = std::get<1>(map_args);
             auto map_kernel = std::get<2>(map_args);
             auto poffset = std::get<3>(map_args);
-            // map over the block
+            // map over the partition
             map_kernel(pfirst, plast, poffset);
           },
           map_args);
