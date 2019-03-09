@@ -90,10 +90,9 @@ struct distributed_random_access_iterator_trait
 template <typename Iterator>
 struct local_iterator_traits : public std::iterator_traits<Iterator> {
   // split a range into n sub-ranges
-  static typename Iterator::partitions_range partitions(Iterator begin,
-                                                        Iterator end,
-                                                        size_t n) {
-    return Iterator::local_partitions(begin, end, n);
+  static std::vector<typename Iterator::partition_range> partitions(
+      Iterator begin, Iterator end, size_t n) {
+    return Iterator::partitions(begin, end, n);
   }
 };
 

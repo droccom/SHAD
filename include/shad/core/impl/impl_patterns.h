@@ -297,10 +297,10 @@ local_map_init(
   // allocate partial results
   auto parts = local_iterator_traits<ForwardIt>::partitions(
       first, last, rt::impl::getConcurrency());
-  auto n_parts = std::distance(parts.begin(), parts.end());
-  std::vector<mapped_t> map_res(n_parts, init);
 
-  if (n_parts) {
+  std::vector<mapped_t> map_res(parts.size(), init);
+
+  if (parts.size()) {
     rt::Handle map_h;
     size_t part_id = 0;
     for (auto pit = parts.begin(); pit != parts.end(); ++pit) {
@@ -344,9 +344,8 @@ template <typename ForwardIt, typename MapF>
 void local_map_void(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
   auto parts = local_iterator_traits<ForwardIt>::partitions(
       first, last, rt::impl::getConcurrency());
-  auto n_parts = std::distance(parts.begin(), parts.end());
 
-  if (n_parts) {
+  if (parts.size()) {
     rt::Handle map_h;
     for (auto pit = parts.begin(); pit != parts.end(); ++pit) {
       auto map_args = std::make_tuple(pit->begin(), pit->end(), map_kernel);
@@ -371,9 +370,8 @@ template <typename ForwardIt, typename MapF>
 void local_map_void_offset(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
   auto parts = local_iterator_traits<ForwardIt>::partitions(
       first, last, rt::impl::getConcurrency());
-  auto n_parts = std::distance(parts.begin(), parts.end());
 
-  if (n_parts) {
+  if (parts.size()) {
     rt::Handle map_h;
     for (auto pit = parts.begin(); pit != parts.end(); ++pit) {
       auto map_args = std::make_tuple(pit->begin(), pit->end(), map_kernel,

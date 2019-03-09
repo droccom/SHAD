@@ -478,7 +478,6 @@ TYPED_TEST(ATF, shad_replace_if) {
       shad_test_stl::ordered_checksum<it_t>, pred, 3);
 }
 
-#if 0
 ///////////////////////////////////////
 //
 // shad::unordered_set
@@ -824,6 +823,7 @@ TYPED_TEST(STF, shad_find) {
 // search_n - todo
 
 // transform
+#if 0
 TYPED_TEST(STF, shad_transform) {
   using it_t = typename TypeParam::iterator;
   using val_t = typename TypeParam::value_type;
@@ -892,12 +892,14 @@ TYPED_TEST(STF, shad_transform) {
                                 unaligned_map_f>,
       shad_test_stl::checksum<it_t>, unaligned_map_f{});
 }
+#endif
 
 ///////////////////////////////////////
 //
 // shad::unordered_map
 //
 ///////////////////////////////////////
+#if 0
 template <typename T>
 using MTF = shad_test_stl::MapTestFixture<T>;
 
