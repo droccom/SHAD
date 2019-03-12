@@ -340,3 +340,74 @@ TEST_F(LocalSetTest, AsyncForEachElement) {
   auto toinsert = kToInsert * 2;
   ASSERT_EQ(cnt, toinsert);
 }
+
+TEST_F(LocalSetTest, LocalIteratorPartitions) {
+  uint64_t exp_checksum, obs_checksum;
+
+  // empty set
+  shad::LocalSet<uint64_t> set(kNumBuckets);
+  for (uint64_t n_parts = 1; n_parts <= 2 * kNumBuckets; ++n_parts) {
+    auto parts = shad::LocalSet<uint64_t>::iterator::partitions(
+        set.begin(), set.end(), n_parts);
+    ASSERT_EQ(parts.size(), 0);
+  }
+
+  // one non-empty bucket
+  for (uint64_t bid = 0; bid < kNumBuckets; bid += kNumBuckets / 8) {
+    shad::LocalSet<uint64_t> set(kNumBuckets);  // FIXME
+    exp_checksum = 0;
+    for (auto i = kToInsert; i > 0; --i) {
+      auto x = i * kNumBuckets + bid;
+      set.Insert(x);
+      exp_checksum += x;
+    }
+    for (uint64_t n_parts = 1; n_parts <= 2 * kNumBuckets; ++n_parts) {
+      obs_checksum = 0;
+      auto parts = shad::LocalSet<uint64_t>::iterator::partitions(
+          set.begin(), set.end(), n_parts);
+      ASSERT_EQ(parts.size(), 1);
+      for (auto &p : parts)
+        for (auto x : p) obs_checksum += x;
+      ASSERT_EQ(exp_checksum, obs_checksum);
+    }
+  }
+
+  // some empty buckets
+  {
+    shad::LocalSet<uint64_t> set(kNumBuckets);  // FIXME
+    exp_checksum = 0;
+    uint64_t bid = 0;
+    for (auto i = kToInsert; i > 0; --i) {
+      auto x = i * kNumBuckets + bid;
+      set.Insert(x);
+      exp_checksum += x;
+      bid = (bid + (kNumBuckets / 8)) % kNumBuckets;
+    }
+    for (uint64_t n_parts = 1; n_parts <= 2 * kNumBuckets; ++n_parts) {
+      obs_checksum = 0;
+      auto parts = shad::LocalSet<uint64_t>::iterator::partitions(
+          set.begin(), set.end(), n_parts);
+      ASSERT_TRUE(parts.size() <= 8);
+      for (auto &p : parts)
+        for (auto x : p) obs_checksum += x;
+      ASSERT_EQ(exp_checksum, obs_checksum);
+    }
+  }
+
+  // all buckets not empty
+  {
+    shad::LocalSet<uint64_t> set(kNumBuckets);  // FIXME
+    exp_checksum = 0;
+    for (auto i = kToInsert; i > 0; --i) {
+      set.Insert(i);
+      exp_checksum += i;
+    }
+    for (size_t n_parts = 1; n_parts <= 2 * kNumBuckets; ++n_parts) {
+      obs_checksum = 0;
+      for (auto &p : shad::LocalSet<uint64_t>::iterator::partitions(
+               set.begin(), set.end(), n_parts))
+        for (auto x : p) obs_checksum += x;
+      ASSERT_EQ(exp_checksum, obs_checksum);
+    }
+  }
+}
