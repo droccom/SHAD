@@ -769,9 +769,6 @@ class lset_iterator : public std::iterator<std::forward_iterator_tag, T> {
           break;
         }
       }
-    } else {
-      // empty range
-      res.push_back(partition_range{begin, end});
     }
 
     return res;
