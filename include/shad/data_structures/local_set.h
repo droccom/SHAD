@@ -760,11 +760,13 @@ class lset_iterator : public std::iterator<std::forward_iterator_tag, T> {
       auto b_end =
           (end != lset_end(set_ptr)) ? end.bucketId_ : set_ptr->numBuckets_;
       auto bi = begin.bucketId_;
+      auto pbegin = begin;
       while (true) {
-        auto pbegin = first_in_bucket(set_ptr, bi);
         bi = first_used_bucket(set_ptr, bi + part_step);
         if (bi < b_end) {
-          res.push_back(partition_range{pbegin, first_in_bucket(set_ptr, bi)});
+          auto pend = first_in_bucket(set_ptr, bi);
+          res.push_back(partition_range{pbegin, pend});
+          pbegin = pend;
         } else {
           res.push_back(partition_range{pbegin, end});
           break;
