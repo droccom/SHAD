@@ -231,7 +231,6 @@ TYPED_TEST(ATF, std_reduce) {
       shad_test_stl::reduce_<it_t, int, reduce_f>, 0, reduce_f{});
 }
 
-#if 0
 ///////////////////////////////////////
 //
 // shad::unordered_set
@@ -339,4 +338,3 @@ TYPED_TEST(MTF, reduce) {
       shad_test_stl::reduce_<it_t, acc_t, reduce_f>, std::make_pair(0, 0),
       reduce_f{});
 }
-#endif
