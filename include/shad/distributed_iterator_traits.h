@@ -26,6 +26,7 @@
 #define INCLUDE_SHAD_DISTRIBUTED_ITERATOR_TRAIT_H
 
 #include <iterator>
+#include <cassert>
 
 #include "shad/runtime/locality.h"
 
