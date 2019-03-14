@@ -899,7 +899,6 @@ TYPED_TEST(STF, shad_transform) {
 // shad::unordered_map
 //
 ///////////////////////////////////////
-#if 0
 template <typename T>
 using MTF = shad_test_stl::MapTestFixture<T>;
 
@@ -1240,6 +1239,7 @@ TYPED_TEST(MTF, shad_find) {
 // search_n - todo
 
 // transform
+#if 0
 TYPED_TEST(MTF, shad_transform) {
   using it_t = typename TypeParam::iterator;
   using val_t = typename TypeParam::value_type;
