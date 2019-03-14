@@ -110,19 +110,23 @@ struct local_iterator_traits<T *> {
   static std::vector<partition_range> partitions(T *begin, T *end, size_t n) {
     auto range_len = std::distance(begin, end);
     auto n_parts = std::min(n, static_cast<size_t>(range_len));
-    std::vector<partition_range> res(n_parts);
+    std::vector<partition_range> res;
     if (n_parts) {
       auto block_size = (range_len + n_parts - 1) / n_parts;
       for (size_t block_id = 0; block_id < n_parts; ++block_id) {
         auto block_begin = begin;
         std::advance(block_begin, block_id * block_size);
         auto block_end = block_begin;
-        if (std::distance(block_begin, end) < block_size)
-          block_end = end;
-        else
+        if (std::distance(block_begin, end) < block_size) {
+          res.push_back(partition_range{block_begin, end});
+          break;
+        }
+        else {
           std::advance(block_end, block_size);
-        res[block_id] = partition_range{block_begin, block_end};
+          res.push_back(partition_range{block_begin, block_end});
+        }
       }
+      assert(res.back().end() == end);
     }
     return res;
   }
