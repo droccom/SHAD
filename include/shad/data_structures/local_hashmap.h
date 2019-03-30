@@ -1169,9 +1169,14 @@ class lmap_iterator : public std::iterator<std::forward_iterator_tag, T> {
     return tmp;
   }
 
-  struct partition_range {
+  class partition_range {
+   public:
+    partition_range(const lmap_iterator &begin, const lmap_iterator &end)
+        : begin_(begin), end_(end) {}
     lmap_iterator begin() { return begin_; }
     lmap_iterator end() { return end_; }
+
+   private:
     lmap_iterator begin_;
     lmap_iterator end_;
   };

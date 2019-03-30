@@ -99,10 +99,16 @@ struct local_iterator_traits : public std::iterator_traits<Iterator> {
 
 // specialization for raw pointers (e.g., array, vector)
 template <typename T>
-struct local_iterator_traits<T *> {
-  using partition_range = struct {
+class local_iterator_traits<T *> {
+ public:
+  class partition_range {
+   public:
     T *begin() { return begin_; }
     T *end() { return end_; }
+
+    partition_range(T *begin, T *end) : begin_(begin), end_(end) {}
+
+   private:
     T *begin_;
     T *end_;
   };

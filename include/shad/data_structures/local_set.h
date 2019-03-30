@@ -737,9 +737,14 @@ class lset_iterator : public std::iterator<std::forward_iterator_tag, T> {
     return tmp;
   }
 
-  struct partition_range {
+  class partition_range {
+   public:
+    partition_range(const lset_iterator& begin, const lset_iterator& end)
+        : begin_(begin), end_(end) {}
     lset_iterator begin() { return begin_; }
     lset_iterator end() { return end_; }
+
+   private:
     lset_iterator begin_;
     lset_iterator end_;
   };

@@ -32,8 +32,6 @@
 #include "common.h"
 #include "stl_emulation/algorithm.h"
 
-#define NO_PAR_BUFFERED
-
 ///////////////////////////////////////
 //
 // shad::array
@@ -862,7 +860,6 @@ TYPED_TEST(STF, shad_transform) {
       shad_test_stl::checksum<it_t>, aligned_map_f{});
 
   // parallel - aligned - buffered insert iterator
-#ifndef NO_PAR_BUFFERED
   this->template test_io_inserters_with_policy<
       shad::buffered_insert_iterator<TypeParam>>(
       shad::distributed_parallel_tag{},
@@ -871,7 +868,6 @@ TYPED_TEST(STF, shad_transform) {
       shad_test_stl::transform_<it_t, std::insert_iterator<TypeParam>,
                                 aligned_map_f>,
       shad_test_stl::checksum<it_t>, aligned_map_f{});
-#endif
 
   // sequential - unaligned - buffered insert iterator
   this->template test_io_inserters_with_policy<
@@ -885,7 +881,6 @@ TYPED_TEST(STF, shad_transform) {
       shad_test_stl::checksum<it_t>, unaligned_map_f{});
 
   // parallel - unaligned - buffered insert iterator
-#ifndef NO_PAR_BUFFERED
   this->template test_io_inserters_with_policy<
       shad::buffered_insert_iterator<TypeParam>>(
       shad::distributed_parallel_tag{},
@@ -895,7 +890,6 @@ TYPED_TEST(STF, shad_transform) {
       shad_test_stl::transform_<it_t, std::insert_iterator<TypeParam>,
                                 unaligned_map_f>,
       shad_test_stl::checksum<it_t>, unaligned_map_f{});
-#endif
 }
 
 ///////////////////////////////////////
@@ -1280,7 +1274,6 @@ TYPED_TEST(MTF, shad_transform) {
       shad_test_stl::checksum<it_t>, aligned_map_f{});
 
   // parallel - aligned - buffered insert iterator
-#ifndef NO_PAR_BUFFERED
   this->template test_io_inserters_with_policy<
       shad::buffered_insert_iterator<TypeParam>>(
       shad::distributed_parallel_tag{},
@@ -1289,7 +1282,6 @@ TYPED_TEST(MTF, shad_transform) {
       shad_test_stl::transform_<it_t, std::insert_iterator<TypeParam>,
                                 aligned_map_f>,
       shad_test_stl::checksum<it_t>, aligned_map_f{});
-#endif
 
   // sequential - unaligned - buffered insert iterator
   this->template test_io_inserters_with_policy<
@@ -1303,7 +1295,6 @@ TYPED_TEST(MTF, shad_transform) {
       shad_test_stl::checksum<it_t>, unaligned_map_f{});
 
   // parallel - unaligned - buffered insert iterator
-#ifndef NO_PAR_BUFFERED
   this->template test_io_inserters_with_policy<
       shad::buffered_insert_iterator<TypeParam>>(
       shad::distributed_parallel_tag{},
@@ -1313,5 +1304,4 @@ TYPED_TEST(MTF, shad_transform) {
       shad_test_stl::transform_<it_t, std::insert_iterator<TypeParam>,
                                 unaligned_map_f>,
       shad_test_stl::checksum<it_t>, unaligned_map_f{});
-#endif
 }

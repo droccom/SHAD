@@ -220,6 +220,8 @@ void block_contiguous_remote(rt::Locality l, ForwardIt1 first, ForwardIt1 last,
 //
 // kernels for block-contiguous output-iterators
 //
+// TODO(droccom) improve in-node parallelism with patterns
+//
 ////////////////////////////////////////////////////////////////////////////////
 // sequential
 template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
@@ -284,7 +286,7 @@ ForwardIt2 dpar_kernel(std::true_type, ForwardIt1 first, ForwardIt1 last,
     block_contiguous_local_par(coloc_first, coloc_last, coloc_d_first, op);
 
   // join
-  if (!h.IsNull()) rt::waitForCompletion(h);
+  rt::waitForCompletion(h);
 
   return d_last;
 }
@@ -308,28 +310,11 @@ ForwardIt2 dseq_kernel(std::false_type, ForwardIt1 first, ForwardIt1 last,
 }
 
 // parallel
+// TODO(droccom) in-node parallelism
 template <class ForwardIt1, class ForwardIt2, class UnaryOperation>
 ForwardIt2 dpar_kernel(std::false_type, ForwardIt1 first, ForwardIt1 last,
                        ForwardIt2 d_first, UnaryOperation op) {
-  using itr_traits1 = distributed_iterator_traits<ForwardIt1>;
-  using local_iterator_t = typename itr_traits1::local_iterator_type;
-  auto lrange = itr_traits1::local_range(first, last);
-
-  // local map
-  auto map_res = local_map_init(
-      // range
-      lrange.begin(), lrange.end(),
-      // kernel
-      [&](local_iterator_t b, local_iterator_t e) {
-        auto res = std::transform(b, e, d_first, op);
-        flush_iterator(res);
-        return res;
-      },
-      // init val
-      d_first);
-
-  // local reduce
-  return map_res.back();
+  return dseq_kernel(std::false_type{}, first, last, d_first, op);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
