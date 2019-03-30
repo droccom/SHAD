@@ -744,7 +744,7 @@ class lset_iterator : public std::iterator<std::forward_iterator_tag, T> {
     lset_iterator end_;
   };
 
-  // split a range into at most n sub-ranges
+  // split a range into at most n_parts non-empty sub-ranges
   static std::vector<partition_range> partitions(lset_iterator begin,
                                                  lset_iterator end,
                                                  size_t n_parts) {
@@ -765,10 +765,13 @@ class lset_iterator : public std::iterator<std::forward_iterator_tag, T> {
         bi = first_used_bucket(set_ptr, bi + part_step);
         if (bi < b_end) {
           auto pend = first_in_bucket(set_ptr, bi);
+          assert(pbegin != pend);
           res.push_back(partition_range{pbegin, pend});
           pbegin = pend;
         } else {
-          res.push_back(partition_range{pbegin, end});
+          if (pbegin != end) {
+            res.push_back(partition_range{pbegin, end});
+          }
           break;
         }
       }

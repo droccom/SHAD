@@ -314,6 +314,7 @@ local_map_init(
             auto map_kernel = std::get<2>(map_args);
             auto res_unit = std::get<3>(map_args);
             // map over the partition
+            assert(pfirst != plast);
             *res_unit = map_kernel(pfirst, plast);
           },
           map_args);
@@ -356,6 +357,7 @@ void local_map_void(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
             auto plast = std::get<1>(map_args);
             auto map_kernel = std::get<2>(map_args);
             // map over the partition
+            assert(pfirst != plast);
             map_kernel(pfirst, plast);
           },
           map_args);
@@ -384,6 +386,7 @@ void local_map_void_offset(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
             auto map_kernel = std::get<2>(map_args);
             auto poffset = std::get<3>(map_args);
             // map over the partition
+            assert(pfirst != plast);
             map_kernel(pfirst, plast, poffset);
           },
           map_args);

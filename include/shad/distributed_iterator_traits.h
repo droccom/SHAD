@@ -25,8 +25,8 @@
 #ifndef INCLUDE_SHAD_DISTRIBUTED_ITERATOR_TRAIT_H
 #define INCLUDE_SHAD_DISTRIBUTED_ITERATOR_TRAIT_H
 
-#include <iterator>
 #include <cassert>
+#include <iterator>
 
 #include "shad/runtime/locality.h"
 
@@ -90,7 +90,7 @@ struct distributed_random_access_iterator_trait
 // support for partitioning of local ranges
 template <typename Iterator>
 struct local_iterator_traits : public std::iterator_traits<Iterator> {
-  // split a range into n sub-ranges
+  // split a range into n non-empty sub-ranges
   static std::vector<typename Iterator::partition_range> partitions(
       Iterator begin, Iterator end, size_t n) {
     return Iterator::partitions(begin, end, n);
@@ -119,11 +119,13 @@ struct local_iterator_traits<T *> {
         std::advance(block_begin, block_id * block_size);
         auto block_end = block_begin;
         if (std::distance(block_begin, end) < block_size) {
-          res.push_back(partition_range{block_begin, end});
+          if (block_begin != end) {
+            res.push_back(partition_range{block_begin, end});
+          }
           break;
-        }
-        else {
+        } else {
           std::advance(block_end, block_size);
+          assert(block_begin != block_end);
           res.push_back(partition_range{block_begin, block_end});
         }
       }
