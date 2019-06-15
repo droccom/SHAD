@@ -76,18 +76,21 @@ bool all_of(distributed_parallel_tag&& policy, ForwardItr first,
       // range
       first, last,
       // kernel
-      [](ForwardItr first, ForwardItr last, UnaryPredicate p) -> uint8_t {
+      [](rt::Handle& h, ForwardItr first, ForwardItr last,
+         UnaryPredicate p) -> uint8_t {
         using local_iterator_t = typename itr_traits::local_iterator_type;
 
         // local map
         auto lrange = itr_traits::local_range(first, last);
 
-        auto map_res = local_map(
-            // range
-            lrange.begin(), lrange.end(),
-            // kernel
-            [&](const local_iterator_t& b, const local_iterator_t& e)
-                -> uint8_t { return std::all_of(b, e, p); });
+        auto map_res = local_map(h,
+                                 // range
+                                 lrange.begin(), lrange.end(),
+                                 // kernel
+                                 [&](const local_iterator_t& b,
+                                     const local_iterator_t& e) -> uint8_t {
+                                   return std::all_of(b, e, p);
+                                 });
 
         // local reduce
         return std::all_of(map_res.begin(), map_res.end(),
@@ -136,19 +139,21 @@ bool any_of(distributed_parallel_tag&& policy, ForwardItr first,
       // range
       first, last,
       // kernel
-      [](ForwardItr first, ForwardItr last, UnaryPredicate p) -> uint8_t {
+      [](rt::Handle& h, ForwardItr first, ForwardItr last,
+         UnaryPredicate p) -> uint8_t {
         using local_iterator_t = typename itr_traits::local_iterator_type;
 
         // local map
         auto lrange = itr_traits::local_range(first, last);
 
-        auto map_res = local_map(
-            // range
-            lrange.begin(), lrange.end(),
-            // kernel
-            [&](local_iterator_t b, local_iterator_t e) -> uint8_t {
-              return std::any_of(b, e, p);
-            });
+        auto map_res =
+            local_map(h,
+                      // range
+                      lrange.begin(), lrange.end(),
+                      // kernel
+                      [&](local_iterator_t b, local_iterator_t e) -> uint8_t {
+                        return std::any_of(b, e, p);
+                      });
 
         // local reduce
         return std::any_of(map_res.begin(), map_res.end(),
@@ -199,20 +204,20 @@ ForwardItr find(distributed_parallel_tag&& policy, ForwardItr first,
       // range
       first, last,
       // kernel
-      [](ForwardItr first, ForwardItr last, const T& value) {
+      [](rt::Handle& h, ForwardItr first, ForwardItr last, const T& value) {
         using local_iterator_t = typename itr_traits::local_iterator_type;
 
         // local map
         auto lrange = itr_traits::local_range(first, last);
 
-        auto map_res = local_map(
-            // range
-            lrange.begin(), lrange.end(),
-            // kernel
-            [&](local_iterator_t b, local_iterator_t e) {
-              auto res = std::find(b, e, value);
-              return res != e ? res : lrange.end();
-            });
+        auto map_res = local_map(h,
+                                 // range
+                                 lrange.begin(), lrange.end(),
+                                 // kernel
+                                 [&](local_iterator_t b, local_iterator_t e) {
+                                   auto res = std::find(b, e, value);
+                                   return res != e ? res : lrange.end();
+                                 });
 
         // local reduce
         auto found = std::find_if(
@@ -269,20 +274,20 @@ ForwardItr find_if(distributed_parallel_tag&& policy, ForwardItr first,
       // range
       first, last,
       // kernel
-      [](ForwardItr first, ForwardItr last, UnaryPredicate p) {
+      [](rt::Handle& h, ForwardItr first, ForwardItr last, UnaryPredicate p) {
         using local_iterator_t = typename itr_traits::local_iterator_type;
 
         // local map
         auto lrange = itr_traits::local_range(first, last);
 
-        auto map_res = local_map(
-            // range
-            lrange.begin(), lrange.end(),
-            // kernel
-            [&](local_iterator_t b, local_iterator_t e) {
-              auto res = std::find_if(b, e, p);
-              return res != e ? res : lrange.end();
-            });
+        auto map_res = local_map(h,
+                                 // range
+                                 lrange.begin(), lrange.end(),
+                                 // kernel
+                                 [&](local_iterator_t b, local_iterator_t e) {
+                                   auto res = std::find_if(b, e, p);
+                                   return res != e ? res : lrange.end();
+                                 });
 
         // local reduce
         auto found = std::find_if(
@@ -339,20 +344,20 @@ ForwardItr find_if_not(distributed_parallel_tag&& policy, ForwardItr first,
       // range
       first, last,
       // kernel
-      [](ForwardItr first, ForwardItr last, UnaryPredicate p) {
+      [](rt::Handle& h, ForwardItr first, ForwardItr last, UnaryPredicate p) {
         using local_iterator_t = typename itr_traits::local_iterator_type;
 
         // local map
         auto lrange = itr_traits::local_range(first, last);
 
-        auto map_res = local_map(
-            // range
-            lrange.begin(), lrange.end(),
-            // kernel
-            [&](local_iterator_t b, local_iterator_t e) {
-              auto res = std::find_if_not(b, e, p);
-              return res != e ? res : lrange.end();
-            });
+        auto map_res = local_map(h,
+                                 // range
+                                 lrange.begin(), lrange.end(),
+                                 // kernel
+                                 [&](local_iterator_t b, local_iterator_t e) {
+                                   auto res = std::find_if_not(b, e, p);
+                                   return res != e ? res : lrange.end();
+                                 });
 
         // local reduce
         auto found = std::find_if(
@@ -399,19 +404,19 @@ void for_each(distributed_parallel_tag&& policy, ForwardItr first,
       // range
       first, last,
       // kernel
-      [](ForwardItr first, ForwardItr last, UnaryPredicate p) {
+      [](rt::Handle& h, ForwardItr first, ForwardItr last, UnaryPredicate p) {
         using local_iterator_t = typename itr_traits::local_iterator_type;
 
         // local map
         auto lrange = itr_traits::local_range(first, last);
 
-        local_map_void(
-            // range
-            lrange.begin(), lrange.end(),
-            // kernel
-            [&](local_iterator_t b, local_iterator_t e) {
-              std::for_each(b, e, p);
-            });
+        local_map_void(h,
+                       // range
+                       lrange.begin(), lrange.end(),
+                       // kernel
+                       [&](local_iterator_t b, local_iterator_t e) {
+                         std::for_each(b, e, p);
+                       });
       },
       // map arguments
       p);
@@ -455,19 +460,19 @@ typename shad::distributed_iterator_traits<InputItr>::difference_type count(
       // range
       first, last,
       // kernel
-      [](InputItr first, InputItr last, const T& value) {
+      [](rt::Handle& h, InputItr first, InputItr last, const T& value) {
         using local_iterator_t = typename itr_traits::local_iterator_type;
 
         // local map
         auto lrange = itr_traits::local_range(first, last);
 
-        auto map_res = local_map(
-            // range
-            lrange.begin(), lrange.end(),
-            // kernel
-            [&](local_iterator_t b, local_iterator_t e) {
-              return std::count(b, e, value);
-            });
+        auto map_res = local_map(h,
+                                 // range
+                                 lrange.begin(), lrange.end(),
+                                 // kernel
+                                 [&](local_iterator_t b, local_iterator_t e) {
+                                   return std::count(b, e, value);
+                                 });
 
         // local reduce
         return std::accumulate(
@@ -521,19 +526,19 @@ typename shad::distributed_iterator_traits<InputItr>::difference_type count_if(
       // range
       first, last,
       // kernel
-      [](InputItr first, InputItr last, UnaryPredicate p) {
+      [](rt::Handle& h, InputItr first, InputItr last, UnaryPredicate p) {
         using local_iterator_t = typename itr_traits::local_iterator_type;
 
         // local map
         auto lrange = itr_traits::local_range(first, last);
 
-        auto map_res = local_map(
-            // range
-            lrange.begin(), lrange.end(),
-            // kernel
-            [&](local_iterator_t b, local_iterator_t e) {
-              return std::count_if(b, e, p);
-            });
+        auto map_res = local_map(h,
+                                 // range
+                                 lrange.begin(), lrange.end(),
+                                 // kernel
+                                 [&](local_iterator_t b, local_iterator_t e) {
+                                   return std::count_if(b, e, p);
+                                 });
 
         // local reduce
         return std::accumulate(

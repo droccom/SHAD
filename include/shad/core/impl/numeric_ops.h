@@ -307,20 +307,21 @@ T reduce(distributed_parallel_tag&& policy, InputIt first, InputIt last, T init,
       // range
       first, last,
       // kernel
-      [](InputIt first, InputIt last, BinaryOperation op) {
+      [](rt::Handle& h, InputIt first, InputIt last, BinaryOperation op) {
         using local_iterator_t = typename itr_traits::local_iterator_type;
 
         // local map
         auto lrange = itr_traits::local_range(first, last);
-        auto map_res = local_map(
-            // range
-            lrange.begin(), lrange.end(),
-            // kernel
-            [&](local_iterator_t b, local_iterator_t e) {
-              auto res = *b;
-              while (++b != e) res = op(std::move(res), *b);
-              return res;
-            });
+        auto map_res = local_map(h,
+                                 // range
+                                 lrange.begin(), lrange.end(),
+                                 // kernel
+                                 [&](local_iterator_t b, local_iterator_t e) {
+                                   auto res = *b;
+                                   while (++b != e)
+                                     res = op(std::move(res), *b);
+                                   return res;
+                                 });
 
         // local reduce
         auto b = map_res.begin(), e = map_res.end();
@@ -745,20 +746,22 @@ T transform_reduce(distributed_parallel_tag&& policy, ForwardIt first,
       // range
       first, last,
       // kernel
-      [](ForwardIt first, ForwardIt last, BinaryOp op, UnaryOp uop) {
+      [](rt::Handle& h, ForwardIt first, ForwardIt last, BinaryOp op,
+         UnaryOp uop) {
         using local_iterator_t = typename itr_traits::local_iterator_type;
 
         // local map
         auto lrange = itr_traits::local_range(first, last);
-        auto map_res = local_map(
-            // range
-            lrange.begin(), lrange.end(),
-            // kernel
-            [&](local_iterator_t b, local_iterator_t e) {
-              auto res = uop(*b++);
-              for (; b != e; b++) res = op(std::move(res), uop(*b));
-              return res;
-            });
+        auto map_res = local_map(h,
+                                 // range
+                                 lrange.begin(), lrange.end(),
+                                 // kernel
+                                 [&](local_iterator_t b, local_iterator_t e) {
+                                   auto res = uop(*b++);
+                                   for (; b != e; b++)
+                                     res = op(std::move(res), uop(*b));
+                                   return res;
+                                 });
 
         // local reduce
         auto b = map_res.begin(), e = map_res.end();

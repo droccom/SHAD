@@ -95,18 +95,18 @@ ForwardIt max_element(distributed_parallel_tag&& policy, ForwardIt first,
       // range
       first, last,
       // kernel
-      [](ForwardIt first, ForwardIt last, Compare comp) {
+      [](rt::Handle& h, ForwardIt first, ForwardIt last, Compare comp) {
         using local_iterator_t = typename itr_traits::local_iterator_type;
 
         // local map
         auto lrange = itr_traits::local_range(first, last);
-        auto map_res = local_map(
-            // range
-            lrange.begin(), lrange.end(),
-            // kernel
-            [&](local_iterator_t b, local_iterator_t e) {
-              return std::max_element(b, e, comp);
-            });
+        auto map_res = local_map(h,
+                                 // range
+                                 lrange.begin(), lrange.end(),
+                                 // kernel
+                                 [&](local_iterator_t b, local_iterator_t e) {
+                                   return std::max_element(b, e, comp);
+                                 });
 
         // local reduce
         auto nil_val = itr_traits::local_range(first, last).end();
@@ -188,18 +188,18 @@ ForwardIt min_element(distributed_parallel_tag&& policy, ForwardIt first,
       // range
       first, last,
       // kernel
-      [](ForwardIt first, ForwardIt last, Compare comp) {
+      [](rt::Handle& h, ForwardIt first, ForwardIt last, Compare comp) {
         using local_iterator_t = typename itr_traits::local_iterator_type;
 
         // local map
         auto lrange = itr_traits::local_range(first, last);
-        auto map_res = local_map(
-            // range
-            lrange.begin(), lrange.end(),
-            // kernel
-            [&](local_iterator_t b, local_iterator_t e) {
-              return std::min_element(b, e, comp);
-            });
+        auto map_res = local_map(h,
+                                 // range
+                                 lrange.begin(), lrange.end(),
+                                 // kernel
+                                 [&](local_iterator_t b, local_iterator_t e) {
+                                   return std::min_element(b, e, comp);
+                                 });
 
         // local reduce
         auto nil_val = itr_traits::local_range(first, last).end();
@@ -306,18 +306,18 @@ std::pair<ForwardIt, ForwardIt> minmax_element(
       // range
       first, last,
       // kernel
-      [](ForwardIt first, ForwardIt last, Compare comp) {
+      [](rt::Handle& h, ForwardIt first, ForwardIt last, Compare comp) {
         using local_iterator_t = typename itr_traits::local_iterator_type;
 
         // local map
         auto lrange = itr_traits::local_range(first, last);
-        auto map_res = local_map(
-            // range
-            lrange.begin(), lrange.end(),
-            // kernel
-            [&](local_iterator_t b, local_iterator_t e) {
-              return std::minmax_element(b, e, comp);
-            });
+        auto map_res = local_map(h,
+                                 // range
+                                 lrange.begin(), lrange.end(),
+                                 // kernel
+                                 [&](local_iterator_t b, local_iterator_t e) {
+                                   return std::minmax_element(b, e, comp);
+                                 });
 
         // reduce
         auto nil_val = itr_traits::local_range(first, last).end();

@@ -69,6 +69,31 @@ inline auto apply_from(F&& f, T&& t) {
       ::std::forward<F>(f), ::std::forward<T>(t));
 }
 
+// variant with handle
+template <size_t i, size_t N>
+struct h_Apply {
+  template <typename F, typename T, typename... A>
+  static inline auto h_apply(F&& f, rt::Handle& h, T&& t, A&&... a) {
+    return h_Apply<i, N - 1>::h_apply(
+        ::std::forward<F>(f), h, ::std::forward<T>(t),
+        ::std::get<N - 1>(::std::forward<T>(t)), ::std::forward<A>(a)...);
+  }
+};
+
+template <size_t i>
+struct h_Apply<i, i> {
+  template <typename F, typename T, typename... A>
+  static inline auto h_apply(F&& f, rt::Handle& h, T&&, A&&... a) {
+    return ::std::forward<F>(f)(h, ::std::forward<A>(a)...);
+  }
+};
+
+template <size_t i, typename F, typename T>
+inline auto h_apply_from(F&& f, rt::Handle& h, T&& t) {
+  return h_Apply<i, ::std::tuple_size<::std::decay_t<T>>::value>::h_apply(
+      ::std::forward<F>(f), h, ::std::forward<T>(t));
+}
+
 /// @brief applies the folding-map pattern over a distributed range
 ///
 /// Applies an operation sequentially to each sub-range (one for each locality
@@ -187,16 +212,16 @@ struct optional_vector {
 ///
 /// @todo support operations returning bool
 template <typename ForwardIt, typename MapF, typename... Args>
-std::vector<
-    typename std::result_of<MapF&(ForwardIt, ForwardIt, Args&&...)>::type>
+std::vector<typename std::result_of<MapF&(rt::Handle&, ForwardIt, ForwardIt,
+                                          Args&&...)>::type>
 distributed_map_init(
     ForwardIt first, ForwardIt last, MapF&& map_kernel,
-    const typename std::result_of<MapF&(ForwardIt, ForwardIt, Args&&...)>::type&
-        init,
+    const typename std::result_of<MapF&(rt::Handle&, ForwardIt, ForwardIt,
+                                        Args&&...)>::type& init,
     Args&&... args) {
   using itr_traits = distributed_iterator_traits<ForwardIt>;
-  using mapped_t =
-      typename std::result_of<MapF&(ForwardIt, ForwardIt, Args && ...)>::type;
+  using mapped_t = typename std::result_of<MapF&(rt::Handle&, ForwardIt,
+                                                 ForwardIt, Args && ...)>::type;
   static_assert(
       !std::is_same<mapped_t, bool>::value,
       "distributed-map kernels returning bool are not supported (yet)");
@@ -211,14 +236,15 @@ distributed_map_init(
        locality != end; ++locality, ++i) {
     rt::asyncExecuteAtWithRet(
         h, locality,
-        [](rt::Handle&, const typeof(d_args)& d_args, opt_mapped_t* result) {
+        [](rt::Handle& h, const typeof(d_args)& d_args, opt_mapped_t* result) {
           auto first = ::std::get<1>(d_args);
           auto last = ::std::get<2>(d_args);
           auto lrange = itr_traits::local_range(first, last);
           if (lrange.begin() != lrange.end()) {
             result->valid = true;
-            result->value = apply_from<1>(
-                ::std::get<0>(d_args), ::std::forward<typeof(d_args)>(d_args));
+            result->value =
+                h_apply_from<1>(::std::get<0>(d_args), h,
+                                ::std::forward<typeof(d_args)>(d_args));
           } else {
             result->valid = false;
           }
@@ -234,13 +260,13 @@ distributed_map_init(
 
 // distributed_map_init variant with default-constructed initial value
 template <typename ForwardIt, typename MapF, typename... Args>
-std::vector<
-    typename std::result_of<MapF&(ForwardIt, ForwardIt, Args&&...)>::type>
+std::vector<typename std::result_of<MapF&(rt::Handle&, ForwardIt, ForwardIt,
+                                          Args&&...)>::type>
 distributed_map(ForwardIt first, ForwardIt last, MapF&& map_kernel,
                 Args&&... args) {
   using itr_traits = distributed_iterator_traits<ForwardIt>;
-  using mapped_t =
-      typename std::result_of<MapF&(ForwardIt, ForwardIt, Args && ...)>::type;
+  using mapped_t = typename std::result_of<MapF&(rt::Handle&, ForwardIt,
+                                                 ForwardIt, Args && ...)>::type;
   static_assert(std::is_default_constructible<mapped_t>::value,
                 "distributed_map requires DefaultConstructible value type");
   return distributed_map_init(first, last, map_kernel, mapped_t{},
@@ -260,9 +286,9 @@ void distributed_map_void(ForwardIt first, ForwardIt last, MapF&& map_kernel,
        locality != end; ++locality, ++i) {
     rt::asyncExecuteAt(
         h, locality,
-        [](rt::Handle&, const typeof(d_args)& d_args) {
-          apply_from<1>(::std::get<0>(d_args),
-                        ::std::forward<typeof(d_args)>(d_args));
+        [](rt::Handle& h, const typeof(d_args)& d_args) {
+          h_apply_from<1>(::std::get<0>(d_args), h,
+                          ::std::forward<typeof(d_args)>(d_args));
         },
         d_args);
   }
@@ -287,7 +313,7 @@ void distributed_map_void(ForwardIt first, ForwardIt last, MapF&& map_kernel,
 template <typename ForwardIt, typename MapF>
 std::vector<typename std::result_of<MapF&(ForwardIt, ForwardIt)>::type>
 local_map_init(
-    ForwardIt first, ForwardIt last, MapF&& map_kernel,
+    rt::Handle& h, ForwardIt first, ForwardIt last, MapF&& map_kernel,
     const typename std::result_of<MapF&(ForwardIt, ForwardIt)>::type& init) {
   using mapped_t = typename std::result_of<MapF&(ForwardIt, ForwardIt)>::type;
   static_assert(
@@ -302,6 +328,8 @@ local_map_init(
 
   if (parts.size()) {
     auto map_args = std::make_tuple(parts.data(), map_kernel, map_res.data());
+
+    // TODO(droccom) async
     shad::rt::forEachAt(
         rt::thisLocality(),
         [](const typeof(map_args)& map_args, size_t iter) {
@@ -321,7 +349,7 @@ local_map_init(
 // local_map_init variant with default-constructed initial value
 template <typename ForwardIt, typename MapF>
 std::vector<typename std::result_of<MapF&(ForwardIt, ForwardIt)>::type>
-local_map(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
+local_map(rt::Handle& h, ForwardIt first, ForwardIt last, MapF&& map_kernel) {
   using mapped_t = typename std::result_of<MapF&(ForwardIt, ForwardIt)>::type;
   static_assert(std::is_default_constructible<mapped_t>::value,
                 "local_map requires DefaultConstructible value type");
@@ -329,17 +357,20 @@ local_map(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
       !std::is_same<mapped_t, bool>::value,
       "distributed-map kernels returning bool are not supported (yet)");
 
-  return local_map_init(first, last, map_kernel, mapped_t{});
+  return local_map_init(h, first, last, map_kernel, mapped_t{});
 }
 
 // local_map_init variant with void operation
 template <typename ForwardIt, typename MapF>
-void local_map_void(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
+void local_map_void(rt::Handle& h, ForwardIt first, ForwardIt last,
+                    MapF&& map_kernel) {
   auto parts = local_iterator_traits<ForwardIt>::partitions(
       first, last, rt::impl::getConcurrency());
 
   if (parts.size()) {
     auto map_args = std::make_tuple(parts.data(), map_kernel);
+
+    // TODO(droccom) async
     shad::rt::forEachAt(
         rt::thisLocality(),
         [](const typeof(map_args)& map_args, size_t iter) {
@@ -356,12 +387,15 @@ void local_map_void(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
 // local_map_init variant with a void operation that takes in input the offset
 // of the processed partition with respect to the input range
 template <typename ForwardIt, typename MapF>
-void local_map_void_offset(ForwardIt first, ForwardIt last, MapF&& map_kernel) {
+void local_map_void_offset(rt::Handle& h, ForwardIt first, ForwardIt last,
+                           MapF&& map_kernel) {
   auto parts = local_iterator_traits<ForwardIt>::partitions(
       first, last, rt::impl::getConcurrency());
 
   if (parts.size()) {
     auto map_args = std::make_tuple(parts.data(), map_kernel, first);
+
+    // TODO(droccom) async
     shad::rt::forEachAt(
         rt::thisLocality(),
         [](const typeof(map_args)& map_args, size_t iter) {
